@@ -40,9 +40,9 @@ There is no analytics, no telemetry, and no crash reporting. The details are in 
 
 ### Where your data is stored
 
-Everything stays on your Mac. Molt's files are in `~/Library/Application Support/MacSpace/`,
-`~/Library/Logs/MacSpace/`, the preferences file `~/Library/Preferences/com.macspace.app.plist`,
-and, for what the helper writes, `/Library/Application Support/MacSpace/`. The
+Everything stays on your Mac. Molt's files are in `~/Library/Application Support/Molt/`,
+`~/Library/Logs/Molt/`, the preferences file `~/Library/Preferences/com.swollzy.molt.plist`,
+and, for what the helper writes, `/Library/Application Support/Molt/`. The
 [Privacy Policy](PRIVACY.md) lists each file. None of it is uploaded anywhere.
 
 ### What Molt deletes
@@ -90,7 +90,7 @@ These changes stay in place if you delete the app without switching them back on
 The **Apple Intelligence** switch changes the key `Session Language` in
 `com.apple.assistant.backedup`, which is Siri's language. Switched off, Siri gets a language other
 than the system's, and your Siri voice (`Output Voice`) is left as it is. Molt saves both in
-`~/Library/Application Support/MacSpace/ai-guard-saved-siri-settings.json` and restores them when
+`~/Library/Application Support/Molt/ai-guard-saved-siri-settings.json` and restores them when
 you switch Apple Intelligence on, or if the change does not take effect. If macOS keeps the models
 after the switch is off, Molt may set the language to the system language and back, which takes
 about a minute, to make macOS release them. With Siri's iCloud sync on, these changes also reach
@@ -102,7 +102,7 @@ where to do it.
 The Call transcription switch in Siri & Apple Intelligence uses five fixed TelephonyUtilities overrides in
 `/Library/Preferences/FeatureFlags/Domain/TelephonyUtilities.plist`: call recording, Call Screening, FaceTime caption delivery,
 and the Mac audio/video translation gates. The authenticated helper saves original entries in
-`/Library/Application Support/MacSpace/phone-features.json` before writing changes. Changes take effect after a restart; the
+`/Library/Application Support/Molt/phone-features.json` before writing changes. Changes take effect after a restart; the
 running gates are checked separately. Re-enabling restores those original entries, preserving unrelated overrides. The helper
 refuses an entry changed outside Molt instead of overwriting it. This control installs no configuration profile and does not
 change Siri's Session Language. Its helper operation accepts only an on/off intent, with no arbitrary path, domain or key.
@@ -111,11 +111,11 @@ change Siri's Session Language. Its helper operation accepts only an on/off inte
 
 The separate Siri and Spatial Photos switches save your original settings before disabling a feature. Siri's saved voice is
 cleared while Siri is off; its Session Language is preserved. Call transcription also disables the local recording, screening and caption
-settings. Originals are kept in `~/Library/Application Support/MacSpace/feature-settings/`.
+settings. Originals are kept in `~/Library/Application Support/Molt/feature-settings/`.
 
 Model requests are released through their owning Apple frameworks, in a separate Molt process that runs as you, never in
 the app or the helper. That process checks each method against the one Molt reviewed before calling it and stops on any
-difference. Rollback objects are saved, readable only by you, under `~/Library/Application Support/MacSpace/asset-owners/`. These feature and language-model cleanups never edit the live subscription database or delete model
+difference. Rollback objects are saved, readable only by you, under `~/Library/Application Support/Molt/asset-owners/`. These feature and language-model cleanups never edit the live subscription database or delete model
 payloads directly. Physical cleanup uses the existing guarded macOS cleanup service. It waits while Apple Intelligence's state
 is unreadable and, while Apple Intelligence is on, while macOS is downloading any system asset; it keeps other accounts' requests
 and shared speech models while Dictation is active. Unused language data is released only while Apple Intelligence is off.
@@ -163,7 +163,7 @@ steps down so that the new one starts.
 | `timemachine.backups.delete` | Deletes backups from a Time Machine backup disk | Only on a disk Time Machine lists as connected, only dates it finds there itself, never the latest backup, never while a backup runs or while that is unknown. Runs `/usr/bin/tmutil delete`. |
 | `debloat.status`, `.apply`, `.revert` | Reads, switches off and switches on Debloat items | Control identifiers only, from the built-in catalog. Nothing else. |
 | `debloat.removeProfile` | Removes a Molt profile | Only identifiers `com.macspace.policies` and `com.macspace.policies.…`. Any other profile is refused. |
-| `siri.orphan-subscriptions.plan`, `.execute` | Finds and removes the Apple Intelligence subscriptions of accounts that no longer exist | Backs up the database to `/Library/Application Support/MacSpace/backups/` first, changes it in one transaction, touches only rows that match no local account, and refuses if the account list looks wrong. The app has no button for it yet. |
+| `siri.orphan-subscriptions.plan`, `.execute` | Finds and removes the Apple Intelligence subscriptions of accounts that no longer exist | Backs up the database to `/Library/Application Support/Molt/backups/` first, changes it in one transaction, touches only rows that match no local account, and refuses if the account list looks wrong. The app has no button for it yet. |
 | `helper.ping` | Answers, so the app knows the helper is up | None |
 
 The app's command-line tool, `MacSpaceCli`, inside the app bundle, can talk to the helper too. It
@@ -200,10 +200,10 @@ shasum -a 256 -c Molt-x.y.z.dmg.sha256
 Then, after you drag Molt to Applications:
 
 ```bash
-codesign -dv --verbose=4 /Applications/MacSpace.app
-codesign --verify --deep --strict --verbose=2 /Applications/MacSpace.app
-spctl -a -vv /Applications/MacSpace.app
-xcrun stapler validate /Applications/MacSpace.app
+codesign -dv --verbose=4 /Applications/Molt.app
+codesign --verify --deep --strict --verbose=2 /Applications/Molt.app
+spctl -a -vv /Applications/Molt.app
+xcrun stapler validate /Applications/Molt.app
 ```
 
 You should see `Authority=Developer ID Application`, `TeamIdentifier=J45ZXS2ZF6`, the `runtime`
@@ -220,11 +220,11 @@ module's settings, removes the helper and moves Molt to the Trash. To do it by h
 2. If the profile **Molt: policies** is still in System Settings > General > Device
    Management, remove it.
 3. Quit Molt. Turn it off under System Settings > General > Login Items & Extensions, or run
-   `/Applications/MacSpace.app/Contents/MacOS/MacSpaceCli helper --unregister`.
+   `/Applications/Molt.app/Contents/MacOS/MacSpaceCli helper --unregister`.
 4. Remove the app: `brew uninstall --cask macspace`, or drag **Molt** to the Trash.
 5. Remove its data and preferences:
    ```bash
-   rm -rf ~/Library/Application\ Support/MacSpace ~/Library/Logs/MacSpace ~/Library/Caches/com.macspace.app
+   rm -rf ~/Library/Application\ Support/MacSpace ~/Library/Logs/Molt ~/Library/Caches/com.macspace.app
    defaults delete com.macspace.app
    sudo rm -rf /Library/Application\ Support/MacSpace
    ```

@@ -20,19 +20,19 @@ own machine. None of it leaves your Mac.
 
 | Data | Where it is stored |
 |---|---|
-| Your settings: theme, window choices, which modules are on, module options, automatic cleanup, notification choices, the last tile each module showed, the first-launch step | macOS preferences (`UserDefaults`) for Molt, `~/Library/Preferences/com.macspace.app.plist` |
+| Your settings: theme, window choices, which modules are on, module options, automatic cleanup, notification choices, the last tile each module showed, the first-launch step | macOS preferences (`UserDefaults`) for Molt, `~/Library/Preferences/com.swollzy.molt.plist` |
 | Sparkle's own settings: whether to check for updates automatically, and when it last checked | The same preferences file |
-| Cleanup history: when, which module, how much it freed, how it started, a one-line summary | `~/Library/Application Support/MacSpace/cleanup-history.json` |
-| Space that macOS kept although Molt asked it to free it | `~/Library/Application Support/MacSpace/purge-holdouts.json` |
-| Debloat journal: each setting Molt changed, its value before and after, the macOS build, and when | `~/Library/Application Support/MacSpace/debloat-journal.json`, and for changes made by the helper `/Library/Application Support/MacSpace/debloat-journal.json` |
-| Debloat watch: which features macOS switched back on, and when (the last 20 events) | `~/Library/Application Support/MacSpace/debloat-watch.json` |
-| The Debloat profile, as it is staged for your approval | `~/Library/Application Support/MacSpace/Profiles/MacSpace.mobileconfig` |
-| Your Siri language and voice, saved while Apple Intelligence is off so Molt can restore them | `~/Library/Application Support/MacSpace/ai-guard-saved-siri-settings.json` |
-| Original Siri, Spatial Photos and local Call transcription settings, including absent values | `~/Library/Application Support/MacSpace/feature-settings/` |
-| Model owner requests saved for restoration, including voice and language choices | `~/Library/Application Support/MacSpace/asset-owners/` |
-| Original system-wide Call transcription overrides | `/Library/Application Support/MacSpace/phone-features.json` |
-| Apple Intelligence watch (only if you turn it on): the last state it saw, and a log of changes | `~/Library/Application Support/MacSpace/ai-watch-state.json` and `~/Library/Logs/MacSpace/ai-watch.jsonl` |
-| A backup of macOS's subscription database, only if you remove leftover Apple Intelligence subscriptions of deleted accounts | `/Library/Application Support/MacSpace/backups/` |
+| Cleanup history: when, which module, how much it freed, how it started, a one-line summary | `~/Library/Application Support/Molt/cleanup-history.json` |
+| Space that macOS kept although Molt asked it to free it | `~/Library/Application Support/Molt/purge-holdouts.json` |
+| Debloat journal: each setting Molt changed, its value before and after, the macOS build, and when | `~/Library/Application Support/Molt/debloat-journal.json`, and for changes made by the helper `/Library/Application Support/Molt/debloat-journal.json` |
+| Debloat watch: which features macOS switched back on, and when (the last 20 events) | `~/Library/Application Support/Molt/debloat-watch.json` |
+| The Debloat profile, as it is staged for your approval | `~/Library/Application Support/Molt/Profiles/MacSpace.mobileconfig` |
+| Your Siri language and voice, saved while Apple Intelligence is off so Molt can restore them | `~/Library/Application Support/Molt/ai-guard-saved-siri-settings.json` |
+| Original Siri, Spatial Photos and local Call transcription settings, including absent values | `~/Library/Application Support/Molt/feature-settings/` |
+| Model owner requests saved for restoration, including voice and language choices | `~/Library/Application Support/Molt/asset-owners/` |
+| Original system-wide Call transcription overrides | `/Library/Application Support/Molt/phone-features.json` |
+| Apple Intelligence watch (only if you turn it on): the last state it saw, and a log of changes | `~/Library/Application Support/Molt/ai-watch-state.json` and `~/Library/Logs/Molt/ai-watch.jsonl` |
+| A backup of macOS's subscription database, only if you remove leftover Apple Intelligence subscriptions of deleted accounts | `/Library/Application Support/Molt/backups/` |
 | Update downloads | Sparkle's cache folder, `~/Library/Caches/com.macspace.app/` |
 
 You can delete all of it at any time. [README.md](README.md#uninstall) lists the commands.
