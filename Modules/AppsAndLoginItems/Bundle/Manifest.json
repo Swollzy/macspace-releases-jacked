@@ -1,0 +1,15 @@
+{
+  "id": "com.macspace.apps-and-login-items",
+  "name": "Apps & Login Items",
+  "summary": "Move apps you no longer use to the Trash with what they leave behind, and switch off launch agents you don't want, reversibly.",
+  "version": "0.1.0",
+  "sdkVersion": 7,
+  "symbol": "app.badge",
+  "minimumMacOS": "27.0",
+  "order": 50,
+  "permissions": ["fullDiskAccess"],
+  "options": [],
+  "backgroundTasks": [],
+  "tileTint": "teal",
+  "autoClean": false
+}

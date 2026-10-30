@@ -576,7 +576,7 @@ public final class ModuleHandle: ObservableObject, Identifiable {
     }
 
     private func autoCleanNow() async -> CleanupReport? {
-        guard !preparingForUninstall, state == .ready, manifest.autoClean == true, let module else { return nil }
+        guard !preparingForUninstall, state == .ready, AutoCleaner.takesPart(manifest), let module else { return nil }
         isCleaning = true
         performing = true
         defer { isCleaning = false; performing = false; updateBusy() }
@@ -587,6 +587,14 @@ public final class ModuleHandle: ObservableObject, Identifiable {
         performing = false
         if isWatched { await refresh(quiet: true) }
         return report
+    }
+
+    /// The page as it is now, for the dry-run report: the one shown, or a reading when the page was never opened. Reading changes
+    /// nothing on the Mac.
+    func screenForReport() async -> Screen? {
+        if let screen { return screen }
+        guard state == .ready, let module else { return nil }
+        return await module.screen(context: context())
     }
 
     func runBackgroundTask(_ taskID: String) async {

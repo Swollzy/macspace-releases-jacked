@@ -315,12 +315,22 @@ final class GeneralSettingsTests: XCTestCase {
 }
 
 final class AppNotificationsTests: XCTestCase {
-    /// Low: under 10 GB, or under 5% of a disk large enough for 5% to be more.
-    func testLowSpaceIsTenGigabytesOrFivePercent() {
-        XCTAssertTrue(AppNotifications.isLow(available: 9_000_000_000, capacity: 100_000_000_000))
-        XCTAssertFalse(AppNotifications.isLow(available: 11_000_000_000, capacity: 100_000_000_000))
-        XCTAssertTrue(AppNotifications.isLow(available: 40_000_000_000, capacity: 1_000_000_000_000), "5% of 1 TB is 50 GB")
-        XCTAssertFalse(AppNotifications.isLow(available: 60_000_000_000, capacity: 1_000_000_000_000))
+    /// Low: under 15 GB, or under 10% of a disk large enough for 10% to be more; never a threshold under 5 GB.
+    func testLowSpaceIsFifteenGigabytesOrTenPercent() {
+        XCTAssertTrue(AppNotifications.isLow(available: 14_000_000_000, capacity: 100_000_000_000))
+        XCTAssertFalse(AppNotifications.isLow(available: 16_000_000_000, capacity: 100_000_000_000))
+        XCTAssertTrue(AppNotifications.isLow(available: 90_000_000_000, capacity: 1_000_000_000_000), "10% of 1 TB is 100 GB")
+        XCTAssertFalse(AppNotifications.isLow(available: 110_000_000_000, capacity: 1_000_000_000_000))
+        XCTAssertTrue(AppNotifications.isLow(available: 4_000_000_000, capacity: 20_000_000_000), "a small disk still warns under 15 GB")
+    }
+
+    /// Automatic cleanup never runs Large Files or Apps & Login Items, even if a manifest said it should.
+    func testAutomaticCleanupNeverRunsTheTrashModules() {
+        for id in ["com.macspace.large-files", "com.macspace.apps-and-login-items"] {
+            let manifest = ModuleManifest(id: id, name: id, summary: "", version: "1", symbol: "doc", autoClean: true)
+            XCTAssertFalse(AutoCleaner.takesPart(manifest))
+        }
+        XCTAssertTrue(AutoCleaner.takesPart(ModuleManifest(id: "com.macspace.other-system-files", name: "", summary: "", version: "1", symbol: "doc", autoClean: true)))
     }
 
     /// A click opens the page the notification is about; a module's own notification names its module.

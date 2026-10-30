@@ -35,11 +35,15 @@ public final class AppNotifications: NSObject, UNUserNotificationCenterDelegate 
     static let cleanupThreshold: UInt64 = 100_000_000
     /// An action shorter than this ends before anyone has switched away: no notification.
     static let actionThreshold: TimeInterval = 8
-    /// The disk counts as running low under this much free space, or under `lowSpaceFraction` of it, whichever is larger.
-    nonisolated static let lowSpaceBytes: UInt64 = 10_000_000_000
-    nonisolated static let lowSpaceFraction = 0.05
     static let lowSpaceInterval: TimeInterval = 24 * 3600
     static let lowSpaceLastKey = "notify.lowSpace.last"
+    /// The emergency purge runs at most this often while the disk stays low.
+    static let emergencyInterval: TimeInterval = 3600
+    static let emergencyLastKey = "lowDisk.emergency.last"
+    /// Settings' switch for the emergency purge; on unless the user turns it off.
+    public nonisolated static let emergencyPurgeKey = "lowDisk.emergencyPurge"
+    /// The one module the emergency purge runs: Other System Files, whose cleanup is macOS's own purge of purgeable files.
+    nonisolated static let emergencyModuleID = "com.macspace.other-system-files"
 
     private let defaults: UserDefaults
     private var lowSpaceWatch: Task<Void, Never>?
@@ -87,26 +91,44 @@ public final class AppNotifications: NSObject, UNUserNotificationCenterDelegate 
         post(.actionFinished, title: module.manifest.name, body: message, destination: "module:\(module.id)")
     }
 
-    /// The disk is low: at most once a day, saying what MacSpace can free.
+    public var emergencyPurgeEnabled: Bool { defaults.object(forKey: Self.emergencyPurgeKey) as? Bool ?? true }
+
+    /// The disk is low (`LowDiskPolicy`): the emergency purge first, then, at most once a day, a notification saying what MacSpace
+    /// can free and offering the dry-run report. Only while MacSpace is open: with the app closed nothing watches the disk.
+    ///
+    /// The emergency purge is the only thing done without the user, and it is only macOS's own purge of the files apps marked
+    /// purgeable (Other System Files' cleanup). Never the user's files, snapshots, backups, duplicates, large files or app leftovers.
     func checkLowSpace(now: Date = Date()) async {
-        guard isOn(.lowSpace) else { return }
         let reading = await Task.detached(priority: .utility) { () -> (available: UInt64, capacity: UInt64)? in
             let values = try? URL(fileURLWithPath: DataVolume.path).resourceValues(forKeys: [.volumeTotalCapacityKey, .volumeAvailableCapacityForImportantUsageKey])
             guard let capacity = values?.volumeTotalCapacity, let available = values?.volumeAvailableCapacityForImportantUsage, available >= 0 else { return nil }
             return (UInt64(available), UInt64(capacity))
         }.value
         guard let reading, Self.isLow(available: reading.available, capacity: reading.capacity) else { return }
-        if let last = defaults.object(forKey: Self.lowSpaceLastKey) as? Date, now.timeIntervalSince(last) < Self.lowSpaceInterval { return }
+        let purged = await emergencyPurge(now: now)
+        guard isOn(.lowSpace) else { return }
+        if let last = defaults.object(forKey: Self.lowSpaceLastKey) as? Date, now.timeIntervalSince(last) < Self.lowSpaceInterval, purged == 0 { return }
         defaults.set(now, forKey: Self.lowSpaceLastKey)
         let freeable = host?.reclaimable.values.reduce(0, +) ?? 0
-        let body = freeable >= Self.cleanupThreshold
+        var body = freeable >= Self.cleanupThreshold
             ? String(localized: "\(ByteFormat.string(reading.available)) left. MacSpace can free \(ByteFormat.string(freeable)).")
             : String(localized: "\(ByteFormat.string(reading.available)) left.")
-        post(.lowSpace, title: String(localized: "Your disk is almost full"), body: body, destination: "home")
+        if purged > 0 { body = String(localized: "MacSpace freed \(ByteFormat.string(purged)) of purgeable files.") + " " + body }
+        body += " " + String(localized: "Export a dry-run report in Settings to see what else could go.")
+        post(.lowSpace, title: String(localized: "Your disk is almost full"), body: body, destination: "settings")
+    }
+
+    /// macOS's purge of purgeable files, through Other System Files' own cleanup, at most once an hour. What it freed; 0 when it
+    /// did not run. The cleanup history records it as automatic.
+    func emergencyPurge(now: Date = Date()) async -> UInt64 {
+        guard emergencyPurgeEnabled, let handle = host?.handle(for: Self.emergencyModuleID), handle.state == .ready else { return 0 }
+        if let last = defaults.object(forKey: Self.emergencyLastKey) as? Date, now.timeIntervalSince(last) < Self.emergencyInterval { return 0 }
+        defaults.set(now, forKey: Self.emergencyLastKey)
+        return await handle.autoClean()?.freedBytes ?? 0
     }
 
     nonisolated static func isLow(available: UInt64, capacity: UInt64) -> Bool {
-        available < max(lowSpaceBytes, UInt64(Double(capacity) * lowSpaceFraction))
+        LowDiskPolicy.isLow(available: available, capacity: capacity)
     }
 
     private func post(_ kind: Kind, title: String, body: String, destination: String) {

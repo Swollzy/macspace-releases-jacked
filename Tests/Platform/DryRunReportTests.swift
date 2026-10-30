@@ -1,0 +1,48 @@
+import XCTest
+import MacSpaceSdk
+@testable import MacSpacePlatform
+
+final class DryRunReportTests: XCTestCase {
+    /// Low: under 15 GB or 10% of the disk, whichever is larger, never a threshold under 5 GB.
+    func testLowDiskPolicy() {
+        XCTAssertEqual(LowDiskPolicy.threshold(capacity: 100_000_000_000), 15_000_000_000)
+        XCTAssertEqual(LowDiskPolicy.threshold(capacity: 1_000_000_000_000), 100_000_000_000)
+        XCTAssertGreaterThanOrEqual(LowDiskPolicy.threshold(capacity: 0), LowDiskPolicy.floor)
+        XCTAssertTrue(LowDiskPolicy.isLow(available: 14_999_999_999, capacity: 100_000_000_000))
+        XCTAssertFalse(LowDiskPolicy.isLow(available: 15_000_000_000, capacity: 100_000_000_000))
+    }
+
+    /// The report takes every offered row, checked or not, with what its action does to it, and writes JSON and Markdown locally.
+    func testItemsAndFiles() throws {
+        let trash = Action(id: "trashLarge", title: "Move to Trash", parameters: [DryRunReport.dispositionKey: DryRunReport.Disposition.trash.rawValue])
+        var group = Row.group(id: "large-files", title: "Large files", totalBytes: 300,
+                              rows: [Row(id: "a", title: "a.mov", paths: ["/Users/x/Movies/a.mov"]), Row(id: "b", title: "b.mov", paths: ["/Users/x/Movies/b.mov"]),
+                                     Row(id: "kept", title: "kept.mov")])
+        group.selection = Selection(action: trash, choices: ["a": 100, "b": 200], checked: [])
+        let screen = Screen(title: "Large Files", widgets: [.section(SectionWidget(id: "s", title: "Over 100 MB", widgets: [.list(ListWidget(id: "l", rows: [group]))]))])
+
+        let items = DryRunReport.items(in: screen, checked: { _ in ["b"] })
+        XCTAssertEqual(items.map(\.title), ["a.mov", "b.mov"], "a row with no checkbox is never offered")
+        XCTAssertEqual(items.filter(\.checked).map(\.title), ["b.mov"])
+        XCTAssertTrue(items.allSatisfy { $0.disposition == .trash })
+
+        let report = DryRunReport(created: Date(timeIntervalSince1970: 0), macSpaceVersion: "1.2.0", freeBytes: 10_000_000_000, capacityBytes: 100_000_000_000,
+                                  modules: [DryRunReport.Module(id: "lf", name: "Large Files", reclaimableBytes: nil, autoClean: false, items: items),
+                                            DryRunReport.Module(id: "osf", name: "Other System Files", reclaimableBytes: 5_000, autoClean: true, items: [])])
+        XCTAssertTrue(report.lowDisk)
+        XCTAssertEqual(report.wouldTrashBytes, 200)
+        XCTAssertEqual(report.wouldFreeBytes, 5_000)
+
+        let folder = FileManager.default.temporaryDirectory.appendingPathComponent("macspace-report-\(UUID().uuidString)")
+        try FileManager.default.createDirectory(at: folder, withIntermediateDirectories: true)
+        defer { try? FileManager.default.removeItem(at: folder) }
+        let files = try report.write(to: folder)
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .iso8601
+        XCTAssertEqual(try decoder.decode(DryRunReport.self, from: Data(contentsOf: files.json)), report)
+        let markdown = try String(contentsOf: files.markdown, encoding: .utf8)
+        XCTAssertTrue(markdown.contains("/Users/x/Movies/b.mov"))
+        XCTAssertFalse(markdown.contains("/Users/x/Movies/a.mov"), "unchecked rows are counted, not listed")
+        XCTAssertTrue(markdown.contains("Nothing was deleted"))
+    }
+}

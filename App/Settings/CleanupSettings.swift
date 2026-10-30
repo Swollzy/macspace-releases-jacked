@@ -8,6 +8,9 @@ struct CleanupSection: View {
     @ObservedObject var cleaner: AutoCleaner
     @ObservedObject var host: ModuleHost
     @State private var lifetime = CleanupHistory.shared.lifetimeBytes
+    @AppStorage(AppNotifications.emergencyPurgeKey) private var emergencyPurge = true
+    @State private var exporting = false
+    @State private var exportNote: String?
 
     var body: some View {
         PageSection("Cleanup") {
@@ -24,6 +27,23 @@ struct CleanupSection: View {
                 ChangingText(text: ByteFormat.string(lifetime), alignment: .trailing).monospacedDigit()
             }
             SettingsLinkRow(title: String(localized: "Recent cleanups"), note: nil) { host.settingsPage = .cleanupHistory }
+            // Only macOS's own purge of purgeable files, and only while MacSpace is open: nothing watches the disk with the app closed.
+            Toggle(isOn: $emergencyPurge) {
+                InfoTitle(title: String(localized: "Free purgeable files when the disk is almost full"),
+                          info: String(localized: "Under 15 GB or 10% free, MacSpace asks macOS to free the files apps marked purgeable, and tells you. It never moves your files, apps, snapshots or backups. Only while MacSpace is open."))
+            }
+            SettingsLinkRow(title: exporting ? String(localized: "Exporting…") : String(localized: "Export dry-run report…"), note: exportNote) {
+                guard !exporting else { return }
+                exporting = true
+                Task {
+                    switch await DryRunExport.run(host: host) {
+                    case .success?: exportNote = String(localized: "Saved. Nothing was deleted.")
+                    case let .failure(error)?: exportNote = error.localizedDescription
+                    case nil: break
+                    }
+                    exporting = false
+                }
+            }
         }
         .onReceive(NotificationCenter.default.publisher(for: CleanupHistory.didChange)) { _ in
             withAnimation(Theme.value) { lifetime = CleanupHistory.shared.lifetimeBytes }

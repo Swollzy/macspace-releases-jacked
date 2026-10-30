@@ -7,6 +7,23 @@ The format follows [Keep a Changelog 1.1.0](https://keepachangelog.com/en/1.1.0/
 
 ## [Unreleased]
 
+### Added
+
+- Large Files: files over 100 MB and duplicate files in Documents, Downloads, Desktop, Movies, Music and Pictures. Duplicates
+  have the same size and the same SHA-256 of their whole content. One copy of each set always stays, and files go to the Trash
+  only when you check them.
+- Apps & Login Items: your apps with their bundle identifier and size. Uninstalling moves the app to the Trash first, then offers
+  what it left in your Library, none checked. Files left by apps you no longer have are listed too. Launch agents can be
+  switched off and on again without touching their files.
+- Settings > Cleanup: Export dry-run report writes what MacSpace would free and what it would move to the Trash, as JSON and
+  Markdown, to a folder you pick. Nothing is deleted and nothing is sent anywhere.
+- When the disk is almost full (under 15 GB or 10% free), MacSpace asks macOS to free purgeable files and tells you. It never
+  moves your own files on its own. This only happens while MacSpace is open.
+
+### Changed
+
+- The low-space notification now uses the same threshold: under 15 GB or 10% free, whichever is larger.
+
 ## [1.1.5] - 2026-10-21
 
 ### Changed

@@ -1,0 +1,15 @@
+{
+  "id": "com.macspace.large-files",
+  "name": "Large Files",
+  "summary": "Find files over 100 MB and duplicate files in your own folders, and move the ones you check to the Trash.",
+  "version": "0.1.0",
+  "sdkVersion": 7,
+  "symbol": "doc.on.doc",
+  "minimumMacOS": "27.0",
+  "order": 40,
+  "permissions": ["fullDiskAccess"],
+  "options": [],
+  "backgroundTasks": [],
+  "tileTint": "blue",
+  "autoClean": false
+}

@@ -29,6 +29,13 @@ public final class AutoCleaner: ObservableObject {
     static let enabledKey = "autoClean.enabled"
     static let frequencyKey = "autoClean.frequency"
     static let lastRunKey = "autoClean.lastRun"
+    /// Modules automatic cleanup never runs, whatever their manifest says: they move the user's own files and apps to the Trash,
+    /// only ever file by file as the user checks them.
+    public nonisolated static let neverAutomatic: Set<String> = ["com.macspace.large-files", "com.macspace.apps-and-login-items"]
+
+    public nonisolated static func takesPart(_ manifest: ModuleManifest) -> Bool {
+        manifest.autoClean == true && !neverAutomatic.contains(manifest.id)
+    }
     /// How often MacSpace looks whether a run is due.
     static let checkInterval: TimeInterval = 30 * 60
 
@@ -102,7 +109,7 @@ public final class AutoCleaner: ObservableObject {
         defer { isRunning = false }
         var freed: UInt64 = 0
         var modules: [String] = []
-        for handle in host.activeHandles where handle.manifest.autoClean == true {
+        for handle in host.activeHandles where Self.takesPart(handle.manifest) {
             guard let report = await handle.autoClean(), report.freedBytes > 0 else { continue }
             freed += report.freedBytes
             modules.append(handle.manifest.name)

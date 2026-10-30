@@ -9,6 +9,8 @@ let package = Package(
         .library(name: "Siri", type: .dynamic, targets: ["MacSpaceSiri"]),
         .library(name: "Debloat", type: .dynamic, targets: ["MacSpaceDebloat"]),
         .library(name: "OtherSystemFiles", type: .dynamic, targets: ["MacSpaceOtherSystemFiles"]),
+        .library(name: "LargeFiles", type: .dynamic, targets: ["MacSpaceLargeFiles"]),
+        .library(name: "AppsAndLoginItems", type: .dynamic, targets: ["MacSpaceAppsAndLoginItems"]),
         .executable(name: "MacSpaceMain", targets: ["MacSpaceMain"]),
         .executable(name: "MacSpaceCli", targets: ["MacSpaceCli"]),
         .executable(name: "MacSpaceHelper", targets: ["MacSpaceHelper"]),
@@ -24,6 +26,9 @@ let package = Package(
         .target(name: "MacSpaceDebloat", dependencies: ["MacSpaceDebloatPrivileged", .product(name: "MacSpaceSdk", package: "Sdk"), .product(name: "MacSpacePlatform", package: "Platform")], path: "Modules/Debloat/Module"),
         .target(name: "MacSpaceOtherSystemFilesPrivileged", dependencies: [.product(name: "MacSpacePlatform", package: "Platform")], path: "Modules/OtherSystemFiles/Privileged"),
         .target(name: "MacSpaceOtherSystemFiles", dependencies: ["MacSpaceOtherSystemFilesPrivileged", .product(name: "MacSpaceSdk", package: "Sdk"), .product(name: "MacSpacePlatform", package: "Platform")], path: "Modules/OtherSystemFiles/Module"),
+        // No privileged part: both work as the user, and only ever move files to the Trash.
+        .target(name: "MacSpaceLargeFiles", dependencies: [.product(name: "MacSpaceSdk", package: "Sdk"), .product(name: "MacSpacePlatform", package: "Platform")], path: "Modules/LargeFiles/Module"),
+        .target(name: "MacSpaceAppsAndLoginItems", dependencies: [.product(name: "MacSpaceSdk", package: "Sdk"), .product(name: "MacSpacePlatform", package: "Platform")], path: "Modules/AppsAndLoginItems/Module"),
         // The app: shell, module registry, renderer, settings, scheduler.
         .target(name: "MacSpaceApp", dependencies: [.product(name: "MacSpaceSdk", package: "Sdk"), .product(name: "MacSpacePlatform", package: "Platform"), .product(name: "Sparkle", package: "Sparkle")], path: "App", exclude: ["Resources", "Main"]),
         .executableTarget(name: "MacSpaceMain", dependencies: ["MacSpaceApp"], path: "App/Main"),
@@ -35,6 +40,8 @@ let package = Package(
         .testTarget(name: "SiriTests", dependencies: ["MacSpaceSiri", "MacSpaceSiriPrivileged", .product(name: "MacSpacePlatform", package: "Platform"), .product(name: "MacSpaceSdk", package: "Sdk")], path: "Tests/Siri"),
         .testTarget(name: "DebloatTests", dependencies: ["MacSpaceDebloat", "MacSpaceDebloatPrivileged", .product(name: "MacSpacePlatform", package: "Platform"), .product(name: "MacSpaceSdk", package: "Sdk")], path: "Tests/Debloat"),
         .testTarget(name: "OtherSystemFilesTests", dependencies: ["MacSpaceOtherSystemFiles", "MacSpaceOtherSystemFilesPrivileged", .product(name: "MacSpacePlatform", package: "Platform"), .product(name: "MacSpaceSdk", package: "Sdk")], path: "Tests/OtherSystemFiles"),
+        .testTarget(name: "LargeFilesTests", dependencies: ["MacSpaceLargeFiles", .product(name: "MacSpacePlatform", package: "Platform"), .product(name: "MacSpaceSdk", package: "Sdk")], path: "Tests/LargeFiles"),
+        .testTarget(name: "AppsAndLoginItemsTests", dependencies: ["MacSpaceAppsAndLoginItems", .product(name: "MacSpacePlatform", package: "Platform"), .product(name: "MacSpaceSdk", package: "Sdk")], path: "Tests/AppsAndLoginItems"),
         .testTarget(name: "PlatformTests", dependencies: [.product(name: "MacSpacePlatform", package: "Platform"), .product(name: "MacSpaceSdk", package: "Sdk")], path: "Tests/Platform"),
     ]
 )
