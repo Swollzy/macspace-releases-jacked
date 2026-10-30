@@ -118,13 +118,13 @@ public struct DryRunReport: Codable, Equatable, Sendable {
 
     public func markdown() -> String {
         let date = ISO8601DateFormatter().string(from: created)
-        var lines = ["# MacSpace dry-run report", "", "Made \(date) by MacSpace \(macSpaceVersion). Nothing was deleted to make this report.", ""]
+        var lines = ["# Molt dry-run report", "", "Made \(date) by Molt \(macSpaceVersion). Nothing was deleted to make this report.", ""]
         if let freeBytes, let capacityBytes {
             lines.append("Disk: \(ByteFormat.string(freeBytes)) free of \(ByteFormat.string(capacityBytes))\(lowDisk ? " (low)" : "").")
             lines.append("")
         }
         lines += ["## Summary", "",
-                  "- Would be freed by MacSpace's Free buttons: \(ByteFormat.string(wouldFreeBytes))",
+                  "- Would be freed by Molt's Free buttons: \(ByteFormat.string(wouldFreeBytes))",
                   "- Would be moved to the Trash (checked files only): \(ByteFormat.string(wouldTrashBytes))", ""]
         for module in modules {
             lines.append("## \(module.name)")
@@ -159,7 +159,7 @@ public struct DryRunReport: Codable, Equatable, Sendable {
         let formatter = DateFormatter()
         formatter.locale = Locale(identifier: "en_US_POSIX")
         formatter.dateFormat = "yyyy-MM-dd HH.mm.ss"
-        let base = "MacSpace Dry Run \(formatter.string(from: created))"
+        let base = "Molt Dry Run \(formatter.string(from: created))"
         let json = folder.appendingPathComponent(base + ".json")
         let markdown = folder.appendingPathComponent(base + ".md")
         try self.json().write(to: json, options: .atomic)

@@ -73,3 +73,26 @@ final class DryRunReportTests: XCTestCase {
         XCTAssertEqual(DryRunReport.items(in: screen).map(\.title), ["Container"])
     }
 }
+
+/// MacSpace's folders move to Molt's once, never over Molt's own, never through a link.
+final class EarlierDataFoldersTests: XCTestCase {
+    func testFoldersMoveOnceAndNeverOverMolts() throws {
+        let home = FileManager.default.temporaryDirectory.appendingPathComponent("molt-move-\(UUID().uuidString)")
+        defer { try? FileManager.default.removeItem(at: home) }
+        let old = home.appendingPathComponent("Library/Application Support/MacSpace")
+        let earlierApp = home.appendingPathComponent("Applications/MacSpace.app")
+        try FileManager.default.createDirectory(at: earlierApp, withIntermediateDirectories: true)
+        try FileManager.default.createDirectory(at: old, withIntermediateDirectories: true)
+        XCTAssertTrue(EarlierDataFolders.moveUserFolders(home: home, applications: home.appendingPathComponent("Applications").path).isEmpty, "not while MacSpace, which needs them to uninstall, is there")
+        try FileManager.default.removeItem(at: earlierApp)
+        try FileManager.default.createDirectory(at: old, withIntermediateDirectories: true)
+        try Data("x".utf8).write(to: old.appendingPathComponent("debloat-watch.json"))
+        XCTAssertEqual(EarlierDataFolders.moveUserFolders(home: home, applications: home.appendingPathComponent("Applications").path).count, 1)
+        XCTAssertTrue(FileManager.default.fileExists(atPath: home.appendingPathComponent("Library/Application Support/Molt/debloat-watch.json").path))
+        XCTAssertFalse(FileManager.default.fileExists(atPath: old.path))
+
+        try FileManager.default.createDirectory(at: old, withIntermediateDirectories: true)
+        XCTAssertTrue(EarlierDataFolders.moveUserFolders(home: home, applications: home.appendingPathComponent("Applications").path).isEmpty, "Molt's own folder is never replaced")
+        XCTAssertTrue(FileManager.default.fileExists(atPath: old.path))
+    }
+}

@@ -16,9 +16,9 @@ public struct InstalledApp: Codable, Equatable, Hashable, Sendable {
         self.bytes = bytes
     }
 
-    /// Apps MacSpace never offers to move: macOS's own (macOS protects most of them anyway) and MacSpace itself.
+    /// Apps Molt never offers to move: macOS's own (macOS protects most of them anyway) and Molt itself.
     public var isProtected: Bool {
-        bundleID.hasPrefix("com.apple.") || bundleID.hasPrefix("com.macspace.")
+        bundleID.hasPrefix("com.apple.") || bundleID.hasPrefix("com.macspace.") || bundleID == "com.swollzy.molt" || bundleID.hasPrefix("com.swollzy.molt.")
     }
 }
 

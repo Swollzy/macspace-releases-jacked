@@ -7,7 +7,7 @@
 "%lld more, including Apple Intelligence models, are under Protected by macOS." = "另外 %lld 项（包括 Apple 智能模型）位于“受 macOS 保护”中。";
 "%lld places couldn't be measured." = "无法测量 %lld 个位置。";
 "%lld places only the helper can measure: %@. Turn it on in Settings." = "%lld 个位置只有辅助程序可以测量：%@。请在设置中开启。";
-"%lld places weren't measured. Reopen MacSpace." = "%lld 个位置未测量，请重新打开 MacSpace。";
+"%lld places weren't measured. Reopen Molt." = "%lld 个位置未测量，请重新打开 Molt。";
 "%lld reports" = "%lld 份报告";
 "/System/Library/%@" = "/System/Library/%@";
 "1 item" = "1 项";
@@ -79,7 +79,7 @@
 "Everything else" = "其他所有内容";
 "Everything in the Trash is deleted for good." = "废纸篓中的所有内容将永久删除。";
 "File system metadata" = "文件系统元数据";
-"Files of an earlier macOS update that is already installed; no update is waiting. macOS has not removed them and they sit in a protected folder, so MacSpace leaves them alone." = "已安装的 macOS 更新残留文件，没有待安装更新。macOS 尚未移除且文件位于受保护文件夹，MacSpace 不作处理。";
+"Files of an earlier macOS update that is already installed; no update is waiting. macOS has not removed them and they sit in a protected folder, so Molt leaves them alone." = "已安装的 macOS 更新残留文件，没有待安装更新。macOS 尚未移除且文件位于受保护文件夹，Molt 不作处理。";
 "Free" = "释放";
 "Free %@" = "释放 %@";
 "Free %@ in the Trash?" = "释放废纸篓中的 %@？";
@@ -135,8 +135,8 @@
 "Not a cleanable item (%@)." = "不可清理的项目（%@）。";
 "Not identified" = "未识别";
 "Not opened for %lld days" = "%lld 天未打开";
-"Nothing was freed: MacSpace couldn't check which apps are open." = "未释放任何内容：MacSpace 无法检查哪些应用正在运行。";
-"Nothing was freed: MacSpace couldn't check which files are in use." = "未释放任何内容：MacSpace 无法检查哪些文件正在使用。";
+"Nothing was freed: Molt couldn't check which apps are open." = "未释放任何内容：Molt 无法检查哪些应用正在运行。";
+"Nothing was freed: Molt couldn't check which files are in use." = "未释放任何内容：Molt 无法检查哪些文件正在使用。";
 "Old Homebrew versions" = "旧 Homebrew 版本";
 "Old app copy" = "旧应用副本";
 "Old diagnostic and crash reports" = "旧诊断与崩溃报告";
@@ -236,7 +236,7 @@
 "free %@" = "释放 %@";
 "macOS builds them again the next time it reads a crash report." = "macOS 下次读取崩溃报告时会重建。";
 "macOS downloads them again if they're needed." = "需要时 macOS 会重新下载。";
-"macOS keeps these locked, even from MacSpace." = "macOS 锁定这些内容，MacSpace 也无法访问。";
+"macOS keeps these locked, even from Molt." = "macOS 锁定这些内容，Molt 也无法访问。";
 "macOS restore image: %@" = "macOS 恢复映像：%@";
 "macOS's model catalog, for the Photos spatial effect." = "macOS 模型目录，用于照片的空间效果。";
 "nothing to free" = "没有可释放的内容";

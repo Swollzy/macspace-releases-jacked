@@ -30,7 +30,7 @@ struct CleanupSection: View {
             // Only macOS's own purge of purgeable files, and only while MacSpace is open: nothing watches the disk with the app closed.
             Toggle(isOn: $emergencyPurge) {
                 InfoTitle(title: String(localized: "Free purgeable files when the disk is almost full"),
-                          info: String(localized: "Under 15 GB or 10% free, MacSpace asks macOS to free the files apps marked purgeable, and tells you. It never moves your files, apps, snapshots or backups. Only while MacSpace is open."))
+                          info: String(localized: "Under 15 GB or 10% free, Molt asks macOS to free the files apps marked purgeable, and tells you. It never moves your files, apps, snapshots or backups. Only while Molt is open."))
             }
             SettingsLinkRow(title: exporting ? String(localized: "Exporting…") : String(localized: "Export dry-run report…"), note: exportNote) {
                 guard !exporting else { return }
@@ -107,7 +107,7 @@ struct CleanupHistoryPage: View {
         switch trigger {
         case .manual: return String(localized: "By you")
         case .automatic: return String(localized: "Automatic")
-        case .background: return String(localized: "By MacSpace")
+        case .background: return String(localized: "By Molt")
         }
     }
 }

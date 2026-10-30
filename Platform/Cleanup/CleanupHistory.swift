@@ -41,7 +41,7 @@ public final class CleanupHistory: @unchecked Sendable {
     public static let shared = CleanupHistory()
     public static let didChange = Notification.Name("com.macspace.cleanupHistoryDidChange")
     public static let defaultURL = FileManager.default.homeDirectoryForCurrentUser
-        .appendingPathComponent("Library/Application Support/MacSpace/cleanup-history.json")
+        .appendingPathComponent("Library/Application Support/Molt/cleanup-history.json")
     /// Entries kept one by one; older ones only count toward the total. Settings lists them all, and 263 had made its page take
     /// 168 MB (2026-10-20); a history kept before the limit is trimmed when it is read.
     static let keptEntries = 100

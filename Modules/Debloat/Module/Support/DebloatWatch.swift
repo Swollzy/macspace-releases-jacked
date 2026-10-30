@@ -16,7 +16,7 @@ struct DebloatWatchStore {
     let url: URL
     var fileManager = FileManager.default
 
-    init(url: URL = FileManager.default.homeDirectoryForCurrentUser.appendingPathComponent("Library/Application Support/MacSpace/debloat-watch.json")) {
+    init(url: URL = FileManager.default.homeDirectoryForCurrentUser.appendingPathComponent("Library/Application Support/Molt/debloat-watch.json")) {
         self.url = url
     }
 
@@ -53,8 +53,8 @@ struct DebloatWatchStore {
         let names = event.titles.map(locKey)
         let title = names.count == 1 ? loc("\(names[0]) was turned back on") : loc("\(names.count) features were turned back on")
         let list = ListFormatter.localizedString(byJoining: names)
-        let body = names.count == 1 ? loc("macOS switched \(list) back on. MacSpace disabled it again.")
-            : loc("macOS switched \(list) back on. MacSpace disabled them again.")
+        let body = names.count == 1 ? loc("macOS switched \(list) back on. Molt disabled it again.")
+            : loc("macOS switched \(list) back on. Molt disabled them again.")
         return (title, body)
     }
 }

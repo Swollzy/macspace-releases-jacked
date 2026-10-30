@@ -22,7 +22,7 @@
 "Copies of this Mac Time Machine keeps for a day, to restore files without the backup disk. Free keeps the newest and the one the next backup needs." = "Copies de ce Mac que Time Machine garde un jour, pour restaurer des fichiers sans le disque de sauvegarde. Libérer garde la plus récente et celle dont la prochaine sauvegarde a besoin.";
 "Couldn't free it" = "Impossible de libérer";
 "Deleted by macOS when the disk is full" = "Supprimé par macOS quand le disque est plein";
-"Files apps marked as safe to delete. macOS frees them when the disk is nearly full; MacSpace keeps asking if it doesn't." = "Fichiers que les apps ont marqués comme supprimables. macOS les libère quand le disque est presque plein ; MacSpace insiste sinon.";
+"Files apps marked as safe to delete. macOS frees them when the disk is nearly full; Molt keeps asking if it doesn't." = "Fichiers que les apps ont marqués comme supprimables. macOS les libère quand le disque est presque plein ; Molt insiste sinon.";
 "Files can no longer be restored from those hours on this Mac. Backups on the backup disk stay." = "Les fichiers de ces heures ne pourront plus être restaurés sur ce Mac. Les sauvegardes sur le disque de sauvegarde restent.";
 "Files macOS deletes on its own when the disk runs low. System Settings counts this space as available." = "Fichiers que macOS supprime de lui-même quand l’espace manque. Réglages Système compte cet espace comme disponible.";
 "Free" = "Libérer";
@@ -41,7 +41,7 @@
 "Installs at the next restart" = "S’installe au prochain redémarrage";
 "Latest" = "La plus récente";
 "Left alone" = "Laissé tel quel";
-"MacSpace could not measure right now. Try the refresh button." = "MacSpace n’a pas pu mesurer pour l’instant. Essayez le bouton Actualiser.";
+"Molt could not measure right now. Try the refresh button." = "Molt n’a pas pu mesurer pour l’instant. Essayez le bouton Actualiser.";
 "Not connected" = "Non connecté";
 "Open" = "Ouvrir";
 "Other System Files" = "Autres fichiers système";

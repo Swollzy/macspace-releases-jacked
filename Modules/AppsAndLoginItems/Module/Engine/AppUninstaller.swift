@@ -41,7 +41,7 @@ public struct AppUninstaller: Sendable {
     }
 
     public static let journalURL = FileManager.default.homeDirectoryForCurrentUser
-        .appendingPathComponent("Library/Application Support/MacSpace/removed-apps.json")
+        .appendingPathComponent("Library/Application Support/Molt/removed-apps.json")
 
     public var journalURL: URL
     public var finder: LeftoverFinder
@@ -80,7 +80,7 @@ public struct AppUninstaller: Sendable {
 
         public var description: String {
             switch self {
-            case .protected: return "macOS's own apps and MacSpace are not moved."
+            case .protected: return "macOS's own apps and Molt are not moved."
             case .running: return "The app is open."
             case .notInstalled: return "The app is no longer there."
             case .stillInstalled: return "The app is installed again, so its files are in use."

@@ -10,7 +10,7 @@ import MacSpacePlatform
 actor ModelPurger {
     static let shared = ModelPurger()
     /// Only the app purges by itself; the CLI loads modules too and exits as soon as it has printed.
-    static let runsHere = ProcessInfo.processInfo.processName == "MacSpace"
+    static let runsHere = ProcessInfo.processInfo.processName == "Molt"
     /// Between two purges started because released models were found on disk.
     static let minimumInterval: TimeInterval = 10 * 60
 

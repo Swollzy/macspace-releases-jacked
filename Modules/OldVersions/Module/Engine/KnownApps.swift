@@ -82,7 +82,11 @@ public enum KnownApps {
         all.first { $0.bundleID.caseInsensitiveCompare(bundleID) == .orderedSame }
     }
 
+    /// Molt itself is left out: it looks after the others, and its own folders are in use while it runs.
+    public static let excluded = "com.swollzy.molt"
+
     public static func isFamily(_ bundleID: String) -> Bool {
-        bundleID.lowercased().hasPrefix(familyPrefix)
+        let lower = bundleID.lowercased()
+        return lower.hasPrefix(familyPrefix) && lower != excluded && !lower.hasPrefix(excluded + ".")
     }
 }

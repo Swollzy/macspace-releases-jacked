@@ -71,14 +71,14 @@
   "残り%@。",
   "%@ 남음."
  ],
- "%@ left. MacSpace can free %@.": [
-  "%@ livres. O MacSpace pode liberar %@.",
-  "%@ restants. MacSpace peut libérer %@.",
-  "%@ disponibles. MacSpace puede liberar %@.",
-  "%@ frei. MacSpace kann %@ freigeben.",
-  "剩余 %@。MacSpace 可释放 %@。",
-  "残り%@。MacSpaceで%@を解放できます。",
-  "%@ 남음. MacSpace로 %@ 확보 가능."
+ "%@ left. Molt can free %@.": [
+  "%@ livres. O Molt pode liberar %@.",
+  "%@ restants. Molt peut libérer %@.",
+  "%@ disponibles. Molt puede liberar %@.",
+  "%@ frei. Molt kann %@ freigeben.",
+  "剩余 %@。Molt 可释放 %@。",
+  "残り%@。Moltで%@を解放できます。",
+  "%@ 남음. Molt로 %@ 확보 가능."
  ],
  "%@ update": [
   "Atualização do %@",
@@ -539,12 +539,12 @@
   "頻度",
   "주기"
  ],
- "In the background, MacSpace has no menu bar or Dock icon. Open it again from Applications.": [
-  "Em segundo plano, o MacSpace não tem ícone na barra de menus nem no Dock. Abra-o de novo pela pasta Aplicativos.",
-  "En arrière-plan, MacSpace n’a pas d’icône dans la barre des menus ni dans le Dock. Rouvrez-le depuis Applications.",
-  "En segundo plano, MacSpace no tiene icono en la barra de menús ni en el Dock. Vuelve a abrirlo desde Aplicaciones.",
-  "Im Hintergrund hat MacSpace kein Symbol in der Menüleiste oder im Dock. Öffne es erneut über „Programme“.",
-  "在后台运行时，MacSpace 不显示菜单栏或程序坞图标。可从“应用程序”重新打开。",
+ "In the background, Molt has no menu bar or Dock icon. Open it again from Applications.": [
+  "Em segundo plano, o Molt não tem ícone na barra de menus nem no Dock. Abra-o de novo pela pasta Aplicativos.",
+  "En arrière-plan, Molt n’a pas d’icône dans la barre des menus ni dans le Dock. Rouvrez-le depuis Applications.",
+  "En segundo plano, Molt no tiene icono en la barra de menús ni en el Dock. Vuelve a abrirlo desde Aplicaciones.",
+  "Im Hintergrund hat Molt kein Symbol in der Menüleiste oder im Dock. Öffne es erneut über „Programme“.",
+  "在后台运行时，Molt 不显示菜单栏或程序坞图标。可从“应用程序”重新打开。",
   "バックグラウンドではメニューバーやDockにアイコンを表示しません。「アプリケーション」から再度開けます。",
   "백그라운드에서는 메뉴 막대나 Dock 아이콘이 표시되지 않습니다. 응용 프로그램에서 다시 여세요."
  ],
@@ -611,66 +611,66 @@
   "読み込み中",
   "로드 중"
  ],
- "MacSpace": [
-  "MacSpace",
-  "MacSpace",
-  "MacSpace",
-  "MacSpace",
-  "MacSpace",
-  "MacSpace",
-  "MacSpace"
+ "Molt": [
+  "Molt",
+  "Molt",
+  "Molt",
+  "Molt",
+  "Molt",
+  "Molt",
+  "Molt"
  ],
- "MacSpace can now do the tasks that need an administrator.": [
-  "Agora o MacSpace pode fazer as tarefas que exigem um administrador.",
-  "MacSpace peut maintenant effectuer les tâches qui demandent un administrateur.",
-  "MacSpace ya puede realizar las tareas que requieren un administrador.",
-  "MacSpace kann jetzt die Aufgaben erledigen, die einen Administrator erfordern.",
-  "MacSpace 现在可以执行需要管理员权限的任务。",
+ "Molt can now do the tasks that need an administrator.": [
+  "Agora o Molt pode fazer as tarefas que exigem um administrador.",
+  "Molt peut maintenant effectuer les tâches qui demandent un administrateur.",
+  "Molt ya puede realizar las tareas que requieren un administrador.",
+  "Molt kann jetzt die Aufgaben erledigen, die einen Administrator erfordern.",
+  "Molt 现在可以执行需要管理员权限的任务。",
   "管理者権限が必要な処理を実行できるようになりました。",
-  "이제 MacSpace가 관리자 권한이 필요한 작업을 수행할 수 있습니다."
+  "이제 Molt가 관리자 권한이 필요한 작업을 수행할 수 있습니다."
  ],
- "MacSpace can now see everything in System Data.": [
-  "Agora o MacSpace vê tudo em Dados do Sistema.",
-  "MacSpace voit maintenant tout le contenu de Données système.",
-  "MacSpace ya puede ver todo lo que hay en Datos del sistema.",
-  "MacSpace sieht jetzt alles in „Systemdaten“.",
-  "MacSpace 现在可以查看所有系统数据。",
+ "Molt can now see everything in System Data.": [
+  "Agora o Molt vê tudo em Dados do Sistema.",
+  "Molt voit maintenant tout le contenu de Données système.",
+  "Molt ya puede ver todo lo que hay en Datos del sistema.",
+  "Molt sieht jetzt alles in „Systemdaten“.",
+  "Molt 现在可以查看所有系统数据。",
   "すべてのシステムデータを確認できるようになりました。",
-  "이제 MacSpace가 모든 시스템 데이터를 볼 수 있습니다."
+  "이제 Molt가 모든 시스템 데이터를 볼 수 있습니다."
  ],
- "MacSpace freed %@": [
-  "O MacSpace liberou %@",
-  "MacSpace a libéré %@",
-  "MacSpace ha liberado %@",
-  "MacSpace hat %@ freigegeben",
-  "MacSpace 已释放 %@",
-  "MacSpaceが%@を解放しました",
-  "MacSpace가 %@ 확보함"
+ "Molt freed %@": [
+  "O Molt liberou %@",
+  "Molt a libéré %@",
+  "Molt ha liberado %@",
+  "Molt hat %@ freigegeben",
+  "Molt 已释放 %@",
+  "Moltが%@を解放しました",
+  "Molt가 %@ 확보함"
  ],
- "MacSpace has not been tested on this release yet.": [
-  "O MacSpace ainda não foi testado nesta versão.",
-  "MacSpace n’a pas encore été testé sur cette version.",
-  "MacSpace aún no se ha probado en esta versión.",
-  "MacSpace wurde mit dieser Version noch nicht getestet.",
-  "此 macOS 版本尚未经过 MacSpace 测试。",
-  "このmacOSではまだMacSpaceをテストしていません。",
-  "이 macOS 버전에서는 아직 MacSpace를 테스트하지 않았습니다."
+ "Molt has not been tested on this release yet.": [
+  "O Molt ainda não foi testado nesta versão.",
+  "Molt n’a pas encore été testé sur cette version.",
+  "Molt aún no se ha probado en esta versión.",
+  "Molt wurde mit dieser Version noch nicht getestet.",
+  "此 macOS 版本尚未经过 Molt 测试。",
+  "このmacOSではまだMoltをテストしていません。",
+  "이 macOS 버전에서는 아직 Molt를 테스트하지 않았습니다."
  ],
- "MacSpace keeps an eye on your disk.": [
-  "O MacSpace fica de olho no seu disco.",
-  "MacSpace surveille votre disque.",
-  "MacSpace vigila tu disco.",
-  "MacSpace behält deinen Speicher im Blick.",
-  "MacSpace 会关注磁盘状态。",
-  "MacSpaceがディスクの状態を見守ります。",
-  "MacSpace가 디스크 상태를 확인합니다."
+ "Molt keeps an eye on your disk.": [
+  "O Molt fica de olho no seu disco.",
+  "Molt surveille votre disque.",
+  "Molt vigila tu disco.",
+  "Molt behält deinen Speicher im Blick.",
+  "Molt 会关注磁盘状态。",
+  "Moltがディスクの状態を見守ります。",
+  "Molt가 디스크 상태를 확인합니다."
  ],
- "MacSpace needs it to see everything in System Data.": [
-  "O MacSpace precisa dele para ver tudo em Dados do Sistema.",
-  "MacSpace en a besoin pour voir tout le contenu de Données système.",
-  "MacSpace lo necesita para ver todo lo que hay en Datos del sistema.",
-  "MacSpace braucht ihn, um alles in „Systemdaten“ zu sehen.",
-  "MacSpace 需要此权限才能查看所有系统数据。",
+ "Molt needs it to see everything in System Data.": [
+  "O Molt precisa dele para ver tudo em Dados do Sistema.",
+  "Molt en a besoin pour voir tout le contenu de Données système.",
+  "Molt lo necesita para ver todo lo que hay en Datos del sistema.",
+  "Molt braucht ihn, um alles in „Systemdaten“ zu sehen.",
+  "Molt 需要此权限才能查看所有系统数据。",
   "すべてのシステムデータを確認するために必要です。",
   "모든 시스템 데이터를 보려면 이 권한이 필요합니다."
  ],
@@ -701,23 +701,23 @@
   "詳しく見る",
   "자세히 알아보기"
  ],
- "Move MacSpace to the Applications folder, then reopen it.": [
-  "Mova o MacSpace para a pasta Aplicativos e abra-o de novo.",
-  "Placez MacSpace dans le dossier Applications, puis rouvrez-le.",
-  "Mueve MacSpace a la carpeta Aplicaciones y vuelve a abrirlo.",
-  "Bewege MacSpace in den Ordner „Programme“ und öffne es erneut.",
-  "将 MacSpace 移到“应用程序”文件夹，然后重新打开。",
-  "MacSpaceを「アプリケーション」に移動し、開き直してください。",
-  "MacSpace를 응용 프로그램 폴더로 옮긴 후 다시 여세요."
+ "Move Molt to the Applications folder, then reopen it.": [
+  "Mova o Molt para a pasta Aplicativos e abra-o de novo.",
+  "Placez Molt dans le dossier Applications, puis rouvrez-le.",
+  "Mueve Molt a la carpeta Aplicaciones y vuelve a abrirlo.",
+  "Bewege Molt in den Ordner „Programme“ und öffne es erneut.",
+  "将 Molt 移到“应用程序”文件夹，然后重新打开。",
+  "Moltを「アプリケーション」に移動し、開き直してください。",
+  "Molt를 응용 프로그램 폴더로 옮긴 후 다시 여세요."
  ],
- "Move MacSpace to your Applications folder first.": [
-  "Primeiro, mova o MacSpace para a pasta Aplicativos.",
-  "Placez d’abord MacSpace dans le dossier Applications.",
-  "Primero mueve MacSpace a la carpeta Aplicaciones.",
-  "Bewege MacSpace zuerst in den Ordner „Programme“.",
-  "请先将 MacSpace 移到“应用程序”文件夹。",
-  "先にMacSpaceを「アプリケーション」に移動してください。",
-  "먼저 MacSpace를 응용 프로그램 폴더로 옮기세요."
+ "Move Molt to your Applications folder first.": [
+  "Primeiro, mova o Molt para a pasta Aplicativos.",
+  "Placez d’abord Molt dans le dossier Applications.",
+  "Primero mueve Molt a la carpeta Aplicaciones.",
+  "Bewege Molt zuerst in den Ordner „Programme“.",
+  "请先将 Molt 移到“应用程序”文件夹。",
+  "先にMoltを「アプリケーション」に移動してください。",
+  "먼저 Molt를 응용 프로그램 폴더로 옮기세요."
  ],
  "Needed": [
   "Necessário",
@@ -863,14 +863,14 @@
   "ログイン項目を開く",
   "로그인 항목 열기"
  ],
- "Open MacSpace": [
-  "Abrir o MacSpace",
-  "Ouvrir MacSpace",
-  "Abrir MacSpace",
-  "MacSpace öffnen",
-  "打开 MacSpace",
-  "MacSpaceを開く",
-  "MacSpace 열기"
+ "Open Molt": [
+  "Abrir o Molt",
+  "Ouvrir Molt",
+  "Abrir Molt",
+  "Molt öffnen",
+  "打开 Molt",
+  "Moltを開く",
+  "Molt 열기"
  ],
  "Open Panel": [
   "Abrir Painel",
@@ -908,14 +908,14 @@
   "権限",
   "권한"
  ],
- "Press Install helper. If macOS still does not recognise it, run in Terminal: /Applications/MacSpace.app/Contents/MacOS/MacSpaceCli helper --register and send the message it prints.": [
-  "Clique em Instalar auxiliar. Se o macOS ainda não o reconhecer, execute no Terminal: /Applications/MacSpace.app/Contents/MacOS/MacSpaceCli helper --register e envie a mensagem exibida.",
-  "Cliquez sur Installer l’assistant. Si macOS ne le reconnaît toujours pas, exécutez dans Terminal : /Applications/MacSpace.app/Contents/MacOS/MacSpaceCli helper --register et envoyez le message affiché.",
-  "Pulsa Instalar asistente. Si macOS sigue sin reconocerlo, ejecuta en Terminal: /Applications/MacSpace.app/Contents/MacOS/MacSpaceCli helper --register y envía el mensaje que muestre.",
-  "Klicke auf „Hilfsprogramm installieren“. Erkennt macOS es weiterhin nicht, führe im Terminal /Applications/MacSpace.app/Contents/MacOS/MacSpaceCli helper --register aus und sende die ausgegebene Meldung.",
-  "点击“安装辅助程序”。如果 macOS 仍无法识别，请在终端运行：/Applications/MacSpace.app/Contents/MacOS/MacSpaceCli helper --register，并发送输出的信息。",
-  "「ヘルパーをインストール」を押してください。認識されない場合はターミナルで /Applications/MacSpace.app/Contents/MacOS/MacSpaceCli helper --register を実行し、表示されたメッセージを送ってください。",
-  "보조 프로그램 설치를 누르세요. macOS가 인식하지 못하면 터미널에서 /Applications/MacSpace.app/Contents/MacOS/MacSpaceCli helper --register 를 실행하고 출력 메시지를 보내주세요."
+ "Press Install helper. If macOS still does not recognise it, run in Terminal: /Applications/Molt.app/Contents/MacOS/MacSpaceCli helper --register and send the message it prints.": [
+  "Clique em Instalar auxiliar. Se o macOS ainda não o reconhecer, execute no Terminal: /Applications/Molt.app/Contents/MacOS/MacSpaceCli helper --register e envie a mensagem exibida.",
+  "Cliquez sur Installer l’assistant. Si macOS ne le reconnaît toujours pas, exécutez dans Terminal : /Applications/Molt.app/Contents/MacOS/MacSpaceCli helper --register et envoyez le message affiché.",
+  "Pulsa Instalar asistente. Si macOS sigue sin reconocerlo, ejecuta en Terminal: /Applications/Molt.app/Contents/MacOS/MacSpaceCli helper --register y envía el mensaje que muestre.",
+  "Klicke auf „Hilfsprogramm installieren“. Erkennt macOS es weiterhin nicht, führe im Terminal /Applications/Molt.app/Contents/MacOS/MacSpaceCli helper --register aus und sende die ausgegebene Meldung.",
+  "点击“安装辅助程序”。如果 macOS 仍无法识别，请在终端运行：/Applications/Molt.app/Contents/MacOS/MacSpaceCli helper --register，并发送输出的信息。",
+  "「ヘルパーをインストール」を押してください。認識されない場合はターミナルで /Applications/Molt.app/Contents/MacOS/MacSpaceCli helper --register を実行し、表示されたメッセージを送ってください。",
+  "보조 프로그램 설치를 누르세요. macOS가 인식하지 못하면 터미널에서 /Applications/Molt.app/Contents/MacOS/MacSpaceCli helper --register 를 실행하고 출력 메시지를 보내주세요."
  ],
  "Privileged helper": [
   "Auxiliar privilegiado",
@@ -935,23 +935,23 @@
   "終了",
   "종료"
  ],
- "Quit MacSpace": [
-  "Encerrar o MacSpace",
-  "Quitter MacSpace",
-  "Salir de MacSpace",
-  "MacSpace beenden",
-  "退出 MacSpace",
-  "MacSpaceを終了",
-  "MacSpace 종료"
+ "Quit Molt": [
+  "Encerrar o Molt",
+  "Quitter Molt",
+  "Salir de Molt",
+  "Molt beenden",
+  "退出 Molt",
+  "Moltを終了",
+  "Molt 종료"
  ],
- "Quit MacSpace and copy it again. Permissions given to this copy would be lost at the next update.": [
-  "Encerre o MacSpace e copie-o de novo. As permissões dadas a esta cópia seriam perdidas na próxima atualização.",
-  "Quittez MacSpace et copiez-le à nouveau. Les autorisations accordées à cette copie seraient perdues à la prochaine mise à jour.",
-  "Sal de MacSpace y vuelve a copiarlo. Los permisos concedidos a esta copia se perderían en la próxima actualización.",
-  "Beende MacSpace und kopiere es erneut. Berechtigungen für diese Kopie gingen beim nächsten Update verloren.",
-  "退出 MacSpace 并重新拷贝。授予此副本的权限会在下次更新时丢失。",
-  "MacSpaceを終了してコピーし直してください。このコピーに与えた権限は次の更新で失われます。",
-  "MacSpace를 종료하고 다시 복사하세요. 이 사본에 부여한 권한은 다음 업데이트 시 사라집니다."
+ "Quit Molt and copy it again. Permissions given to this copy would be lost at the next update.": [
+  "Encerre o Molt e copie-o de novo. As permissões dadas a esta cópia seriam perdidas na próxima atualização.",
+  "Quittez Molt et copiez-le à nouveau. Les autorisations accordées à cette copie seraient perdues à la prochaine mise à jour.",
+  "Sal de Molt y vuelve a copiarlo. Los permisos concedidos a esta copia se perderían en la próxima actualización.",
+  "Beende Molt und kopiere es erneut. Berechtigungen für diese Kopie gingen beim nächsten Update verloren.",
+  "退出 Molt 并重新拷贝。授予此副本的权限会在下次更新时丢失。",
+  "Moltを終了してコピーし直してください。このコピーに与えた権限は次の更新で失われます。",
+  "Molt를 종료하고 다시 복사하세요. 이 사본에 부여한 권한은 다음 업데이트 시 사라집니다."
  ],
  "Recent cleanups": [
   "Limpezas recentes",
@@ -1070,41 +1070,41 @@
   "テーマ",
   "테마"
  ],
- "This build of MacSpace does not contain the helper.": [
-  "Esta versão do MacSpace não contém o auxiliar.",
-  "Cette version de MacSpace ne contient pas l’assistant.",
-  "Esta versión de MacSpace no incluye el asistente.",
-  "Dieser Build von MacSpace enthält das Hilfsprogramm nicht.",
-  "此 MacSpace 构建不包含辅助程序。",
-  "このMacSpaceにはヘルパーが含まれていません。",
-  "이 MacSpace 빌드에는 보조 프로그램이 없습니다."
+ "This build of Molt does not contain the helper.": [
+  "Esta versão do Molt não contém o auxiliar.",
+  "Cette version de Molt ne contient pas l’assistant.",
+  "Esta versión de Molt no incluye el asistente.",
+  "Dieser Build von Molt enthält das Hilfsprogramm nicht.",
+  "此 Molt 构建不包含辅助程序。",
+  "このMoltにはヘルパーが含まれていません。",
+  "이 Molt 빌드에는 보조 프로그램이 없습니다."
  ],
- "This copy of MacSpace is incomplete": [
-  "Esta cópia do MacSpace está incompleta",
-  "Cette copie de MacSpace est incomplète",
-  "Esta copia de MacSpace está incompleta",
-  "Diese Kopie von MacSpace ist unvollständig",
-  "此 MacSpace 副本不完整",
-  "このMacSpaceのコピーは不完全です",
-  "이 MacSpace 사본이 불완전함"
+ "This copy of Molt is incomplete": [
+  "Esta cópia do Molt está incompleta",
+  "Cette copie de Molt est incomplète",
+  "Esta copia de Molt está incompleta",
+  "Diese Kopie von Molt ist unvollständig",
+  "此 Molt 副本不完整",
+  "このMoltのコピーは不完全です",
+  "이 Molt 사본이 불완전함"
  ],
- "Turn on MacSpace in the list. Not there? Drag this icon into it.": [
-  "Ative o MacSpace na lista. Não está lá? Arraste este ícone para ela.",
-  "Activez MacSpace dans la liste. Absent ? Faites-y glisser cette icône.",
-  "Activa MacSpace en la lista. ¿No aparece? Arrastra este icono a ella.",
-  "Aktiviere MacSpace in der Liste. Nicht dabei? Zieh dieses Symbol hinein.",
-  "在列表中开启 MacSpace。没有找到？将此图标拖入列表。",
-  "リストのMacSpaceをオンにしてください。なければ、このアイコンをドラッグしてください。",
-  "목록에서 MacSpace를 켜세요. 없으면 이 아이콘을 목록으로 드래그하세요."
+ "Turn on Molt in the list. Not there? Drag this icon into it.": [
+  "Ative o Molt na lista. Não está lá? Arraste este ícone para ela.",
+  "Activez Molt dans la liste. Absent ? Faites-y glisser cette icône.",
+  "Activa Molt en la lista. ¿No aparece? Arrastra este icono a ella.",
+  "Aktiviere Molt in der Liste. Nicht dabei? Zieh dieses Symbol hinein.",
+  "在列表中开启 Molt。没有找到？将此图标拖入列表。",
+  "リストのMoltをオンにしてください。なければ、このアイコンをドラッグしてください。",
+  "목록에서 Molt를 켜세요. 없으면 이 아이콘을 목록으로 드래그하세요."
  ],
- "Turn on MacSpace under Allow in the Background.": [
-  "Ative o MacSpace em Permitir em Segundo Plano.",
-  "Activez MacSpace sous Autoriser en arrière-plan.",
-  "Activa MacSpace en Permitir en segundo plano.",
-  "Aktiviere MacSpace unter „Im Hintergrund erlauben“.",
-  "在“允许在后台”下开启 MacSpace。",
-  "「バックグラウンドでの実行を許可」でMacSpaceをオンにしてください。",
-  "백그라운드에서 허용 아래에서 MacSpace를 켜세요."
+ "Turn on Molt under Allow in the Background.": [
+  "Ative o Molt em Permitir em Segundo Plano.",
+  "Activez Molt sous Autoriser en arrière-plan.",
+  "Activa Molt en Permitir en segundo plano.",
+  "Aktiviere Molt unter „Im Hintergrund erlauben“.",
+  "在“允许在后台”下开启 Molt。",
+  "「バックグラウンドでの実行を許可」でMoltをオンにしてください。",
+  "백그라운드에서 허용 아래에서 Molt를 켜세요."
  ],
  "Unknown": [
   "Desconhecido",
@@ -1133,11 +1133,11 @@
   "バージョン",
   "버전"
  ],
- "When MacSpace frees space, or your disk is almost full.": [
-  "Quando o MacSpace liberar espaço ou o disco estiver quase cheio.",
-  "Quand MacSpace libère de l’espace ou que votre disque est presque plein.",
-  "Cuando MacSpace libere espacio o tu disco esté casi lleno.",
-  "Wenn MacSpace Speicher freigibt oder dein Speicher fast voll ist.",
+ "When Molt frees space, or your disk is almost full.": [
+  "Quando o Molt liberar espaço ou o disco estiver quase cheio.",
+  "Quand Molt libère de l’espace ou que votre disque est presque plein.",
+  "Cuando Molt libere espacio o tu disco esté casi lleno.",
+  "Wenn Molt Speicher freigibt oder dein Speicher fast voll ist.",
   "释放空间或磁盘空间即将用尽时通知。",
   "空き容量が増えたときやディスクがほぼ満杯のときに通知します。",
   "공간이 확보되거나 디스크가 거의 찼을 때 알립니다."
@@ -1259,14 +1259,14 @@
   "有効",
   "켜짐"
  ],
- "By MacSpace": [
-  "Pelo MacSpace",
-  "Par MacSpace",
-  "Por MacSpace",
-  "Von MacSpace",
-  "由 MacSpace 执行",
-  "MacSpaceによる処理",
-  "MacSpace가 수행"
+ "By Molt": [
+  "Pelo Molt",
+  "Par Molt",
+  "Por Molt",
+  "Von Molt",
+  "由 Molt 执行",
+  "Moltによる処理",
+  "Molt가 수행"
  ],
  "macOS": [
   "macOS",
@@ -1277,14 +1277,14 @@
   "macOS",
   "macOS"
  ],
- "macOS is treating MacSpace as a downloaded app, so the helper cannot be installed. In Terminal run: xattr -dr com.apple.quarantine /Applications/MacSpace.app, then reopen MacSpace. (A notarized release does not need this.)": [
-  "O macOS está tratando o MacSpace como um app baixado, então o auxiliar não pode ser instalado. No Terminal, execute: xattr -dr com.apple.quarantine /Applications/MacSpace.app e abra o MacSpace de novo. (Uma versão notarizada não precisa disso.)",
-  "macOS traite MacSpace comme une app téléchargée : l’assistant ne peut donc pas être installé. Dans Terminal, exécutez : xattr -dr com.apple.quarantine /Applications/MacSpace.app, puis rouvrez MacSpace. (Une version notarisée n’en a pas besoin.)",
-  "macOS trata MacSpace como una app descargada, así que no se puede instalar el asistente. En Terminal, ejecuta: xattr -dr com.apple.quarantine /Applications/MacSpace.app y vuelve a abrir MacSpace. (Una versión notarizada no lo necesita.)",
-  "macOS behandelt MacSpace als geladene App, daher kann das Hilfsprogramm nicht installiert werden. Führe im Terminal xattr -dr com.apple.quarantine /Applications/MacSpace.app aus und öffne MacSpace erneut. (Eine notarisierte Version braucht das nicht.)",
-  "macOS 将 MacSpace 视为下载的应用，因此无法安装辅助程序。在终端运行：xattr -dr com.apple.quarantine /Applications/MacSpace.app，然后重新打开 MacSpace。（经过公证的版本无需此操作。）",
-  "macOSがダウンロードしたアプリとして扱っているため、ヘルパーをインストールできません。ターミナルで xattr -dr com.apple.quarantine /Applications/MacSpace.app を実行し、開き直してください。（公証済みのリリースでは不要です。）",
-  "macOS가 MacSpace를 다운로드한 앱으로 취급하여 보조 프로그램을 설치할 수 없습니다. 터미널에서 xattr -dr com.apple.quarantine /Applications/MacSpace.app 를 실행한 후 다시 여세요. (공증된 릴리스에는 필요하지 않습니다.)"
+ "macOS is treating Molt as a downloaded app, so the helper cannot be installed. In Terminal run: xattr -dr com.apple.quarantine /Applications/Molt.app, then reopen Molt. (A notarized release does not need this.)": [
+  "O macOS está tratando o Molt como um app baixado, então o auxiliar não pode ser instalado. No Terminal, execute: xattr -dr com.apple.quarantine /Applications/Molt.app e abra o Molt de novo. (Uma versão notarizada não precisa disso.)",
+  "macOS traite Molt comme une app téléchargée : l’assistant ne peut donc pas être installé. Dans Terminal, exécutez : xattr -dr com.apple.quarantine /Applications/Molt.app, puis rouvrez Molt. (Une version notarisée n’en a pas besoin.)",
+  "macOS trata Molt como una app descargada, así que no se puede instalar el asistente. En Terminal, ejecuta: xattr -dr com.apple.quarantine /Applications/Molt.app y vuelve a abrir Molt. (Una versión notarizada no lo necesita.)",
+  "macOS behandelt Molt als geladene App, daher kann das Hilfsprogramm nicht installiert werden. Führe im Terminal xattr -dr com.apple.quarantine /Applications/Molt.app aus und öffne Molt erneut. (Eine notarisierte Version braucht das nicht.)",
+  "macOS 将 Molt 视为下载的应用，因此无法安装辅助程序。在终端运行：xattr -dr com.apple.quarantine /Applications/Molt.app，然后重新打开 Molt。（经过公证的版本无需此操作。）",
+  "macOSがダウンロードしたアプリとして扱っているため、ヘルパーをインストールできません。ターミナルで xattr -dr com.apple.quarantine /Applications/Molt.app を実行し、開き直してください。（公証済みのリリースでは不要です。）",
+  "macOS가 Molt를 다운로드한 앱으로 취급하여 보조 프로그램을 설치할 수 없습니다. 터미널에서 xattr -dr com.apple.quarantine /Applications/Molt.app 를 실행한 후 다시 여세요. (공증된 릴리스에는 필요하지 않습니다.)"
  ],
  "macOS update": [
   "Atualização do macOS",
@@ -1385,32 +1385,32 @@
   "設定を復元中",
   "설정 복원 중"
  ],
- "Uninstall MacSpace…": [
-  "Desinstalar o MacSpace…",
-  "Désinstaller MacSpace…",
-  "Desinstalar MacSpace…",
-  "MacSpace deinstallieren…",
-  "卸载 MacSpace…",
-  "MacSpaceをアンインストール…",
-  "MacSpace 제거…"
+ "Uninstall Molt…": [
+  "Desinstalar o Molt…",
+  "Désinstaller Molt…",
+  "Desinstalar Molt…",
+  "Molt deinstallieren…",
+  "卸载 Molt…",
+  "Moltをアンインストール…",
+  "Molt 제거…"
  ],
- "Uninstall MacSpace?": [
-  "Desinstalar o MacSpace?",
-  "Désinstaller MacSpace ?",
-  "¿Desinstalar MacSpace?",
-  "MacSpace deinstallieren?",
-  "卸载 MacSpace？",
-  "MacSpaceをアンインストールしますか？",
-  "MacSpace를 제거할까요?"
+ "Uninstall Molt?": [
+  "Desinstalar o Molt?",
+  "Désinstaller Molt ?",
+  "¿Desinstalar Molt?",
+  "Molt deinstallieren?",
+  "卸载 Molt？",
+  "Moltをアンインストールしますか？",
+  "Molt를 제거할까요?"
  ],
- "Restores settings changed by MacSpace and moves the app to the Trash. Your history is kept. Freed files cannot be restored.": [
-  "Restaura os ajustes alterados pelo MacSpace e move o app para o Lixo. Seu histórico é mantido. Arquivos apagados não podem ser restaurados.",
-  "Restaure les réglages modifiés par MacSpace et place l’app dans la Corbeille. Votre historique est conservé. Les fichiers supprimés ne peuvent pas être restaurés.",
-  "Restaura los ajustes modificados por MacSpace y mueve la app a la Papelera. Se conserva tu historial. Los archivos eliminados no se pueden restaurar.",
-  "Stellt von MacSpace geänderte Einstellungen wieder her und verschiebt die App in den Papierkorb. Dein Verlauf bleibt erhalten. Gelöschte Dateien können nicht wiederhergestellt werden.",
-  "还原 MacSpace 更改的设置并将应用移到废纸篓。保留清理历史，已释放的文件无法恢复。",
-  "MacSpaceが変更した設定を復元し、アプリをゴミ箱に移動します。履歴は保持されます。削除したファイルは復元できません。",
-  "MacSpace가 변경한 설정을 복원하고 앱을 휴지통으로 옮깁니다. 기록은 유지됩니다. 삭제한 파일은 복원할 수 없습니다."
+ "Restores settings changed by Molt and moves the app to the Trash. Your history is kept. Freed files cannot be restored.": [
+  "Restaura os ajustes alterados pelo Molt e move o app para o Lixo. Seu histórico é mantido. Arquivos apagados não podem ser restaurados.",
+  "Restaure les réglages modifiés par Molt et place l’app dans la Corbeille. Votre historique est conservé. Les fichiers supprimés ne peuvent pas être restaurés.",
+  "Restaura los ajustes modificados por Molt y mueve la app a la Papelera. Se conserva tu historial. Los archivos eliminados no se pueden restaurar.",
+  "Stellt von Molt geänderte Einstellungen wieder her und verschiebt die App in den Papierkorb. Dein Verlauf bleibt erhalten. Gelöschte Dateien können nicht wiederhergestellt werden.",
+  "还原 Molt 更改的设置并将应用移到废纸篓。保留清理历史，已释放的文件无法恢复。",
+  "Moltが変更した設定を復元し、アプリをゴミ箱に移動します。履歴は保持されます。削除したファイルは復元できません。",
+  "Molt가 변경한 설정을 복원하고 앱을 휴지통으로 옮깁니다. 기록은 유지됩니다. 삭제한 파일은 복원할 수 없습니다."
  ],
  "Uninstall": [
   "Desinstalar",
@@ -1421,23 +1421,23 @@
   "アンインストール",
   "제거"
  ],
- "Couldn’t uninstall MacSpace": [
-  "Não foi possível desinstalar o MacSpace",
-  "Impossible de désinstaller MacSpace",
-  "No se pudo desinstalar MacSpace",
-  "MacSpace konnte nicht deinstalliert werden",
-  "无法卸载 MacSpace",
-  "MacSpaceをアンインストールできませんでした",
-  "MacSpace를 제거하지 못함"
+ "Couldn’t uninstall Molt": [
+  "Não foi possível desinstalar o Molt",
+  "Impossible de désinstaller Molt",
+  "No se pudo desinstalar Molt",
+  "Molt konnte nicht deinstalliert werden",
+  "无法卸载 Molt",
+  "Moltをアンインストールできませんでした",
+  "Molt를 제거하지 못함"
  ],
- "Move MacSpace to the Trash from Applications.": [
-  "Mova o MacSpace de Aplicativos para o Lixo.",
-  "Placez MacSpace dans la Corbeille depuis Applications.",
-  "Mueve MacSpace de Aplicaciones a la Papelera.",
-  "Verschiebe MacSpace aus Programme in den Papierkorb.",
-  "从“应用程序”将 MacSpace 移到废纸篓。",
-  "「アプリケーション」からMacSpaceをゴミ箱に移動してください。",
-  "응용 프로그램에서 MacSpace를 휴지통으로 옮기세요."
+ "Move Molt to the Trash from Applications.": [
+  "Mova o Molt de Aplicativos para o Lixo.",
+  "Placez Molt dans la Corbeille depuis Applications.",
+  "Mueve Molt de Aplicaciones a la Papelera.",
+  "Verschiebe Molt aus Programme in den Papierkorb.",
+  "从“应用程序”将 Molt 移到废纸篓。",
+  "「アプリケーション」からMoltをゴミ箱に移動してください。",
+  "응용 프로그램에서 Molt를 휴지통으로 옮기세요."
  ],
  "Wait for the current task to finish, then try again.": [
   "Aguarde a tarefa atual terminar e tente novamente.",
@@ -1457,14 +1457,14 @@
   "GitHub",
   "GitHub"
  ],
- "About MacSpace": [
-  "Sobre o MacSpace",
-  "À propos de MacSpace",
-  "Acerca de MacSpace",
-  "Über MacSpace",
-  "关于 MacSpace",
-  "MacSpaceについて",
-  "MacSpace 정보"
+ "About Molt": [
+  "Sobre o Molt",
+  "À propos de Molt",
+  "Acerca de Molt",
+  "Über Molt",
+  "关于 Molt",
+  "Moltについて",
+  "Molt 정보"
  ],
  "Version %@": [
   "Versão %@",
@@ -1474,24 +1474,6 @@
   "版本 %@",
   "バージョン %@",
   "버전 %@"
- ],
- "Developed by\n%@": [
-  "Desenvolvido por\n%@",
-  "Développé par\n%@",
-  "Desarrollado por\n%@",
-  "Entwickelt von\n%@",
-  "开发者\n%@",
-  "開発者\n%@",
-  "개발자\n%@"
- ],
- "Modified by\n%@": [
-  "Modificado por\n%@",
-  "Modifié par\n%@",
-  "Modificado por\n%@",
-  "Geändert von\n%@",
-  "修改者\n%@",
-  "変更者\n%@",
-  "수정자\n%@"
  ],
  "OK": [
   "OK",
@@ -1627,5 +1609,23 @@
   "未找到",
   "見つかりません",
   "찾을 수 없음"
+ ],
+ "Made by\n%@": [
+  "Feito por\n%@",
+  "Créé par\n%@",
+  "Hecho por\n%@",
+  "Erstellt von\n%@",
+  "制作者\n%@",
+  "制作\n%@",
+  "제작\n%@"
+ ],
+ "Based on\n%@": [
+  "Baseado em\n%@",
+  "Basé sur\n%@",
+  "Basado en\n%@",
+  "Basiert auf\n%@",
+  "基于\n%@",
+  "ベース\n%@",
+  "기반\n%@"
  ]
 }

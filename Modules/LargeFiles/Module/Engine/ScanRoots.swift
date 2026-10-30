@@ -11,7 +11,7 @@ public struct ScanRoots: Equatable, Sendable {
 
     /// Roots the user added, one absolute path per line, in a file they edit by hand. There is no text option in Settings.
     public static let extraRootsURL = FileManager.default.homeDirectoryForCurrentUser
-        .appendingPathComponent("Library/Application Support/MacSpace/large-files-roots.txt")
+        .appendingPathComponent("Library/Application Support/Molt/large-files-roots.txt")
 
     public var home: String
     public var roots: [String]

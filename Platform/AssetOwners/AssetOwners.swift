@@ -758,7 +758,7 @@ enum AssetOwners {
                 try require(entry.user?.caseInsensitiveCompare(user) == .orderedSame, "Rollback belongs to another account")
                 let original = try decode(entry.archive)
                 if let current = try subscription(owner, client: entry.client, name: entry.name) {
-                    try require(facts(original).isEqual(try facts(current)), "An asset owner changed outside MacSpace; it was kept")
+                    try require(facts(original).isEqual(try facts(current)), "An asset owner changed outside Molt; it was kept")
                 } else {
                     try require(try row(rows(), client: entry.client, name: entry.name, user: user) == nil, "Owner API and database disagree; restore stopped")
                     let expiry = try value(original, "expiration") as? Date
@@ -779,7 +779,7 @@ enum AssetOwners {
                 let before = try voices.requests()
                 let current = try before.filter { equal(try value($0, "clientId"), entry.client) }
                 if !current.isEmpty {
-                    try require(try voiceViews(current).isEqual(try voiceViews(saved)), "Voice settings changed outside MacSpace; they were kept")
+                    try require(try voiceViews(current).isEqual(try voiceViews(saved)), "Voice settings changed outside Molt; they were kept")
                 } else {
                     var restoring: [AnyObject] = []
                     for request in saved {
@@ -799,7 +799,7 @@ enum AssetOwners {
             case "dds":
                 let saved = try decode(entry.archive) as? NSDictionary
                 if let current = try languageDataOwners()[entry.name] {
-                    try require(try sameLanguageData(current, saved), "Language-data settings changed outside MacSpace")
+                    try require(try sameLanguageData(current, saved), "Language-data settings changed outside Molt")
                 } else {
                     guard let saved, let query = saved["query"], let policy = saved["policy"] else { throw Refusal("Language-data restore could not be verified") }
                     try require(entry.phase != .restoring, "An interrupted language-data restore is still ambiguous")

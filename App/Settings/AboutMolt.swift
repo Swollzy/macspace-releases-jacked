@@ -6,21 +6,22 @@ import SwiftUI
 
 /// The application menu's About command, matching MacBat's native alert layout.
 @MainActor
-public enum AboutMacSpace {
+public enum AboutMolt {
     private static var uninstalling = false
-    /// This build is a modified copy of 1architect's MacSpace (MIT): the original author is credited first, the changes after, and
-    /// the GitHub button opens the copy the changes live in.
-    static let modifiedBy = "Swollzy"
+    /// Molt is Swollzy's app, built on 1architect's MacSpace (MIT). The MIT license asks that the original copyright stays with the
+    /// code, so the original author is credited here and in LICENSE and NOTICE.
+    static let author = "Swollzy"
+    static let basedOn = "MacSpace by Gio Mantovani/1architect (MIT License)"
     static let repository = "https://github.com/Swollzy/macspace-releases-jacked"
 
     static func makeAlert(bundle: Bundle = .main) -> AppAlert {
         let alert = AppAlert()
         alert.icon = NSApp.applicationIconImage
-        alert.messageText = "MacSpace"
+        alert.messageText = "Molt"
         let version = bundle.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "—"
         alert.informativeText = [String(format: String(localized: "Version %@"), version), "",
-                                 String(format: String(localized: "Developed by\n%@"), "Gio Mantovani/1architect"), "",
-                                 String(format: String(localized: "Modified by\n%@"), modifiedBy)].joined(separator: "\n")
+                                 String(format: String(localized: "Made by\n%@"), author), "",
+                                 String(format: String(localized: "Based on\n%@"), basedOn)].joined(separator: "\n")
         alert.alertStyle = .informational
         alert.addButton(withTitle: String(localized: "OK"))
         alert.addButton(withTitle: String(localized: "Uninstall…")).hasDestructiveAction = true
@@ -39,8 +40,8 @@ public enum AboutMacSpace {
 
     private static func confirmUninstall(host: ModuleHost) {
         let alert = AppAlert()
-        alert.messageText = String(localized: "Uninstall MacSpace?")
-        alert.informativeText = String(localized: "Restores settings changed by MacSpace and moves the app to the Trash. Your history is kept. Freed files cannot be restored.")
+        alert.messageText = String(localized: "Uninstall Molt?")
+        alert.informativeText = String(localized: "Restores settings changed by Molt and moves the app to the Trash. Your history is kept. Freed files cannot be restored.")
         alert.alertStyle = .warning
         alert.addButton(withTitle: String(localized: "Cancel"))
         alert.addButton(withTitle: String(localized: "Uninstall")).hasDestructiveAction = true
@@ -51,7 +52,7 @@ public enum AboutMacSpace {
             do { try await AppUninstaller.uninstall(host: host) }
             catch {
                 let failure = AppAlert()
-                failure.messageText = String(localized: "Couldn’t uninstall MacSpace")
+                failure.messageText = String(localized: "Couldn’t uninstall Molt")
                 failure.informativeText = error.localizedDescription
                 failure.addButton(withTitle: String(localized: "OK"))
                 failure.runModal()
@@ -74,7 +75,7 @@ enum AppUninstaller {
 
     static func uninstall(host: ModuleHost) async throws {
         let app = Bundle.main.bundleURL.resolvingSymlinksInPath()
-        guard app.pathExtension == "app" else { throw Failure(message: String(localized: "Move MacSpace to the Trash from Applications.")) }
+        guard app.pathExtension == "app" else { throw Failure(message: String(localized: "Move Molt to the Trash from Applications.")) }
         guard !host.isCleaning, !host.autoCleaner.isRunning, !host.handles.contains(where: \.isBusy) else {
             throw Failure(message: String(localized: "Wait for the current task to finish, then try again."))
         }

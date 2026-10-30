@@ -161,12 +161,12 @@
   "そのままにする項目",
   "그대로 유지"
  ],
- "MacSpace could not measure right now. Try the refresh button.": [
-  "O MacSpace não conseguiu medir nada agora. Tente o botão atualizar.",
-  "MacSpace n’a pas pu mesurer pour l’instant. Essayez le bouton Actualiser.",
-  "MacSpace no ha podido medir ahora. Prueba con el botón de actualizar.",
-  "MacSpace konnte gerade nichts messen. Versuche die Aktualisieren-Taste.",
-  "MacSpace 暂时无法测量，请点击刷新按钮重试。",
+ "Molt could not measure right now. Try the refresh button.": [
+  "O Molt não conseguiu medir nada agora. Tente o botão atualizar.",
+  "Molt n’a pas pu mesurer pour l’instant. Essayez le bouton Actualiser.",
+  "Molt no ha podido medir ahora. Prueba con el botón de actualizar.",
+  "Molt konnte gerade nichts messen. Versuche die Aktualisieren-Taste.",
+  "Molt 暂时无法测量，请点击刷新按钮重试。",
   "今は測定できません。更新ボタンをお試しください。",
   "지금은 측정할 수 없습니다. 새로 고침 버튼을 눌러보세요."
  ],
@@ -620,14 +620,14 @@
   "Time Machineのスナップショット",
   "Time Machine 스냅샷"
  ],
- "Files apps marked as safe to delete. macOS frees them when the disk is nearly full; MacSpace keeps asking if it doesn't.": [
-  "Arquivos que os apps marcaram como seguros para apagar. O macOS os libera quando o disco está quase cheio; o MacSpace insiste se ele não liberar.",
-  "Fichiers que les apps ont marqués comme supprimables. macOS les libère quand le disque est presque plein ; MacSpace insiste sinon.",
-  "Archivos que las apps marcaron como seguros de borrar. macOS los libera cuando el disco está casi lleno; MacSpace insiste si no lo hace.",
-  "Dateien, die Apps als löschbar markiert haben. macOS gibt sie frei, wenn das Volume fast voll ist; sonst fragt MacSpace erneut.",
-  "应用标记为可安全删除的文件。磁盘快满时 macOS 会释放它们；若未释放，MacSpace 会继续请求。",
-  "アプリが削除してよいと示したファイル。ディスクがほぼいっぱいになるとmacOSが解放し、されない場合はMacSpaceが再度依頼します。",
-  "앱이 삭제해도 된다고 표시한 파일입니다. 디스크가 거의 차면 macOS가 정리하고, 그렇지 않으면 MacSpace가 다시 요청합니다."
+ "Files apps marked as safe to delete. macOS frees them when the disk is nearly full; Molt keeps asking if it doesn't.": [
+  "Arquivos que os apps marcaram como seguros para apagar. O macOS os libera quando o disco está quase cheio; o Molt insiste se ele não liberar.",
+  "Fichiers que les apps ont marqués comme supprimables. macOS les libère quand le disque est presque plein ; Molt insiste sinon.",
+  "Archivos que las apps marcaron como seguros de borrar. macOS los libera cuando el disco está casi lleno; Molt insiste si no lo hace.",
+  "Dateien, die Apps als löschbar markiert haben. macOS gibt sie frei, wenn das Volume fast voll ist; sonst fragt Molt erneut.",
+  "应用标记为可安全删除的文件。磁盘快满时 macOS 会释放它们；若未释放，Molt 会继续请求。",
+  "アプリが削除してよいと示したファイル。ディスクがほぼいっぱいになるとmacOSが解放し、されない場合はMoltが再度依頼します。",
+  "앱이 삭제해도 된다고 표시한 파일입니다. 디스크가 거의 차면 macOS가 정리하고, 그렇지 않으면 Molt가 다시 요청합니다."
  ],
  "Copies of this Mac Time Machine keeps for a day, to restore files without the backup disk. Free keeps the newest and the one the next backup needs.": [
   "Cópias deste Mac que o Time Machine guarda por um dia, para restaurar arquivos sem o disco de backup. Liberar mantém a mais recente e a que o próximo backup usa.",

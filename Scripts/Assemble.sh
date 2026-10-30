@@ -1,16 +1,16 @@
 #!/bin/bash
-# Builds Build/MacSpace.app from the Swift package: the app, its shared libraries and one bundle per module.
+# Builds Build/Molt.app from the Swift package: the app, its shared libraries and one bundle per module.
 #
-#   Scripts/Assemble.sh                      local build into Build/MacSpace.app; copy it to /Applications to run it. Signed with
+#   Scripts/Assemble.sh                      local build into Build/Molt.app; copy it to /Applications to run it. Signed with
 #                                            the first Developer ID / Apple Development identity found (ad-hoc without one). A stable identity keeps Full Disk Access across rebuilds:
 #                                            macOS ties the permission to the signature, and an ad-hoc signature changes every build.
 #   SIGN_IDENTITY=- Scripts/Assemble.sh      force an ad-hoc signature
 #   CONFIG=release VERSION=1.0.0 BUILD=42 SIGN_IDENTITY="Developer ID Application: …" Scripts/Assemble.sh
-#   ICON=/path/to/MacSpace.icon Scripts/Assemble.sh   the app icon, an Icon Composer document (default: App/Resources/MacSpace.icon)
+#   ICON=/path/to/Molt.icon Scripts/Assemble.sh   the app icon, an Icon Composer document (default: App/Resources/Molt.icon)
 #   Notarization is on by default with a Developer ID identity: the app is notarized and the ticket stapled, so it opens on any
-#                                            Mac (another Mac, a VM). It uses the notarytool keychain profile "MacSpace" (NOTARY_PROFILE
+#                                            Mac (another Mac, a VM). It uses the notarytool keychain profile "Molt" (NOTARY_PROFILE
 #                                            names another), made once with
-#                                            xcrun notarytool store-credentials MacSpace --apple-id … --team-id … (app-specific password)
+#                                            xcrun notarytool store-credentials Molt --apple-id … --team-id … (app-specific password)
 #   DEV=1 / DEV=0 Scripts/Assemble.sh        with or without the development tools (default: with them for a -dev version only)
 #   NOTARY_PROFILE= Scripts/Assemble.sh      skip notarization (the app then opens only on the Mac that built it)
 #   OUT_DIR=Build/Test Scripts/Assemble.sh   build somewhere else than Build/ (development and test builds, so they never replace the
@@ -18,14 +18,14 @@
 #   FEED_URL=<url> Scripts/Assemble.sh       read updates from another appcast than the latest release's (a pre-release's feed, to
 #                                            test an update before it reaches users)
 #
-# The app is assembled, signed and notarized in a staging folder and only moved to <OUT_DIR>/MacSpace.app once it verifies: that
+# The app is assembled, signed and notarized in a staging folder and only moved to <OUT_DIR>/Molt.app once it verifies: that
 # path always holds a complete app. It used to be rebuilt in place, and a copy made while it was being signed came out with no
 # signature (the helper then failed with "Codesigning failure loading plist … -67056", 2026-10-05).
 #
 # Signing with a real identity enables the hardened runtime. The identity and any notarization credentials are
 # supplied by the release pipeline; nothing secret lives in this repository.
 set -euo pipefail
-# A failed step leaves only the staging copy half made; the app at <OUT_DIR>/MacSpace.app is the last complete build.
+# A failed step leaves only the staging copy half made; the app at <OUT_DIR>/Molt.app is the last complete build.
 trap 'echo "error: the build failed at line $LINENO; nothing was replaced" >&2' ERR
 cd "$(dirname "$0")/.."
 
@@ -64,7 +64,7 @@ fi
 # Notarized unless NOTARY_PROFILE is set empty. Only a Developer ID identity can be notarized; without one (a contributor's build) it
 # is skipped, unless a profile was asked for explicitly.
 NOTARY_EXPLICIT=${NOTARY_PROFILE+x}
-NOTARY_PROFILE=${NOTARY_PROFILE-MacSpace}
+NOTARY_PROFILE=${NOTARY_PROFILE-Molt}
 case "$SIGN_IDENTITY" in
   "Developer ID Application:"*) ;;
   *) if [ -n "$NOTARY_PROFILE" ] && [ -z "$NOTARY_EXPLICIT" ]; then
@@ -82,7 +82,7 @@ if [ -z "${DEVELOPER_DIR:-}" ] && [ -d /Applications/Xcode-beta.app ] && ! xcode
 fi
 
 # The app icon, made in Icon Composer, kept in the repository.
-ICON=${ICON:-App/Resources/MacSpace.icon}
+ICON=${ICON:-App/Resources/Molt.icon}
 
 # The oldest macOS the app runs on (Package.swift reads the same variable): 26, the last release for Intel Macs, by default.
 export MOLT_MIN_MACOS=${MOLT_MIN_MACOS:-26.0}
@@ -116,9 +116,9 @@ else
 fi
 
 OUT_DIR=${OUT_DIR:-Build}
-FINAL="$OUT_DIR/MacSpace.app"
+FINAL="$OUT_DIR/Molt.app"
 STAGING="$OUT_DIR/.staging"
-APP="$STAGING/MacSpace.app"
+APP="$STAGING/Molt.app"
 rm -rf "$STAGING"
 mkdir -p "$APP/Contents/MacOS" "$APP/Contents/Frameworks" "$APP/Contents/PlugIns" "$APP/Contents/Resources"
 
@@ -128,7 +128,7 @@ if [ -n "${FEED_URL:-}" ]; then
   plutil -replace SUFeedURL -string "$FEED_URL" "$APP/Contents/Info.plist"
   echo "Update feed: $FEED_URL"
 fi
-cp "$BIN/MacSpaceMain" "$APP/Contents/MacOS/MacSpace"
+cp "$BIN/MacSpaceMain" "$APP/Contents/MacOS/Molt"
 # The Icon Composer document is compiled by actool into the asset catalog (the icon macOS 26 and later draw, with its light, dark
 # and tinted looks) and an .icns for older places; Info.plist names both. Without an icon the build stops: an app that names an icon
 # it does not carry shows the generic one.
@@ -157,7 +157,7 @@ fi
 cp "$BIN/MacSpaceCli" "$APP/Contents/MacOS/MacSpaceCli"
 cp "$BIN/MacSpaceHelper" "$APP/Contents/MacOS/MacSpaceHelper"
 mkdir -p "$APP/Contents/Library/LaunchDaemons"
-sed "s/__TEAM_ID__/$TEAM_ID/" Packaging/com.macspace.helper.plist > "$APP/Contents/Library/LaunchDaemons/com.macspace.helper.plist"
+sed "s/__TEAM_ID__/$TEAM_ID/" Packaging/com.swollzy.molt.helper.plist > "$APP/Contents/Library/LaunchDaemons/com.swollzy.molt.helper.plist"
 cp "$BIN/libMacSpaceSdk.dylib" "$BIN/libMacSpacePlatform.dylib" "$APP/Contents/Frameworks/"
 cp -R "$BIN/Sparkle.framework" "$APP/Contents/Frameworks/"
 
@@ -168,7 +168,7 @@ reroot() { # file, new rpath
   done
   install_name_tool -add_rpath "$2" "$1"
 }
-reroot "$APP/Contents/MacOS/MacSpace" "@executable_path/../Frameworks"
+reroot "$APP/Contents/MacOS/Molt" "@executable_path/../Frameworks"
 reroot "$APP/Contents/MacOS/MacSpaceCli" "@executable_path/../Frameworks"
 reroot "$APP/Contents/MacOS/MacSpaceHelper" "@executable_path/../Frameworks"
 for lib in "$APP"/Contents/Frameworks/*.dylib; do
@@ -208,8 +208,8 @@ codesign "${FLAGS[@]}" "$APP/Contents/Frameworks/Sparkle.framework"
 for lib in "$APP"/Contents/Frameworks/*.dylib; do codesign "${FLAGS[@]}" "$lib"; done
 for bundle in "${MODULES[@]}"; do codesign "${FLAGS[@]}" "$bundle"; done
 # Its own identifier, which the helper accepts besides the app's: signed as "MacSpaceCli", `MacSpaceCli helper --ping` was turned away.
-codesign "${FLAGS[@]}" --identifier com.macspace.cli "$APP/Contents/MacOS/MacSpaceCli"
-codesign "${FLAGS[@]}" --identifier com.macspace.helper "$APP/Contents/MacOS/MacSpaceHelper"
+codesign "${FLAGS[@]}" --identifier com.swollzy.molt.cli "$APP/Contents/MacOS/MacSpaceCli"
+codesign "${FLAGS[@]}" --identifier com.swollzy.molt.helper "$APP/Contents/MacOS/MacSpaceHelper"
 codesign "${FLAGS[@]}" "$APP"
 codesign --verify --deep --strict "$APP" || { echo "error: the signed app does not verify; nothing was replaced" >&2; exit 1; }
 
@@ -220,7 +220,7 @@ if [ -n "${NOTARY_PROFILE:-}" ]; then
     "Developer ID Application:"*) ;;
     *) echo "error: notarization needs a Developer ID Application identity (signed with $SIGN_IDENTITY)" >&2; exit 1 ;;
   esac
-  ZIP=$(mktemp -d)/MacSpace.zip
+  ZIP=$(mktemp -d)/Molt.zip
   ditto -c -k --keepParent "$APP" "$ZIP"
   echo "Notarizing (this usually takes a few minutes)…"
   RESULT=$(xcrun notarytool submit "$ZIP" --keychain-profile "$NOTARY_PROFILE" --wait --output-format json) || {
@@ -253,7 +253,7 @@ APP="$FINAL"
 # an administrator password when the folder is not writable, and removes the copy earlier builds put in ~/Applications.
 if [ "${INSTALL:-0}" = 1 ]; then
   INSTALL_DIR=${INSTALL_DIR:-/Applications}
-  TARGET="$INSTALL_DIR/MacSpace.app"
+  TARGET="$INSTALL_DIR/Molt.app"
   # A plain string, not an array: macOS's bash 3.2 treats an empty array as unbound under set -u.
   AS_ADMIN=""
   if [ ! -w "$INSTALL_DIR" ] || { [ -e "$TARGET" ] && [ ! -w "$TARGET" ]; }; then
@@ -261,9 +261,9 @@ if [ "${INSTALL:-0}" = 1 ]; then
     AS_ADMIN=sudo
   fi
   LSREGISTER=/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister
-  pkill -i -x MacSpace 2>/dev/null || true
+  pkill -i -x Molt 2>/dev/null || true
   # One installed copy only: two copies with the same identifier left macOS free to pick either for the helper.
-  for other in /Applications/MacSpace.app "$HOME/Applications/MacSpace.app"; do
+  for other in /Applications/Molt.app "$HOME/Applications/Molt.app"; do
     if [ "$other" != "$TARGET" ] && [ -d "$other" ]; then
       "$LSREGISTER" -u "$other" 2>/dev/null || true
       if rm -rf "$other" 2>/dev/null || sudo rm -rf "$other"; then echo "Removed the earlier copy at $other"; fi
@@ -287,4 +287,4 @@ fi
 TOOLS=""
 [ "$DEV" = 1 ] && TOOLS=", with the development tools"
 echo "Built $APP (version $VERSION, signed with ${SIGN_IDENTITY/#-/ad-hoc}${NOTARY_PROFILE:+, notarized}$TOOLS)"
-[ "${INSTALL:-0}" = 1 ] || echo "Copy it to /Applications to run it (quit MacSpace first)."
+[ "${INSTALL:-0}" = 1 ] || echo "Copy it to /Applications to run it (quit Molt first)."

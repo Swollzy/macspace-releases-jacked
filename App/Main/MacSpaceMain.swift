@@ -15,14 +15,17 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     /// (menu bar only), and nothing should wait for a click.
     func applicationDidFinishLaunching(_ notification: Notification) {
         GlyphCache.apply()
+        // Before anything reads them: what MacSpace kept moves to Molt's folders, once MacSpace itself is gone.
+        EarlierDataFolders.moveUserFolders()
+        Self.askToUninstallMacSpace()
         // An app copied in by hand may be unknown to Launch Services, which makes the helper "not found" instead of "needs approval".
         if PrivilegedHelperInstaller.status == .notFound { PrivilegedHelperInstaller.registerAppWithLaunchServices() }
         // A copy with pieces missing (copied while it was being built) must not be given permissions: macOS would tie them to this
         // one build, and every update would lose them. Said once, plainly.
         if !CodeIntegrity.isIntact(Bundle.main.bundleURL) {
             let alert = AppAlert()
-            alert.messageText = String(localized: "This copy of MacSpace is incomplete")
-            alert.informativeText = String(localized: "Quit MacSpace and copy it again. Permissions given to this copy would be lost at the next update.")
+            alert.messageText = String(localized: "This copy of Molt is incomplete")
+            alert.informativeText = String(localized: "Quit Molt and copy it again. Permissions given to this copy would be lost at the next update.")
             alert.alertStyle = .critical
             alert.addButton(withTitle: String(localized: "Quit"))
             alert.addButton(withTitle: String(localized: "Continue"))
@@ -47,6 +50,19 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
 
+    /// Molt was MacSpace. With both installed, two apps would switch the same settings and run two helpers, and MacSpace's own
+    /// Uninstall is what puts back the settings it changed. So Molt asks for it, once per launch, and opens MacSpace to do it.
+    @MainActor static func askToUninstallMacSpace() {
+        guard let earlier = EarlierDataFolders.earlierAppPaths().first else { return }
+        let alert = AppAlert()
+        alert.messageText = String(localized: "Uninstall MacSpace first")
+        alert.informativeText = String(localized: "Molt replaces MacSpace. Open MacSpace, choose About MacSpace, then Uninstall: it puts back the settings it changed. Then open Molt again.")
+        alert.addButton(withTitle: String(localized: "Open MacSpace"))
+        alert.addButton(withTitle: String(localized: "Later"))
+        ConfirmationAlert.standardize(alert)
+        if alert.runModal() == .alertFirstButtonReturn { NSWorkspace.shared.open(URL(fileURLWithPath: earlier)) }
+    }
+
     /// Clicking the Dock icon with no window open opens it again.
     func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows: Bool) -> Bool {
         if !hasVisibleWindows { Task { @MainActor in AppRouter.shared.open() } }
@@ -66,7 +82,7 @@ struct MacSpaceMain: App {
 
     var body: some Scene {
         // The window opens at launch and is not restored.
-        Window("MacSpace", id: MacSpaceWindow.glass) {
+        Window("Molt", id: MacSpaceWindow.glass) {
             ReleasableContent { MainView(host: host, updates: updates) }
         }
         .defaultLaunchBehavior(.presented)
@@ -81,7 +97,7 @@ struct MacSpaceMain: App {
         .commands {
             DesignCommands()
             CommandGroup(replacing: .appInfo) {
-                Button("About MacSpace") { AboutMacSpace.show(host: host) }
+                Button("About Molt") { AboutMolt.show(host: host) }
             }
             CommandGroup(after: .appInfo) {
                 Button("Check for Updates…") { updates.checkForUpdates() }.disabled(!updates.canCheck)

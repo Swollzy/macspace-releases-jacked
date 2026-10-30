@@ -24,7 +24,7 @@ public struct ModelFeatureSettings: Sendable {
     struct Entry: Codable { var id: String; var before: Data? }
     struct Journal: Codable { var version = 1; var feature: Feature; var wantsOff: Bool; var entries: [Entry]; var completed = false }
     public static let directory = FileManager.default.homeDirectoryForCurrentUser
-        .appendingPathComponent("Library/Application Support/MacSpace/feature-settings")
+        .appendingPathComponent("Library/Application Support/Molt/feature-settings")
     let directory: URL
     let supported: Bool
     let read: @Sendable (String, String) throws -> Data?

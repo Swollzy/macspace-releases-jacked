@@ -41,7 +41,7 @@ public struct DebloatPrivilegedOperations: PrivilegedOperationHandler {
         if operation == Self.removeProfile {
             let identifiers = (arguments["identifiers"] ?? "").split(separator: ",").map(String.init)
             guard !identifiers.isEmpty, identifiers.allSatisfy(ConfigurationProfileBuilder.isMacSpaceProfile) else {
-                throw PrivilegedOperationError("Only MacSpace profiles can be removed.")
+                throw PrivilegedOperationError("Only Molt profiles can be removed.")
             }
             var outcome: [String: String] = [:]
             for identifier in identifiers {

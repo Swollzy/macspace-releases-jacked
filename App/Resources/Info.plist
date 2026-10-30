@@ -2,28 +2,28 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <key>CFBundleIdentifier</key><string>com.macspace.app</string>
+    <key>CFBundleIdentifier</key><string>com.swollzy.molt</string>
     <key>CFBundleURLTypes</key>
     <array>
         <dict>
-            <key>CFBundleURLName</key><string>com.macspace.app</string>
-            <key>CFBundleURLSchemes</key><array><string>macspace</string></array>
+            <key>CFBundleURLName</key><string>com.swollzy.molt</string>
+            <key>CFBundleURLSchemes</key><array><string>molt</string></array>
         </dict>
     </array>
-    <key>CFBundleName</key><string>MacSpace</string>
+    <key>CFBundleName</key><string>Molt</string>
     <key>CFBundleDevelopmentRegion</key><string>en</string>
     <key>CFBundleLocalizations</key><array><string>en</string><string>pt-BR</string><string>fr</string><string>es</string><string>de</string><string>zh-Hans</string><string>ja</string><string>ko</string></array>
-    <key>CFBundleDisplayName</key><string>MacSpace</string>
-    <key>CFBundleIconFile</key><string>MacSpace</string>
-    <key>CFBundleExecutable</key><string>MacSpace</string>
+    <key>CFBundleDisplayName</key><string>Molt</string>
+    <key>CFBundleIconFile</key><string>Molt</string>
+    <key>CFBundleExecutable</key><string>Molt</string>
     <key>CFBundlePackageType</key><string>APPL</string>
     <key>CFBundleShortVersionString</key><string>__VERSION__</string>
     <key>CFBundleVersion</key><string>__BUILD__</string>
-    <key>LSMinimumSystemVersion</key><string>27.0</string>
+    <key>LSMinimumSystemVersion</key><string>26.0</string>
     <key>LSApplicationCategoryType</key><string>public.app-category.utilities</string>
     <key>NSPrincipalClass</key><string>NSApplication</string>
     <key>NSHighResolutionCapable</key><true/>
-    <key>SUFeedURL</key><string>https://github.com/1architect/macspace-releases/releases/latest/download/appcast.xml</string>
+    <key>SUFeedURL</key><string>https://github.com/Swollzy/macspace-releases-jacked/releases/latest/download/appcast.xml</string>
     <key>SUPublicEDKey</key><string>__SPARKLE_PUBLIC_KEY__</string>
 </dict>
 </plist>

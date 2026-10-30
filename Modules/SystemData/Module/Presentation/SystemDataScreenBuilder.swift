@@ -121,15 +121,15 @@ enum SystemDataScreenBuilder {
             // While Apple Intelligence is on, its models stay (`SystemAssetGuard`), which is why they are on disk at all.
             rows.append(Row(id: "protected:assets", title: loc("Models and system assets"), subtitle: count(assets),
                             badge: snapshot.assetsHeld ? Badge(loc("Kept while Apple Intelligence is on"), .info) : nil,
-                            detail: loc("macOS keeps these locked, even from MacSpace.")))
+                            detail: loc("macOS keeps these locked, even from Molt.")))
         }
         if !databases.isEmpty {
             rows.append(Row(id: "protected:databases", title: loc("System databases"), subtitle: count(databases),
-                            detail: loc("macOS keeps these locked, even from MacSpace.")))
+                            detail: loc("macOS keeps these locked, even from Molt.")))
         }
         if !others.isEmpty {
             rows.append(Row(id: "protected:other", title: loc("Other protected folders"), subtitle: count(others),
-                            detail: loc("macOS keeps these locked, even from MacSpace.")))
+                            detail: loc("macOS keeps these locked, even from Molt.")))
         }
         rows.append(Row(id: "protected:filesystem", title: loc("File system metadata"),
                         detail: loc("What the disk records about each file.")))
@@ -681,7 +681,7 @@ enum SystemDataScreenBuilder {
         }
         if !actionable.helperUnreachable.isEmpty {
             return .banner(Banner(id: "partial", severity: .warning, title: loc("The helper did not answer"),
-                                  message: loc("\(actionable.helperUnreachable.count) places weren't measured. Reopen MacSpace.")))
+                                  message: loc("\(actionable.helperUnreachable.count) places weren't measured. Reopen Molt.")))
         }
         return nil
     }

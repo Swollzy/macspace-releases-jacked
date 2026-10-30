@@ -164,7 +164,7 @@ public struct DisabledAgentsJournal: Sendable {
     }
 
     public static let defaultURL = FileManager.default.homeDirectoryForCurrentUser
-        .appendingPathComponent("Library/Application Support/MacSpace/disabled-launch-agents.json")
+        .appendingPathComponent("Library/Application Support/Molt/disabled-launch-agents.json")
 
     public var url: URL
 

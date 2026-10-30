@@ -107,7 +107,7 @@ final class DebugRemote: ObservableObject {
         guard let window = window ?? NSApp.windows.first(where: { $0.isVisible && $0.frame.width > 300 && (title == nil || $0.title == title) }), let createImage,
               let image = createImage(.null, 1 << 3, UInt32(window.windowNumber), 0)?.takeRetainedValue(),
               let data = NSBitmapImageRep(cgImage: image).representation(using: .png, properties: [:]) else {
-            NSLog("MacSpace debug: capture failed")
+            NSLog("Molt debug: capture failed")
             return
         }
         try? data.write(to: URL(fileURLWithPath: path))

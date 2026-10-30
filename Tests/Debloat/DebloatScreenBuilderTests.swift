@@ -145,7 +145,7 @@ final class DebloatScreenBuilderTests: XCTestCase {
     func testToggleStateAndBadgeFollowTheControlStateAndNoSwitchAsks() {
         let on = DebloatScreenBuilder.row(verifiedControl, snapshot([status(verifiedControl.id, .debloated,
                                                                             effect: EffectStatus(state: .effective, detail: "no submissions"))]))
-        XCTAssertTrue(on.isOn, "Disable <feature> is on once MacSpace switched the feature off")
+        XCTAssertTrue(on.isOn, "Disable <feature> is on once Molt switched the feature off")
         XCTAssertNil(on.badge, "working as intended needs no badge")
         XCTAssertFalse(on.detail?.contains("no submissions") == true, "a measurement is shown only when something is wrong")
         XCTAssertNil(on.action.confirmation, "a switch never asks: it moves, then the change follows")

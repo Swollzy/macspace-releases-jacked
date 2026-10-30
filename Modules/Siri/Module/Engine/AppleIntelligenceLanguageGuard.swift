@@ -408,7 +408,7 @@ public struct AppleIntelligenceLanguageGuard {
 /// Live system implementation. Reads use CFPreferences and world-readable files; writes use the CP112 method.
 public struct LiveSiriLanguageEnvironment: SiriLanguageEnvironment {
     public static let savedSettingsURL = FileManager.default.homeDirectoryForCurrentUser
-        .appendingPathComponent("Library/Application Support/MacSpace/ai-guard-saved-siri-settings.json")
+        .appendingPathComponent("Library/Application Support/Molt/ai-guard-saved-siri-settings.json")
     private let fileManager: FileManager
     private let savedURL: URL
 

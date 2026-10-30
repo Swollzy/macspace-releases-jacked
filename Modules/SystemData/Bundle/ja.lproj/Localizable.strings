@@ -7,7 +7,7 @@
 "%lld more, including Apple Intelligence models, are under Protected by macOS." = "Apple Intelligenceモデルを含むほか%lld件は「macOSが保護」にあります。";
 "%lld places couldn't be measured." = "%lldか所を測定できませんでした。";
 "%lld places only the helper can measure: %@. Turn it on in Settings." = "ヘルパーでのみ測定できる場所が%lldか所あります：%@。設定でオンにしてください。";
-"%lld places weren't measured. Reopen MacSpace." = "%lldか所が未測定です。MacSpaceを開き直してください。";
+"%lld places weren't measured. Reopen Molt." = "%lldか所が未測定です。Moltを開き直してください。";
 "%lld reports" = "%lld件のレポート";
 "/System/Library/%@" = "/System/Library/%@";
 "1 item" = "1項目";
@@ -79,7 +79,7 @@
 "Everything else" = "その他すべて";
 "Everything in the Trash is deleted for good." = "ゴミ箱の内容をすべて完全に削除します。";
 "File system metadata" = "ファイルシステムのメタデータ";
-"Files of an earlier macOS update that is already installed; no update is waiting. macOS has not removed them and they sit in a protected folder, so MacSpace leaves them alone." = "インストール済みmacOS更新の残りです。保留中の更新はありません。保護されたフォルダに残っているため、MacSpaceはそのままにします。";
+"Files of an earlier macOS update that is already installed; no update is waiting. macOS has not removed them and they sit in a protected folder, so Molt leaves them alone." = "インストール済みmacOS更新の残りです。保留中の更新はありません。保護されたフォルダに残っているため、Moltはそのままにします。";
 "Free" = "解放";
 "Free %@" = "%@を解放";
 "Free %@ in the Trash?" = "ゴミ箱の%@を解放しますか？";
@@ -135,8 +135,8 @@
 "Not a cleanable item (%@)." = "クリーンアップできない項目です（%@）。";
 "Not identified" = "未識別";
 "Not opened for %lld days" = "%lld日間未起動";
-"Nothing was freed: MacSpace couldn't check which apps are open." = "何も解放していません。実行中のアプリを確認できませんでした。";
-"Nothing was freed: MacSpace couldn't check which files are in use." = "何も解放していません。使用中のファイルを確認できませんでした。";
+"Nothing was freed: Molt couldn't check which apps are open." = "何も解放していません。実行中のアプリを確認できませんでした。";
+"Nothing was freed: Molt couldn't check which files are in use." = "何も解放していません。使用中のファイルを確認できませんでした。";
 "Old Homebrew versions" = "古いHomebrewのバージョン";
 "Old app copy" = "古いアプリのコピー";
 "Old diagnostic and crash reports" = "古い診断・クラッシュレポート";
@@ -236,7 +236,7 @@
 "free %@" = "%@を解放";
 "macOS builds them again the next time it reads a crash report." = "次にクラッシュレポートを読むときにmacOSが再作成します。";
 "macOS downloads them again if they're needed." = "必要に応じてmacOSが再ダウンロードします。";
-"macOS keeps these locked, even from MacSpace." = "macOSがロックしており、MacSpaceもアクセスできません。";
+"macOS keeps these locked, even from Molt." = "macOSがロックしており、Moltもアクセスできません。";
 "macOS restore image: %@" = "macOS復元イメージ：%@";
 "macOS's model catalog, for the Photos spatial effect." = "写真の空間効果用のmacOSモデルカタログです。";
 "nothing to free" = "解放できるものはありません";

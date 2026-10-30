@@ -73,7 +73,7 @@ public struct OrphanFinder: Sendable {
         let lower = id.lowercased()
         // macOS's own data is never an orphan, under any prefix ("243LU875E5.groups.com.apple.podcasts"), nor that of the parts of
         // macOS not named com.apple (Shortcuts' library is "group.is.workflow.my.app", printing is "org.cups").
-        guard !lower.contains("com.apple."), !lower.hasPrefix("com.macspace."),
+        guard !lower.contains("com.apple."), !lower.hasPrefix("com.macspace."), !lower.hasPrefix("com.swollzy.molt"),
               !Self.systemPrefixes.contains(where: { lower.hasPrefix($0) }) else { return nil }
         return id
     }

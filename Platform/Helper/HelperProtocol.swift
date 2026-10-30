@@ -7,8 +7,8 @@ import Foundation
 /// for its own operations, compiled into the helper, so nothing installed later can ask the helper to do more. Clients must
 /// satisfy a code-signing requirement, which is covered by the app's signature.
 public enum PrivilegedHelperConstants {
-    public static let machServiceName = "com.macspace.helper"
-    public static let launchDaemonPlistName = "com.macspace.helper.plist"
+    public static let machServiceName = "com.swollzy.molt.helper"
+    public static let launchDaemonPlistName = "com.swollzy.molt.helper.plist"
     public static let protocolVersion = 1
     public static let helperVersion = "1"
 }
@@ -101,9 +101,9 @@ public enum PrivilegedHelperError: LocalizedError, Equatable, CustomStringConver
 
     public var description: String {
         switch self {
-        case let .connection(message): return "Could not reach the MacSpace helper: \(message)"
-        case let .noAnswer(seconds): return "Could not reach the MacSpace helper: no answer after \(seconds) seconds"
-        case .malformedResponse: return "The MacSpace helper sent an unreadable response."
+        case let .connection(message): return "Could not reach the Molt helper: \(message)"
+        case let .noAnswer(seconds): return "Could not reach the Molt helper: no answer after \(seconds) seconds"
+        case .malformedResponse: return "The Molt helper sent an unreadable response."
         case let .helper(message): return message
         }
     }

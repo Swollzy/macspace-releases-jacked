@@ -4,7 +4,7 @@ import Foundation
 /// Calls are serialized: handlers touch shared system state and are not written to run concurrently.
 public final class PrivilegedHelperService: @unchecked Sendable {
     private let handlers: [String: any PrivilegedOperationHandler]
-    private let queue = DispatchQueue(label: "com.macspace.helper.requests")
+    private let queue = DispatchQueue(label: "com.swollzy.molt.helper.requests")
 
     /// Built-in operation that answers without any handler: lets the app check that the helper is up.
     public static let pingOperation = "helper.ping"

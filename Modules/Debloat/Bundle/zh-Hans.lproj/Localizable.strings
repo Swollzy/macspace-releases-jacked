@@ -25,7 +25,7 @@
 "Breaks Mail search" = "会导致邮件搜索失效";
 "Cannot read" = "无法读取";
 "Cannot take effect here" = "无法在此生效";
-"Checks every 15 minutes while MacSpace is open, and disables again any feature macOS switched back on." = "MacSpace 运行时每 15 分钟检查一次，再次停用 macOS 重新开启的功能。";
+"Checks every 15 minutes while Molt is open, and disables again any feature macOS switched back on." = "Molt 运行时每 15 分钟检查一次，再次停用 macOS 重新开启的功能。";
 "Couldn't change it" = "无法更改";
 "Couldn't open the profile" = "无法打开描述文件";
 "Couldn't remove a profile" = "无法移除描述文件";
@@ -62,9 +62,9 @@
 "Its profile could not be removed (%@); remove \"%@\" in System Settings > General > Device Management." = "无法移除其描述文件（%@）；请在“系统设置 > 通用 > 设备管理”中移除“%@”。";
 "Its profile was removed." = "其描述文件已移除。";
 "Log out to apply." = "注销后生效。";
-"MacSpace disabled it again, most recently %@." = "MacSpace 已再次停用，最近一次为 %@。";
-"MacSpace disabled them again, most recently %@." = "MacSpace 已再次停用这些功能，最近一次为 %@。";
-"MacSpace restores the settings it saved before disabling them." = "MacSpace 会还原停用前保存的设置。";
+"Molt disabled it again, most recently %@." = "Molt 已再次停用，最近一次为 %@。";
+"Molt disabled them again, most recently %@." = "Molt 已再次停用这些功能，最近一次为 %@。";
+"Molt restores the settings it saved before disabling them." = "Molt 会还原停用前保存的设置。";
 "No control was named." = "未指定控制项。";
 "No controls were selected." = "未选择控制项。";
 "No longer works" = "不再生效";
@@ -81,7 +81,7 @@
 "Restart to apply." = "重新启动后生效。";
 "Set by another profile" = "由其他描述文件设置";
 "Share analytics with Apple" = "与 Apple 共享分析";
-"Shows a notification when macOS switches a disabled feature back on and MacSpace disables it again." = "macOS 重新开启已停用的功能，而 MacSpace 再次停用时显示通知。";
+"Shows a notification when macOS switches a disabled feature back on and Molt disables it again." = "macOS 重新开启已停用的功能，而 Molt 再次停用时显示通知。";
 "Siri" = "Siri";
 "Siri AI search" = "Siri AI 搜索";
 "Some are not tested yet." = "部分功能尚未测试。";
@@ -109,5 +109,5 @@
 "macOS asks you to approve the policy profile once." = "macOS 只会要求你批准一次策略描述文件。";
 "macOS prevents this change from taking effect on this Mac." = "macOS 阻止此更改在这台 Mac 上生效。";
 "macOS still chose to send diagnostics after this change." = "此次更改后，macOS 仍决定发送诊断信息。";
-"macOS switched %@ back on. MacSpace disabled it again." = "macOS 重新开启了 %@，MacSpace 已再次停用。";
-"macOS switched %@ back on. MacSpace disabled them again." = "macOS 重新开启了 %@，MacSpace 已再次停用这些功能。";
+"macOS switched %@ back on. Molt disabled it again." = "macOS 重新开启了 %@，Molt 已再次停用。";
+"macOS switched %@ back on. Molt disabled them again." = "macOS 重新开启了 %@，Molt 已再次停用这些功能。";

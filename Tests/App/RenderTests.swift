@@ -177,15 +177,15 @@ final class RenderTests: XCTestCase {
 }
 
 final class MenuBarIconTests: XCTestCase {
-    /// The ring segments breathe as a loading chart's elements do: the same wave, running through them one after another.
+    /// The old skin's segments breathe as a loading chart's elements do: the same wave, running through them one after another.
     func testTheRingBreathesAsTheChartsDoWhileTheyLoad() {
         XCTAssertEqual(MenuBarIcon.visibility(rank: 0, at: nil), 1, "the full ring at rest")
         let date = Date(timeIntervalSinceReferenceDate: 1000)
-        for rank in 0..<9 {
-            XCTAssertEqual(MenuBarIcon.visibility(rank: rank, at: date), LoadingWave.opacity(date, index: rank, count: 9, loading: true, reduceMotion: false))
+        for rank in 0..<6 {
+            XCTAssertEqual(MenuBarIcon.visibility(rank: rank, at: date), LoadingWave.opacity(date, index: rank, count: 6, loading: true, reduceMotion: false))
         }
-        XCTAssertNotEqual(MenuBarIcon.visibility(rank: 0, at: date), MenuBarIcon.visibility(rank: 4, at: date), "a wave, not all at once")
-        XCTAssertEqual(Set(MenuBarIcon.order), Set(0..<9))
+        XCTAssertNotEqual(MenuBarIcon.visibility(rank: 0, at: date), MenuBarIcon.visibility(rank: 3, at: date), "a wave, not all at once")
+        XCTAssertEqual(Set(MenuBarIcon.order), Set(0..<6))
     }
 
     /// Writes the animation as a strip to MACSPACE_SNAPSHOT_DIR/menubar-icon.png, to look at it.
