@@ -70,7 +70,7 @@ public final class AppRouter: ObservableObject {
 }
 
 /// The menu bar item. A click opens MacSpace; a right click (or Control-click) opens its menu: each module by name (with a "!" when
-/// its tile needs attention), opening that module's page, then Settings, then Open Panel and Quit. While something is being cleaned, the icon's circles leave and come back
+/// its tile needs attention), opening that module's page, then Settings, then Open Panel and Quit. While something is being cleaned, the icon's ring segments leave and come back
 /// (`MenuBarIcon`).
 @MainActor
 public final class StatusItemController: NSObject {
@@ -172,7 +172,7 @@ public final class StatusItemController: NSObject {
     @objc private func openSettings() { AppRouter.shared.open(.settings) }
     @objc private func quit() { NSApp.terminate(nil) }
 
-    /// The circles breathe while something is cleaned, and rest full when it ends.
+    /// The ring breathes while something is cleaned, and rest full when it ends.
     private func animate() {
         guard animation == nil, !NSWorkspace.shared.accessibilityDisplayShouldReduceMotion else { return }
         animation = Task { @MainActor [weak self] in

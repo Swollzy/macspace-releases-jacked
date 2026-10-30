@@ -177,9 +177,9 @@ final class RenderTests: XCTestCase {
 }
 
 final class MenuBarIconTests: XCTestCase {
-    /// The circles breathe as a loading chart's elements do: the same wave, running through them one after another.
-    func testTheCirclesBreatheAsTheChartsDoWhileTheyLoad() {
-        XCTAssertEqual(MenuBarIcon.visibility(rank: 0, at: nil), 1, "the full grid at rest")
+    /// The ring segments breathe as a loading chart's elements do: the same wave, running through them one after another.
+    func testTheRingBreathesAsTheChartsDoWhileTheyLoad() {
+        XCTAssertEqual(MenuBarIcon.visibility(rank: 0, at: nil), 1, "the full ring at rest")
         let date = Date(timeIntervalSinceReferenceDate: 1000)
         for rank in 0..<9 {
             XCTAssertEqual(MenuBarIcon.visibility(rank: rank, at: date), LoadingWave.opacity(date, index: rank, count: 9, loading: true, reduceMotion: false))
