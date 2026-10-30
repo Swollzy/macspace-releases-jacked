@@ -16,6 +16,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ notification: Notification) {
         GlyphCache.apply()
         // Before anything reads them: what MacSpace kept moves to Molt's folders, once MacSpace itself is gone.
+        EarlierDataFolders.importEarlierDefaults()
         EarlierDataFolders.moveUserFolders()
         Self.askToUninstallMacSpace()
         // An app copied in by hand may be unknown to Launch Services, which makes the helper "not found" instead of "needs approval".
@@ -87,7 +88,7 @@ struct MacSpaceMain: App {
         }
         .defaultLaunchBehavior(.presented)
         .restorationBehavior(.disabled)
-        // Opened by `macspace://main` when no window has been open yet (`AppRouter.open`).
+        // Opened by `molt://main` when no window has been open yet (`AppRouter.open`).
         .handlesExternalEvents(matching: [MacSpaceWindow.glass])
         .windowStyle(.plain)
         .windowBackgroundDragBehavior(.enabled)

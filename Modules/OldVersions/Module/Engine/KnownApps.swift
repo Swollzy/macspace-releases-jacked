@@ -31,13 +31,18 @@ public struct KnownApp: Equatable, Sendable {
     /// Relative to ~/Library: the user's settings and data. Never offered, nothing inside them either, unless listed in `clearable`.
     public var kept: [String]
     public var clearable: [Clearable]
+    /// Whether the app ever shipped as an AppleScript app made with osacompile (Burrow's simple menu app), which carries Script
+    /// Editor's identifier: a copy with its exact name and that identifier then counts as an old copy, never checked.
+    public var scriptStandIn: Bool
 
-    public init(name: String, bundleID: String, formerNames: [String] = [], kept: [String] = [], clearable: [Clearable] = []) {
+    public init(name: String, bundleID: String, formerNames: [String] = [], kept: [String] = [], clearable: [Clearable] = [],
+                scriptStandIn: Bool = false) {
         self.name = name
         self.bundleID = bundleID
         self.formerNames = formerNames
         self.kept = kept
         self.clearable = clearable
+        self.scriptStandIn = scriptStandIn
     }
 
     /// What every app keeps whatever it is: its preferences and its Application Support folders, by name and by identifier, and its
@@ -75,7 +80,7 @@ public enum KnownApps {
                           staleSince: "0.3.1"),
                     .init("Application Support/Burrow/cache/downloads", note: "Installers Burrow downloaded. It downloads them again if needed.",
                           checked: false),
-                 ]),
+                 ], scriptStandIn: true),
     ]
 
     public static func known(_ bundleID: String) -> KnownApp? {

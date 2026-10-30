@@ -107,7 +107,10 @@ else
   mkdir -p "$BIN"
   # Sparkle comes as a universal framework already.
   cp -R "${BINS[0]}/Sparkle.framework" "$BIN/"
-  for item in MacSpaceMain MacSpaceCli MacSpaceHelper $(cd "${BINS[0]}" && ls lib*.dylib); do
+  # Exactly what is packed below, so a stale library left in one architecture's folder cannot stop the build.
+  ITEMS="MacSpaceMain MacSpaceCli MacSpaceHelper libMacSpaceSdk.dylib libMacSpacePlatform.dylib"
+  for dir in Modules/*/; do ITEMS="$ITEMS lib$(basename "$dir").dylib"; done
+  for item in $ITEMS; do
     parts=()
     for dir in "${BINS[@]}"; do parts+=("$dir/$item"); done
     lipo -create "${parts[@]}" -output "$BIN/$item"

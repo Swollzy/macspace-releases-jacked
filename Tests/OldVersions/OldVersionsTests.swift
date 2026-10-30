@@ -94,6 +94,7 @@ final class OldVersionsTests: XCTestCase {
         let report = try XCTUnwrap(report("com.swollzy.swivel", scanner(running: [old], ids: ["com.swollzy.swivel"])))
         XCTAssertEqual(report.current?.path, old)
         XCTAssertEqual(report.findings.filter { $0.kind == .oldCopy }.map(\.path), [new], "the newer copy is offered, the open one never")
+        XCTAssertEqual(report.findings.first { $0.path == new }?.checked, false, "but not checked: it is most likely the one to keep")
     }
 
     func testAnAppOpenFromElsewhereLeavesItsCopiesUnchecked() throws {
@@ -121,6 +122,28 @@ final class OldVersionsTests: XCTestCase {
         let report = try XCTUnwrap(report("com.swollzy.burrow", scanner()))
         XCTAssertEqual(report.current?.path, real)
         XCTAssertEqual(report.findings.filter { $0.kind == .oldCopy }.map(\.path), [script])
+        XCTAssertEqual(report.findings.first { $0.path == script }?.checked, false, "it may be the user's own applet")
+        // Only Burrow ever shipped as an AppleScript app: an applet named Swivel is the user's.
+        try app(system, "Swivel", id: "com.swollzy.swivel", version: "0.3.0")
+        try app(userApps, "Swivel", id: "com.apple.ScriptEditor.id.Swivel", version: "1.0")
+        XCTAssertTrue(self.report("com.swollzy.swivel", scanner())?.findings.isEmpty ?? false)
+    }
+
+    /// Another maker's app with the same name keeps folders under that name: without a sign of Swollzy's app, they are left alone.
+    func testNameFoldersNeedTheAppToBeHere() throws {
+        try make("Logs/Swivel")
+        try make("Caches/Burrow")
+        try make("Application Support/Burrow/logs")
+        try make("Logs/DiagnosticReports/Wallflower-2026-10-30-101010.ips", file: true)
+        XCTAssertTrue(scanner().scan().allSatisfy { $0.findings.isEmpty }, "\(scanner().scan().flatMap(\.findings).map(\.path))")
+        try make("Preferences/com.swollzy.swivel.plist", file: true)
+        XCTAssertEqual(report("com.swollzy.swivel", scanner())?.findings.map(\.path), [(library as NSString).appendingPathComponent("Logs/Swivel")])
+    }
+
+    func testWebStorageIsNeverChecked() throws {
+        try app(system, "Wallflower", id: "com.swollzy.wallflower", version: "0.2.3")
+        let web = try make("HTTPStorages/com.swollzy.wallflower")
+        XCTAssertEqual(report("com.swollzy.wallflower", scanner())?.findings.first { $0.path == web }?.checked, false)
     }
 
     /// A game shortcut in ~/Applications/Burrow, or another vendor's app named like one of these, is never taken for a copy.

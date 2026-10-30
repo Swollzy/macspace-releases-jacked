@@ -38,8 +38,8 @@ public final class AppRouter: ObservableObject {
             }
         } else {
             // No window has been open since launch (MacSpace started in the menu bar), so none could hand over `openWindow`. The
-            // window's scene claims `macspace://<window id>` (`handlesExternalEvents`); opening it with this very app opens the window.
-            if let url = URL(string: "macspace://\(MacSpaceWindow.glass)") {
+            // window's scene claims `molt://<window id>` (`handlesExternalEvents`); opening it with this very app opens the window.
+            if let url = URL(string: "molt://\(MacSpaceWindow.glass)") {
                 NSWorkspace.shared.open([url], withApplicationAt: Bundle.main.bundleURL, configuration: NSWorkspace.OpenConfiguration())
             }
         }

@@ -79,6 +79,8 @@ rm -f "${OUT}"/.molt-build-*.log
 APP="${ROOT}/Build/Molt.app"
 [[ -d "${APP}" ]] || die "The build finished but ${APP} is missing."
 codesign --verify --deep --strict "${APP}" || die "Molt's signature didn't verify."
+SIGNER="$(codesign -dvv "${APP}" 2>&1 | sed -n 's/^Authority=//p' | head -1)"
+if [[ -n "${SIGNER}" ]]; then info "Signed by ${SIGNER}"; else warn "Signed ad-hoc: the helper (Debloat, model freeing) won't run from this DMG."; fi
 
 # --- 3. The DMG ------------------------------------------------------------------------
 WORK="$(mktemp -d)"
@@ -94,5 +96,5 @@ rm -f "${DMG}"
 hdiutil create -quiet -volname "Molt ${VERSION}" -srcfolder "${STAGE}" -fs HFS+ -format UDZO -ov "${DMG}" || die "hdiutil create failed."
 (cd "${OUT}" && shasum -a 256 "$(basename "${DMG}")" > "$(basename "${DMG}").sha256")
 info "Made ${DMG} (${NEEDS})"
-[[ -f "${LOG}" ]] && warn "The macOS 26 / Intel build failed; send ${LOG} to Claude to fix it."
+[[ -f "${LOG}" ]] && warn "The macOS 26 build failed, so this DMG needs macOS 27; send ${LOG} to Claude to fix it."
 exit 0

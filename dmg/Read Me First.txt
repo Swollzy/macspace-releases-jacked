@@ -15,6 +15,12 @@ Install
    next to Molt. You only do this once.
 3. Molt asks for Full Disk Access and for its helper. Follow the steps it shows.
 
+Without a paid Apple developer certificate
+------------------------------------------
+A DMG made without one has no working helper, so the parts that need administrator rights
+(Debloat, freeing Apple Intelligence models, some System Data items) say so and do nothing.
+Old Versions, Large Files, Apps & Login Items and caches work either way.
+
 Used MacSpace before?
 ---------------------
 Molt replaces it. Open MacSpace, choose About MacSpace > Uninstall, so it puts back the

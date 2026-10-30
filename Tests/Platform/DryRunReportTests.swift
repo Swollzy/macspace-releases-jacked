@@ -91,8 +91,14 @@ final class EarlierDataFoldersTests: XCTestCase {
         XCTAssertTrue(FileManager.default.fileExists(atPath: home.appendingPathComponent("Library/Application Support/Molt/debloat-watch.json").path))
         XCTAssertFalse(FileManager.default.fileExists(atPath: old.path))
 
+        // Molt ran before: only what it lacks comes over, nothing of its own is replaced.
         try FileManager.default.createDirectory(at: old, withIntermediateDirectories: true)
-        XCTAssertTrue(EarlierDataFolders.moveUserFolders(home: home, applications: home.appendingPathComponent("Applications").path).isEmpty, "Molt's own folder is never replaced")
-        XCTAssertTrue(FileManager.default.fileExists(atPath: old.path))
+        try Data("old".utf8).write(to: old.appendingPathComponent("debloat-watch.json"))
+        try Data("x".utf8).write(to: old.appendingPathComponent("removed-apps.json"))
+        XCTAssertEqual(EarlierDataFolders.moveUserFolders(home: home, applications: home.appendingPathComponent("Applications").path).count, 1)
+        let molt = home.appendingPathComponent("Library/Application Support/Molt")
+        XCTAssertEqual(try String(contentsOf: molt.appendingPathComponent("debloat-watch.json"), encoding: .utf8), "x", "Molt's own file stays")
+        XCTAssertTrue(FileManager.default.fileExists(atPath: molt.appendingPathComponent("removed-apps.json").path))
+        XCTAssertTrue(FileManager.default.fileExists(atPath: old.appendingPathComponent("debloat-watch.json").path), "the earlier copy is kept")
     }
 }

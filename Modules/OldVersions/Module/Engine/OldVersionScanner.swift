@@ -120,7 +120,7 @@ public struct OldVersionScanner: Sendable {
         }
         return apps.compactMap { app in
             let mine = copies.filter { copy in
-                if copy.matchedByName { return Self.nameMatches(copy.path, app) }
+                if copy.matchedByName { return app.scriptStandIn && Self.nameMatches(copy.path, app) }
                 return copy.bundleID.caseInsensitiveCompare(app.bundleID) == .orderedSame
             }
             let isRunning = runningIDs.contains { $0.caseInsensitiveCompare(app.bundleID) == .orderedSame }
@@ -137,11 +137,25 @@ public struct OldVersionScanner: Sendable {
         let openElsewhere = isRunning && !copies.contains { runningPaths.contains($0.path) }
         for copy in copies where copy.path != keeper?.path && !runningPaths.contains(copy.path) {
             guard let bytes = measure(copy.path, inside: appFolders) else { continue }
-            let note = keeper.map { "Version \(copy.versionText). Keeping \($0.versionText) in \(Self.folderName(of: $0.path))." } ?? ""
-            findings.append(Finding(kind: .oldCopy, path: copy.path, bytes: bytes, note: note, checked: !openElsewhere))
+            var note = keeper.map { "Version \(copy.versionText). Keeping \($0.versionText) in \(Self.folderName(of: $0.path))." } ?? ""
+            // Newer than the copy that is open: the user opened an old build, and the newer one is most likely the one to keep.
+            let newer = keeper.map { Self.compareVersions(copy.version, $0.version) == .orderedDescending } ?? false
+            if newer { note = "Newer than the copy that is open. Quit \(app.name), open this one, and scan again to clear the older one instead." }
+            if copy.matchedByName { note = "An AppleScript app named \(app.name), like \(app.name)'s old simple menu app. Check it only if it is that." }
+            findings.append(Finding(kind: .oldCopy, path: copy.path, bytes: bytes, note: note,
+                                    checked: !openElsewhere && !newer && !copy.matchedByName))
         }
 
+        // Names are shared: another maker's "Swivel" may keep ~/Library/Logs/Swivel. Paths named after the app's name, not its
+        // identifier, count only when the app is known to be here: a copy, or a file named by its identifier.
+        let byID = ["Preferences/\(app.bundleID).plist", "Caches/\(app.bundleID)", "Application Support/\(app.bundleID)",
+                    "Saved Application State/\(app.bundleID).savedState", "HTTPStorages/\(app.bundleID)", "Containers/\(app.bundleID)"]
+        let present = copies.contains { !$0.matchedByName }
+            || byID.contains { FileManager.default.fileExists(atPath: (library as NSString).appendingPathComponent($0)) }
+        // Every kept path is protected; the ones named after the app's name are shown as its own only when it is here.
         let kept = app.allKept.map { (library as NSString).appendingPathComponent($0) }
+        let shownKept = app.allKept.filter { present || !$0.lowercased().hasPrefix("application support/\(app.name.lowercased())") }
+            .map { (library as NSString).appendingPathComponent($0) }
         func add(_ kind: Finding.Kind, _ relative: String, note: String, checked: Bool = true, label: String? = nil) {
             let path = (library as NSString).appendingPathComponent(relative)
             guard !Self.touchesKept(path, kept: kept), let bytes = measure(path, inside: [library]) else { return }
@@ -150,16 +164,19 @@ public struct OldVersionScanner: Sendable {
         }
 
         add(.cache, "Caches/\(app.bundleID)", note: "Cache. \(app.name) makes a new one when it needs it.")
-        add(.cache, "Caches/\(app.name)", note: "Cache. \(app.name) makes a new one when it needs it.")
-        add(.cache, "HTTPStorages/\(app.bundleID)", note: "Web cache.")
+        if present { add(.cache, "Caches/\(app.name)", note: "Cache. \(app.name) makes a new one when it needs it.") }
+        // Cookies and web storage: clearing them signs the app out of websites, so never checked.
+        add(.cache, "HTTPStorages/\(app.bundleID)", note: "Cookies and web data. \(app.name) is signed out of websites without them.", checked: false)
         add(.savedState, "Saved Application State/\(app.bundleID).savedState", note: "The windows macOS reopens for \(app.name).")
-        add(.logs, "Logs/\(app.name)", note: "Logs.")
+        if present { add(.logs, "Logs/\(app.name)", note: "Logs.") }
         add(.logs, "Logs/\(app.bundleID)", note: "Logs.")
-        for file in contents("Logs/DiagnosticReports") where Self.isReport(file, of: app.name) {
-            add(.crashReport, "Logs/DiagnosticReports/\(file)", note: "Crash report.")
+        if present {
+            for file in contents("Logs/DiagnosticReports") where Self.isReport(file, of: app.name) {
+                add(.crashReport, "Logs/DiagnosticReports/\(file)", note: "Crash report.")
+            }
         }
         // Inside a kept folder only by name: the entry lists it on purpose.
-        for clearable in app.clearable {
+        for clearable in app.clearable where present {
             let path = (library as NSString).appendingPathComponent(clearable.path)
             let keptElsewhere = kept.filter { !Self.isSame($0, (library as NSString).appendingPathComponent("Application Support/\(app.name)")) }
             guard !Self.touchesKept(path, kept: keptElsewhere), !Self.isAncestorOrSame(path, of: kept),
@@ -176,7 +193,7 @@ public struct OldVersionScanner: Sendable {
         var seen = Set<String>()
         findings = findings.filter { seen.insert($0.path.lowercased()).inserted }
         var keptSizes: [String: UInt64] = [:]
-        for path in kept { if let bytes = measure(path, inside: [library]) { keptSizes[path] = bytes } }
+        for path in shownKept { if let bytes = measure(path, inside: [library]) { keptSizes[path] = bytes } }
         return AppReport(name: app.name, bundleID: app.bundleID, current: keeper, isRunning: isRunning, findings: findings, kept: keptSizes)
     }
 
@@ -215,7 +232,7 @@ public struct OldVersionScanner: Sendable {
         if KnownApps.isFamily(bundleID) {
             return AppCopy(path: path, bundleID: bundleID, version: version, build: build, modified: modified)
         }
-        guard topLevel, isScriptApp(bundleID), KnownApps.all.contains(where: { nameMatches(path, $0) }) else { return nil }
+        guard topLevel, isScriptApp(bundleID), KnownApps.all.contains(where: { $0.scriptStandIn && nameMatches(path, $0) }) else { return nil }
         return AppCopy(path: path, bundleID: bundleID, version: version, build: build, modified: modified, matchedByName: true)
     }
 
