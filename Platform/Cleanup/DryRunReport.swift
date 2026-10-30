@@ -76,13 +76,18 @@ public struct DryRunReport: Codable, Equatable, Sendable {
 
     /// The rows a page offers to act on (`Row.selection`), checked or not, with what its action does to them. `checked` gives the
     /// boxes as the user left them, by group id; nil uses the page's own `Selection.checked`.
+    ///
+    /// A page can draw one group twice (System Data's caches are under Free now and again in the bar's "Can be freed" block), so each
+    /// row is taken once. A row with nothing left in it (a cache already freed, listed until the next scan) frees nothing and is left
+    /// out.
     public static func items(in screen: Screen, checked: (Row) -> Set<String>? = { _ in nil }) -> [Item] {
         var items: [Item] = []
+        var seen: Set<String> = []
         func visitRow(_ row: Row) {
             if let selection = row.selection {
                 let disposition = Disposition(rawValue: selection.action.parameters[dispositionKey] ?? "") ?? .free
                 let boxes = checked(row) ?? Set(selection.checked)
-                for child in row.children where selection.choices[child.id] != nil {
+                for child in row.children where (selection.choices[child.id] ?? 0) > 0 && seen.insert(child.id).inserted {
                     items.append(Item(title: child.title, bytes: selection.choices[child.id] ?? 0, paths: child.paths,
                                       disposition: disposition, checked: boxes.contains(child.id)))
                 }

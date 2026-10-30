@@ -37,6 +37,8 @@ public enum DeveloperCaches {
     static let unusedDays = 7.0
     /// A folder of `~/.cache` with no known tool is recommended after this long untouched.
     static let toolCacheDays = 30.0
+    /// Smaller than this, a cache is not listed.
+    static let minimumBytes: UInt64 = 1_000_000
 
     /// A package manager's cache: where it is under the home folder, and the programs that use it.
     struct Folder {
@@ -101,7 +103,7 @@ public enum DeveloperCaches {
         var found: [DeveloperCache] = []
         func measured(_ id: String, _ title: String, _ path: String, owners: [String], method: DeveloperCache.Method = .delete,
                       reason: (Date) -> String?) {
-            guard FileManager.default.fileExists(atPath: path), let dates = AppCaches.measure(path, now: now), dates.bytes >= 1_000_000 else { return }
+            guard FileManager.default.fileExists(atPath: path), let dates = AppCaches.measure(path, now: now), dates.bytes >= minimumBytes else { return }
             found.append(DeveloperCache(id: "dev:\(id)", title: title, paths: [path], bytes: dates.bytes, lastChange: dates.lastChange,
                                         owners: owners, method: method, reason: reason(dates.lastChange)))
         }
@@ -210,7 +212,7 @@ public enum DeveloperCaches {
         let paths = list.devices.values.flatMap { $0 }.filter { $0.isAvailable == false }
             .map { (devices as NSString).appendingPathComponent($0.udid) }.filter(FileManager.default.fileExists(atPath:))
         let bytes = paths.compactMap { AppCaches.measure($0)?.bytes }.reduce(0, +)
-        guard bytes >= 1_000_000 else { return nil }
+        guard bytes >= minimumBytes else { return nil }
         return DeveloperCache(id: "dev:simulators", title: loc("Simulators that can't run"), paths: paths, bytes: bytes, lastChange: nil,
                               owners: ["Simulator"], method: .unavailableSimulators, reason: loc("Can't run"))
     }

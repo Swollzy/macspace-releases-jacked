@@ -11,6 +11,7 @@ final class AboutMacSpaceTests: XCTestCase {
         XCTAssertEqual(alert.messageText, "MacSpace")
         XCTAssertTrue(alert.informativeText.contains("\n\n"))
         XCTAssertTrue(alert.informativeText.contains("Gio Mantovani/1architect"))
+        XCTAssertTrue(alert.informativeText.contains("Swollzy"), "the changes are credited after the original author")
         XCTAssertEqual(alert.buttons.count, 3)
         XCTAssertTrue(alert.buttons[1].hasDestructiveAction)
         let description = alert.window.contentView!.subviews.compactMap { $0 as? NSTextField }.first { $0.stringValue == alert.informativeText }!

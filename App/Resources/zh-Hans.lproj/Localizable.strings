@@ -87,6 +87,7 @@
 "MacSpace needs it to see everything in System Data." = "MacSpace 需要此权限才能查看所有系统数据。";
 "Maximize" = "最大化";
 "Minimize" = "最小化";
+"Modified by\n%@" = "修改者\n%@";
 "Modules" = "模块";
 "Modules that could not be used" = "无法使用的模块";
 "More about this" = "了解更多";

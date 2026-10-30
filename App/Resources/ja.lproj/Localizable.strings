@@ -87,6 +87,7 @@
 "MacSpace needs it to see everything in System Data." = "すべてのシステムデータを確認するために必要です。";
 "Maximize" = "最大化";
 "Minimize" = "最小化";
+"Modified by\n%@" = "変更者\n%@";
 "Modules" = "モジュール";
 "Modules that could not be used" = "使用できなかったモジュール";
 "More about this" = "詳しく見る";

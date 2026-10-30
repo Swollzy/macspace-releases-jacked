@@ -131,8 +131,9 @@ enum CachesPage {
             entries.append(entry)
         }
 
-        // Developer tools' caches; those in ~/Library/Developer are System Settings' Developer, in no System Data item.
-        for cache in snapshot.developerCaches {
+        // Developer tools' caches; those in ~/Library/Developer are System Settings' Developer, in no System Data item. One measured
+        // again after a Free (`TargetedSystemDataMeasurements`) can be empty now: under the scan's 1 MB it is gone, as the next scan finds.
+        for cache in snapshot.developerCaches where cache.bytes >= DeveloperCaches.minimumBytes {
             var entry = CacheEntry(id: cache.id, title: cache.title, bytes: cache.bytes, paths: cache.paths, source: .developer,
                                    recommended: cache.recommended, reason: cache.reason, within: containingItem(cache.paths.first, report))
             entry.owners = cache.owners

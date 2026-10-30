@@ -45,4 +45,21 @@ final class DryRunReportTests: XCTestCase {
         XCTAssertFalse(markdown.contains("/Users/x/Movies/a.mov"), "unchecked rows are counted, not listed")
         XCTAssertTrue(markdown.contains("Nothing was deleted"))
     }
+    /// A group drawn twice on one page (System Data's caches, under Free now and in the bar's "Can be freed" block) is reported once,
+    /// and a row already emptied (0 bytes until the next scan) is not reported at all.
+    func testGroupDrawnTwiceAndEmptyRows() {
+        let free = Action(id: "freeCaches", title: "Free selected")
+        var group = Row.group(id: "caches", title: "Caches you can free", totalBytes: 300,
+                              rows: [Row(id: "dev:gradle", title: "Gradle", paths: ["/Users/x/.gradle/caches"]),
+                                     Row(id: "dev:pub", title: "Dart packages", paths: ["/Users/x/.pub-cache/hosted"])])
+        group.selection = Selection(action: free, choices: ["dev:gradle": 300, "dev:pub": 0], checked: ["dev:gradle", "dev:pub"])
+        let hero = UsageBar(id: "usage", title: "What fills System Data", segments: [UsageSegment(id: "freeable", label: "Can be freed", bytes: 300, tone: .caution)])
+        var screen = Screen(title: "System Data", hero: hero, widgets: [.section(SectionWidget(id: "free", title: "Free now", widgets: [.list(ListWidget(id: "l", rows: [group]))]))])
+        screen.hero?.segments[0].items = [group]
+
+        let items = DryRunReport.items(in: screen)
+        XCTAssertEqual(items.map(\.title), ["Gradle"])
+        XCTAssertEqual(items.first?.bytes, 300)
+        XCTAssertEqual(items.first?.checked, true)
+    }
 }

@@ -8,6 +8,10 @@ import SwiftUI
 @MainActor
 public enum AboutMacSpace {
     private static var uninstalling = false
+    /// This build is a modified copy of 1architect's MacSpace (MIT): the original author is credited first, the changes after, and
+    /// the GitHub button opens the copy the changes live in.
+    static let modifiedBy = "Swollzy"
+    static let repository = "https://github.com/Swollzy/macspace-releases-jacked"
 
     static func makeAlert(bundle: Bundle = .main) -> AppAlert {
         let alert = AppAlert()
@@ -15,7 +19,8 @@ public enum AboutMacSpace {
         alert.messageText = "MacSpace"
         let version = bundle.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "—"
         alert.informativeText = [String(format: String(localized: "Version %@"), version), "",
-                                 String(format: String(localized: "Developed by\n%@"), "Gio Mantovani/1architect")].joined(separator: "\n")
+                                 String(format: String(localized: "Developed by\n%@"), "Gio Mantovani/1architect"), "",
+                                 String(format: String(localized: "Modified by\n%@"), modifiedBy)].joined(separator: "\n")
         alert.alertStyle = .informational
         alert.addButton(withTitle: String(localized: "OK"))
         alert.addButton(withTitle: String(localized: "Uninstall…")).hasDestructiveAction = true
@@ -27,7 +32,7 @@ public enum AboutMacSpace {
         guard !uninstalling else { return }
         switch makeAlert().runModal() {
         case .alertSecondButtonReturn: confirmUninstall(host: host)
-        case .alertThirdButtonReturn: NSWorkspace.shared.open(URL(string: "https://github.com/1architect/macspace-releases")!)
+        case .alertThirdButtonReturn: NSWorkspace.shared.open(URL(string: repository)!)
         default: break
         }
     }

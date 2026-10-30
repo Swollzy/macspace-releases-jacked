@@ -87,6 +87,7 @@
 "MacSpace needs it to see everything in System Data." = "모든 시스템 데이터를 보려면 이 권한이 필요합니다.";
 "Maximize" = "최대화";
 "Minimize" = "최소화";
+"Modified by\n%@" = "수정자\n%@";
 "Modules" = "모듈";
 "Modules that could not be used" = "사용할 수 없는 모듈";
 "More about this" = "자세히 알아보기";

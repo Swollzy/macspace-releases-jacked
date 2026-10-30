@@ -87,6 +87,7 @@
 "MacSpace needs it to see everything in System Data." = "MacSpace en a besoin pour voir tout le contenu de Données système.";
 "Maximize" = "Agrandir";
 "Minimize" = "Réduire";
+"Modified by\n%@" = "Modifié par\n%@";
 "Modules" = "Modules";
 "Modules that could not be used" = "Modules inutilisables";
 "More about this" = "En savoir plus";
