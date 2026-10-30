@@ -2,34 +2,34 @@
 
 # Security Policy
 
-MacSpace is a free, open-source (MIT) app for macOS. It runs with your normal user account. For
+Molt is a free, open-source (MIT) app for macOS. It runs with your normal user account. For
 the few things that need an administrator, it uses a privileged helper that you approve once. It
-collects no data about you. This document explains exactly what MacSpace touches on your Mac and
+collects no data about you. This document explains exactly what Molt touches on your Mac and
 how to report a problem.
 
 ## Reporting a vulnerability
 
 Use GitHub's private vulnerability reporting:
-[report a vulnerability](https://github.com/1architect/macspace-releases/security/advisories/new).
+[report a vulnerability](https://github.com/Swollzy/macspace-releases-jacked/security/advisories/new).
 Or email **dev@giomantovani.com.br** with the details and steps to reproduce. Please do not open
 a public issue for a security report. You get an acknowledgement within a few days.
 
 What counts: anything that lets another program make the helper do what you did not ask, lets
-MacSpace delete or change something it should not, or lets an update install without the release
+Molt delete or change something it should not, or lets an update install without the release
 signature.
 
 ## Supported versions
 
 Security fixes go into the latest release only. Always update to the newest version from
-[Releases](https://github.com/1architect/macspace-releases/releases/latest), with **Check for
+[Releases](https://github.com/Swollzy/macspace-releases-jacked/releases/latest), with **Check for
 Updates…**, or with `brew upgrade --cask macspace` (add `--greedy` if Homebrew skips it, because
-MacSpace updates itself).
+Molt updates itself).
 
-## What MacSpace does on your Mac
+## What Molt does on your Mac
 
 ### Network
 
-MacSpace makes network connections for one purpose: updates. When you choose **Check for
+Molt makes network connections for one purpose: updates. When you choose **Check for
 Updates…** (or **Check Now** in Settings), and, if you turned on **Check for updates
 automatically**, about once a day while it runs, it reads the update feed hosted with the releases
 on GitHub (`appcast.xml`). If you accept an update, it downloads the new version from GitHub
@@ -40,18 +40,18 @@ There is no analytics, no telemetry, and no crash reporting. The details are in 
 
 ### Where your data is stored
 
-Everything stays on your Mac. MacSpace's files are in `~/Library/Application Support/MacSpace/`,
+Everything stays on your Mac. Molt's files are in `~/Library/Application Support/MacSpace/`,
 `~/Library/Logs/MacSpace/`, the preferences file `~/Library/Preferences/com.macspace.app.plist`,
 and, for what the helper writes, `/Library/Application Support/MacSpace/`. The
 [Privacy Policy](PRIVACY.md) lists each file. None of it is uploaded anywhere.
 
-### What MacSpace deletes
+### What Molt deletes
 
 | What | Where | Done by |
 |---|---|---|
 | Caches of apps that are closed | The per-user system cache folder (`/var/folders/…/C`), except Apple's own. The folders `Cache`, `Code Cache`, `GPUCache`, `DawnCache`, `DawnGraphiteCache`, `DawnWebGPUCache`, `GrShaderCache`, `ShaderCache` and `CachedData` inside a Chromium or Electron profile in `~/Library/Application Support`. | The app, as you |
 | Diagnostic and crash reports older than 7 days | `/Library/Logs/DiagnosticReports` and `~/Library/Logs/DiagnosticReports`. A file you may not delete is skipped. | The app, as you |
-| Unused system assets, released Apple Intelligence models, files apps marked purgeable | macOS's own purge service (CacheDelete). MacSpace asks for it in a short-lived child process, so a failure there cannot take the app down. | macOS |
+| Unused system assets, released Apple Intelligence models, files apps marked purgeable | macOS's own purge service (CacheDelete). Molt asks for it in a short-lived child process, so a failure there cannot take the app down. | macOS |
 | Local copies of cloud files | One cloud folder at a time (`~/Library/CloudStorage/…` or iCloud Drive). Only files that are uploaded and have no conflict. The files stay in the cloud. | The app, as you |
 | Document version history | `/System/Volumes/Data/.DocumentRevisions-V100` | The helper |
 | Leftover macOS update files | `/System/Volumes/Data/macOS Install Data`, only if older than the installed system. The `Locked Files` folder stays. | The helper |
@@ -68,7 +68,7 @@ again when needed, and cloud copies download again when you open the file. Repor
 update leftovers, the system log, items in the Trash, snapshots and backups do not come back. Every one of these asks for confirmation first, except the
 **Free** button of a single app's caches.
 
-### What MacSpace changes (Debloat)
+### What Molt changes (Debloat)
 
 Each change is written to a journal first, so it can be undone with **Enable all** or by switching
 the feature back on.
@@ -89,12 +89,12 @@ These changes stay in place if you delete the app without switching them back on
 
 The **Apple Intelligence** switch changes the key `Session Language` in
 `com.apple.assistant.backedup`, which is Siri's language. Switched off, Siri gets a language other
-than the system's, and your Siri voice (`Output Voice`) is left as it is. MacSpace saves both in
+than the system's, and your Siri voice (`Output Voice`) is left as it is. Molt saves both in
 `~/Library/Application Support/MacSpace/ai-guard-saved-siri-settings.json` and restores them when
 you switch Apple Intelligence on, or if the change does not take effect. If macOS keeps the models
-after the switch is off, MacSpace may set the language to the system language and back, which takes
+after the switch is off, Molt may set the language to the system language and back, which takes
 about a minute, to make macOS release them. With Siri's iCloud sync on, these changes also reach
-your other devices on the same Apple Account. MacSpace cannot turn that sync off. It tells you
+your other devices on the same Apple Account. Molt cannot turn that sync off. It tells you
 where to do it.
 
 ### Call transcription
@@ -104,7 +104,7 @@ The Call transcription switch in Siri & Apple Intelligence uses five fixed Telep
 and the Mac audio/video translation gates. The authenticated helper saves original entries in
 `/Library/Application Support/MacSpace/phone-features.json` before writing changes. Changes take effect after a restart; the
 running gates are checked separately. Re-enabling restores those original entries, preserving unrelated overrides. The helper
-refuses an entry changed outside MacSpace instead of overwriting it. This control installs no configuration profile and does not
+refuses an entry changed outside Molt instead of overwriting it. This control installs no configuration profile and does not
 change Siri's Session Language. Its helper operation accepts only an on/off intent, with no arbitrary path, domain or key.
 
 ### Feature models
@@ -113,24 +113,24 @@ The separate Siri and Spatial Photos switches save your original settings before
 cleared while Siri is off; its Session Language is preserved. Call transcription also disables the local recording, screening and caption
 settings. Originals are kept in `~/Library/Application Support/MacSpace/feature-settings/`.
 
-Model requests are released through their owning Apple frameworks, in a separate MacSpace process that runs as you, never in
-the app or the helper. That process checks each method against the one MacSpace reviewed before calling it and stops on any
+Model requests are released through their owning Apple frameworks, in a separate Molt process that runs as you, never in
+the app or the helper. That process checks each method against the one Molt reviewed before calling it and stops on any
 difference. Rollback objects are saved, readable only by you, under `~/Library/Application Support/MacSpace/asset-owners/`. These feature and language-model cleanups never edit the live subscription database or delete model
 payloads directly. Physical cleanup uses the existing guarded macOS cleanup service. It waits while Apple Intelligence's state
 is unreadable and, while Apple Intelligence is on, while macOS is downloading any system asset; it keeps other accounts' requests
 and shared speech models while Dictation is active. Unused language data is released only while Apple Intelligence is off.
 
-While MacSpace is open, explicitly disabled features are checked every five minutes and their unused models are cleaned again
-if macOS requests them again. Re-enabling a feature or using MacSpace's uninstaller restores saved settings and model requests;
+While Molt is open, explicitly disabled features are checked every five minutes and their unused models are cleaned again
+if macOS requests them again. Re-enabling a feature or using Molt's uninstaller restores saved settings and model requests;
 macOS may download the models again. An interrupted or conflicting owner operation is checked before any repeat request.
 These controls work on every macOS 27 release; before each request the separate process checks the Apple methods it calls. Unused language assets in System Data use a one-shot cleanup;
 that action does not disable spelling or dictionaries.
 
 ### Permissions
 
-macOS handles each prompt, so MacSpace never sees your password.
+macOS handles each prompt, so Molt never sees your password.
 
-| Permission | Where | What MacSpace uses it for |
+| Permission | Where | What Molt uses it for |
 |---|---|---|
 | Full Disk Access | System Settings > Privacy & Security | Measuring folders macOS protects, and reading the Apple Intelligence state |
 | Privileged helper | System Settings > General > Login Items & Extensions | The operations below |
@@ -140,7 +140,7 @@ macOS handles each prompt, so MacSpace never sees your password.
 ### The privileged helper
 
 The helper is a launch daemon, `com.macspace.helper`, registered with macOS from inside the app.
-launchd starts it when MacSpace asks for something. It runs as root, and it accepts a connection only
+launchd starts it when Molt asks for something. It runs as root, and it accepts a connection only
 from a program that satisfies this code-signing requirement, which macOS checks:
 
 ```
@@ -162,7 +162,7 @@ steps down so that the new one starts.
 | `systemdata.symbolication-cache.delete` | Deletes the symbols for crash reports | Takes no argument. Only `/System/Library/Caches/com.apple.coresymbolicationd`, opened without following links; deletes what is in it, never the folder, then stops `coresymbolicationd` (`kill -TERM`, `-KILL` after 5 seconds). |
 | `timemachine.backups.delete` | Deletes backups from a Time Machine backup disk | Only on a disk Time Machine lists as connected, only dates it finds there itself, never the latest backup, never while a backup runs or while that is unknown. Runs `/usr/bin/tmutil delete`. |
 | `debloat.status`, `.apply`, `.revert` | Reads, switches off and switches on Debloat items | Control identifiers only, from the built-in catalog. Nothing else. |
-| `debloat.removeProfile` | Removes a MacSpace profile | Only identifiers `com.macspace.policies` and `com.macspace.policies.…`. Any other profile is refused. |
+| `debloat.removeProfile` | Removes a Molt profile | Only identifiers `com.macspace.policies` and `com.macspace.policies.…`. Any other profile is refused. |
 | `siri.orphan-subscriptions.plan`, `.execute` | Finds and removes the Apple Intelligence subscriptions of accounts that no longer exist | Backs up the database to `/Library/Application Support/MacSpace/backups/` first, changes it in one transaction, touches only rows that match no local account, and refuses if the account list looks wrong. The app has no button for it yet. |
 | `helper.ping` | Answers, so the app knows the helper is up | None |
 
@@ -171,8 +171,8 @@ is signed with the same team.
 
 ### The configuration profile
 
-Debloat's policies are settings only a configuration profile can force. MacSpace builds one
-profile, `com.macspace.policies` (shown as **MacSpace: policies**, organization "MacSpace"), with
+Debloat's policies are settings only a configuration profile can force. Molt builds one
+profile, `com.macspace.policies` (shown as **Molt: policies**, organization "Molt"), with
 every policy you switched off. It opens the profile, and you approve it in System Settings >
 General > Device Management. Approving it replaces the earlier one. It is not marked as
 impossible to remove. Switching the last policy back on removes it, through the helper, with
@@ -180,24 +180,24 @@ nothing to approve. You can also remove it yourself in System Settings.
 
 ### Code signing and updates
 
-MacSpace is signed with an Apple Developer ID, with the hardened runtime, and notarized by Apple.
+Molt is signed with an Apple Developer ID, with the hardened runtime, and notarized by Apple.
 The notarization ticket is stapled to the app, so it also opens offline. Sparkle's own components
 are signed with the same identity.
 
-Updates are signed with an EdDSA key as well. Its public half is inside MacSpace (`SUPublicEDKey`),
+Updates are signed with an EdDSA key as well. Its public half is inside Molt (`SUPublicEDKey`),
 and Sparkle checks every download against it before installing. The private half of that key and
-the signing identity are not in this repository. A copy of MacSpace built without the public key
+the signing identity are not in this repository. A copy of Molt built without the public key
 never checks for updates.
 
 ## Verify a download
 
-Put `MacSpace-x.y.z.dmg` and `MacSpace-x.y.z.dmg.sha256` in one folder:
+Put `Molt-x.y.z.dmg` and `Molt-x.y.z.dmg.sha256` in one folder:
 
 ```bash
-shasum -a 256 -c MacSpace-x.y.z.dmg.sha256
+shasum -a 256 -c Molt-x.y.z.dmg.sha256
 ```
 
-Then, after you drag MacSpace to Applications:
+Then, after you drag Molt to Applications:
 
 ```bash
 codesign -dv --verbose=4 /Applications/MacSpace.app
@@ -212,20 +212,20 @@ flag, `Notarization Ticket=stapled`, and `spctl` should say `accepted` with
 
 ## Uninstall completely
 
-MacSpace has an uninstaller: in the menu bar, choose **MacSpace** > **About MacSpace**, then **Uninstall…**. It restores each
-module's settings, removes the helper and moves MacSpace to the Trash. To do it by hand, the full steps are in the
+Molt has an uninstaller: in the menu bar, choose **Molt** > **About Molt**, then **Uninstall…**. It restores each
+module's settings, removes the helper and moves Molt to the Trash. To do it by hand, the full steps are in the
 [README](README.md#uninstall). In short:
 
 1. In **Debloat**, press **Enable all**. This removes the overrides and the profile it made.
-2. If the profile **MacSpace: policies** is still in System Settings > General > Device
+2. If the profile **Molt: policies** is still in System Settings > General > Device
    Management, remove it.
-3. Quit MacSpace. Turn it off under System Settings > General > Login Items & Extensions, or run
+3. Quit Molt. Turn it off under System Settings > General > Login Items & Extensions, or run
    `/Applications/MacSpace.app/Contents/MacOS/MacSpaceCli helper --unregister`.
-4. Remove the app: `brew uninstall --cask macspace`, or drag **MacSpace** to the Trash.
+4. Remove the app: `brew uninstall --cask macspace`, or drag **Molt** to the Trash.
 5. Remove its data and preferences:
    ```bash
    rm -rf ~/Library/Application\ Support/MacSpace ~/Library/Logs/MacSpace ~/Library/Caches/com.macspace.app
    defaults delete com.macspace.app
    sudo rm -rf /Library/Application\ Support/MacSpace
    ```
-6. Remove MacSpace from System Settings > Privacy & Security > Full Disk Access.
+6. Remove Molt from System Settings > Privacy & Security > Full Disk Access.

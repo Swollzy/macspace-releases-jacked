@@ -1,12 +1,12 @@
 name: Translation
-description: A text in MacSpace is missing, wrong or unclear in one of its languages.
+description: A text in Molt is missing, wrong or unclear in one of its languages.
 title: "[Translation]: "
 labels: ["translation"]
 body:
   - type: markdown
     attributes:
       value: |
-        Thank you for helping MacSpace speak your language. To fix it yourself, edit the table in `Localization/` and open a pull request. [CONTRIBUTING.md](https://github.com/1architect/macspace-releases/blob/main/CONTRIBUTING.md#localization) explains how.
+        Thank you for helping Molt speak your language. To fix it yourself, edit the table in `Localization/` and open a pull request. [CONTRIBUTING.md](https://github.com/Swollzy/macspace-releases-jacked/blob/main/CONTRIBUTING.md#localization) explains how.
   - type: dropdown
     id: language
     attributes:
@@ -25,8 +25,8 @@ body:
   - type: input
     id: version
     attributes:
-      label: MacSpace version
-      description: Open the MacSpace menu and choose About MacSpace.
+      label: Molt version
+      description: Open the Molt menu and choose About Molt.
       placeholder: "1.0.0"
   - type: input
     id: where
@@ -40,7 +40,7 @@ body:
     id: current
     attributes:
       label: Current text
-      description: Copy the text as MacSpace shows it. Write "none" if a text is missing.
+      description: Copy the text as Molt shows it. Write "none" if a text is missing.
     validations:
       required: true
   - type: textarea

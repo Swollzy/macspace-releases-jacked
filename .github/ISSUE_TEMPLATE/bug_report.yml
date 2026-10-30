@@ -1,5 +1,5 @@
 name: Bug report
-description: Something in MacSpace does not work as it should.
+description: Something in Molt does not work as it should.
 title: "[Bug]: "
 labels: ["bug"]
 body:
@@ -8,21 +8,21 @@ body:
       value: |
         Thank you for the report. The more exactly you describe the problem, the faster we can fix it.
 
-        Is it a security problem? Do not use this form. [Report it privately](https://github.com/1architect/macspace-releases/security/advisories/new).
+        Is it a security problem? Do not use this form. [Report it privately](https://github.com/Swollzy/macspace-releases-jacked/security/advisories/new).
   - type: checkboxes
     id: checks
     attributes:
       label: Before you send
       options:
-        - label: I use the latest version of MacSpace.
+        - label: I use the latest version of Molt.
           required: true
         - label: I searched the existing issues, and this problem is not there yet.
           required: true
   - type: input
     id: version
     attributes:
-      label: MacSpace version
-      description: Open the MacSpace menu and choose About MacSpace.
+      label: Molt version
+      description: Open the Molt menu and choose About Molt.
       placeholder: "1.0.0"
     validations:
       required: true
@@ -45,7 +45,7 @@ body:
   - type: dropdown
     id: language
     attributes:
-      label: Language of MacSpace
+      label: Language of Molt
       options:
         - English
         - Portuguese (Brazil)
@@ -75,7 +75,7 @@ body:
     id: what-happened
     attributes:
       label: What happened?
-      description: Say what you saw. Include any message MacSpace or macOS showed.
+      description: Say what you saw. Include any message Molt or macOS showed.
     validations:
       required: true
   - type: textarea
@@ -83,7 +83,7 @@ body:
     attributes:
       label: Steps to reproduce
       placeholder: |
-        1. Open MacSpace.
+        1. Open Molt.
         2. Click ...
         3. See ...
     validations:
