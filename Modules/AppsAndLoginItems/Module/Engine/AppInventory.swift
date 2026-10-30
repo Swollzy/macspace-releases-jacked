@@ -112,8 +112,13 @@ public struct LeftoverFinder: Sendable {
         let otherIDs = Set(others.map { $0.bundleID.lowercased() })
         let otherNames = Set(others.map { $0.name.lowercased() })
         guard !otherIDs.contains(bundleID.lowercased()) else { return [] }
-        let nameUsable = name.count >= 3 && !Self.sharedNames.contains(name.lowercased()) && !otherNames.contains(name.lowercased())
-            && !systemAppNames.contains(name.lowercased()) && !name.contains("/")
+        // The name is the app's alone only when no installed app shares its vendor or starts with its name: Firefox Developer
+        // Edition reads Firefox's profiles in "Application Support/Firefox", a vendor's apps often share a folder named after one.
+        let vendor = OrphanFinder.vendor(bundleID)
+        let lowerName = name.lowercased()
+        let nameShared = others.contains { OrphanFinder.vendor($0.bundleID) == vendor || $0.name.lowercased().hasPrefix(lowerName) }
+        let nameUsable = name.count >= 3 && !Self.sharedNames.contains(lowerName) && !otherNames.contains(lowerName)
+            && !systemAppNames.contains(lowerName) && !name.contains("/") && !nameShared
 
         var found: [Leftover] = []
         func add(_ relative: String, _ place: Leftover.Place) {

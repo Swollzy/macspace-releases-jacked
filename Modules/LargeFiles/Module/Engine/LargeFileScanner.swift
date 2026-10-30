@@ -113,7 +113,7 @@ public struct LargeFileScanner: Sendable {
             guard let values = try? url.resourceValues(forKeys: Set(keys)) else { continue }
             if values.isSymbolicLink == true { continue }
             if values.isDirectory == true {
-                if values.isPackage == true || !roots.mayEnter(path, under: root) { walk.skipDescendants() }
+                if values.isPackage == true || Self.isManaged(url.lastPathComponent) || !roots.mayEnter(path, under: root) { walk.skipDescendants() }
                 continue
             }
             guard values.isRegularFile == true, let size = values.fileSize, size > 0, !path.contains("\n") else { continue }
@@ -128,6 +128,15 @@ public struct LargeFileScanner: Sendable {
                                    modified: values.contentModificationDate, created: values.creationDate))
         }
         return true
+    }
+
+    /// Folders a tool or an app keeps for itself: a repository's objects, a project's packages, Music's and TV's media. A file in
+    /// one is not the user's to trash on its own, and "duplicates" there (two clones of a repository) are meant to be there.
+    static let managedFolders: Set<String> = [".git", ".hg", ".svn", "node_modules", ".venv", "Pods", "DerivedData",
+                                             "Media.localized", "Music Media.localized"]
+
+    static func isManaged(_ name: String) -> Bool {
+        managedFolders.contains(name) || (name.hasPrefix(".") && name != "." && name != "..")
     }
 
     func findDuplicates(_ files: [FoundFile], progress: (Double) -> Void) -> [DuplicateGroup] {

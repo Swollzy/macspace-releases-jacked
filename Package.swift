@@ -11,6 +11,7 @@ let package = Package(
         .library(name: "OtherSystemFiles", type: .dynamic, targets: ["MacSpaceOtherSystemFiles"]),
         .library(name: "LargeFiles", type: .dynamic, targets: ["MacSpaceLargeFiles"]),
         .library(name: "AppsAndLoginItems", type: .dynamic, targets: ["MacSpaceAppsAndLoginItems"]),
+        .library(name: "OldVersions", type: .dynamic, targets: ["MacSpaceOldVersions"]),
         .executable(name: "MacSpaceMain", targets: ["MacSpaceMain"]),
         .executable(name: "MacSpaceCli", targets: ["MacSpaceCli"]),
         .executable(name: "MacSpaceHelper", targets: ["MacSpaceHelper"]),
@@ -29,6 +30,7 @@ let package = Package(
         // No privileged part: both work as the user, and only ever move files to the Trash.
         .target(name: "MacSpaceLargeFiles", dependencies: [.product(name: "MacSpaceSdk", package: "Sdk"), .product(name: "MacSpacePlatform", package: "Platform")], path: "Modules/LargeFiles/Module"),
         .target(name: "MacSpaceAppsAndLoginItems", dependencies: [.product(name: "MacSpaceSdk", package: "Sdk"), .product(name: "MacSpacePlatform", package: "Platform")], path: "Modules/AppsAndLoginItems/Module"),
+        .target(name: "MacSpaceOldVersions", dependencies: [.product(name: "MacSpaceSdk", package: "Sdk"), .product(name: "MacSpacePlatform", package: "Platform")], path: "Modules/OldVersions/Module"),
         // The app: shell, module registry, renderer, settings, scheduler.
         .target(name: "MacSpaceApp", dependencies: [.product(name: "MacSpaceSdk", package: "Sdk"), .product(name: "MacSpacePlatform", package: "Platform"), .product(name: "Sparkle", package: "Sparkle")], path: "App", exclude: ["Resources", "Main"]),
         .executableTarget(name: "MacSpaceMain", dependencies: ["MacSpaceApp"], path: "App/Main"),
@@ -42,6 +44,7 @@ let package = Package(
         .testTarget(name: "OtherSystemFilesTests", dependencies: ["MacSpaceOtherSystemFiles", "MacSpaceOtherSystemFilesPrivileged", .product(name: "MacSpacePlatform", package: "Platform"), .product(name: "MacSpaceSdk", package: "Sdk")], path: "Tests/OtherSystemFiles"),
         .testTarget(name: "LargeFilesTests", dependencies: ["MacSpaceLargeFiles", .product(name: "MacSpacePlatform", package: "Platform"), .product(name: "MacSpaceSdk", package: "Sdk")], path: "Tests/LargeFiles"),
         .testTarget(name: "AppsAndLoginItemsTests", dependencies: ["MacSpaceAppsAndLoginItems", .product(name: "MacSpacePlatform", package: "Platform"), .product(name: "MacSpaceSdk", package: "Sdk")], path: "Tests/AppsAndLoginItems"),
+        .testTarget(name: "OldVersionsTests", dependencies: ["MacSpaceOldVersions", .product(name: "MacSpacePlatform", package: "Platform"), .product(name: "MacSpaceSdk", package: "Sdk")], path: "Tests/OldVersions"),
         .testTarget(name: "PlatformTests", dependencies: [.product(name: "MacSpacePlatform", package: "Platform"), .product(name: "MacSpaceSdk", package: "Sdk")], path: "Tests/Platform"),
     ]
 )

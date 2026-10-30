@@ -62,4 +62,14 @@ final class DryRunReportTests: XCTestCase {
         XCTAssertEqual(items.first?.bytes, 300)
         XCTAssertEqual(items.first?.checked, true)
     }
+
+    /// A row that would go to the Trash is reported even when its size reads as 0 (a folder privacy settings keep MacSpace from
+    /// sizing): it still moves if checked.
+    func testZeroByteTrashRowsAreReported() {
+        let trash = Action(id: "trash", title: "Move to Trash", parameters: [DryRunReport.dispositionKey: DryRunReport.Disposition.trash.rawValue])
+        var group = Row.group(id: "left", title: "Leftovers", totalBytes: 0, rows: [Row(id: "x", title: "Container", paths: ["/Users/x/Library/Containers/x"])])
+        group.selection = Selection(action: trash, choices: ["x": 0], checked: ["x"])
+        let screen = Screen(title: "Apps", widgets: [.list(ListWidget(id: "l", rows: [group]))])
+        XCTAssertEqual(DryRunReport.items(in: screen).map(\.title), ["Container"])
+    }
 }

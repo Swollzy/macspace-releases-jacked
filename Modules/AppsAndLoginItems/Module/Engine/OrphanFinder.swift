@@ -60,8 +60,10 @@ public struct OrphanFinder: Sendable {
             guard id.hasSuffix(".savedState") else { return nil }
             id = String(id.dropLast(".savedState".count))
         case .groupContainers:
-            if id.hasPrefix("group.") { id = String(id.dropFirst("group.".count)) }
-            else if let dot = id.firstIndex(of: "."), id.distance(from: id.startIndex, to: dot) == 10 { id = String(id[id.index(after: dot)...]) }
+            // "<team>.group.com.vendor.App", "group.com.vendor.App" or "<team>.com.vendor.App": the identifier after both prefixes.
+            if let dot = id.firstIndex(of: "."), id.distance(from: id.startIndex, to: dot) == 10,
+               id[..<dot].allSatisfy({ $0.isUppercase || $0.isNumber }) { id = String(id[id.index(after: dot)...]) }
+            for prefix in ["group.", "groups."] where id.lowercased().hasPrefix(prefix) { id = String(id.dropFirst(prefix.count)) }
         default:
             break
         }
@@ -69,9 +71,18 @@ public struct OrphanFinder: Sendable {
         guard parts.count >= 3, parts.allSatisfy({ !$0.isEmpty }), parts.allSatisfy({ $0.allSatisfy { $0.isLetter || $0.isNumber || $0 == "-" || $0 == "_" } }),
               parts[0].count >= 2, parts[0].allSatisfy(\.isLetter) else { return nil }
         let lower = id.lowercased()
-        guard !lower.hasPrefix("com.apple."), !lower.hasPrefix("com.macspace."), !lower.hasPrefix("group.com.apple.") else { return nil }
+        // macOS's own data is never an orphan, under any prefix ("243LU875E5.groups.com.apple.podcasts"), nor that of the parts of
+        // macOS not named com.apple (Shortcuts' library is "group.is.workflow.my.app", printing is "org.cups").
+        guard !lower.contains("com.apple."), !lower.hasPrefix("com.macspace."),
+              !Self.systemPrefixes.contains(where: { lower.hasPrefix($0) }) else { return nil }
         return id
     }
+
+    /// Identifiers of parts of macOS that are not named com.apple.
+    static let systemPrefixes = ["is.workflow.", "org.cups.", "com.openssh."]
+
+    /// Where macOS keeps its own apps: their identifiers count as installed, so nothing named after them is an orphan.
+    static let systemAppFolders = ["/System/Applications", "/System/Library/CoreServices", "/System/Applications/Utilities"]
 
     static let places: [(String, Leftover.Place)] = [
         ("Application Support", .applicationSupport), ("Caches", .caches), ("Preferences", .preferences), ("Containers", .containers),
@@ -79,7 +90,9 @@ public struct OrphanFinder: Sendable {
     ]
 
     public func orphans(installed apps: [InstalledApp], installedIDs: Set<String>? = nil) -> [Orphan] {
-        let ids = installedIDs ?? Self.installedIdentifiers(apps)
+        var ids = installedIDs ?? Self.installedIdentifiers(apps)
+        // Only their own identifiers: walking inside every system app on each scan is slow, and com.apple is refused by name anyway.
+        if installedIDs == nil { ids.formUnion(AppInventory.apps(in: Self.systemAppFolders, sizes: false).map { $0.bundleID.lowercased() }) }
         let vendors = Set(ids.map(Self.vendor))
         var orphans: [Orphan] = []
         var verdicts: [String: Bool] = [:]

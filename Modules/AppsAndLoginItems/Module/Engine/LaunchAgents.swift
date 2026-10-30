@@ -121,9 +121,12 @@ public struct LaunchAgentSwitch: Sendable {
 
     /// Switches it back on and loads it again from its untouched property list.
     public func enable(label: String, plistPath: String?) throws {
+        guard !label.hasPrefix("com.apple.") else { throw SwitchError.apple }
         let result = try runner.run("/bin/launchctl", ["enable", "\(domain)/\(label)"])
         guard result.exitCode == 0 else { throw SwitchError.launchctl(String(decoding: result.stderr, as: UTF8.self)) }
-        if let plistPath, FileManager.default.fileExists(atPath: plistPath) {
+        // Loaded again only from one of the two LaunchAgents folders, never from a path a request names elsewhere.
+        if let plistPath, FileManager.default.fileExists(atPath: plistPath),
+           LaunchAgentInventory.folders().contains(where: { (plistPath as NSString).standardizingPath.hasPrefix($0.0 + "/") }) {
             _ = try? runner.run("/bin/launchctl", ["bootstrap", domain, plistPath])
         }
         try journal.remove(label)
