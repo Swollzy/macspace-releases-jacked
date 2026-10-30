@@ -84,8 +84,36 @@ fi
 # The app icon, made in Icon Composer, kept in the repository.
 ICON=${ICON:-App/Resources/MacSpace.icon}
 
-swift build -c "$CONFIG" ${SWIFT_FLAGS[@]+"${SWIFT_FLAGS[@]}"}
-BIN=$(swift build -c "$CONFIG" ${SWIFT_FLAGS[@]+"${SWIFT_FLAGS[@]}"} --show-bin-path)
+# The oldest macOS the app runs on (Package.swift reads the same variable): 26, the last release for Intel Macs, by default.
+export MOLT_MIN_MACOS=${MOLT_MIN_MACOS:-26.0}
+# Both kinds of Mac for macOS 26 (one universal app), Apple silicon only from 27, which no Intel Mac runs. ARCHS chooses others.
+if [ -z "${ARCHS:-}" ]; then
+  if [ "${MOLT_MIN_MACOS%%.*}" -ge 27 ]; then ARCHS="arm64"; else ARCHS="arm64 x86_64"; fi
+fi
+echo "Building for macOS $MOLT_MIN_MACOS and later, $ARCHS"
+# One build per architecture (SwiftPM's own build system: several --arch at once switches to Xcode's, which makes frameworks, not the
+# .dylib files this script packs), then every binary joined into one universal file with lipo. The manifest reads MOLT_MIN_MACOS,
+# so it is read again every build instead of from SwiftPM's cache.
+BINS=()
+for arch in $ARCHS; do
+  swift build -c "$CONFIG" --manifest-cache none --arch "$arch" ${SWIFT_FLAGS[@]+"${SWIFT_FLAGS[@]}"}
+  BINS+=("$(swift build -c "$CONFIG" --manifest-cache none --arch "$arch" ${SWIFT_FLAGS[@]+"${SWIFT_FLAGS[@]}"} --show-bin-path)")
+done
+if [ "${#BINS[@]}" -eq 1 ]; then
+  BIN=${BINS[0]}
+else
+  BIN=.build/universal/$CONFIG
+  rm -rf "$BIN"
+  mkdir -p "$BIN"
+  # Sparkle comes as a universal framework already.
+  cp -R "${BINS[0]}/Sparkle.framework" "$BIN/"
+  for item in MacSpaceMain MacSpaceCli MacSpaceHelper $(cd "${BINS[0]}" && ls lib*.dylib); do
+    parts=()
+    for dir in "${BINS[@]}"; do parts+=("$dir/$item"); done
+    lipo -create "${parts[@]}" -output "$BIN/$item"
+  done
+  echo "Universal: $(lipo -archs "$BIN/MacSpaceMain")"
+fi
 
 OUT_DIR=${OUT_DIR:-Build}
 FINAL="$OUT_DIR/MacSpace.app"
@@ -95,6 +123,7 @@ rm -rf "$STAGING"
 mkdir -p "$APP/Contents/MacOS" "$APP/Contents/Frameworks" "$APP/Contents/PlugIns" "$APP/Contents/Resources"
 
 sed -e "s/__VERSION__/$VERSION/" -e "s/__BUILD__/$BUILD/" -e "s|__SPARKLE_PUBLIC_KEY__|$SPARKLE_PUBLIC_KEY|" App/Resources/Info.plist > "$APP/Contents/Info.plist"
+plutil -replace LSMinimumSystemVersion -string "$MOLT_MIN_MACOS" "$APP/Contents/Info.plist"
 if [ -n "${FEED_URL:-}" ]; then
   plutil -replace SUFeedURL -string "$FEED_URL" "$APP/Contents/Info.plist"
   echo "Update feed: $FEED_URL"
@@ -107,7 +136,7 @@ cp "$BIN/MacSpaceMain" "$APP/Contents/MacOS/MacSpace"
 ICON_NAME=$(basename "$ICON" .icon)
 PARTIAL=$(mktemp -d)
 xcrun actool "$ICON" --compile "$APP/Contents/Resources" --app-icon "$ICON_NAME" --include-all-app-icons \
-  --output-partial-info-plist "$PARTIAL/Info.plist" --platform macosx --target-device mac --minimum-deployment-target 27.0 \
+  --output-partial-info-plist "$PARTIAL/Info.plist" --platform macosx --target-device mac --minimum-deployment-target "$MOLT_MIN_MACOS" \
   --enable-on-demand-resources NO --development-region en --errors --warnings --output-format human-readable-text
 rm -rf "$PARTIAL"
 if [ ! -f "$APP/Contents/Resources/Assets.car" ] || [ ! -f "$APP/Contents/Resources/$ICON_NAME.icns" ]; then
