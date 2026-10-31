@@ -84,11 +84,39 @@ fi
 NOTARY_LOG="${OUT}/Molt-notarize.log"
 rm -f "${NOTARY_LOG}"
 
-# --- 3. Build --------------------------------------------------------------------------
+# --- 3. Update key ---------------------------------------------------------------------
+# A notarized Molt updates itself (Sparkle): every update is signed with a private key that stays in this Mac's keychain, and the
+# app carries the public half, so it installs nothing else. The key is made the first time; it has to stay the same for good, as
+# every copy already out there checks updates against it.
 cd "${ROOT}" || die "Can't open ${ROOT}"
+SPARKLE_ACCOUNT="molt"
+UPDATE_KEY=""
+SPARKLE_BIN=""
+REPO_URL="https://github.com/Swollzy/macspace-releases-jacked"
+if [[ -n "${NOTARIZE}" ]]; then
+    swift package resolve >/dev/null 2>&1 || true
+    SPARKLE_BIN="$(dirname "$(find "${ROOT}/.build/artifacts" -type f -name generate_keys -perm -u+x 2>/dev/null | head -1)")"
+    if [[ -x "${SPARKLE_BIN}/generate_keys" && -x "${SPARKLE_BIN}/sign_update" ]]; then
+        if ! UPDATE_KEY="$("${SPARKLE_BIN}/generate_keys" --account "${SPARKLE_ACCOUNT}" -p 2>/dev/null)" || [[ -z "${UPDATE_KEY}" ]]; then
+            info "Making Molt's update key (once). It is kept in your keychain; click Always Allow if macOS asks."
+            "${SPARKLE_BIN}/generate_keys" --account "${SPARKLE_ACCOUNT}" >/dev/null 2>&1 || true
+            UPDATE_KEY="$("${SPARKLE_BIN}/generate_keys" --account "${SPARKLE_ACCOUNT}" -p 2>/dev/null || true)"
+            if [[ -n "${UPDATE_KEY}" ]]; then
+                BACKUP="${HOME}/Desktop/Molt-update-key-BACKUP.txt"
+                "${SPARKLE_BIN}/generate_keys" --account "${SPARKLE_ACCOUNT}" -x "${BACKUP}" >/dev/null 2>&1 \
+                    && warn "Saved a backup of the update key to ${BACKUP}. Keep it somewhere safe and private (a password manager), then delete it."
+            fi
+        fi
+        [[ -n "${UPDATE_KEY}" ]] && info "Updates on: this Molt checks for new versions and installs only ones you signed"
+    fi
+    [[ -n "${UPDATE_KEY}" ]] || warn "Couldn't set up the update key, so this Molt won't update itself."
+fi
+
+# --- 4. Build --------------------------------------------------------------------------
 build() { # minimum macOS -> 0 if it built
     if [[ -n "${DEVID}" ]]; then
         MOLT_MIN_MACOS="$1" VERSION="${VERSION}" DEV=0 SIGN_IDENTITY="${DEVID}" TEAM_ID="${TEAM}" NOTARY_PROFILE="${NOTARIZE}" \
+            SPARKLE_PUBLIC_KEY="${UPDATE_KEY}" FEED_URL="${UPDATE_KEY:+${REPO_URL}/releases/latest/download/appcast.xml}" \
             bash Scripts/Assemble.sh > "${OUT}/.molt-build-$1.log" 2>&1
     else
         MOLT_MIN_MACOS="$1" VERSION="${VERSION}" DEV=0 NOTARY_PROFILE="" bash Scripts/Assemble.sh > "${OUT}/.molt-build-$1.log" 2>&1
@@ -123,7 +151,7 @@ codesign --verify --deep --strict "${APP}" || die "Molt's signature didn't verif
 SIGNER="$(codesign -dvv "${APP}" 2>&1 | sed -n 's/^Authority=//p' | head -1)"
 if [[ -n "${SIGNER}" ]]; then info "Signed by ${SIGNER}"; else warn "Signed ad-hoc: the helper (Debloat, model freeing) won't run from this DMG."; fi
 
-# --- 4. The DMG ------------------------------------------------------------------------
+# --- 5. The DMG ------------------------------------------------------------------------
 WORK="$(mktemp -d)"
 trap 'rm -rf "${WORK}"' EXIT
 STAGE="${WORK}/Molt"
@@ -152,5 +180,36 @@ if [[ -n "${NOTARIZE}" ]]; then
 fi
 (cd "${OUT}" && shasum -a 256 "$(basename "${DMG}")" > "$(basename "${DMG}").sha256")
 info "Made ${DMG} (${NEEDS})"
+
+# --- 6. The update feed ----------------------------------------------------------------
+# appcast.xml tells copies already installed about this version. Put it and the DMG on a GitHub release named v<version>: the app
+# reads the feed of the latest release, then checks the DMG's signature against its key before installing.
+if [[ -n "${UPDATE_KEY}" && -n "${NOTARIZE}" ]]; then
+    SIG="$("${SPARKLE_BIN}/sign_update" --account "${SPARKLE_ACCOUNT}" "${DMG}" 2>/dev/null || true)"
+    BUILD_NUMBER="$(/usr/libexec/PlistBuddy -c 'Print :CFBundleVersion' "${APP}/Contents/Info.plist")"
+    if [[ "${SIG}" == *edSignature=* ]]; then
+        cat > "${OUT}/appcast.xml" <<FEED
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle">
+  <channel>
+    <title>Molt</title>
+    <item>
+      <title>Molt ${VERSION}</title>
+      <pubDate>$(LC_ALL=C date -u '+%a, %d %b %Y %H:%M:%S +0000')</pubDate>
+      <sparkle:version>${BUILD_NUMBER}</sparkle:version>
+      <sparkle:shortVersionString>${VERSION}</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>${MIN}</sparkle:minimumSystemVersion>
+      <link>${REPO_URL}/releases/tag/v${VERSION}</link>
+      <enclosure url="${REPO_URL}/releases/download/v${VERSION}/Molt-${VERSION}.dmg" type="application/octet-stream" ${SIG} />
+    </item>
+  </channel>
+</rss>
+FEED
+        info "Made ${OUT}/appcast.xml. To ship this version as an update, put it and the DMG on a release named v${VERSION}:"
+        info "  ${REPO_URL}/releases/new?tag=v${VERSION}"
+    else
+        warn "Couldn't sign the update, so no appcast.xml this time. The DMG itself is fine."
+    fi
+fi
 [[ -f "${LOG}" ]] && warn "The macOS 26 build failed, so this DMG needs macOS 27; send ${LOG} to Claude to fix it."
 exit 0

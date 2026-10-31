@@ -11,7 +11,8 @@ Install
 -------
 1. Drag Molt onto the Applications folder in this window.
 [signed]
-2. Open Molt from Applications.
+2. Open Molt from Applications. It keeps itself up to date: new versions show up on their own
+   (Settings > Updates to turn that off or check now).
 [/]
 [unsigned]
 2. Open Molt from Applications. The first time, macOS says it can't check it: click Done,
