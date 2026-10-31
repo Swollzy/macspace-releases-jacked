@@ -110,9 +110,19 @@ signing_notarize() {
         return 1
     fi
     rm -f "${out}" "${err}"
-    xcrun stapler staple "${file}" >> "${log}" 2>&1 || return 1
-    rm -f "${log}"
-    return 0
+    # Right after "Accepted" Apple's ticket can take a moment to show up (error 65, "Record not
+    # found"), so stapling gets a few tries before the DMG counts as failed.
+    echo "Stapling $(basename "${file}") on $(date): Apple accepted it (submission ${id})" > "${log}"
+    local try
+    for try in 1 2 3 4; do
+        if xcrun stapler staple "${file}" >> "${log}" 2>&1; then
+            rm -f "${log}"
+            return 0
+        fi
+        [[ "${try}" == 4 ]] || sleep 15
+    done
+    echo "Apple notarized it, but its ticket couldn't be attached. Run Make DMG again in a few minutes." >> "${log}"
+    return 1
 }
 
 # Keeps the [signed] or the [unsigned] parts of a read-me, whichever this DMG is. A part
