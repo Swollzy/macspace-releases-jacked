@@ -204,8 +204,9 @@ else
 fi
 # Sparkle ships helpers that must be signed first, inside out, with the same identity (see Sparkle's documentation).
 SPARKLE="$APP/Contents/Frameworks/Sparkle.framework/Versions/B"
+# Downloader.xpc keeps the entitlements Sparkle gave it (its sandbox and network access): --force alone would strip them.
 for item in "$SPARKLE"/XPCServices/*.xpc "$SPARKLE/Autoupdate" "$SPARKLE/Updater.app"; do
-  [ -e "$item" ] && codesign "${FLAGS[@]}" "$item"
+  [ -e "$item" ] && codesign "${FLAGS[@]}" --preserve-metadata=entitlements "$item"
 done
 codesign "${FLAGS[@]}" "$APP/Contents/Frameworks/Sparkle.framework"
 for lib in "$APP"/Contents/Frameworks/*.dylib; do codesign "${FLAGS[@]}" "$lib"; done
