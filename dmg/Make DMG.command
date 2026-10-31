@@ -19,16 +19,32 @@ finish() {
 }
 
 [[ "$(uname)" == "Darwin" ]] || { echo "This runs on a Mac."; finish 1; }
+# Apple signing: once "Set Up Signing.command" has run, DMGs open on friends' Macs with no
+# warning. Until then, offer it (it skips what's already done, so a no costs nothing later).
+SIGNING_CONF="${HOME}/Library/Application Support/Swollzy/signing.conf"
+if [[ ! -f "${SIGNING_CONF}" && -z "${DEVELOPER_ID:-}" && -t 0 ]]; then
+    echo
+    echo "Apple signing isn't set up on this Mac yet, so friends would have to click 'Open Anyway'."
+    read -r -p "Set it up now? It's once, about 5 minutes, and needs your Apple Developer account. [Y/n] " ANSWER || ANSWER="n"
+    case "${ANSWER}" in
+        [nN]*) echo "Making an unsigned DMG. Double-click Set Up Signing.command any time to add signing." ;;
+        *) bash "${HERE}/Set Up Signing.command" --inline || echo "Signing isn't set up, so this DMG is unsigned." ;;
+    esac
+fi
+
 mkdir -p "${OUT}"
 printf '\n\033[1m%s\033[0m\n' "Molt"
 if ! bash "${HERE}/make-dmg.sh" "${OUT}"; then
     echo
-    echo "  Molt didn't build. Send Molt-build-error.log from ${OUT} to Claude."
+    if [[ -f "${OUT}/Molt-notarize.log" ]]; then
+        echo "  Apple didn't notarize Molt. Run this again, or send Molt-notarize.log from ${OUT} to Claude."
+    else
+        echo "  Molt didn't build. Send Molt-build-error.log from ${OUT} to Claude."
+    fi
     open "${OUT}"
     finish 1
 fi
 open "${OUT}"
 echo
-echo "  Send friends the .dmg file. It has a 'Read Me First' with the one-time"
-echo "  'Open Anyway' step macOS asks for on apps that aren't from the App Store."
+echo "  Send friends the .dmg file."
 finish 0

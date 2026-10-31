@@ -7,10 +7,10 @@
 # and later as one universal app for Apple silicon and Intel. If that build fails, it is built again for macOS 27 on Apple silicon
 # only, and the first build's errors are kept in Molt-build-error.log.
 #
-# With a "Developer ID Application" certificate in the keychain (a paid Apple developer account), the app and the DMG are signed
-# with it and notarized by Apple, so they open on any Mac with no warning and the helper works. The first run asks once for the
-# Apple ID and an app-specific password and keeps them in the keychain as the notarytool profile "Molt". Without the certificate
-# it signs with what the keychain has, or ad-hoc (friends then use "Open Anyway" once, and the helper doesn't run).
+# Once "Set Up Signing.command" (next to this file, which Make DMG offers) has stored a "Developer ID Application" certificate and
+# Apple's notary login, the app and the DMG are signed with it and notarized by Apple, so they open on any Mac with no warning and
+# the helper works. Without it the app is signed with what the keychain has, or ad-hoc (friends then use "Open Anyway" once, and
+# the helper doesn't run).
 #
 #   MOLT_VERSION=1.0.1 bash dmg/make-dmg.sh ~/Desktop/DMGs     another version number
 #
@@ -59,35 +59,36 @@ if ! xcodebuild -checkFirstLaunchStatus >/dev/null 2>&1; then
 fi
 
 # --- 2. Developer ID and notarization -------------------------------------------------
-PROFILE="Molt"
-DEVID="$(security find-identity -v -p codesigning 2>/dev/null | sed -nE 's/^ *[0-9]+\) [0-9A-F]+ "(Developer ID Application:.*)"$/\1/p' | head -1)"
+# "Set Up Signing.command" (next to this file, shared with Swollzy's other apps) stores the
+# certificate's name and the notary login once; signing.sh reads them.
+# shellcheck source=signing.sh
+. "${HERE}/signing.sh"
+DEVID=""
+TEAM=""
 NOTARIZE=""
-if [[ -z "${DEVID}" ]]; then
-    warn "No Developer ID Application certificate in your keychain, so this DMG won't be notarized and the helper won't run."
-    warn "To make one: Xcode > Settings > Accounts, pick your team, Manage Certificates, + > Developer ID Application."
-    warn "Then run this again."
-else
-    TEAM="$(printf '%s' "${DEVID}" | sed -n 's/.*(\([A-Z0-9]\{10\}\)).*/\1/p')"
+if signing_load; then
+    DEVID="${SIGN_NAME}"
+    TEAM="${TEAM_ID}"
     info "Signing with ${DEVID}"
-    if ! xcrun notarytool history --keychain-profile "${PROFILE}" >/dev/null 2>&1; then
-        info "Apple has to notarize Molt. This is asked once and saved in your keychain."
-        info "Make an app-specific password at account.apple.com > Sign-In and Security > App-Specific Passwords (opening it now)."
-        open "https://account.apple.com/account/manage" 2>/dev/null || true
-        printf '    Apple ID email: '
-        read -r APPLE_ID
-        [[ -n "${APPLE_ID}" ]] || die "No Apple ID given."
-        info "Now paste the app-specific password (it doesn't show as you type)."
-        xcrun notarytool store-credentials "${PROFILE}" --apple-id "${APPLE_ID}" --team-id "${TEAM}" \
-            || die "Apple didn't accept that Apple ID and password. Run this again to retry."
+    if [[ -n "${NOTARY_PROFILE}" ]]; then
+        NOTARIZE="${NOTARY_PROFILE}"
+    elif xcrun notarytool history --keychain-profile Molt >/dev/null 2>&1; then
+        NOTARIZE="Molt"   # saved by an earlier version of this script
+    else
+        warn "No notary login saved, so Apple won't notarize this DMG. Double-click dmg/Set Up Signing.command to add it."
     fi
-    NOTARIZE="${PROFILE}"
+else
+    warn "No Developer ID certificate set up, so this DMG won't be notarized and the helper won't run."
+    warn "Double-click dmg/Set Up Signing.command once, then run this again."
 fi
+NOTARY_LOG="${OUT}/Molt-notarize.log"
+rm -f "${NOTARY_LOG}"
 
 # --- 3. Build --------------------------------------------------------------------------
 cd "${ROOT}" || die "Can't open ${ROOT}"
 build() { # minimum macOS -> 0 if it built
     if [[ -n "${DEVID}" ]]; then
-        MOLT_MIN_MACOS="$1" VERSION="${VERSION}" DEV=0 SIGN_IDENTITY="${DEVID}" NOTARY_PROFILE="${NOTARIZE}" \
+        MOLT_MIN_MACOS="$1" VERSION="${VERSION}" DEV=0 SIGN_IDENTITY="${DEVID}" TEAM_ID="${TEAM}" NOTARY_PROFILE="${NOTARIZE}" \
             bash Scripts/Assemble.sh > "${OUT}/.molt-build-$1.log" 2>&1
     else
         MOLT_MIN_MACOS="$1" VERSION="${VERSION}" DEV=0 NOTARY_PROFILE="" bash Scripts/Assemble.sh > "${OUT}/.molt-build-$1.log" 2>&1
@@ -96,6 +97,12 @@ build() { # minimum macOS -> 0 if it built
 MIN="26.0"
 info "Building Molt ${VERSION} for macOS 26 and later, Apple silicon and Intel (a few minutes${NOTARIZE:+, plus the Apple check})"
 if ! build 26.0; then
+    # Built, but Apple turned the app down: building again for macOS 27 wouldn't help.
+    if grep -qE "error: (notarization|could not submit)" "${OUT}/.molt-build-26.0.log"; then
+        tail -n 100 "${OUT}/.molt-build-26.0.log" > "${NOTARY_LOG}"
+        rm -f "${OUT}"/.molt-build-*.log
+        die "Apple didn't notarize Molt. The reason is in ${NOTARY_LOG}"
+    fi
     { echo "macOS $(sw_vers -productVersion) $(uname -m), Xcode ${BEST}, building for macOS 26"; echo
       tail -n 200 "${OUT}/.molt-build-26.0.log"; } > "${LOG}"
     grep -m 10 "error:" "${OUT}/.molt-build-26.0.log" >&2 || true
@@ -127,22 +134,20 @@ if [[ "${MIN}" == "26.0" ]]; then NEEDS="macOS 26 or later, on any Mac (Apple si
 # The read-me keeps the [signed] or the [unsigned] parts, whichever this DMG is.
 if [[ -n "${NOTARIZE}" ]]; then KIND="signed"; else KIND="unsigned"; fi
 sed -e "s/{{VERSION}}/${VERSION}/g" -e "s/{{NEEDS}}/${NEEDS}/g" "${HERE}/Read Me First.txt" \
-    | awk -v kind="${KIND}" '/^\[(signed|unsigned)\]$/ { part = substr($0, 2, length($0) - 2); next }
-                              /^\[\/\]$/ { part = ""; next }
-                              part == "" || part == kind' > "${STAGE}/Read Me First.txt"
+    | signing_readme_filter "${KIND}" > "${STAGE}/Read Me First.txt"
 DMG="${OUT}/Molt-${VERSION}.dmg"
 rm -f "${DMG}"
 hdiutil create -quiet -volname "Molt ${VERSION}" -srcfolder "${STAGE}" -fs HFS+ -format UDZO -ov "${DMG}" || die "hdiutil create failed."
 if [[ -n "${NOTARIZE}" ]]; then
     # The DMG is signed and notarized too, so a friend's Mac checks it before it is even opened.
-    codesign --force --timestamp --sign "${DEVID}" "${DMG}" || die "Couldn't sign the DMG."
+    codesign --force --timestamp --sign "${SIGN_HASH}" "${DMG}" || die "Couldn't sign the DMG."
     info "Apple is checking the DMG (usually a few minutes)"
-    xcrun notarytool submit "${DMG}" --keychain-profile "${PROFILE}" --wait > "${WORK}/notary.txt" 2>&1
-    if ! grep -q "status: Accepted" "${WORK}/notary.txt"; then
-        cat "${WORK}/notary.txt" > "${LOG}"
-        die "Apple didn't accept the DMG. Details are in ${LOG}"
+    NOTARY_PROFILE="${NOTARIZE}"
+    if ! signing_notarize "${DMG}" "${NOTARY_LOG}"; then
+        # Not shared by mistake: its read-me says it opens with no warning.
+        rm -f "${DMG}"
+        die "Apple didn't accept the DMG. The reason is in ${NOTARY_LOG}"
     fi
-    xcrun stapler staple "${DMG}" >/dev/null || die "Couldn't attach Apple's ticket to the DMG."
     spctl -a -t open --context context:primary-signature "${DMG}" 2>/dev/null && info "Notarized: opens on any Mac with no warning"
 fi
 (cd "${OUT}" && shasum -a 256 "$(basename "${DMG}")" > "$(basename "${DMG}").sha256")
