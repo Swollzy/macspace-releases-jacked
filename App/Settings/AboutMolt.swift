@@ -38,18 +38,25 @@ public enum AboutMolt {
         }
     }
 
-    private static func confirmUninstall(host: ModuleHost) {
+    /// From About and from Settings › Uninstall. Asks first; "Keep my settings and history" is ticked, so only an explicit choice
+    /// takes them.
+    static func confirmUninstall(host: ModuleHost) {
+        guard !uninstalling else { return }
         let alert = AppAlert()
         alert.messageText = String(localized: "Uninstall Molt?")
-        alert.informativeText = String(localized: "Restores settings changed by Molt and moves the app to the Trash. Your history is kept. Freed files cannot be restored.")
+        alert.informativeText = String(localized: "Restores settings changed by Molt, removes its helper and login item, moves its caches and logs and the app to the Trash, and quits. Freed files cannot be restored.")
         alert.alertStyle = .warning
+        let keep = NSButton(checkboxWithTitle: String(localized: "Keep my settings and history"), target: nil, action: nil)
+        keep.state = .on
+        alert.accessoryView = keep
         alert.addButton(withTitle: String(localized: "Cancel"))
         alert.addButton(withTitle: String(localized: "Uninstall")).hasDestructiveAction = true
         guard alert.runModal() == .alertSecondButtonReturn else { return }
+        let keepData = keep.state == .on
         uninstalling = true
         Task {
             defer { uninstalling = false }
-            do { try await AppUninstaller.uninstall(host: host) }
+            do { try await AppUninstaller.uninstall(host: host, keepData: keepData) }
             catch {
                 let failure = AppAlert()
                 failure.messageText = String(localized: "Couldn’t uninstall Molt")
@@ -73,7 +80,31 @@ enum AppUninstaller {
         for step in steps { try await step() }
     }
 
-    static func uninstall(host: ModuleHost) async throws {
+    /// What Molt leaves in ~/Library besides the app. The caches, logs and saved windows always go; settings and history only
+    /// when the user unticks "Keep my settings and history". All of it goes to the Trash.
+    static func leftovers(keepData: Bool, home: URL = FileManager.default.homeDirectoryForCurrentUser) -> [URL] {
+        let id = "com.swollzy.molt"
+        var paths = ["Caches/\(id)", "HTTPStorages/\(id)", "Saved Application State/\(id).savedState", "Logs/Molt"]
+        if !keepData { paths += ["Application Support/Molt", "Preferences/\(id).plist"] }
+        let library = home.appendingPathComponent("Library", isDirectory: true)
+        return paths.map { library.appendingPathComponent($0) }.filter {
+            // Never through a link: only Molt's own folders.
+            (try? $0.resourceValues(forKeys: [.isSymbolicLinkKey]).isSymbolicLink) != true
+                && FileManager.default.fileExists(atPath: $0.path)
+        }
+    }
+
+    static func recycle(_ urls: [URL]) async throws {
+        guard !urls.isEmpty else { return }
+        try await withCheckedThrowingContinuation { (continuation: CheckedContinuation<Void, Error>) in
+            NSWorkspace.shared.recycle(urls) { _, error in
+                if let error { continuation.resume(throwing: error) }
+                else { continuation.resume() }
+            }
+        }
+    }
+
+    static func uninstall(host: ModuleHost, keepData: Bool = true) async throws {
         let app = Bundle.main.bundleURL.resolvingSymlinksInPath()
         guard app.pathExtension == "app" else { throw Failure(message: String(localized: "Move Molt to the Trash from Applications.")) }
         guard !host.isCleaning, !host.autoCleaner.isRunning, !host.handles.contains(where: \.isBusy) else {
@@ -101,12 +132,13 @@ enum AppUninstaller {
                     }
                 },
                 {
-                    try await withCheckedThrowingContinuation { (continuation: CheckedContinuation<Void, Error>) in
-                        NSWorkspace.shared.recycle([app]) { _, error in
-                            if let error { continuation.resume(throwing: error) }
-                            else { continuation.resume() }
-                        }
+                    if !keepData, let id = Bundle.main.bundleIdentifier {
+                        UserDefaults.standard.removePersistentDomain(forName: id)
+                        CFPreferencesAppSynchronize(id as CFString)
                     }
+                    // Leftovers that won't move are not worth stopping for: the app still goes.
+                    try? await recycle(leftovers(keepData: keepData))
+                    try await recycle([app])
                 }
             ])
             NSApp.terminate(nil)

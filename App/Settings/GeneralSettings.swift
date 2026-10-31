@@ -152,3 +152,22 @@ struct NotificationSettingsSection: View {
         }
     }
 }
+
+/// Uninstall, last in Settings: the same steps as About › Uninstall, after a confirmation.
+struct UninstallSettingsSection: View {
+    @ObservedObject var host: ModuleHost
+
+    var body: some View {
+        PageSection("Uninstall") {
+            LabeledContent {
+                Button("Uninstall Molt…", role: .destructive) { AboutMolt.confirmUninstall(host: host) }
+            } label: {
+                VStack(alignment: .leading, spacing: 2) {
+                    Text("Remove Molt from this Mac")
+                    Text("Undoes the settings Molt changed, removes its helper and login item, and moves the app to the Trash.")
+                        .font(.caption).foregroundStyle(.secondary)
+                }
+            }
+        }
+    }
+}
