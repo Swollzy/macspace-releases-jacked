@@ -143,7 +143,7 @@ actor SiriStore {
         let release = AppleIntelligenceModelRelease(environment: environment, accounts: { accounts })
         var snapshot = SiriSnapshot(status: status, disablePlan: plan, accounts: accounts, purgeableAssetsBytes: purgeable,
                                     releaseBlockers: release.blockers(), watch: AppleIntelligenceWatchStore().load(),
-                                    cliPath: cli?.path ?? "/Applications/MacSpace.app/Contents/MacOS/MacSpaceCli", takenAt: Date())
+                                    cliPath: cli?.path ?? "/Applications/Molt.app/Contents/MacOS/MacSpaceCli", takenAt: Date())
         let models = modelBytes()
         progress.report(0.9)
         snapshot.recordedModelBytes = models.installed

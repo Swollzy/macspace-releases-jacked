@@ -25,7 +25,7 @@
 "Breaks Mail search" = "Mail 검색이 작동하지 않음";
 "Cannot read" = "읽을 수 없음";
 "Cannot take effect here" = "여기서는 적용할 수 없음";
-"Checks every 15 minutes while MacSpace is open, and disables again any feature macOS switched back on." = "MacSpace가 열려 있는 동안 15분마다 확인하고 macOS가 다시 켠 기능을 다시 끕니다.";
+"Checks every 15 minutes while Molt is open, and disables again any feature macOS switched back on." = "Molt가 열려 있는 동안 15분마다 확인하고 macOS가 다시 켠 기능을 다시 끕니다.";
 "Couldn't change it" = "변경하지 못함";
 "Couldn't open the profile" = "프로파일을 열지 못함";
 "Couldn't remove a profile" = "프로파일을 제거하지 못함";
@@ -62,9 +62,9 @@
 "Its profile could not be removed (%@); remove \"%@\" in System Settings > General > Device Management." = "프로파일을 제거하지 못했습니다(%@). 시스템 설정 > 일반 > 기기 관리에서 \"%@\"를 제거하세요.";
 "Its profile was removed." = "프로파일이 제거되었습니다.";
 "Log out to apply." = "로그아웃하면 적용됩니다.";
-"MacSpace disabled it again, most recently %@." = "MacSpace가 다시 껐습니다. 최근: %@.";
-"MacSpace disabled them again, most recently %@." = "MacSpace가 해당 기능을 다시 껐습니다. 최근: %@.";
-"MacSpace restores the settings it saved before disabling them." = "MacSpace가 기능을 끄기 전에 저장한 설정을 복원합니다.";
+"Molt disabled it again, most recently %@." = "Molt가 다시 껐습니다. 최근: %@.";
+"Molt disabled them again, most recently %@." = "Molt가 해당 기능을 다시 껐습니다. 최근: %@.";
+"Molt restores the settings it saved before disabling them." = "Molt가 기능을 끄기 전에 저장한 설정을 복원합니다.";
 "No control was named." = "제어 항목이 지정되지 않았습니다.";
 "No controls were selected." = "제어 항목을 선택하지 않았습니다.";
 "No longer works" = "더 이상 작동하지 않음";
@@ -81,7 +81,7 @@
 "Restart to apply." = "재시동하면 적용됩니다.";
 "Set by another profile" = "다른 프로파일에서 설정";
 "Share analytics with Apple" = "Apple과 분석 공유";
-"Shows a notification when macOS switches a disabled feature back on and MacSpace disables it again." = "macOS가 꺼진 기능을 다시 켜고 MacSpace가 다시 끄면 알림을 표시합니다.";
+"Shows a notification when macOS switches a disabled feature back on and Molt disables it again." = "macOS가 꺼진 기능을 다시 켜고 Molt가 다시 끄면 알림을 표시합니다.";
 "Siri" = "Siri";
 "Siri AI search" = "Siri AI 검색";
 "Some are not tested yet." = "일부 기능은 아직 테스트되지 않았습니다.";
@@ -109,5 +109,5 @@
 "macOS asks you to approve the policy profile once." = "macOS가 정책 프로파일 승인을 한 번 요청합니다.";
 "macOS prevents this change from taking effect on this Mac." = "macOS가 이 Mac에서 이 변경 사항이 적용되지 않도록 합니다.";
 "macOS still chose to send diagnostics after this change." = "이 변경 후에도 macOS가 진단 정보를 전송하기로 결정했습니다.";
-"macOS switched %@ back on. MacSpace disabled it again." = "macOS가 %@ 다시 켜서 MacSpace가 다시 껐습니다.";
-"macOS switched %@ back on. MacSpace disabled them again." = "macOS가 %@ 다시 켜서 MacSpace가 해당 기능을 다시 껐습니다.";
+"macOS switched %@ back on. Molt disabled it again." = "macOS가 %@ 다시 켜서 Molt가 다시 껐습니다.";
+"macOS switched %@ back on. Molt disabled them again." = "macOS가 %@ 다시 켜서 Molt가 해당 기능을 다시 껐습니다.";

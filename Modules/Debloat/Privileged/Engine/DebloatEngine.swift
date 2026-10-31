@@ -163,7 +163,7 @@ public final class DebloatEngine {
             if let held, status.matchesDesired == true, let managed = status.setting.managed, !held.contains("\(managed.payloadType):\(managed.key)") {
                 elsewhere = true
                 status = SettingStatus(setting: status.setting, availability: status.availability, current: status.current, desired: status.desired,
-                                       matchesDesired: false, detail: [status.detail, "enforced by a profile that is not MacSpace's"].compactMap { $0 }.joined(separator: "; "))
+                                       matchesDesired: false, detail: [status.detail, "enforced by a profile that is not Molt's"].compactMap { $0 }.joined(separator: "; "))
             }
             guard let note = ignored[status.setting.id]?.explanation else { return status }
             return SettingStatus(setting: status.setting, availability: status.availability, current: status.current, desired: status.desired,
@@ -232,7 +232,7 @@ public final class DebloatEngine {
             }
             guard applied else { return EffectStatus(state: .notMeasured, detail: "\(notApplied) (\(lastText)).") }
             guard let appliedAt else {
-                return EffectStatus(state: .notMeasured, detail: "Applied outside MacSpace, so there is no reference time (\(lastText)).")
+                return EffectStatus(state: .notMeasured, detail: "Applied outside Molt, so there is no reference time (\(lastText)).")
             }
             // SubmitDiagInfo logs its opt-in decision on every run. That is the authoritative signal:
             // LastFullSubmissionSuccess also advances on opt-out runs that upload nothing but a ~480-byte check-in
@@ -357,12 +357,12 @@ public final class DebloatEngine {
                 } else if options.restoreFallbacks {
                     target = current ?? .absent
                     if blocker == nil {
-                        blocker = "The original value is unknown (not changed by MacSpace and no known macOS default); restore it in System Settings."
+                        blocker = "The original value is unknown (not changed by Molt and no known macOS default); restore it in System Settings."
                     }
                 } else {
                     target = current ?? .absent
                     leaveAsIs = true
-                    warning = "Not changed by MacSpace; left as is (pass --restore-defaults to reset it)."
+                    warning = "Not changed by Molt; left as is (pass --restore-defaults to reset it)."
                 }
             }
             if leaveAsIs {
@@ -432,7 +432,7 @@ public final class DebloatEngine {
                 }
             case .none:
                 for index in runs.indices where runs[index].profileTouched {
-                    runs[index].results = Self.settle(runs[index].results, .changed, "The MacSpace profile already holds it.")
+                    runs[index].results = Self.settle(runs[index].results, .changed, "The Molt profile already holds it.")
                 }
             }
         }

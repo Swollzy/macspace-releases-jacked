@@ -1,27 +1,29 @@
-MacSpace
-Copyright (c) 2026 1architect
+Molt
+Copyright (c) 2026 Swollzy
 
-MacSpace is released under the MIT License. See the LICENSE file.
+Molt is built on MacSpace (https://github.com/1architect/macspace-releases)
+by Gio Mantovani / 1architect, Copyright (c) 2026 1architect, released under
+the MIT License. Molt keeps that license and that copyright notice; see the
+LICENSE file. Molt adds Old Versions (cleanup of what earlier versions of
+Swollzy's apps leave), Large Files, Apps & Login Items, the dry-run report,
+the low-disk purge, its own name, icon and colors, and support for macOS 26
+and Intel Macs. The changes are under the same MIT License.
 
-This copy (https://github.com/Swollzy/macspace-releases-jacked) is modified by
-Swollzy: Large Files, Apps & Login Items, the dry-run report and the low-disk
-purge were added. The changes are under the same MIT License.
-
-MacSpace is not affiliated with or endorsed by Apple Inc. Apple, macOS, Siri
-and Apple Intelligence are trademarks of Apple Inc. Other names are the
-property of their owners. MacSpace uses these names only to say what it works
-with.
+Molt is not affiliated with or endorsed by Apple Inc. or by 1architect.
+Apple, macOS, Siri and Apple Intelligence are trademarks of Apple Inc. Other
+names are the property of their owners. Molt uses these names only to say
+what it works with.
 
 Third-party software
 --------------------
 
-MacSpace bundles Sparkle (https://github.com/sparkle-project/Sparkle), the
+Molt bundles Sparkle (https://github.com/sparkle-project/Sparkle), the
 framework that checks for and installs updates. Sparkle is distributed under
 its own license, which also covers the components bundled with it (bsdiff,
 sais-lite, ed25519 and SUSignatureVerifier). The license text below is copied
-from the Sparkle source that MacSpace is built with.
+from the Sparkle source that Molt is built with.
 
-MacSpace uses no other third-party code. It links the frameworks that ship
+Molt uses no other third-party code. It links the frameworks that ship
 with macOS, which Apple licenses separately.
 
 --------------------------------------------------------------------------

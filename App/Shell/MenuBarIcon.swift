@@ -1,70 +1,68 @@
 import AppKit
 
-/// The menu bar icon: the app icon's storage ring (Used.svg and Free.svg), nine segments around a sparkle (Spark.svg), drawn as a
-/// template image so it takes the menu bar's color. The last two segments are the free space, drawn faint. While something is being
-/// cleaned the segments breathe one after another around the ring, as a tile's chart does while it loads (`LoadingWave`);
-/// `StatusItemController` plays it, and when the cleanup ends the icon rests.
+/// The menu bar icon: the app icon's two shapes (Shed.svg and Body.svg), an old skin left open as six faint segments and the new one
+/// coming out of its gap, drawn as a template image so it takes the menu bar's color. While something is being cleaned the old skin's
+/// segments breathe one after another, as a tile's chart does while it loads (`LoadingWave`); `StatusItemController` plays it, and
+/// when the cleanup ends the icon rests.
 enum MenuBarIcon {
     static let frameRate: Double = 30
 
     // MARK: Drawing
 
-    /// The segments in the order they leave and come back: clockwise from the top.
-    static let order = Array(0..<9)
+    /// The segments in the order they leave and come back: clockwise from the gap.
+    static let order = Array(0..<6)
 
     /// How much of segment `rank` (its place in `order`) shows at `date` while the icon breathes: the charts' loading wave
-    /// (`LoadingWave.opacity`), the same pace and the same spread over the nine segments. nil: at rest, every segment full.
+    /// (`LoadingWave.opacity`), the same pace and the same spread over the segments. nil: at rest, every segment full.
     static func visibility(rank: Int, at date: Date?) -> Double {
         guard let date else { return 1 }
         return LoadingWave.opacity(date, index: rank, count: order.count, loading: true, reduceMotion: false)
     }
 
-    /// The ring in the design's 1024 × 1024 canvas: nine segments with a small gap between them, the last `freeCount` faint.
-    static let outerRadius: CGFloat = 400
-    static let innerRadius: CGFloat = 270
-    static let gapDegrees: CGFloat = 7
-    static let freeCount = 2
-    static let freeAlpha: CGFloat = 0.35
-    /// The sparkle in the middle: a four-pointed star, this far from the centre to each point.
-    static let sparkRadius: CGFloat = 150
+    /// The shapes in the design's 1024 × 1024 canvas, as the icon's SVGs draw them: the old skin, a ring open toward the lower
+    /// right, and the new body, a disc in that gap.
+    static let shedCentre = CGPoint(x: 457, y: 457)
+    static let outerRadius: CGFloat = 300
+    static let innerRadius: CGFloat = 245
+    /// Where the ring is open, degrees clockwise from the top, and how wide.
+    static let gapCentre: CGFloat = 135
+    static let gapWidth: CGFloat = 60
+    static let gapDegrees: CGFloat = 6
+    static let shedAlpha: CGFloat = 0.45
+    static let bodyCentre = CGPoint(x: 627, y: 627)
+    static let bodyRadius: CGFloat = 230
+    /// The part of the canvas the shapes fill, so they fill the menu bar's square.
+    static let artBounds = CGRect(x: 157, y: 157, width: 700, height: 700)
     static let pointSize = NSSize(width: 18, height: 18)
 
     static func image(at date: Date?) -> NSImage {
         let image = NSImage(size: pointSize, flipped: true) { bounds in
-            let scale = min(bounds.width, bounds.height) / (2 * outerRadius)
-            let centre = CGPoint(x: bounds.midX, y: bounds.midY)
+            let scale = min(bounds.width, bounds.height) / artBounds.width
+            func point(_ p: CGPoint) -> CGPoint {
+                CGPoint(x: bounds.minX + (p.x - artBounds.minX) * scale, y: bounds.minY + (p.y - artBounds.minY) * scale)
+            }
+            let centre = point(shedCentre)
             let count = order.count
+            let span = 360 - gapWidth
+            let first = gapCentre + gapWidth / 2
             for index in 0..<count {
                 let shown = CGFloat(visibility(rank: order.firstIndex(of: index) ?? index, at: date))
-                let base: CGFloat = index >= count - freeCount ? freeAlpha : 1
                 // Degrees clockwise from the top; the image is flipped, so AppKit's counterclockwise is clockwise on screen.
-                let start = -90 + CGFloat(index) * 360 / CGFloat(count) + gapDegrees / 2
-                let end = -90 + CGFloat(index + 1) * 360 / CGFloat(count) - gapDegrees / 2
+                let start = -90 + first + CGFloat(index) * span / CGFloat(count) + gapDegrees / 2
+                let end = -90 + first + CGFloat(index + 1) * span / CGFloat(count) - gapDegrees / 2
                 let path = NSBezierPath()
                 path.appendArc(withCenter: centre, radius: outerRadius * scale, startAngle: start, endAngle: end, clockwise: false)
                 path.appendArc(withCenter: centre, radius: innerRadius * scale, startAngle: end, endAngle: start, clockwise: true)
                 path.close()
-                NSColor.black.withAlphaComponent(base * shown).setFill()
+                NSColor.black.withAlphaComponent(shedAlpha * shown).setFill()
                 path.fill()
             }
-            sparkle(centre: centre, radius: sparkRadius * scale).fill()
+            let body = point(bodyCentre), radius = bodyRadius * scale
+            NSColor.black.setFill()
+            NSBezierPath(ovalIn: CGRect(x: body.x - radius, y: body.y - radius, width: 2 * radius, height: 2 * radius)).fill()
             return true
         }
         image.isTemplate = true
         return image
-    }
-
-    /// A four-pointed star with curved sides, as Spark.svg draws it.
-    static func sparkle(centre c: CGPoint, radius r: CGFloat) -> NSBezierPath {
-        let w = r * 0.25
-        let path = NSBezierPath()
-        path.move(to: CGPoint(x: c.x, y: c.y - r))
-        path.curve(to: CGPoint(x: c.x + r, y: c.y), controlPoint1: CGPoint(x: c.x + w * 0.35, y: c.y - w), controlPoint2: CGPoint(x: c.x + w, y: c.y - w * 0.35))
-        path.curve(to: CGPoint(x: c.x, y: c.y + r), controlPoint1: CGPoint(x: c.x + w, y: c.y + w * 0.35), controlPoint2: CGPoint(x: c.x + w * 0.35, y: c.y + w))
-        path.curve(to: CGPoint(x: c.x - r, y: c.y), controlPoint1: CGPoint(x: c.x - w * 0.35, y: c.y + w), controlPoint2: CGPoint(x: c.x - w, y: c.y + w * 0.35))
-        path.curve(to: CGPoint(x: c.x, y: c.y - r), controlPoint1: CGPoint(x: c.x - w, y: c.y - w * 0.35), controlPoint2: CGPoint(x: c.x - w * 0.35, y: c.y - w))
-        path.close()
-        NSColor.black.setFill()
-        return path
     }
 }

@@ -100,7 +100,8 @@ public enum PaletteScheme: String, CaseIterable, Identifiable, Sendable {
         case .nord: return (Color(hex: 0xEBCB8B), Color(hex: 0xF3DDB0), Color(hex: 0x3B3220))
         // By day the lighter form is darker (hover) and the fill a deeper amber, so it holds on the
         // toned grounds.
-        case .paper, .monoDay: return (Color(hex: 0xE08300), Color(hex: 0xC46F00), Color(hex: 0x3D2200))
+        // Molt's own: mint, the color of its icon and of Swollzy's apps. By day a deeper teal holds on the toned grounds.
+        case .paper, .monoDay: return (Color(hex: 0x0FA88C), Color(hex: 0x0B8A73), Color(hex: 0x032E26))
         case .sketchDay: return (Color(hex: 0xE0A800), Color(hex: 0xC28F00), Color(hex: 0x3A2A00))
         case .nordDay: return (Color(hex: 0xD9A93F), Color(hex: 0xBC8C28), Color(hex: 0x38290A))
         case .auroraDay: return (Color(hex: 0xE58A12), Color(hex: 0xC97200), Color(hex: 0x3F2300))
@@ -110,7 +111,7 @@ public enum PaletteScheme: String, CaseIterable, Identifiable, Sendable {
         case .inkNight: return (Color(hex: 0xC6F135), Color(hex: 0xDDF98A), Color(hex: 0x26300A))
         // Light and deep lime read on a light tile, where the night's pale lime would vanish.
         case .inkDay: return (Color(hex: 0x8DBB00), Color(hex: 0x739A00), Color(hex: 0x1E2900))
-        case .deep, .mono: return (Color(hex: 0xEF9F27), Color(hex: 0xFAC775), Color(hex: 0x412402))
+        case .deep, .mono: return (Color(hex: 0x2EE6C5), Color(hex: 0x8FF3E0), Color(hex: 0x053B33))
         }
     }
 

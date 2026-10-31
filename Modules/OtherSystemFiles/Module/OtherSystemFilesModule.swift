@@ -197,7 +197,7 @@ public struct OtherSystemFilesModule: MacSpaceModule {
             if let lastError { return (.failed(PurgeRun.failedMessage, details: [lastError]), false, 0) }
             // CacheDelete can answer at once that it removed nothing while its estimate still counts the files.
             return (ActionResult(outcome: .succeeded, message: PurgeRun.laterMessage,
-                                 details: ["MacSpace asks macOS again over the next hour; the figures update as soon as it lets them go."]),
+                                 details: ["Molt asks macOS again over the next hour; the figures update as soon as it lets them go."]),
                     true, 0)
         }
         let removed = max(freed, reported)

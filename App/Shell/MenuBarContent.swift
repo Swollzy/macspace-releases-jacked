@@ -38,8 +38,8 @@ public final class AppRouter: ObservableObject {
             }
         } else {
             // No window has been open since launch (MacSpace started in the menu bar), so none could hand over `openWindow`. The
-            // window's scene claims `macspace://<window id>` (`handlesExternalEvents`); opening it with this very app opens the window.
-            if let url = URL(string: "macspace://\(MacSpaceWindow.glass)") {
+            // window's scene claims `molt://<window id>` (`handlesExternalEvents`); opening it with this very app opens the window.
+            if let url = URL(string: "molt://\(MacSpaceWindow.glass)") {
                 NSWorkspace.shared.open([url], withApplicationAt: Bundle.main.bundleURL, configuration: NSWorkspace.OpenConfiguration())
             }
         }
@@ -98,7 +98,7 @@ public final class StatusItemController: NSObject {
         if shown, item == nil {
             let item = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
             item.button?.image = MenuBarIcon.image(at: nil)
-            item.button?.setAccessibilityLabel("MacSpace")
+            item.button?.setAccessibilityLabel("Molt")
             item.button?.target = self
             item.button?.action = #selector(clicked(_:))
             item.button?.sendAction(on: [.leftMouseUp, .rightMouseUp])
@@ -148,9 +148,9 @@ public final class StatusItemController: NSObject {
         menu.addItem(.separator())
         menu.addItem(entry(String(localized: "Settings…"), #selector(openSettings), key: ","))
         menu.addItem(.separator())
-        menu.addItem(entry(String(localized: "About MacSpace"), #selector(showAbout), key: ""))
+        menu.addItem(entry(String(localized: "About Molt"), #selector(showAbout), key: ""))
         menu.addItem(entry(String(localized: "Open Panel"), #selector(openApp), key: "o"))
-        menu.addItem(entry(String(localized: "Quit MacSpace"), #selector(quit), key: "q"))
+        menu.addItem(entry(String(localized: "Quit Molt"), #selector(quit), key: "q"))
         return menu
     }
 
@@ -168,7 +168,7 @@ public final class StatusItemController: NSObject {
     }
 
     @objc private func openApp() { AppRouter.shared.open() }
-    @objc private func showAbout() { if let host { AboutMacSpace.show(host: host) } }
+    @objc private func showAbout() { if let host { AboutMolt.show(host: host) } }
     @objc private func openSettings() { AppRouter.shared.open(.settings) }
     @objc private func quit() { NSApp.terminate(nil) }
 

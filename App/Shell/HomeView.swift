@@ -19,7 +19,7 @@ struct TileInfo: Equatable {
     /// What the switch of a `state` chart runs; nil when it cannot be flipped.
     var switchAction: Action?
 
-    static let settings = TileInfo(title: "MacSpace", status: String(localized: "settings"))
+    static let settings = TileInfo(title: "Molt", status: String(localized: "settings"))
 
     @MainActor
     init(_ handle: ModuleHandle) {

@@ -75,6 +75,20 @@ final class AppsAndLoginItemsTests: XCTestCase {
         XCTAssertTrue(LeftoverFinder(home: home, systemAppNames: []).leftovers(bundleID: "com.apple.Notes", name: "Notes", installed: []).isEmpty)
     }
 
+    /// A sibling app of the same maker, or one whose name starts with this one's, may read the folder named after it (Firefox
+    /// Developer Edition reads Firefox's profiles): no match by name then, by identifier still.
+    func testNameMatchesStopWhenASiblingAppIsInstalled() throws {
+        let id = "org.mozilla.firefox"
+        try make("Application Support/Firefox")
+        let caches = try make("Caches/\(id)")
+        let finder = LeftoverFinder(home: home, systemAppNames: [])
+        let sibling = [InstalledApp(path: "/Applications/Firefox Developer Edition.app", bundleID: "org.mozilla.firefoxdeveloperedition",
+                                    name: "Firefox Developer Edition", bytes: 0)]
+        XCTAssertEqual(finder.leftovers(bundleID: id, name: "Firefox", installed: sibling).map(\.path), [caches])
+        let unrelated = [InstalledApp(path: "/Applications/Fire Tool.app", bundleID: "com.other.FireToolbox", name: "FireToolbox", bytes: 0)]
+        XCTAssertEqual(finder.leftovers(bundleID: id, name: "Firefox", installed: unrelated).count, 2)
+    }
+
     /// Two steps: the app goes first, alone; its leftovers are offered after, none checked, and go only when checked.
     func testUninstallIsTwoSteps() async throws {
         let id = "com.example.Widget"
@@ -93,7 +107,8 @@ final class AppsAndLoginItemsTests: XCTestCase {
         let apps = InstalledList([app])
         let uninstaller = AppUninstaller(journalURL: URL(fileURLWithPath: home).appendingPathComponent("removed.json"),
                                          finder: LeftoverFinder(home: home, systemAppNames: []), installed: { apps.value },
-                                         recycle: { url in apps.value = []; return try move(url) }, move: move, isRunning: { _ in false })
+                                         recycle: { url in apps.value = []; return try move(url) }, move: move, isRunning: { _ in false },
+                                         existsElsewhere: { _ in false })
 
         _ = try await uninstaller.trashApp(app)
         XCTAssertFalse(FileManager.default.fileExists(atPath: appPath))
@@ -139,6 +154,11 @@ final class AppsAndLoginItemsTests: XCTestCase {
         XCTAssertNil(OrphanFinder.owner(of: "com.apple.Safari", in: .caches))
         XCTAssertNil(OrphanFinder.owner(of: "Google", in: .applicationSupport))
         XCTAssertNil(OrphanFinder.owner(of: "com.vendor", in: .caches))
+        // macOS's own data under other prefixes is never an orphan.
+        XCTAssertNil(OrphanFinder.owner(of: "243LU875E5.groups.com.apple.podcasts", in: .groupContainers))
+        XCTAssertNil(OrphanFinder.owner(of: "group.is.workflow.my.app", in: .groupContainers))
+        XCTAssertNil(OrphanFinder.owner(of: "org.cups.PrintingPrefs.plist", in: .preferences))
+        XCTAssertEqual(OrphanFinder.owner(of: "ABCDE12345.group.com.vendor.App", in: .groupContainers), "com.vendor.App")
     }
 
     func testLaunchAgentsAreReadAndSwitchedReversibly() throws {

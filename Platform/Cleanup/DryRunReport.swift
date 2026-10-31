@@ -79,7 +79,7 @@ public struct DryRunReport: Codable, Equatable, Sendable {
     ///
     /// A page can draw one group twice (System Data's caches are under Free now and again in the bar's "Can be freed" block), so each
     /// row is taken once. A row with nothing left in it (a cache already freed, listed until the next scan) frees nothing and is left
-    /// out.
+    /// out, unless it would go to the Trash.
     public static func items(in screen: Screen, checked: (Row) -> Set<String>? = { _ in nil }) -> [Item] {
         var items: [Item] = []
         var seen: Set<String> = []
@@ -87,7 +87,9 @@ public struct DryRunReport: Codable, Equatable, Sendable {
             if let selection = row.selection {
                 let disposition = Disposition(rawValue: selection.action.parameters[dispositionKey] ?? "") ?? .free
                 let boxes = checked(row) ?? Set(selection.checked)
-                for child in row.children where (selection.choices[child.id] ?? 0) > 0 && seen.insert(child.id).inserted {
+                // A row that would go to the Trash is listed even at 0 bytes: its size may just be unreadable, and it still moves.
+                for child in row.children where selection.choices[child.id] != nil
+                    && (disposition != .free || (selection.choices[child.id] ?? 0) > 0) && seen.insert(child.id).inserted {
                     items.append(Item(title: child.title, bytes: selection.choices[child.id] ?? 0, paths: child.paths,
                                       disposition: disposition, checked: boxes.contains(child.id)))
                 }
@@ -116,13 +118,13 @@ public struct DryRunReport: Codable, Equatable, Sendable {
 
     public func markdown() -> String {
         let date = ISO8601DateFormatter().string(from: created)
-        var lines = ["# MacSpace dry-run report", "", "Made \(date) by MacSpace \(macSpaceVersion). Nothing was deleted to make this report.", ""]
+        var lines = ["# Molt dry-run report", "", "Made \(date) by Molt \(macSpaceVersion). Nothing was deleted to make this report.", ""]
         if let freeBytes, let capacityBytes {
             lines.append("Disk: \(ByteFormat.string(freeBytes)) free of \(ByteFormat.string(capacityBytes))\(lowDisk ? " (low)" : "").")
             lines.append("")
         }
         lines += ["## Summary", "",
-                  "- Would be freed by MacSpace's Free buttons: \(ByteFormat.string(wouldFreeBytes))",
+                  "- Would be freed by Molt's Free buttons: \(ByteFormat.string(wouldFreeBytes))",
                   "- Would be moved to the Trash (checked files only): \(ByteFormat.string(wouldTrashBytes))", ""]
         for module in modules {
             lines.append("## \(module.name)")
@@ -157,7 +159,7 @@ public struct DryRunReport: Codable, Equatable, Sendable {
         let formatter = DateFormatter()
         formatter.locale = Locale(identifier: "en_US_POSIX")
         formatter.dateFormat = "yyyy-MM-dd HH.mm.ss"
-        let base = "MacSpace Dry Run \(formatter.string(from: created))"
+        let base = "Molt Dry Run \(formatter.string(from: created))"
         let json = folder.appendingPathComponent(base + ".json")
         let markdown = folder.appendingPathComponent(base + ".md")
         try self.json().write(to: json, options: .atomic)

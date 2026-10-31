@@ -29,12 +29,12 @@ public enum AssetModelCleanup {
     public static func refusal(_ scope: Scope, available: Bool?, supported: Bool, virtualMachine: Bool,
                                settings: [ModelFeatureSettings.Feature: ModelFeatureSettings.Status], phone: PhoneFeatureFlags.Status) -> String? {
         guard supported, !virtualMachine else { return "Model controls are not verified on this macOS build." }
-        guard let available else { return "MacSpace could not read whether Apple Intelligence is on." }
+        guard let available else { return "Molt could not read whether Apple Intelligence is on." }
         if scope == .released, available { return SystemAssetGuard.heldMessage }
         switch scope {
-        case .siri: guard settings[.siri]?.managedOff == true else { return "Siri is not managed off by MacSpace." }
+        case .siri: guard settings[.siri]?.managedOff == true else { return "Siri is not managed off by Molt." }
         case .phone: guard settings[.phone]?.managedOff == true, phone.managedOff else { return "Phone changes have not been verified after restart." }
-        case .spatialPhotos: guard settings[.spatialPhotos]?.managedOff == true else { return "Spatial Photos is not managed off by MacSpace." }
+        case .spatialPhotos: guard settings[.spatialPhotos]?.managedOff == true else { return "Spatial Photos is not managed off by Molt." }
         case .released: break
         }
         return nil
@@ -67,10 +67,10 @@ public enum AssetModelCleanup {
     }
     static func journal(_ scope: Scope) -> URL {
         FileManager.default.homeDirectoryForCurrentUser
-            .appendingPathComponent("Library/Application Support/MacSpace/asset-owners/\(scope.rawValue).plist")
+            .appendingPathComponent("Library/Application Support/Molt/asset-owners/\(scope.rawValue).plist")
     }
     static func child(_ scope: Scope, mode: String) -> OwnerResult {
-        guard let cli = ToolLocator.cli() else { return OwnerResult(pending: true, error: "MacSpace's model cleanup tool is unavailable.") }
+        guard let cli = ToolLocator.cli() else { return OwnerResult(pending: true, error: "Molt's model cleanup tool is unavailable.") }
         let run = CacheDeleteClient.runSubprocess(cli, ["asset-owners", scope.rawValue, mode], timeout: 180)
         guard run.status == 0, run.signal == nil, let result = try? JSONDecoder().decode(OwnerResult.self, from: run.data) else {
             return OwnerResult(pending: true, error: "The model cleanup tool did not finish. Saved owner state will be reconciled before another request.")
@@ -241,7 +241,7 @@ public actor ManagedModelCleanup {
     /// little room for a recheck that comes a few seconds early.
     static let stallTime: TimeInterval = 10 * 60 - 30
     /// When MacSpace first asked for a restart for a stalled feature: the Mac's boot time then, kept across the restart.
-    static func restartAskedKey(_ feature: ModelFeatureSettings.Feature) -> String { "MacSpace.modelCleanup.restartAsked." + feature.rawValue }
+    static func restartAskedKey(_ feature: ModelFeatureSettings.Feature) -> String { "Molt.modelCleanup.restartAsked." + feature.rawValue }
 
     /// When the Mac last started, in seconds since 1970; 0 when it cannot be read.
     static func bootTime() -> TimeInterval {

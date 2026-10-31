@@ -62,14 +62,14 @@
   "ヘルパーでのみ測定できる場所が%lldか所あります：%@。設定でオンにしてください。",
   "보조 프로그램만 측정할 수 있는 위치 %lld개: %@. 설정에서 켜세요."
  ],
- "%lld places weren't measured. Reopen MacSpace.": [
-  "%lld locais não foram medidos. Abra o MacSpace de novo.",
-  "%lld emplacements n’ont pas été mesurés. Rouvrez MacSpace.",
-  "No se han medido %lld ubicaciones. Vuelve a abrir MacSpace.",
-  "%lld Orte wurden nicht gemessen. Öffne MacSpace erneut.",
-  "%lld 个位置未测量，请重新打开 MacSpace。",
-  "%lldか所が未測定です。MacSpaceを開き直してください。",
-  "위치 %lld개가 측정되지 않았습니다. MacSpace를 다시 여세요."
+ "%lld places weren't measured. Reopen Molt.": [
+  "%lld locais não foram medidos. Abra o Molt de novo.",
+  "%lld emplacements n’ont pas été mesurés. Rouvrez Molt.",
+  "No se han medido %lld ubicaciones. Vuelve a abrir Molt.",
+  "%lld Orte wurden nicht gemessen. Öffne Molt erneut.",
+  "%lld 个位置未测量，请重新打开 Molt。",
+  "%lldか所が未測定です。Moltを開き直してください。",
+  "위치 %lld개가 측정되지 않았습니다. Molt를 다시 여세요."
  ],
  "%lld reports": [
   "%lld relatórios",
@@ -710,14 +710,14 @@
   "ファイルシステムのメタデータ",
   "파일 시스템 메타데이터"
  ],
- "Files of an earlier macOS update that is already installed; no update is waiting. macOS has not removed them and they sit in a protected folder, so MacSpace leaves them alone.": [
-  "Arquivos de uma atualização anterior do macOS já instalada; nenhuma atualização está pendente. O macOS não os removeu e eles estão numa pasta protegida, então o MacSpace não mexe neles.",
-  "Fichiers d’une mise à jour de macOS déjà installée ; aucune mise à jour n’est en attente. macOS ne les a pas supprimés et ils se trouvent dans un dossier protégé : MacSpace n’y touche pas.",
-  "Archivos de una actualización anterior de macOS ya instalada; no hay ninguna pendiente. macOS no los ha eliminado y están en una carpeta protegida, así que MacSpace no los toca.",
-  "Dateien eines bereits installierten macOS-Updates; kein Update wartet. macOS hat sie nicht entfernt, und sie liegen in einem geschützten Ordner, daher lässt MacSpace sie unangetastet.",
-  "已安装的 macOS 更新残留文件，没有待安装更新。macOS 尚未移除且文件位于受保护文件夹，MacSpace 不作处理。",
-  "インストール済みmacOS更新の残りです。保留中の更新はありません。保護されたフォルダに残っているため、MacSpaceはそのままにします。",
-  "이미 설치된 macOS 업데이트의 파일이며 대기 중인 업데이트는 없습니다. macOS가 아직 제거하지 않았고 보호된 폴더에 있으므로 MacSpace가 유지합니다."
+ "Files of an earlier macOS update that is already installed; no update is waiting. macOS has not removed them and they sit in a protected folder, so Molt leaves them alone.": [
+  "Arquivos de uma atualização anterior do macOS já instalada; nenhuma atualização está pendente. O macOS não os removeu e eles estão numa pasta protegida, então o Molt não mexe neles.",
+  "Fichiers d’une mise à jour de macOS déjà installée ; aucune mise à jour n’est en attente. macOS ne les a pas supprimés et ils se trouvent dans un dossier protégé : Molt n’y touche pas.",
+  "Archivos de una actualización anterior de macOS ya instalada; no hay ninguna pendiente. macOS no los ha eliminado y están en una carpeta protegida, así que Molt no los toca.",
+  "Dateien eines bereits installierten macOS-Updates; kein Update wartet. macOS hat sie nicht entfernt, und sie liegen in einem geschützten Ordner, daher lässt Molt sie unangetastet.",
+  "已安装的 macOS 更新残留文件，没有待安装更新。macOS 尚未移除且文件位于受保护文件夹，Molt 不作处理。",
+  "インストール済みmacOS更新の残りです。保留中の更新はありません。保護されたフォルダに残っているため、Moltはそのままにします。",
+  "이미 설치된 macOS 업데이트의 파일이며 대기 중인 업데이트는 없습니다. macOS가 아직 제거하지 않았고 보호된 폴더에 있으므로 Molt가 유지합니다."
  ],
  "Free": [
   "Liberar",
@@ -1214,21 +1214,21 @@
   "%lld日間未起動",
   "%lld일 동안 열지 않음"
  ],
- "Nothing was freed: MacSpace couldn't check which apps are open.": [
-  "Nada foi liberado: o MacSpace não conseguiu verificar quais apps estão abertos.",
-  "Rien n’a été libéré : MacSpace n’a pas pu vérifier quelles apps sont ouvertes.",
-  "No se liberó nada: MacSpace no pudo comprobar qué apps están abiertas.",
-  "Nichts wurde freigegeben: MacSpace konnte nicht prüfen, welche Apps geöffnet sind.",
-  "未释放任何内容：MacSpace 无法检查哪些应用正在运行。",
+ "Nothing was freed: Molt couldn't check which apps are open.": [
+  "Nada foi liberado: o Molt não conseguiu verificar quais apps estão abertos.",
+  "Rien n’a été libéré : Molt n’a pas pu vérifier quelles apps sont ouvertes.",
+  "No se liberó nada: Molt no pudo comprobar qué apps están abiertas.",
+  "Nichts wurde freigegeben: Molt konnte nicht prüfen, welche Apps geöffnet sind.",
+  "未释放任何内容：Molt 无法检查哪些应用正在运行。",
   "何も解放していません。実行中のアプリを確認できませんでした。",
   "정리된 항목 없음: 실행 중인 앱을 확인하지 못했습니다."
  ],
- "Nothing was freed: MacSpace couldn't check which files are in use.": [
-  "Nada foi liberado: o MacSpace não conseguiu verificar quais arquivos estão em uso.",
-  "Rien n’a été libéré : MacSpace n’a pas pu vérifier quels fichiers sont utilisés.",
-  "No se liberó nada: MacSpace no pudo comprobar qué archivos están en uso.",
-  "Nichts wurde freigegeben: MacSpace konnte nicht prüfen, welche Dateien verwendet werden.",
-  "未释放任何内容：MacSpace 无法检查哪些文件正在使用。",
+ "Nothing was freed: Molt couldn't check which files are in use.": [
+  "Nada foi liberado: o Molt não conseguiu verificar quais arquivos estão em uso.",
+  "Rien n’a été libéré : Molt n’a pas pu vérifier quels fichiers sont utilisés.",
+  "No se liberó nada: Molt no pudo comprobar qué archivos están en uso.",
+  "Nichts wurde freigegeben: Molt konnte nicht prüfen, welche Dateien verwendet werden.",
+  "未释放任何内容：Molt 无法检查哪些文件正在使用。",
   "何も解放していません。使用中のファイルを確認できませんでした。",
   "정리된 항목 없음: 사용 중인 파일을 확인하지 못했습니다."
  ],
@@ -2105,14 +2105,14 @@
   "必要に応じてmacOSが再ダウンロードします。",
   "필요하면 macOS가 다시 다운로드합니다."
  ],
- "macOS keeps these locked, even from MacSpace.": [
-  "O macOS mantém isto inacessível, até para o MacSpace.",
-  "macOS garde ces éléments verrouillés, même pour MacSpace.",
-  "macOS los mantiene bloqueados, incluso para MacSpace.",
-  "macOS hält diese gesperrt, auch für MacSpace.",
-  "macOS 锁定这些内容，MacSpace 也无法访问。",
-  "macOSがロックしており、MacSpaceもアクセスできません。",
-  "macOS가 잠근 항목으로 MacSpace도 접근할 수 없습니다."
+ "macOS keeps these locked, even from Molt.": [
+  "O macOS mantém isto inacessível, até para o Molt.",
+  "macOS garde ces éléments verrouillés, même pour Molt.",
+  "macOS los mantiene bloqueados, incluso para Molt.",
+  "macOS hält diese gesperrt, auch für Molt.",
+  "macOS 锁定这些内容，Molt 也无法访问。",
+  "macOSがロックしており、Moltもアクセスできません。",
+  "macOS가 잠근 항목으로 Molt도 접근할 수 없습니다."
  ],
  "macOS restore image: %@": [
   "Imagem de restauração do macOS: %@",

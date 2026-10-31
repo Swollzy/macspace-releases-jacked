@@ -119,7 +119,7 @@ final class ConfigurationProfileTests: XCTestCase {
         XCTAssertEqual(data, try ConfigurationProfileBuilder.build(settings, controlID: "test.diag", title: "Diag"))
         let root = try XCTUnwrap(PropertyListSerialization.propertyList(from: data, options: [], format: nil) as? [String: Any])
         XCTAssertEqual(root["PayloadIdentifier"] as? String, "com.macspace.policies.test.diag", "one profile per control")
-        XCTAssertEqual(root["PayloadDisplayName"] as? String, "MacSpace: Diag")
+        XCTAssertEqual(root["PayloadDisplayName"] as? String, "Molt: Diag")
         XCTAssertEqual(root["PayloadScope"] as? String, "System")
         let payloads = try XCTUnwrap(root["PayloadContent"] as? [[String: Any]])
         XCTAssertEqual(payloads.map { $0["PayloadType"] as? String }, ["com.apple.SubmitDiagInfo", "com.apple.applicationaccess"])
@@ -128,7 +128,7 @@ final class ConfigurationProfileTests: XCTestCase {
         XCTAssertNotNil(UUID(uuidString: payloads[0]["PayloadUUID"] as! String))
         XCTAssertTrue(ConfigurationProfileBuilder.isMacSpaceProfile("com.macspace.policies"))
         XCTAssertTrue(ConfigurationProfileBuilder.isMacSpaceProfile("com.macspace.policies.test.diag"))
-        XCTAssertFalse(ConfigurationProfileBuilder.isMacSpaceProfile("com.example.vpn"), "the helper removes MacSpace's profiles only")
+        XCTAssertFalse(ConfigurationProfileBuilder.isMacSpaceProfile("com.example.vpn"), "the helper removes Molt's profiles only")
         XCTAssertFalse(ConfigurationProfileBuilder.isMacSpaceProfile("com.macspace.policiesX"))
     }
 
@@ -227,7 +227,7 @@ final class ConfigurationProfileTests: XCTestCase {
         let engine = DebloatEngine(controls: controls, system: system, journal: MemoryJournalStore())
         system.forced[diagnostics[0].id] = .bool(false) // Screen Time, say: one of the two settings
         let partly = engine.status(of: controls[0])
-        XCTAssertEqual(partly.state, .stock, "not partly applied: none of it is MacSpace's")
+        XCTAssertEqual(partly.state, .stock, "not partly applied: none of it is Molt's")
         XCTAssertEqual(partly.managedElsewhere, true)
         for setting in diagnostics { system.forced[setting.id] = .bool(false) }
         XCTAssertEqual(engine.status(of: controls[0]).state, .stock)

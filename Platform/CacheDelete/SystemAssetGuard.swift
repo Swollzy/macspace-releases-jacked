@@ -65,5 +65,5 @@ public enum SystemAssetGuard {
     }
 
     /// Said where a purge was not made, in English (results' details and the CLI).
-    public static let heldMessage = "Apple Intelligence is on: MacSpace does not ask macOS to delete system assets, which hold its models and their downloads."
+    public static let heldMessage = "Apple Intelligence is on: Molt does not ask macOS to delete system assets, which hold its models and their downloads."
 }

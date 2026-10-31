@@ -1,0 +1,37 @@
+Molt {{VERSION}}
+================
+
+Molt cleans up your Mac: what fills System Data, caches, big and duplicate files, apps you
+no longer use, and what old versions of Swollzy's apps (Wallflower, Burrow, Swivel) left
+behind. Your settings and libraries stay. Everything it removes goes to the Trash first.
+
+Needs {{NEEDS}}.
+
+Install
+-------
+1. Drag Molt onto the Applications folder in this window.
+[signed]
+2. Open Molt from Applications. It keeps itself up to date: new versions show up on their own
+   (Settings > Updates to turn that off or check now).
+[/]
+[unsigned]
+2. Open Molt from Applications. The first time, macOS says it can't check it: click Done,
+   then open System Settings > Privacy & Security, scroll down, and click "Open Anyway"
+   next to Molt. You only do this once.
+[/]
+3. Molt asks for Full Disk Access and for its helper. Follow the steps it shows.
+[unsigned]
+
+This copy isn't notarized
+-------------------------
+It was made without a Developer ID certificate, so it has no working helper: the parts that
+need administrator rights (Debloat, freeing Apple Intelligence models, some System Data
+items) say so and do nothing. Old Versions, Large Files, Apps & Login Items and caches work.
+[/]
+
+Used MacSpace before?
+---------------------
+Molt replaces it. Open MacSpace, choose About MacSpace > Uninstall, so it puts back the
+settings it changed. Then open Molt. Your history comes along.
+
+Molt is built on MacSpace by Gio Mantovani / 1architect (MIT License).

@@ -350,7 +350,7 @@ final class DebloatEngineTests: XCTestCase {
         let engine = DebloatEngine(controls: [control], system: system, journal: journal)
         XCTAssertEqual(engine.status(of: control).state, .debloated, "still written, so still read")
         _ = engine.execute(try engine.plan(.revert, controlIDs: [control.id], options: DebloatPlanOptions(restoreFallbacks: true)))
-        XCTAssertTrue(system.preferences.isEmpty, "nothing MacSpace wrote is left: \(system.preferences.keys.sorted())")
+        XCTAssertTrue(system.preferences.isEmpty, "nothing Molt wrote is left: \(system.preferences.keys.sorted())")
         XCTAssertNotEqual(engine.status(of: control).state, .debloated)
     }
 

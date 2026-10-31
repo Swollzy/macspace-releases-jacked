@@ -318,7 +318,7 @@ public struct SystemDataModule: MacSpaceModule {
 
     /// Runs Homebrew's cleanup (`HomebrewCleanup`), unless Homebrew is busy: a cleanup then would delete what an install is unpacking.
     static func cleanHomebrew(_ brew: String, allDownloads: Bool) -> ActionResult {
-        guard let processes = ProcessCheck.live.processes() else { return .failed(loc("Nothing was freed: MacSpace couldn't check which apps are open.")) }
+        guard let processes = ProcessCheck.live.processes() else { return .failed(loc("Nothing was freed: Molt couldn't check which apps are open.")) }
         if HomebrewCleanup.isRunning(brew, processes: processes) { return .failed(loc("Homebrew is busy. Try again when it's done.")) }
         let before = DataVolume.freeBytes()
         let run = HomebrewCleanup.clean(brew, allDownloads: allDownloads)

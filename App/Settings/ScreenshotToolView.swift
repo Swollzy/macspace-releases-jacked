@@ -70,7 +70,7 @@ public enum ScreenshotLaunch {
             tool.settleSeconds = 10
             tool.warmupSeconds = 40
             await tool.capture()
-            NSLog("MacSpace screenshots: \(tool.status)")
+            NSLog("Molt screenshots: \(tool.status)")
             NSApp.terminate(nil)
         }
     }
@@ -126,7 +126,7 @@ final class ScreenshotTool: ObservableObject {
             let folder = root.appendingPathComponent("Docs/Screenshots/\(language)")
             if FileManager.default.fileExists(atPath: folder.deletingLastPathComponent().path) { return folder }
         }
-        return FileManager.default.urls(for: .desktopDirectory, in: .userDomainMask)[0].appendingPathComponent("MacSpace Screenshots")
+        return FileManager.default.urls(for: .desktopDirectory, in: .userDomainMask)[0].appendingPathComponent("Molt Screenshots")
     }
 
     func set(_ id: String, _ on: Bool) {
@@ -162,7 +162,7 @@ final class ScreenshotTool: ObservableObject {
         }
         AppRouter.shared.open()
         try? await Task.sleep(for: .seconds(1))
-        guard let window = AppRouter.mainWindow else { status = "MacSpace's window is not open."; return }
+        guard let window = AppRouter.mainWindow else { status = "Molt's window is not open."; return }
         if width > 0, height > 0 {
             let frame = window.frameRect(forContentRect: NSRect(x: 0, y: 0, width: width, height: height))
             window.setFrame(NSRect(x: window.frame.minX, y: window.frame.maxY - frame.height, width: frame.width, height: frame.height), display: true)

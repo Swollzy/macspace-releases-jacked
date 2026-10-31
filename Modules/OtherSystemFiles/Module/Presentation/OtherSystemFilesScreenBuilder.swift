@@ -74,7 +74,7 @@ enum OtherSystemFilesScreenBuilder {
         guard snapshot.services != nil || !snapshot.updates.isEmpty || !snapshot.documents.isEmpty else {
             return Screen(title: loc("Other System Files"), widgets: [.banner(Banner(id: "unavailable", severity: .warning,
                 title: loc("macOS's purge service did not answer"),
-                message: loc("MacSpace could not measure right now. Try the refresh button.")))])
+                message: loc("Molt could not measure right now. Try the refresh button.")))])
         }
         var widgets: [ScreenWidget] = []
         if let free = freeNow(snapshot) { widgets.append(free) }

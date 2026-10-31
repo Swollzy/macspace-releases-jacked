@@ -25,7 +25,7 @@
 "Breaks Mail search" = "Quebra a busca do Mail";
 "Cannot read" = "Não é possível ler";
 "Cannot take effect here" = "Não tem efeito aqui";
-"Checks every 15 minutes while MacSpace is open, and disables again any feature macOS switched back on." = "Verifica a cada 15 minutos enquanto o MacSpace está aberto e desativa de novo qualquer recurso que o macOS tenha reativado.";
+"Checks every 15 minutes while Molt is open, and disables again any feature macOS switched back on." = "Verifica a cada 15 minutos enquanto o Molt está aberto e desativa de novo qualquer recurso que o macOS tenha reativado.";
 "Couldn't change it" = "Não foi possível alterar";
 "Couldn't open the profile" = "Não foi possível abrir o perfil";
 "Couldn't remove a profile" = "Não foi possível remover um perfil";
@@ -62,9 +62,9 @@
 "Its profile could not be removed (%@); remove \"%@\" in System Settings > General > Device Management." = "Não foi possível remover o perfil (%@); remova \"%@\" em Ajustes do Sistema > Geral > Gerenciamento de Dispositivo.";
 "Its profile was removed." = "O perfil foi removido.";
 "Log out to apply." = "Encerre a sessão para aplicar.";
-"MacSpace disabled it again, most recently %@." = "O MacSpace o desativou de novo, pela última vez %@.";
-"MacSpace disabled them again, most recently %@." = "O MacSpace os desativou de novo, pela última vez %@.";
-"MacSpace restores the settings it saved before disabling them." = "O MacSpace restaura os ajustes que salvou antes de desativá-los.";
+"Molt disabled it again, most recently %@." = "O Molt o desativou de novo, pela última vez %@.";
+"Molt disabled them again, most recently %@." = "O Molt os desativou de novo, pela última vez %@.";
+"Molt restores the settings it saved before disabling them." = "O Molt restaura os ajustes que salvou antes de desativá-los.";
 "No control was named." = "Nenhum controle foi indicado.";
 "No controls were selected." = "Nenhum controle foi selecionado.";
 "No longer works" = "Não funciona mais";
@@ -81,7 +81,7 @@
 "Restart to apply." = "Reinicie para aplicar.";
 "Set by another profile" = "Definido por outro perfil";
 "Share analytics with Apple" = "Compartilhar análises com a Apple";
-"Shows a notification when macOS switches a disabled feature back on and MacSpace disables it again." = "Mostra uma notificação quando o macOS reativa um recurso desativado e o MacSpace o desativa de novo.";
+"Shows a notification when macOS switches a disabled feature back on and Molt disables it again." = "Mostra uma notificação quando o macOS reativa um recurso desativado e o Molt o desativa de novo.";
 "Siri" = "Siri";
 "Siri AI search" = "Busca da Siri AI";
 "Some are not tested yet." = "Alguns ainda não foram testados.";
@@ -109,5 +109,5 @@
 "macOS asks you to approve the policy profile once." = "O macOS pede que você aprove o perfil de políticas uma vez.";
 "macOS prevents this change from taking effect on this Mac." = "O macOS impede que esta alteração tenha efeito neste Mac.";
 "macOS still chose to send diagnostics after this change." = "O macOS ainda decidiu enviar diagnósticos após esta alteração.";
-"macOS switched %@ back on. MacSpace disabled it again." = "O macOS reativou %@. O MacSpace o desativou de novo.";
-"macOS switched %@ back on. MacSpace disabled them again." = "O macOS reativou %@. O MacSpace os desativou de novo.";
+"macOS switched %@ back on. Molt disabled it again." = "O macOS reativou %@. O Molt o desativou de novo.";
+"macOS switched %@ back on. Molt disabled them again." = "O macOS reativou %@. O Molt os desativou de novo.";

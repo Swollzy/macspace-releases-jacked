@@ -31,7 +31,7 @@ public final class AutoCleaner: ObservableObject {
     static let lastRunKey = "autoClean.lastRun"
     /// Modules automatic cleanup never runs, whatever their manifest says: they move the user's own files and apps to the Trash,
     /// only ever file by file as the user checks them.
-    public nonisolated static let neverAutomatic: Set<String> = ["com.macspace.large-files", "com.macspace.apps-and-login-items"]
+    public nonisolated static let neverAutomatic: Set<String> = ["com.macspace.large-files", "com.macspace.apps-and-login-items", "com.macspace.old-versions"]
 
     public nonisolated static func takesPart(_ manifest: ModuleManifest) -> Bool {
         manifest.autoClean == true && !neverAutomatic.contains(manifest.id)

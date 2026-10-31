@@ -25,7 +25,7 @@
     {
       "id": "notify",
       "title": "Notify me when Apple Intelligence turns back on",
-      "detail": "A notification when MacSpace finds that macOS made Apple Intelligence available again.",
+      "detail": "A notification when Molt finds that macOS made Apple Intelligence available again.",
       "kind": {
         "toggle": {
           "defaultValue": true
@@ -47,7 +47,7 @@
     {
       "id": "watch",
       "title": "Check Apple Intelligence every 15 minutes",
-      "detail": "While MacSpace is open: finds out if macOS turns Apple Intelligence back on, and frees the models it leaves.",
+      "detail": "While Molt is open: finds out if macOS turns Apple Intelligence back on, and frees the models it leaves.",
       "defaultEnabled": true,
       "intervalSeconds": 900,
       "hidden": true
@@ -55,7 +55,7 @@
     {
       "id": "featureModels",
       "title": "Free switched-off features' models automatically",
-      "detail": "While MacSpace is open: frees the models macOS asks for again for Siri, Spatial Photos and Call transcription after you switched them off.",
+      "detail": "While Molt is open: frees the models macOS asks for again for Siri, Spatial Photos and Call transcription after you switched them off.",
       "defaultEnabled": true,
       "intervalSeconds": 300
     }
