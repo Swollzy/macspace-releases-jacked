@@ -10,16 +10,23 @@ Needs {{NEEDS}}.
 Install
 -------
 1. Drag Molt onto the Applications folder in this window.
+[signed]
+2. Open Molt from Applications.
+[/]
+[unsigned]
 2. Open Molt from Applications. The first time, macOS says it can't check it: click Done,
    then open System Settings > Privacy & Security, scroll down, and click "Open Anyway"
    next to Molt. You only do this once.
+[/]
 3. Molt asks for Full Disk Access and for its helper. Follow the steps it shows.
+[unsigned]
 
-Without a paid Apple developer certificate
-------------------------------------------
-A DMG made without one has no working helper, so the parts that need administrator rights
-(Debloat, freeing Apple Intelligence models, some System Data items) say so and do nothing.
-Old Versions, Large Files, Apps & Login Items and caches work either way.
+This copy isn't notarized
+-------------------------
+It was made without a Developer ID certificate, so it has no working helper: the parts that
+need administrator rights (Debloat, freeing Apple Intelligence models, some System Data
+items) say so and do nothing. Old Versions, Large Files, Apps & Login Items and caches work.
+[/]
 
 Used MacSpace before?
 ---------------------
