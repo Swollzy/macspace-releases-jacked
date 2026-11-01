@@ -30,10 +30,10 @@ public enum ConfigurationProfileBuilder {
         return "\(legacyIdentifier).set-\(digest.prefix(12))"
     }
     public static func fileName(forIdentifier identifier: String) -> String {
-        if identifier == profileIdentifier { return "MacSpace.mobileconfig" }
-        return "MacSpace-\(identifier.hasPrefix(legacyIdentifier + ".") ? String(identifier.dropFirst(legacyIdentifier.count + 1)) : identifier).mobileconfig"
+        if identifier == profileIdentifier { return "Molt.mobileconfig" }
+        return "Molt-\(identifier.hasPrefix(legacyIdentifier + ".") ? String(identifier.dropFirst(legacyIdentifier.count + 1)) : identifier).mobileconfig"
     }
-    public static func displayName(for title: String) -> String { "MacSpace: \(title)" }
+    public static func displayName(for title: String) -> String { "Molt: \(title)" }
 
     /// The step detail when a profile has to be removed and this process cannot (it needs root): the app asks the helper. It names
     /// the profiles; the app replaces it with the outcome.
@@ -65,9 +65,9 @@ public enum ConfigurationProfileBuilder {
         }
         let profile: [String: Any] = [
             "PayloadDisplayName": displayName(for: title),
-            "PayloadDescription": "\(title), switched off in MacSpace (\(settings.map { "\($0.payloadType) \($0.key)" }.sorted().joined(separator: ", "))). Switch it back on in MacSpace, or remove this profile, to undo it.",
+            "PayloadDescription": "\(title), switched off in Molt (\(settings.map { "\($0.payloadType) \($0.key)" }.sorted().joined(separator: ", "))). Switch it back on in Molt, or remove this profile, to undo it.",
             "PayloadIdentifier": identifier,
-            "PayloadOrganization": "MacSpace",
+            "PayloadOrganization": "Molt",
             "PayloadScope": "System",
             "PayloadRemovalDisallowed": false,
             "PayloadType": "Configuration",

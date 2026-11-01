@@ -211,13 +211,13 @@ final class LazyChannelTests: XCTestCase {
     }
 
     func testNotFoundReasonNamesTheLikelyCause() {
-        let quarantined = PrivilegedHelperInstaller.notFoundReason(bundlePath: "/Applications/MacSpace.app", quarantined: true, containsLaunchDaemon: true)
+        let quarantined = PrivilegedHelperInstaller.notFoundReason(bundlePath: "/Applications/Molt.app", quarantined: true, containsLaunchDaemon: true)
         XCTAssertTrue(quarantined.contains("xattr -dr com.apple.quarantine"))
-        let translocated = PrivilegedHelperInstaller.notFoundReason(bundlePath: "/private/var/folders/x/AppTranslocation/ABC/d/MacSpace.app", quarantined: false, containsLaunchDaemon: true)
+        let translocated = PrivilegedHelperInstaller.notFoundReason(bundlePath: "/private/var/folders/x/AppTranslocation/ABC/d/Molt.app", quarantined: false, containsLaunchDaemon: true)
         XCTAssertTrue(translocated.contains("xattr -dr com.apple.quarantine"))
-        XCTAssertTrue(PrivilegedHelperInstaller.notFoundReason(bundlePath: "/Users/x/Downloads/MacSpace.app", quarantined: false, containsLaunchDaemon: true).contains("Applications folder"))
-        XCTAssertTrue(PrivilegedHelperInstaller.notFoundReason(bundlePath: "/Applications/MacSpace.app", quarantined: false, containsLaunchDaemon: false).contains("does not contain the helper"))
-        XCTAssertTrue(PrivilegedHelperInstaller.notFoundReason(bundlePath: "/Applications/MacSpace.app", quarantined: false, containsLaunchDaemon: true).contains("helper --register"))
+        XCTAssertTrue(PrivilegedHelperInstaller.notFoundReason(bundlePath: "/Users/x/Downloads/Molt.app", quarantined: false, containsLaunchDaemon: true).contains("Applications folder"))
+        XCTAssertTrue(PrivilegedHelperInstaller.notFoundReason(bundlePath: "/Applications/Molt.app", quarantined: false, containsLaunchDaemon: false).contains("does not contain the helper"))
+        XCTAssertTrue(PrivilegedHelperInstaller.notFoundReason(bundlePath: "/Applications/Molt.app", quarantined: false, containsLaunchDaemon: true).contains("helper --register"))
     }
 
     func testMachineKnowsWhetherItIsAVirtualMachine() {
@@ -231,9 +231,9 @@ final class LazyChannelTests: XCTestCase {
     }
 
     func testHelperIsInstalledOnlyFromAnApplicationsFolder() {
-        XCTAssertTrue(PrivilegedHelperInstaller.isInApplicationsFolder("/Applications/MacSpace.app"))
-        XCTAssertTrue(PrivilegedHelperInstaller.isInApplicationsFolder("/Users/me/Applications/MacSpace.app"))
-        XCTAssertFalse(PrivilegedHelperInstaller.isInApplicationsFolder("/Users/me/Developer/macspace-releases/Build/MacSpace.app"),
+        XCTAssertTrue(PrivilegedHelperInstaller.isInApplicationsFolder("/Applications/Molt.app"))
+        XCTAssertTrue(PrivilegedHelperInstaller.isInApplicationsFolder("/Users/me/Applications/Molt.app"))
+        XCTAssertFalse(PrivilegedHelperInstaller.isInApplicationsFolder("/Users/me/Developer/macspace-releases/Build/Molt.app"),
                        "a helper registered from the build folder stayed tied to a copy every build replaces")
     }
 }
@@ -245,7 +245,7 @@ final class ConfigurationProfilesTests: XCTestCase {
         {"SPConfigurationProfileDataType":[
           {"_name":"User Configuration Profiles (501)","_items":[{"_name":"ManagedSettings User Settings",
             "spconfigprofile_profile_identifier":"com.apple.ManagedSettings.macOS.7BE22211"}]},
-          {"_name":"spconfigprofile_section_deviceconfigprofiles","_items":[{"_name":"MacSpace: Share analytics with Apple",
+          {"_name":"spconfigprofile_section_deviceconfigprofiles","_items":[{"_name":"Molt: Share analytics with Apple",
             "spconfigprofile_profile_identifier":"com.macspace.policies.set-10f13ddcaa46",
             "_items":[{"_name":"com.apple.SubmitDiagInfo","spconfigprofile_payload_identifier":"com.macspace.policies.set-10f13ddcaa46.x"}]}]}
         ]}
@@ -253,7 +253,7 @@ final class ConfigurationProfilesTests: XCTestCase {
         let identifiers = try XCTUnwrap(ConfigurationProfiles.parse(Data(json.utf8)))
         XCTAssertEqual(identifiers, ["com.apple.ManagedSettings.macOS.7BE22211", "com.macspace.policies.set-10f13ddcaa46"])
         XCTAssertEqual(ConfigurationProfiles.status(identifiers), .granted)
-        XCTAssertEqual(ConfigurationProfiles.status(["com.apple.ManagedSettings.macOS.7BE22211"]), .missing, "another profile is not MacSpace's")
+        XCTAssertEqual(ConfigurationProfiles.status(["com.apple.ManagedSettings.macOS.7BE22211"]), .missing, "another profile is not Molt's")
     }
 
     func testAnswersFromTheLastReadingAndUnknownBeforeTheFirst() {
@@ -271,7 +271,7 @@ final class ConfigurationProfilesTests: XCTestCase {
 
 final class CodeIntegrityTests: XCTestCase {
     func testAMissingOrUnsignedBundleIsNotIntact() throws {
-        XCTAssertFalse(CodeIntegrity.isIntact(URL(fileURLWithPath: "/nonexistent/MacSpace.app")))
+        XCTAssertFalse(CodeIntegrity.isIntact(URL(fileURLWithPath: "/nonexistent/Molt.app")))
         let folder = FileManager.default.temporaryDirectory.appendingPathComponent("unsigned-\(UUID().uuidString).app")
         try FileManager.default.createDirectory(at: folder.appendingPathComponent("Contents"), withIntermediateDirectories: true)
         defer { try? FileManager.default.removeItem(at: folder) }

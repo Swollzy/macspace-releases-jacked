@@ -25,7 +25,7 @@
 "Breaks Mail search" = "メール検索が使えなくなります";
 "Cannot read" = "読み取れません";
 "Cannot take effect here" = "ここでは適用できません";
-"Checks every 15 minutes while MacSpace is open, and disables again any feature macOS switched back on." = "MacSpaceの起動中は15分ごとに確認し、macOSが再びオンにした機能を無効に戻します。";
+"Checks every 15 minutes while Molt is open, and disables again any feature macOS switched back on." = "Moltの起動中は15分ごとに確認し、macOSが再びオンにした機能を無効に戻します。";
 "Couldn't change it" = "変更できませんでした";
 "Couldn't open the profile" = "プロファイルを開けませんでした";
 "Couldn't remove a profile" = "プロファイルを削除できませんでした";
@@ -62,9 +62,9 @@
 "Its profile could not be removed (%@); remove \"%@\" in System Settings > General > Device Management." = "プロファイルを削除できませんでした（%@）。「システム設定 > 一般 > デバイス管理」で「%@」を削除してください。";
 "Its profile was removed." = "プロファイルを削除しました。";
 "Log out to apply." = "ログアウトすると適用されます。";
-"MacSpace disabled it again, most recently %@." = "MacSpaceが再び無効にしました。直近：%@。";
-"MacSpace disabled them again, most recently %@." = "MacSpaceがこれらを再び無効にしました。直近：%@。";
-"MacSpace restores the settings it saved before disabling them." = "無効にする前に保存した設定に戻します。";
+"Molt disabled it again, most recently %@." = "Moltが再び無効にしました。直近：%@。";
+"Molt disabled them again, most recently %@." = "Moltがこれらを再び無効にしました。直近：%@。";
+"Molt restores the settings it saved before disabling them." = "無効にする前に保存した設定に戻します。";
 "No control was named." = "操作対象が指定されていません。";
 "No controls were selected." = "操作対象が選択されていません。";
 "No longer works" = "現在は機能しません";
@@ -81,7 +81,7 @@
 "Restart to apply." = "再起動すると適用されます。";
 "Set by another profile" = "別のプロファイルによる設定";
 "Share analytics with Apple" = "解析をAppleと共有";
-"Shows a notification when macOS switches a disabled feature back on and MacSpace disables it again." = "macOSが無効な機能を再びオンにし、MacSpaceが再度無効にすると通知します。";
+"Shows a notification when macOS switches a disabled feature back on and Molt disables it again." = "macOSが無効な機能を再びオンにし、Moltが再度無効にすると通知します。";
 "Siri" = "Siri";
 "Siri AI search" = "Siri AI 検索";
 "Some are not tested yet." = "未テストのものもあります。";
@@ -109,5 +109,5 @@
 "macOS asks you to approve the policy profile once." = "macOSがポリシープロファイルの承認を一度だけ求めます。";
 "macOS prevents this change from taking effect on this Mac." = "macOSがこのMacでの変更の適用を阻止しています。";
 "macOS still chose to send diagnostics after this change." = "この変更後もmacOSは診断情報の送信を選択しています。";
-"macOS switched %@ back on. MacSpace disabled it again." = "macOSが%@を再びオンにしたため、MacSpaceが無効に戻しました。";
-"macOS switched %@ back on. MacSpace disabled them again." = "macOSが%@を再びオンにしたため、MacSpaceがこれらを無効に戻しました。";
+"macOS switched %@ back on. Molt disabled it again." = "macOSが%@を再びオンにしたため、Moltが無効に戻しました。";
+"macOS switched %@ back on. Molt disabled them again." = "macOSが%@を再びオンにしたため、Moltがこれらを無効に戻しました。";

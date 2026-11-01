@@ -3,7 +3,7 @@ import Foundation
 import MacSpaceSdk
 import ServiceManagement
 
-/// Registers the helper launch daemon that ships in the app bundle (`Contents/Library/LaunchDaemons/com.macspace.helper.plist`,
+/// Registers the helper launch daemon that ships in the app bundle (`Contents/Library/LaunchDaemons/com.swollzy.molt.helper.plist`,
 /// program `Contents/MacOS/MacSpaceHelper`). Only meaningful from the signed app; the user approves it once in System Settings
 /// > General > Login Items & Extensions.
 public enum PrivilegedHelperInstaller {
@@ -32,7 +32,7 @@ public enum PrivilegedHelperInstaller {
     public struct NotInApplicationsError: LocalizedError {
         public let path: String
         public var errorDescription: String? {
-            "MacSpace runs from \(path). Install the helper from the copy in an Applications folder: macOS ties the helper to the copy it was installed from, and a build folder is replaced by every build."
+            "Molt runs from \(path). Install the helper from the copy in an Applications folder: macOS ties the helper to the copy it was installed from, and a build folder is replaced by every build."
         }
     }
 
@@ -108,12 +108,12 @@ public enum PrivilegedHelperInstaller {
     /// Why macOS reports the helper as "not found", worded for the Settings page. The usual cause is a quarantined app: macOS runs it
     /// from a randomized, read-only copy (App Translocation) and the helper cannot be registered from there.
     public static func notFoundReason(bundlePath: String, quarantined: Bool, containsLaunchDaemon: Bool) -> String {
-        if !containsLaunchDaemon { return String(localized: "This build of MacSpace does not contain the helper.") }
+        if !containsLaunchDaemon { return String(localized: "This build of Molt does not contain the helper.") }
         if bundlePath.contains("/AppTranslocation/") || quarantined {
-            return String(localized: "macOS is treating MacSpace as a downloaded app, so the helper cannot be installed. In Terminal run: xattr -dr com.apple.quarantine /Applications/MacSpace.app, then reopen MacSpace. (A notarized release does not need this.)")
+            return String(localized: "macOS is treating Molt as a downloaded app, so the helper cannot be installed. In Terminal run: xattr -dr com.apple.quarantine /Applications/Molt.app, then reopen Molt. (A notarized release does not need this.)")
         }
-        if !isInApplicationsFolder(bundlePath) { return String(localized: "Move MacSpace to the Applications folder, then reopen it.") }
-        return String(localized: "Press Install helper. If macOS still does not recognise it, run in Terminal: /Applications/MacSpace.app/Contents/MacOS/MacSpaceCli helper --register and send the message it prints.")
+        if !isInApplicationsFolder(bundlePath) { return String(localized: "Move Molt to the Applications folder, then reopen it.") }
+        return String(localized: "Press Install helper. If macOS still does not recognise it, run in Terminal: /Applications/Molt.app/Contents/MacOS/MacSpaceCli helper --register and send the message it prints.")
     }
 
     public static func notFoundReason(bundle: Bundle = .main) -> String {

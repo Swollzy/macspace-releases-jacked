@@ -81,7 +81,7 @@ public final class AppNotifications: NSObject, UNUserNotificationCenterDelegate 
     func automaticCleanupFinished(freed: UInt64, modules: [String]) {
         guard freed >= Self.cleanupThreshold, isOn(.automaticCleanup) else { return }
         let names = ListFormatter.localizedString(byJoining: modules)
-        post(.automaticCleanup, title: String(localized: "MacSpace freed \(ByteFormat.string(freed))"),
+        post(.automaticCleanup, title: String(localized: "Molt freed \(ByteFormat.string(freed))"),
              body: modules.isEmpty ? String(localized: "Automatic cleanup") : String(localized: "Automatic cleanup: \(names)"), destination: "storage")
     }
 
@@ -111,9 +111,9 @@ public final class AppNotifications: NSObject, UNUserNotificationCenterDelegate 
         defaults.set(now, forKey: Self.lowSpaceLastKey)
         let freeable = host?.reclaimable.values.reduce(0, +) ?? 0
         var body = freeable >= Self.cleanupThreshold
-            ? String(localized: "\(ByteFormat.string(reading.available)) left. MacSpace can free \(ByteFormat.string(freeable)).")
+            ? String(localized: "\(ByteFormat.string(reading.available)) left. Molt can free \(ByteFormat.string(freeable)).")
             : String(localized: "\(ByteFormat.string(reading.available)) left.")
-        if purged > 0 { body = String(localized: "MacSpace freed \(ByteFormat.string(purged)) of purgeable files.") + " " + body }
+        if purged > 0 { body = String(localized: "Molt freed \(ByteFormat.string(purged)) of purgeable files.") + " " + body }
         body += " " + String(localized: "Export a dry-run report in Settings to see what else could go.")
         post(.lowSpace, title: String(localized: "Your disk is almost full"), body: body, destination: "settings")
     }

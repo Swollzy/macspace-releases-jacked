@@ -1,5 +1,5 @@
 #!/bin/bash
-# Tests MacSpace on this Mac by itself: no switch to flip, nothing to answer. Run it, wait, send back the report.
+# Tests Molt on this Mac by itself: no switch to flip, nothing to answer. Run it, wait, send back the report.
 #
 #   Scripts/SelfTest.sh
 #
@@ -16,14 +16,14 @@
 set -uo pipefail
 cd "$(dirname "$0")/.."
 
-APP=/Applications/MacSpace.app
+APP=/Applications/Molt.app
 CLI="$APP/Contents/MacOS/MacSpaceCli"
 DEBLOAT=com.macspace.debloat
 OUT="results/selftest-$(date +%Y%m%d-%H%M%S)"
 REPORT="$OUT/report.md"
 mkdir -p "$OUT"
 if [ -z "${DEVELOPER_DIR:-}" ] && [ -d /Applications/Xcode-beta.app ]; then export DEVELOPER_DIR=/Applications/Xcode-beta.app/Contents/Developer; fi
-[ -x "$CLI" ] || { echo "MacSpace is not in /Applications. Build it, copy it there, open it once, then run this again."; exit 1; }
+[ -x "$CLI" ] || { echo "Molt is not in /Applications. Build it, copy it there, open it once, then run this again."; exit 1; }
 
 PASSED=0; FAILED=0
 note() { printf '%s\n' "$*" >> "$REPORT"; }
@@ -35,7 +35,7 @@ result() { # status, item, detail
 section() { printf '\n\033[1m%s\033[0m\n' "$1"; note ""; note "## $1"; }
 
 {
-  echo "# MacSpace self-test"
+  echo "# Molt self-test"
   echo
   echo "- Date: $(date)"
   echo "- macOS: $(sw_vers -productVersion) ($(sw_vers -buildVersion))"
@@ -52,7 +52,7 @@ grep -q "source=Notarized Developer ID" "$OUT/spctl.txt" && result PASS "Notariz
 xcrun stapler validate "$APP" > "$OUT/stapler.txt" 2>&1 && result PASS "Ticket stapled" || result FAIL "Ticket stapled" "see stapler.txt"
 "$CLI" helper --ping > "$OUT/helper.txt" 2>&1
 if grep -q "ping ok" "$OUT/helper.txt"; then result PASS "Helper answers the command-line tool"
-else result FAIL "Helper" "$(head -3 "$OUT/helper.txt" | tr '\n' ' ') — open MacSpace once (it re-registers the helper), then run this again"; fi
+else result FAIL "Helper" "$(head -3 "$OUT/helper.txt" | tr '\n' ' ') — open Molt once (it re-registers the helper), then run this again"; fi
 
 # MARK: CacheDelete
 

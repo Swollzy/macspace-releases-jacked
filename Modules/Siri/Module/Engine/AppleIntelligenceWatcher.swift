@@ -70,13 +70,13 @@ public struct AppleIntelligenceWatcher: Sendable {
             switch status.state {
             case .atRisk:
                 alert = .init(severity: .warning, title: loc("Apple Intelligence is back on"),
-                              message: loc("Switch it off again in MacSpace."))
+                              message: loc("Switch it off again in Molt."))
             case .unknown where now.timeIntervalSince(since) >= Self.unknownGrace:
                 alert = .init(severity: .warning, title: loc("Couldn't check Apple Intelligence"),
-                              message: loc("Open MacSpace to check."))
+                              message: loc("Open Molt to check."))
             case .releasing where now.timeIntervalSince(since) >= releaseGrace:
                 alert = .init(severity: .warning, title: loc("Apple Intelligence models still on disk"),
-                              message: loc("Open MacSpace to free them."))
+                              message: loc("Open Molt to free them."))
             case .protected where previous.map { $0.state != .protected && $0.warned } ?? false:
                 alert = .init(severity: .info, title: loc("Apple Intelligence is off"),
                               message: loc("Its models are gone."))
@@ -94,8 +94,8 @@ public struct AppleIntelligenceWatcher: Sendable {
 
 /// File-backed state, log and notification handling for the watcher.
 public struct AppleIntelligenceWatchStore {
-    public static let supportDirectory = FileManager.default.homeDirectoryForCurrentUser.appendingPathComponent("Library/Application Support/MacSpace")
-    public static let logDirectory = FileManager.default.homeDirectoryForCurrentUser.appendingPathComponent("Library/Logs/MacSpace")
+    public static let supportDirectory = FileManager.default.homeDirectoryForCurrentUser.appendingPathComponent("Library/Application Support/Molt")
+    public static let logDirectory = FileManager.default.homeDirectoryForCurrentUser.appendingPathComponent("Library/Logs/Molt")
     public static let maximumLogBytes = 512 * 1024
 
     public let stateURL: URL

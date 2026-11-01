@@ -373,7 +373,7 @@ public final class LiveDebloatSystem: DebloatSystem {
             return ["/usr/libexec/PlistBuddy", "-c", "Delete :\(flag.feature):Enabled", flag.overridePath]
         case (.managedPreference, _):
             // The control's own profile, opened for approval (see `stageProfile`).
-            return ["/usr/bin/open", "MacSpace-<control>.mobileconfig"]
+            return ["/usr/bin/open", "Molt-<control>.mobileconfig"]
         case (.systemTool, .value(.bool(let enabled))):
             switch setting.tool!.tool {
             case .tailspin: return ["/usr/bin/tailspin", enabled ? "enable" : "disable"]
@@ -457,11 +457,11 @@ public final class LiveDebloatSystem: DebloatSystem {
     }
 
     private func profileURL(_ fileName: String) -> URL? {
-        targetUser?.home.appendingPathComponent("Library/Application Support/MacSpace/Profiles/\(fileName)")
+        targetUser?.home.appendingPathComponent("Library/Application Support/Molt/Profiles/\(fileName)")
     }
 
     public func removeProfile(identifier: String) throws -> String {
-        guard ConfigurationProfileBuilder.isMacSpaceProfile(identifier) else { throw DebloatSystemError.commandFailed("\(identifier) is not a MacSpace profile.") }
+        guard ConfigurationProfileBuilder.isMacSpaceProfile(identifier) else { throw DebloatSystemError.commandFailed("\(identifier) is not a Molt profile.") }
         guard isRoot else { throw DebloatSystemError.commandFailed("Removing a profile needs root.") }
         let result = try runner.run("/usr/bin/profiles", ["remove", "-identifier", identifier], timeout: 30)
         guard result.exitCode == 0 else {

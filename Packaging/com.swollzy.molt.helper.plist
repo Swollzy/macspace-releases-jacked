@@ -7,23 +7,23 @@
 <plist version="1.0">
 <dict>
 	<key>Label</key>
-	<string>com.macspace.helper</string>
+	<string>com.swollzy.molt.helper</string>
 	<key>BundleProgram</key>
 	<string>Contents/MacOS/MacSpaceHelper</string>
 	<key>ProgramArguments</key>
 	<array>
 		<string>MacSpaceHelper</string>
 		<string>--client-requirement</string>
-		<string>anchor apple generic and (identifier "com.macspace.app" or identifier "com.macspace.cli") and certificate leaf[subject.OU] = "__TEAM_ID__"</string>
+		<string>anchor apple generic and (identifier "com.swollzy.molt" or identifier "com.swollzy.molt.cli") and certificate leaf[subject.OU] = "__TEAM_ID__"</string>
 	</array>
 	<key>MachServices</key>
 	<dict>
-		<key>com.macspace.helper</key>
+		<key>com.swollzy.molt.helper</key>
 		<true/>
 	</dict>
 	<key>AssociatedBundleIdentifiers</key>
 	<array>
-		<string>com.macspace.app</string>
+		<string>com.swollzy.molt</string>
 	</array>
 </dict>
 </plist>

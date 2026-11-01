@@ -275,7 +275,7 @@ public struct DebloatModule: MacSpaceModule {
         if changed == 0 { return .succeeded(action == .apply ? loc("Already disabled") : loc("Already enabled")) }
         if approval {
             return ActionResult(outcome: .needsAttention, message: loc("Approve the profile in System Settings"),
-                                details: ["Open System Settings > General > Device Management and approve the MacSpace profile there, once: it holds every policy switched off. Switching a policy back on later needs no approval."] + details, restartRequired: restart)
+                                details: ["Open System Settings > General > Device Management and approve the Molt profile there, once: it holds every policy switched off. Switching a policy back on later needs no approval."] + details, restartRequired: restart)
         }
         return ActionResult(outcome: .succeeded, message: action == .apply ? loc("Disabled") : loc("Enabled"), details: details, restartRequired: restart)
     }

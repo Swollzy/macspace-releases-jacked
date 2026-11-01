@@ -58,6 +58,7 @@ struct SettingsView: View {
                 }
             }
             MacOSReleaseSection()
+            UninstallSettingsSection(host: host)
         }
         .animation(Theme.layout, value: moduleOptions.map(\.id))
         .modifier(PageScrollArea(hasFooter: false))

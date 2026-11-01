@@ -134,14 +134,14 @@
   "Apple Intelligenceが再びオンになりました",
   "Apple Intelligence가 다시 켜짐"
  ],
- "Apple Intelligence is not switched off in this account (Siri language %@ matches the system language); switch it off in MacSpace first.": [
-  "O Apple Intelligence não está desativado nesta conta (o idioma da Siri, %@, é igual ao do sistema); desative-o primeiro no MacSpace.",
-  "Apple Intelligence n’est pas désactivé sur ce compte (la langue de Siri, %@, correspond à celle du système) ; désactivez-le d’abord dans MacSpace.",
-  "Apple Intelligence no está desactivado en esta cuenta (el idioma de Siri, %@, coincide con el del sistema); desactívalo primero en MacSpace.",
-  "Apple Intelligence ist in diesem Account nicht ausgeschaltet (die Siri-Sprache %@ entspricht der Systemsprache); schalte es zuerst in MacSpace aus.",
-  "此账户的 Apple 智能尚未关闭（Siri 语言 %@ 与系统语言相同）；请先在 MacSpace 中关闭。",
-  "このアカウントではApple Intelligenceがオフではありません（Siriの言語%@がシステム言語と一致）。先にMacSpaceでオフにしてください。",
-  "이 계정에서 Apple Intelligence가 꺼지지 않았습니다(Siri 언어 %@이(가) 시스템 언어와 일치). 먼저 MacSpace에서 끄세요."
+ "Apple Intelligence is not switched off in this account (Siri language %@ matches the system language); switch it off in Molt first.": [
+  "O Apple Intelligence não está desativado nesta conta (o idioma da Siri, %@, é igual ao do sistema); desative-o primeiro no Molt.",
+  "Apple Intelligence n’est pas désactivé sur ce compte (la langue de Siri, %@, correspond à celle du système) ; désactivez-le d’abord dans Molt.",
+  "Apple Intelligence no está desactivado en esta cuenta (el idioma de Siri, %@, coincide con el del sistema); desactívalo primero en Molt.",
+  "Apple Intelligence ist in diesem Account nicht ausgeschaltet (die Siri-Sprache %@ entspricht der Systemsprache); schalte es zuerst in Molt aus.",
+  "此账户的 Apple 智能尚未关闭（Siri 语言 %@ 与系统语言相同）；请先在 Molt 中关闭。",
+  "このアカウントではApple Intelligenceがオフではありません（Siriの言語%@がシステム言語と一致）。先にMoltでオフにしてください。",
+  "이 계정에서 Apple Intelligence가 꺼지지 않았습니다(Siri 언어 %@이(가) 시스템 언어와 일치). 먼저 Molt에서 끄세요."
  ],
  "Apple Intelligence is off": [
   "O Apple Intelligence está desativado",
@@ -206,14 +206,14 @@
   "まだ解放できません",
   "아직 정리할 수 없음"
  ],
- "Changed outside MacSpace": [
-  "Alterado fora do MacSpace",
-  "Modifié hors de MacSpace",
-  "Modificado fuera de MacSpace",
-  "Außerhalb von MacSpace geändert",
-  "已在 MacSpace 外更改",
-  "MacSpace以外で変更されました",
-  "MacSpace 외부에서 변경됨"
+ "Changed outside Molt": [
+  "Alterado fora do Molt",
+  "Modifié hors de Molt",
+  "Modificado fuera de Molt",
+  "Außerhalb von Molt geändert",
+  "已在 Molt 外更改",
+  "Molt以外で変更されました",
+  "Molt 외부에서 변경됨"
  ],
  "Couldn't change feature settings.": [
   "Não foi possível alterar os ajustes do recurso.",
@@ -251,14 +251,14 @@
   "モデルのリクエストを復元できませんでした。",
   "모델 요청을 복원할 수 없습니다."
  ],
- "Deleted accounts still subscribe to the models. Remove their leftovers in MacSpace (Siri & Apple Intelligence), restart, then try again.": [
-  "Contas apagadas ainda usam os modelos. Remova os restos delas no MacSpace (Siri e Apple Intelligence), reinicie e tente de novo.",
-  "Des comptes supprimés utilisent encore les modèles. Supprimez leurs restes dans MacSpace (Siri et Apple Intelligence), redémarrez, puis réessayez.",
-  "Cuentas eliminadas siguen usando los modelos. Elimina sus restos en MacSpace (Siri y Apple Intelligence), reinicia y vuelve a intentarlo.",
-  "Gelöschte Accounts nutzen die Modelle noch. Entferne ihre Reste in MacSpace (Siri & Apple Intelligence), starte neu und versuche es erneut.",
-  "已删除账户仍订阅模型。请在 MacSpace（Siri 与 Apple 智能）中移除残留，重新启动后重试。",
-  "削除済みアカウントがモデルを購読しています。MacSpaceの「SiriとApple Intelligence」で残りを削除し、再起動して再度お試しください。",
-  "삭제된 계정이 여전히 모델을 구독합니다. MacSpace의 Siri 및 Apple Intelligence에서 잔여 항목을 제거하고 재시동한 후 다시 시도하세요."
+ "Deleted accounts still subscribe to the models. Remove their leftovers in Molt (Siri & Apple Intelligence), restart, then try again.": [
+  "Contas apagadas ainda usam os modelos. Remova os restos delas no Molt (Siri e Apple Intelligence), reinicie e tente de novo.",
+  "Des comptes supprimés utilisent encore les modèles. Supprimez leurs restes dans Molt (Siri et Apple Intelligence), redémarrez, puis réessayez.",
+  "Cuentas eliminadas siguen usando los modelos. Elimina sus restos en Molt (Siri y Apple Intelligence), reinicia y vuelve a intentarlo.",
+  "Gelöschte Accounts nutzen die Modelle noch. Entferne ihre Reste in Molt (Siri & Apple Intelligence), starte neu und versuche es erneut.",
+  "已删除账户仍订阅模型。请在 Molt（Siri 与 Apple 智能）中移除残留，重新启动后重试。",
+  "削除済みアカウントがモデルを購読しています。Moltの「SiriとApple Intelligence」で残りを削除し、再起動して再度お試しください。",
+  "삭제된 계정이 여전히 모델을 구독합니다. Molt의 Siri 및 Apple Intelligence에서 잔여 항목을 제거하고 재시동한 후 다시 시도하세요."
  ],
  "Deletes Apple Intelligence models and other downloads macOS no longer needs.": [
   "Apaga modelos do Apple Intelligence e outros downloads de que o macOS não precisa mais.",
@@ -386,12 +386,12 @@
   "%@でログインし、Apple Intelligenceをオフにしてください。",
   "%@ 계정으로 로그인하여 Apple Intelligence를 끄세요."
  ],
- "MacSpace needs it to read and verify the switch.": [
-  "O MacSpace precisa para ler e verificar o botão.",
-  "MacSpace en a besoin pour lire et vérifier l’interrupteur.",
-  "MacSpace lo necesita para leer y comprobar el interruptor.",
-  "MacSpace braucht ihn, um den Schalter zu lesen und zu prüfen.",
-  "MacSpace 需要此权限才能读取和验证开关状态。",
+ "Molt needs it to read and verify the switch.": [
+  "O Molt precisa para ler e verificar o botão.",
+  "Molt en a besoin pour lire et vérifier l’interrupteur.",
+  "Molt lo necesita para leer y comprobar el interruptor.",
+  "Molt braucht ihn, um den Schalter zu lesen und zu prüfen.",
+  "Molt 需要此权限才能读取和验证开关状态。",
   "スイッチの状態を読み取り検証するために必要です。",
   "스위치 상태를 읽고 확인하려면 이 권한이 필요합니다."
  ],
@@ -440,23 +440,23 @@
   "開く",
   "열기"
  ],
- "Open MacSpace to check.": [
-  "Abra o MacSpace para verificar.",
-  "Ouvrez MacSpace pour vérifier.",
-  "Abre MacSpace para comprobarlo.",
-  "Öffne MacSpace, um es zu prüfen.",
-  "打开 MacSpace 进行检查。",
-  "MacSpaceを開いて確認してください。",
-  "MacSpace를 열어 확인하세요."
+ "Open Molt to check.": [
+  "Abra o Molt para verificar.",
+  "Ouvrez Molt pour vérifier.",
+  "Abre Molt para comprobarlo.",
+  "Öffne Molt, um es zu prüfen.",
+  "打开 Molt 进行检查。",
+  "Moltを開いて確認してください。",
+  "Molt를 열어 확인하세요."
  ],
- "Open MacSpace to free them.": [
-  "Abra o MacSpace para liberá-los.",
-  "Ouvrez MacSpace pour les libérer.",
-  "Abre MacSpace para liberarlos.",
-  "Öffne MacSpace, um sie freizugeben.",
-  "打开 MacSpace 释放模型。",
-  "MacSpaceを開いて解放してください。",
-  "MacSpace를 열어 정리하세요."
+ "Open Molt to free them.": [
+  "Abra o Molt para liberá-los.",
+  "Ouvrez Molt pour les libérer.",
+  "Abre Molt para liberarlos.",
+  "Öffne Molt, um sie freizugeben.",
+  "打开 Molt 释放模型。",
+  "Moltを開いて解放してください。",
+  "Molt를 열어 정리하세요."
  ],
  "Open System Settings > Apple Account > iCloud.": [
   "Abra Ajustes do Sistema > Conta Apple > iCloud.",
@@ -512,14 +512,14 @@
   "この変更を適用するにはMacを再起動してください。",
   "이 변경 사항을 적용하려면 Mac을 재시동하세요."
  ],
- "Restart. MacSpace then deletes the models.": [
-  "Reinicie. Depois, o MacSpace apaga os modelos.",
-  "Redémarrez. MacSpace supprime ensuite les modèles.",
-  "Reinicia. Después, MacSpace elimina los modelos.",
-  "Starte neu. Danach löscht MacSpace die Modelle.",
-  "请重新启动，MacSpace 随后会删除模型。",
-  "再起動してください。その後MacSpaceがモデルを削除します。",
-  "재시동하세요. 이후 MacSpace가 모델을 삭제합니다."
+ "Restart. Molt then deletes the models.": [
+  "Reinicie. Depois, o Molt apaga os modelos.",
+  "Redémarrez. Molt supprime ensuite les modèles.",
+  "Reinicia. Después, Molt elimina los modelos.",
+  "Starte neu. Danach löscht Molt die Modelle.",
+  "请重新启动，Molt 随后会删除模型。",
+  "再起動してください。その後Moltがモデルを削除します。",
+  "재시동하세요. 이후 Molt가 모델을 삭제합니다."
  ],
  "Siri": [
   "Siri",
@@ -602,14 +602,14 @@
   "Apple Intelligenceをオフにし、モデルの容量を取り戻します。",
   "Apple Intelligence를 끄고 모델이 차지하는 공간을 확보합니다."
  ],
- "Switch it off again in MacSpace.": [
-  "Desative-o de novo no MacSpace.",
-  "Désactivez-le de nouveau dans MacSpace.",
-  "Vuelve a desactivarlo en MacSpace.",
-  "Schalte es in MacSpace wieder aus.",
-  "在 MacSpace 中再次关闭。",
-  "MacSpaceでもう一度オフにしてください。",
-  "MacSpace에서 다시 끄세요."
+ "Switch it off again in Molt.": [
+  "Desative-o de novo no Molt.",
+  "Désactivez-le de nouveau dans Molt.",
+  "Vuelve a desactivarlo en Molt.",
+  "Schalte es in Molt wieder aus.",
+  "在 Molt 中再次关闭。",
+  "Moltでもう一度オフにしてください。",
+  "Molt에서 다시 끄세요."
  ],
  "Switching it off sets Siri to a different language than your Mac.": [
   "Desativá-lo coloca a Siri num idioma diferente do seu Mac.",
@@ -674,14 +674,14 @@
   "「このMacを同期」をオフにし、データをこのMacに残してください。",
   "이 Mac 동기화를 끄고 데이터를 이 Mac에 유지하세요."
  ],
- "Turns Siri off and frees its unused models. MacSpace checks again while it stays off. Your Siri language is kept.": [
-  "Desativa a Siri e libera os modelos não usados. O MacSpace verifica novamente enquanto ela estiver desativada. O idioma da Siri é mantido.",
-  "Désactive Siri et libère ses modèles inutilisés. MacSpace vérifie à nouveau tant que Siri reste désactivé. La langue de Siri est conservée.",
-  "Desactiva Siri y libera sus modelos sin uso. MacSpace vuelve a comprobarlos mientras siga desactivado. Se conserva el idioma de Siri.",
-  "Schaltet Siri aus und gibt ungenutzte Modelle frei. MacSpace prüft erneut, solange Siri aus bleibt. Die Siri-Sprache bleibt erhalten.",
-  "关闭 Siri 并释放其未使用的模型。关闭期间，MacSpace 会再次检查。保留 Siri 语言。",
-  "Siriをオフにして未使用のモデルを解放します。オフの間はMacSpaceが再確認します。Siriの言語は維持されます。",
-  "Siri를 끄고 사용하지 않는 모델을 비웁니다. 꺼져 있는 동안 MacSpace가 다시 확인합니다. Siri 언어는 유지됩니다."
+ "Turns Siri off and frees its unused models. Molt checks again while it stays off. Your Siri language is kept.": [
+  "Desativa a Siri e libera os modelos não usados. O Molt verifica novamente enquanto ela estiver desativada. O idioma da Siri é mantido.",
+  "Désactive Siri et libère ses modèles inutilisés. Molt vérifie à nouveau tant que Siri reste désactivé. La langue de Siri est conservée.",
+  "Desactiva Siri y libera sus modelos sin uso. Molt vuelve a comprobarlos mientras siga desactivado. Se conserva el idioma de Siri.",
+  "Schaltet Siri aus und gibt ungenutzte Modelle frei. Molt prüft erneut, solange Siri aus bleibt. Die Siri-Sprache bleibt erhalten.",
+  "关闭 Siri 并释放其未使用的模型。关闭期间，Molt 会再次检查。保留 Siri 语言。",
+  "Siriをオフにして未使用のモデルを解放します。オフの間はMoltが再確認します。Siriの言語は維持されます。",
+  "Siri를 끄고 사용하지 않는 모델을 비웁니다. 꺼져 있는 동안 Molt가 다시 확인합니다. Siri 언어는 유지됩니다."
  ],
  "Turns off spatial photo effects and frees their downloaded models.": [
   "Desativa os efeitos de fotos espaciais e libera os modelos baixados.",
@@ -737,14 +737,14 @@
   "未使用のシステムモデル",
   "사용하지 않는 시스템 모델"
  ],
- "Usually takes a few instants. If it doesn't, MacSpace does it after %lld minutes.": [
-  "Normalmente leva alguns instantes. Se não acontecer, o MacSpace faz isso após %lld minutos.",
-  "Cela prend généralement quelques instants. Sinon, MacSpace s’en charge au bout de %lld minutes.",
-  "Suele tardar unos instantes. Si no ocurre, MacSpace lo hace tras %lld minutos.",
-  "Dauert meist nur einen Moment. Falls nicht, erledigt MacSpace das nach %lld Minuten.",
-  "通常很快完成。如未完成，MacSpace 会在 %lld 分钟后处理。",
-  "通常はすぐ終わります。終わらない場合は%lld分後にMacSpaceが処理します。",
-  "보통 곧 완료됩니다. 그렇지 않으면 %lld분 후 MacSpace가 처리합니다."
+ "Usually takes a few instants. If it doesn't, Molt does it after %lld minutes.": [
+  "Normalmente leva alguns instantes. Se não acontecer, o Molt faz isso após %lld minutos.",
+  "Cela prend généralement quelques instants. Sinon, Molt s’en charge au bout de %lld minutes.",
+  "Suele tardar unos instantes. Si no ocurre, Molt lo hace tras %lld minutos.",
+  "Dauert meist nur einen Moment. Falls nicht, erledigt Molt das nach %lld Minuten.",
+  "通常很快完成。如未完成，Molt 会在 %lld 分钟后处理。",
+  "通常はすぐ終わります。終わらない場合は%lld分後にMoltが処理します。",
+  "보통 곧 완료됩니다. 그렇지 않으면 %lld분 후 Molt가 처리합니다."
  ],
  "macOS still keeps these models.": [
   "O macOS ainda mantém esses modelos.",
@@ -827,14 +827,14 @@
   "%@のモデルを解放中",
   "모델 %@ 정리 중"
  ],
- "macOS does not offer Apple Intelligence in a virtual machine. Use MacSpace on a real Mac.": [
-  "O macOS não oferece o Apple Intelligence em máquinas virtuais. Use o MacSpace em um Mac real.",
-  "macOS ne propose pas Apple Intelligence dans une machine virtuelle. Utilisez MacSpace sur un vrai Mac.",
-  "macOS no ofrece Apple Intelligence en una máquina virtual. Usa MacSpace en un Mac real.",
-  "macOS bietet Apple Intelligence in virtuellen Maschinen nicht an. Nutze MacSpace auf einem echten Mac.",
-  "macOS 不在虚拟机中提供 Apple 智能。请在实体 Mac 上使用 MacSpace。",
-  "仮想マシンではApple Intelligenceを利用できません。実機のMacでMacSpaceを使ってください。",
-  "macOS는 가상 머신에서 Apple Intelligence를 제공하지 않습니다. 실제 Mac에서 MacSpace를 사용하세요."
+ "macOS does not offer Apple Intelligence in a virtual machine. Use Molt on a real Mac.": [
+  "O macOS não oferece o Apple Intelligence em máquinas virtuais. Use o Molt em um Mac real.",
+  "macOS ne propose pas Apple Intelligence dans une machine virtuelle. Utilisez Molt sur un vrai Mac.",
+  "macOS no ofrece Apple Intelligence en una máquina virtual. Usa Molt en un Mac real.",
+  "macOS bietet Apple Intelligence in virtuellen Maschinen nicht an. Nutze Molt auf einem echten Mac.",
+  "macOS 不在虚拟机中提供 Apple 智能。请在实体 Mac 上使用 Molt。",
+  "仮想マシンではApple Intelligenceを利用できません。実機のMacでMoltを使ってください。",
+  "macOS는 가상 머신에서 Apple Intelligence를 제공하지 않습니다. 실제 Mac에서 Molt를 사용하세요."
  ],
  "models not measured": [
   "modelos não medidos",
@@ -998,14 +998,14 @@
   "macOSがモデルを再びダウンロードします。",
   "macOS가 모델을 다시 다운로드합니다."
  ],
- "Each one can be enabled again. MacSpace frees their models.": [
-  "Cada um pode ser reativado. O MacSpace libera os modelos deles.",
-  "Chacune peut être réactivée. MacSpace libère leurs modèles.",
-  "Cada una se puede volver a activar. MacSpace libera sus modelos.",
-  "Jede lässt sich wieder aktivieren. MacSpace gibt ihre Modelle frei.",
-  "每项功能都可以重新启用。MacSpace 会释放它们的模型。",
-  "どの機能も再び有効にできます。MacSpaceがモデルを解放します。",
-  "각 기능은 다시 켤 수 있습니다. MacSpace가 모델을 정리합니다."
+ "Each one can be enabled again. Molt frees their models.": [
+  "Cada um pode ser reativado. O Molt libera os modelos deles.",
+  "Chacune peut être réactivée. Molt libère leurs modèles.",
+  "Cada una se puede volver a activar. Molt libera sus modelos.",
+  "Jede lässt sich wieder aktivieren. Molt gibt ihre Modelle frei.",
+  "每项功能都可以重新启用。Molt 会释放它们的模型。",
+  "どの機能も再び有効にできます。Moltがモデルを解放します。",
+  "각 기능은 다시 켤 수 있습니다. Molt가 모델을 정리합니다."
  ],
  "%@ of models for %@; switch it off to free them": [
   "%@ de modelos para %@; desative para liberar",
@@ -1097,32 +1097,32 @@
   "今は変更できません",
   "지금은 변경할 수 없음"
  ],
- "Another change affects these settings. MacSpace keeps it and does not free the call transcription models by itself.": [
-  "Outra alteração afeta estes ajustes. O MacSpace a preserva e não libera sozinho os modelos de transcrição de chamadas.",
-  "Une autre modification touche ces réglages. MacSpace la conserve et ne libère pas de lui-même les modèles de transcription des appels.",
-  "Otro cambio afecta a estos ajustes. MacSpace lo conserva y no libera por sí solo los modelos de transcripción de llamadas.",
-  "Eine andere Änderung betrifft diese Einstellungen. MacSpace behält sie bei und gibt die Modelle der Anruftranskription nicht selbst frei.",
-  "另一项更改影响了这些设置。MacSpace 会保留它，不会自行释放通话转录模型。",
-  "別の変更がこれらの設定に影響しています。MacSpaceはそれを維持し、通話の文字起こしのモデルを自動では解放しません。",
-  "다른 변경 사항이 이 설정에 영향을 줍니다. MacSpace는 이를 유지하며 통화 전사 모델을 직접 정리하지 않습니다."
+ "Another change affects these settings. Molt keeps it and does not free the call transcription models by itself.": [
+  "Outra alteração afeta estes ajustes. O Molt a preserva e não libera sozinho os modelos de transcrição de chamadas.",
+  "Une autre modification touche ces réglages. Molt la conserve et ne libère pas de lui-même les modèles de transcription des appels.",
+  "Otro cambio afecta a estos ajustes. Molt lo conserva y no libera por sí solo los modelos de transcripción de llamadas.",
+  "Eine andere Änderung betrifft diese Einstellungen. Molt behält sie bei und gibt die Modelle der Anruftranskription nicht selbst frei.",
+  "另一项更改影响了这些设置。Molt 会保留它，不会自行释放通话转录模型。",
+  "別の変更がこれらの設定に影響しています。Moltはそれを維持し、通話の文字起こしのモデルを自動では解放しません。",
+  "다른 변경 사항이 이 설정에 영향을 줍니다. Molt는 이를 유지하며 통화 전사 모델을 직접 정리하지 않습니다."
  ],
- "MacSpace could not read every Call transcription setting.": [
-  "O MacSpace não conseguiu ler todos os ajustes da Transcrição de chamadas.",
-  "MacSpace n’a pas pu lire tous les réglages de Transcription des appels.",
-  "MacSpace no pudo leer todos los ajustes de Transcripción de llamadas.",
-  "MacSpace konnte nicht alle Einstellungen der Anruftranskription lesen.",
-  "MacSpace 无法读取通话转录的全部设置。",
-  "MacSpaceは通話の文字起こしの設定をすべて読み取れませんでした。",
-  "MacSpace가 통화 전사 설정을 모두 읽지 못했습니다."
+ "Molt could not read every Call transcription setting.": [
+  "O Molt não conseguiu ler todos os ajustes da Transcrição de chamadas.",
+  "Molt n’a pas pu lire tous les réglages de Transcription des appels.",
+  "Molt no pudo leer todos los ajustes de Transcripción de llamadas.",
+  "Molt konnte nicht alle Einstellungen der Anruftranskription lesen.",
+  "Molt 无法读取通话转录的全部设置。",
+  "Moltは通話の文字起こしの設定をすべて読み取れませんでした。",
+  "Molt가 통화 전사 설정을 모두 읽지 못했습니다."
  ],
- "MacSpace needs its helper to restore Call transcription.": [
-  "O MacSpace precisa do auxiliar para restaurar a Transcrição de chamadas.",
-  "MacSpace a besoin de son assistant pour rétablir Transcription des appels.",
-  "MacSpace necesita su asistente para restaurar Transcripción de llamadas.",
-  "MacSpace braucht seinen Helfer, um die Anruftranskription wiederherzustellen.",
-  "MacSpace 需要其辅助程序来恢复通话转录。",
-  "通話の文字起こしを元に戻すにはMacSpaceのヘルパーが必要です。",
-  "통화 전사를 복원하려면 MacSpace 도우미가 필요합니다."
+ "Molt needs its helper to restore Call transcription.": [
+  "O Molt precisa do auxiliar para restaurar a Transcrição de chamadas.",
+  "Molt a besoin de son assistant pour rétablir Transcription des appels.",
+  "Molt necesita su asistente para restaurar Transcripción de llamadas.",
+  "Molt braucht seinen Helfer, um die Anruftranskription wiederherzustellen.",
+  "Molt 需要其辅助程序来恢复通话转录。",
+  "通話の文字起こしを元に戻すにはMoltのヘルパーが必要です。",
+  "통화 전사를 복원하려면 Molt 도우미가 필요합니다."
  ],
  "Couldn't restore Call transcription.": [
   "Não foi possível restaurar a Transcrição de chamadas.",
@@ -1133,14 +1133,14 @@
   "通話の文字起こしを元に戻せませんでした。",
   "통화 전사를 복원할 수 없습니다."
  ],
- "MacSpace needs its helper to change Call transcription.": [
-  "O MacSpace precisa do auxiliar para alterar a Transcrição de chamadas.",
-  "MacSpace a besoin de son assistant pour modifier Transcription des appels.",
-  "MacSpace necesita su asistente para cambiar Transcripción de llamadas.",
-  "MacSpace braucht seinen Helfer, um die Anruftranskription zu ändern.",
-  "MacSpace 需要其辅助程序来更改通话转录。",
-  "通話の文字起こしを変更するにはMacSpaceのヘルパーが必要です。",
-  "통화 전사를 변경하려면 MacSpace 도우미가 필요합니다."
+ "Molt needs its helper to change Call transcription.": [
+  "O Molt precisa do auxiliar para alterar a Transcrição de chamadas.",
+  "Molt a besoin de son assistant pour modifier Transcription des appels.",
+  "Molt necesita su asistente para cambiar Transcripción de llamadas.",
+  "Molt braucht seinen Helfer, um die Anruftranskription zu ändern.",
+  "Molt 需要其辅助程序来更改通话转录。",
+  "通話の文字起こしを変更するにはMoltのヘルパーが必要です。",
+  "통화 전사를 변경하려면 Molt 도우미가 필요합니다."
  ],
  "Couldn't verify the Call transcription change.": [
   "Não foi possível verificar a alteração da Transcrição de chamadas.",
@@ -1178,32 +1178,32 @@
   "通話の録音、文字起こし、字幕、翻訳と、ライブ留守番電話、着信スクリーニングをオフにします。再起動が必要です。",
   "통화 녹음, 전사, 자막, 번역과 실시간 음성 사서함, 통화 스크리닝을 끕니다. 재시동이 필요합니다."
  ],
- "macOS's own services still have these models open. They usually let go within minutes, and MacSpace then deletes them.": [
-  "Serviços do próprio macOS ainda estão usando esses modelos. Costumam liberá-los em poucos minutos, e o MacSpace então os apaga.",
-  "Des services de macOS utilisent encore ces modèles. Ils les libèrent en général en quelques minutes, puis MacSpace les supprime.",
-  "Servicios del propio macOS aún tienen abiertos estos modelos. Suelen liberarlos en pocos minutos y MacSpace los elimina entonces.",
-  "Dienste von macOS haben diese Modelle noch geöffnet. Sie geben sie meist innerhalb weniger Minuten frei, dann löscht MacSpace sie.",
-  "macOS 自身的服务仍在使用这些模型。它们通常会在几分钟内释放，随后 MacSpace 会将其删除。",
-  "macOS自身のサービスがまだこれらのモデルを開いています。通常は数分以内に解放され、その後MacSpaceが削除します。",
-  "macOS 자체 서비스가 아직 이 모델을 사용 중입니다. 보통 몇 분 안에 해제되며, 그러면 MacSpace가 삭제합니다."
+ "macOS's own services still have these models open. They usually let go within minutes, and Molt then deletes them.": [
+  "Serviços do próprio macOS ainda estão usando esses modelos. Costumam liberá-los em poucos minutos, e o Molt então os apaga.",
+  "Des services de macOS utilisent encore ces modèles. Ils les libèrent en général en quelques minutes, puis Molt les supprime.",
+  "Servicios del propio macOS aún tienen abiertos estos modelos. Suelen liberarlos en pocos minutos y Molt los elimina entonces.",
+  "Dienste von macOS haben diese Modelle noch geöffnet. Sie geben sie meist innerhalb weniger Minuten frei, dann löscht Molt sie.",
+  "macOS 自身的服务仍在使用这些模型。它们通常会在几分钟内释放，随后 Molt 会将其删除。",
+  "macOS自身のサービスがまだこれらのモデルを開いています。通常は数分以内に解放され、その後Moltが削除します。",
+  "macOS 자체 서비스가 아직 이 모델을 사용 중입니다. 보통 몇 분 안에 해제되며, 그러면 Molt가 삭제합니다."
  ],
- "macOS kept these models for ten minutes. After a restart, MacSpace deletes them.": [
-  "O macOS manteve esses modelos por dez minutos. Depois de reiniciar, o MacSpace os apaga.",
-  "macOS a conservé ces modèles pendant dix minutes. Après un redémarrage, MacSpace les supprime.",
-  "macOS ha conservado estos modelos durante diez minutos. Tras reiniciar, MacSpace los elimina.",
-  "macOS hat diese Modelle zehn Minuten lang behalten. Nach einem Neustart löscht MacSpace sie.",
-  "macOS 已将这些模型保留了十分钟。重新启动后，MacSpace 会将其删除。",
-  "macOSがこれらのモデルを10分間保持しています。再起動後にMacSpaceが削除します。",
-  "macOS가 이 모델을 10분 동안 유지했습니다. 재시동하면 MacSpace가 삭제합니다."
+ "macOS kept these models for ten minutes. After a restart, Molt deletes them.": [
+  "O macOS manteve esses modelos por dez minutos. Depois de reiniciar, o Molt os apaga.",
+  "macOS a conservé ces modèles pendant dix minutes. Après un redémarrage, Molt les supprime.",
+  "macOS ha conservado estos modelos durante diez minutos. Tras reiniciar, Molt los elimina.",
+  "macOS hat diese Modelle zehn Minuten lang behalten. Nach einem Neustart löscht Molt sie.",
+  "macOS 已将这些模型保留了十分钟。重新启动后，Molt 会将其删除。",
+  "macOSがこれらのモデルを10分間保持しています。再起動後にMoltが削除します。",
+  "macOS가 이 모델을 10분 동안 유지했습니다. 재시동하면 Molt가 삭제합니다."
  ],
- "MacSpace asks macOS again every five minutes.": [
-  "O MacSpace pede de novo ao macOS a cada cinco minutos.",
-  "MacSpace redemande à macOS toutes les cinq minutes.",
-  "MacSpace vuelve a pedírselo a macOS cada cinco minutos.",
-  "MacSpace fragt macOS alle fünf Minuten erneut.",
-  "MacSpace 每五分钟会再次请求 macOS。",
-  "MacSpaceは5分ごとにmacOSに再度依頼します。",
-  "MacSpace가 5분마다 macOS에 다시 요청합니다."
+ "Molt asks macOS again every five minutes.": [
+  "O Molt pede de novo ao macOS a cada cinco minutos.",
+  "Molt redemande à macOS toutes les cinq minutes.",
+  "Molt vuelve a pedírselo a macOS cada cinco minutos.",
+  "Molt fragt macOS alle fünf Minuten erneut.",
+  "Molt 每五分钟会再次请求 macOS。",
+  "Moltは5分ごとにmacOSに再度依頼します。",
+  "Molt가 5분마다 macOS에 다시 요청합니다."
  ],
  "Notify me when freeing models needs a restart": [
   "Avisar quando liberar modelos exigir reiniciar o Mac",
@@ -1250,23 +1250,23 @@
   "15分ごとにApple Intelligenceを確認",
   "15분마다 Apple Intelligence 확인"
  ],
- "While MacSpace is open: finds out if macOS turns Apple Intelligence back on, and frees the models it leaves.": [
-  "Enquanto o MacSpace estiver aberto: descobre se o macOS reativou o Apple Intelligence e libera os modelos que ele deixa.",
-  "Tant que MacSpace est ouvert : repère si macOS réactive Apple Intelligence et libère les modèles qu’il laisse.",
-  "Mientras MacSpace está abierto: detecta si macOS vuelve a activar Apple Intelligence y libera los modelos que deja.",
-  "Solange MacSpace geöffnet ist: bemerkt, wenn macOS Apple Intelligence wieder einschaltet, und gibt die Modelle frei, die es hinterlässt.",
-  "MacSpace 打开期间：发现 macOS 是否重新开启了 Apple 智能，并释放它留下的模型。",
-  "MacSpaceが開いている間：macOSがApple Intelligenceを再びオンにしたかを確認し、残ったモデルを解放します。",
-  "MacSpace가 열려 있는 동안: macOS가 Apple Intelligence를 다시 켰는지 확인하고 남은 모델을 정리합니다."
+ "While Molt is open: finds out if macOS turns Apple Intelligence back on, and frees the models it leaves.": [
+  "Enquanto o Molt estiver aberto: descobre se o macOS reativou o Apple Intelligence e libera os modelos que ele deixa.",
+  "Tant que Molt est ouvert : repère si macOS réactive Apple Intelligence et libère les modèles qu’il laisse.",
+  "Mientras Molt está abierto: detecta si macOS vuelve a activar Apple Intelligence y libera los modelos que deja.",
+  "Solange Molt geöffnet ist: bemerkt, wenn macOS Apple Intelligence wieder einschaltet, und gibt die Modelle frei, die es hinterlässt.",
+  "Molt 打开期间：发现 macOS 是否重新开启了 Apple 智能，并释放它留下的模型。",
+  "Moltが開いている間：macOSがApple Intelligenceを再びオンにしたかを確認し、残ったモデルを解放します。",
+  "Molt가 열려 있는 동안: macOS가 Apple Intelligence를 다시 켰는지 확인하고 남은 모델을 정리합니다."
  ],
- "While MacSpace is open: frees the models macOS asks for again for Siri, Spatial Photos and Call transcription after you switched them off.": [
-  "Enquanto o MacSpace estiver aberto: libera os modelos que o macOS pede de novo para Siri, Fotos Espaciais e Transcrição de chamadas depois que você os desativou.",
-  "Tant que MacSpace est ouvert : libère les modèles que macOS redemande pour Siri, Photos spatiales et Transcription des appels après que vous les avez désactivés.",
-  "Mientras MacSpace está abierto: libera los modelos que macOS vuelve a pedir para Siri, Fotos espaciales y Transcripción de llamadas después de desactivarlos.",
-  "Solange MacSpace geöffnet ist: gibt die Modelle frei, die macOS für Siri, Räumliche Fotos und Anruftranskription erneut anfordert, nachdem du sie ausgeschaltet hast.",
-  "MacSpace 打开期间：在你关闭 Siri、空间照片和通话转录后，释放 macOS 再次请求的模型。",
-  "MacSpaceが開いている間：Siri、空間写真、通話の文字起こしをオフにした後でmacOSが再び求めるモデルを解放します。",
-  "MacSpace가 열려 있는 동안: Siri, 공간 사진, 통화 전사를 끈 뒤 macOS가 다시 요청하는 모델을 정리합니다."
+ "While Molt is open: frees the models macOS asks for again for Siri, Spatial Photos and Call transcription after you switched them off.": [
+  "Enquanto o Molt estiver aberto: libera os modelos que o macOS pede de novo para Siri, Fotos Espaciais e Transcrição de chamadas depois que você os desativou.",
+  "Tant que Molt est ouvert : libère les modèles que macOS redemande pour Siri, Photos spatiales et Transcription des appels après que vous les avez désactivés.",
+  "Mientras Molt está abierto: libera los modelos que macOS vuelve a pedir para Siri, Fotos espaciales y Transcripción de llamadas después de desactivarlos.",
+  "Solange Molt geöffnet ist: gibt die Modelle frei, die macOS für Siri, Räumliche Fotos und Anruftranskription erneut anfordert, nachdem du sie ausgeschaltet hast.",
+  "Molt 打开期间：在你关闭 Siri、空间照片和通话转录后，释放 macOS 再次请求的模型。",
+  "Moltが開いている間：Siri、空間写真、通話の文字起こしをオフにした後でmacOSが再び求めるモデルを解放します。",
+  "Molt가 열려 있는 동안: Siri, 공간 사진, 통화 전사를 끈 뒤 macOS가 다시 요청하는 모델을 정리합니다."
  ],
  "Restart to free %@": [
   "Reiniciar para liberar %@",
@@ -1295,14 +1295,14 @@
   "ホームの通知",
   "홈 알림"
  ],
- "A notification when MacSpace finds that macOS made Apple Intelligence available again.": [
-  "Uma notificação quando o MacSpace perceber que o macOS disponibilizou o Apple Intelligence de novo.",
-  "Une notification quand MacSpace constate que macOS a de nouveau rendu Apple Intelligence disponible.",
-  "Una notificación cuando MacSpace detecta que macOS volvió a hacer disponible Apple Intelligence.",
-  "Eine Mitteilung, wenn MacSpace feststellt, dass macOS Apple Intelligence wieder verfügbar gemacht hat.",
-  "当 MacSpace 发现 macOS 再次提供 Apple 智能时发出通知。",
-  "macOSがApple Intelligenceを再び利用可能にしたことをMacSpaceが見つけたときに通知します。",
-  "macOS가 Apple Intelligence를 다시 사용 가능하게 한 것을 MacSpace가 발견하면 알립니다."
+ "A notification when Molt finds that macOS made Apple Intelligence available again.": [
+  "Uma notificação quando o Molt perceber que o macOS disponibilizou o Apple Intelligence de novo.",
+  "Une notification quand Molt constate que macOS a de nouveau rendu Apple Intelligence disponible.",
+  "Una notificación cuando Molt detecta que macOS volvió a hacer disponible Apple Intelligence.",
+  "Eine Mitteilung, wenn Molt feststellt, dass macOS Apple Intelligence wieder verfügbar gemacht hat.",
+  "当 Molt 发现 macOS 再次提供 Apple 智能时发出通知。",
+  "macOSがApple Intelligenceを再び利用可能にしたことをMoltが見つけたときに通知します。",
+  "macOS가 Apple Intelligence를 다시 사용 가능하게 한 것을 Molt가 발견하면 알립니다."
  ],
  "Free switched-off features' models automatically": [
   "Liberar automaticamente modelos de recursos desativados",

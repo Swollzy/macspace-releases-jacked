@@ -78,7 +78,19 @@ public struct FileTrasher: Sendable {
         guard lstat(file.path, &info) == 0 else { return "It is gone." }
         guard info.st_mode & S_IFMT == S_IFREG else { return "It is not a file any more." }
         guard UInt64(info.st_size) == file.bytes else { return "It changed since the scan." }
+        if let modified = file.modified {
+            let now = Date(timeIntervalSince1970: TimeInterval(info.st_mtimespec.tv_sec) + TimeInterval(info.st_mtimespec.tv_nsec) / 1e9)
+            guard abs(now.timeIntervalSince(modified)) < 1 else { return "It changed since the scan." }
+        }
+        // A folder on the way swapped for a link since the scan would lead the move somewhere else.
+        guard realPath(file.path) == (file.path as NSString).standardizingPath else { return "Its folder is a link now." }
         return nil
+    }
+
+    private func realPath(_ path: String) -> String? {
+        guard let resolved = realpath(path, nil) else { return nil }
+        defer { free(resolved) }
+        return (String(cString: resolved) as NSString).standardizingPath
     }
 
     private func trash(_ file: FoundFile, into outcome: inout Outcome) {

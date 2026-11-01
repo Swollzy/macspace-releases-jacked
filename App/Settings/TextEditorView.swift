@@ -79,12 +79,12 @@ final class TextEditorStore: ObservableObject {
     func markdown(_ texts: [CatalogText], all: Bool) -> String {
         var lines: [String] = []
         if all {
-            lines += ["# MacSpace texts for review", "",
+            lines += ["# Molt texts for review", "",
                       "Every text of the app shown below, grouped by the kind of interface element it is in. Suggest better wording where it "
                       + "helps, keeping the app's voice (short, plain, no jargon) and the placeholders (%@, %lld) of each text.", ""]
         } else {
-            lines += ["# MacSpace text changes", "",
-                      "Apply each change below in the MacSpace repository:", "",
+            lines += ["# Molt text changes", "",
+                      "Apply each change below in the Molt repository:", "",
                       "- The English of each text is its key in `Localization/<Table>.json` and a literal in the code at the places listed "
                       + "(`loc(\"…\")`, `String(localized: \"…\")`, `Text(\"…\")`; interpolations stand for the placeholders %@ and %lld).",
                       "- A new English: change the literal at every place and the key in the table, keeping its placeholders.",
@@ -185,12 +185,12 @@ public struct TextEditorView: View {
                 }
                 ToolbarItem {
                     Menu {
-                        Button("Export Changes…") { export(store.markdown(store.edited, all: false), name: "MacSpace text changes.md") }
+                        Button("Export Changes…") { export(store.markdown(store.edited, all: false), name: "Molt text changes.md") }
                             .disabled(store.edited.isEmpty)
                         Button("Copy Changes") { copy(store.markdown(store.edited, all: false)) }
                             .disabled(store.edited.isEmpty)
                         Divider()
-                        Button("Export Shown Texts for Review…") { export(store.markdown(shown, all: true), name: "MacSpace texts.md") }
+                        Button("Export Shown Texts for Review…") { export(store.markdown(shown, all: true), name: "Molt texts.md") }
                         Button("Copy Shown Texts for Review") { copy(store.markdown(shown, all: true)) }
                         Divider()
                         Button("Clear All Changes", role: .destructive) { store.proposals = [:] }

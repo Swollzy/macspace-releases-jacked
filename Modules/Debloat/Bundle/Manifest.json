@@ -5,7 +5,7 @@
   "version": "0.1.0",
   "sdkVersion": 7,
   "symbol": "shield.lefthalf.filled",
-  "minimumMacOS": "27.0",
+  "minimumMacOS": "26.0",
   "order": 30,
   "permissions": [
     "privilegedHelper",
@@ -15,7 +15,7 @@
     {
       "id": "notify",
       "title": "Notify me when macOS undoes a change",
-      "detail": "Shows a notification when macOS switches a disabled feature back on and MacSpace disables it again.",
+      "detail": "Shows a notification when macOS switches a disabled feature back on and Molt disables it again.",
       "kind": {
         "toggle": {
           "defaultValue": true
@@ -27,7 +27,7 @@
     {
       "id": "watch",
       "title": "Disable automatically if changed",
-      "detail": "Checks every 15 minutes while MacSpace is open, and disables again any feature macOS switched back on.",
+      "detail": "Checks every 15 minutes while Molt is open, and disables again any feature macOS switched back on.",
       "defaultEnabled": true,
       "intervalSeconds": 900
     }

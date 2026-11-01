@@ -22,7 +22,7 @@ enum SiriScreenBuilder {
                           message: loc("Apple Intelligence is on in \(elsewhere.map(\.label).joined(separator: ", ")). Its models are shared, so they stay on this Mac."))
         case .unknown:
             return Banner(id: "status", severity: .info, title: loc("Allow Full Disk Access"),
-                          message: loc("MacSpace needs it to read and verify the switch."),
+                          message: loc("Molt needs it to read and verify the switch."),
                           action: .allowFullDiskAccess(title: loc("Allow")))
         default:
             return nil
@@ -32,7 +32,7 @@ enum SiriScreenBuilder {
     /// macOS does not offer Apple Intelligence in a virtual machine, so there is nothing to switch off or release there.
     static func virtualMachineBanner() -> Banner {
         Banner(id: "status", severity: .info, title: loc("This is a virtual machine"),
-               message: loc("macOS does not offer Apple Intelligence in a virtual machine. Use MacSpace on a real Mac."))
+               message: loc("macOS does not offer Apple Intelligence in a virtual machine. Use Molt on a real Mac."))
     }
 
     /// The tile shows the switch itself, with no glow. What can be freed is said in the line under it, without a meter: the models
@@ -162,7 +162,7 @@ enum SiriScreenBuilder {
     /// again every five minutes; switched off elsewhere, the models are not MacSpace's to delete.
     static func keptBadge(_ feature: ModelFeatureSettings.Feature, _ snapshot: SiriSnapshot, isOn: Bool, managedOff: Bool) -> Badge? {
         guard !isOn, modelsSize(feature, snapshot) != nil else { return nil }
-        return Badge(loc("Kept by macOS"), .info, help: managedOff ? loc("MacSpace asks macOS again every five minutes.") : nil)
+        return Badge(loc("Kept by macOS"), .info, help: managedOff ? loc("Molt asks macOS again every five minutes.") : nil)
     }
 
     /// The Phone gates, with the native settings folded in.
@@ -284,7 +284,7 @@ enum SiriScreenBuilder {
                parameters: ["ids": rows.map(\.id).joined(separator: ",")],
                confirmation: on
                 ? Confirmation(title: question, message: loc("macOS downloads their models again."), confirmTitle: loc("Enable"))
-                : Confirmation(title: question, message: loc("Each one can be enabled again. MacSpace frees their models."), confirmTitle: loc("Disable")),
+                : Confirmation(title: question, message: loc("Each one can be enabled again. Molt frees their models."), confirmTitle: loc("Disable")),
                requires: rows.flatMap(\.action.requires).reduce(into: []) { if !$0.contains($1) { $0.append($1) } })
     }
 
@@ -367,7 +367,7 @@ enum SiriScreenBuilder {
             }
             let minutes = Int(ModelAutoRelease.settleTime / 60)
             return Badge(loc("macOS is freeing the model"), .info,
-                         help: loc("Usually takes a few instants. If it doesn't, MacSpace does it after \(minutes) minutes."))
+                         help: loc("Usually takes a few instants. If it doesn't, Molt does it after \(minutes) minutes."))
         }
         return Badge(loc("Kept by macOS"), .info)
     }
@@ -379,13 +379,13 @@ enum SiriScreenBuilder {
         guard modelsSize(feature, snapshot) != nil else { return nil }
         if snapshot.cleaningFeatures { return .freeingInBackground() }
         if needsRestart(feature, snapshot) {
-            return .restartRequired(help: loc("macOS kept these models for ten minutes. After a restart, MacSpace deletes them."))
+            return .restartRequired(help: loc("macOS kept these models for ten minutes. After a restart, Molt deletes them."))
         }
         // MacSpace is deleting them, again and again until they are gone (`ManagedModelCleanup`): the shared freeing pill
         // (`Badge.freeingInBackground`). What holds them up, when something does, is its hover tag.
         if snapshot.featureCleanupWaiting.contains(feature) {
             let help = snapshot.featureLocked.contains(feature)
-                ? loc("macOS's own services still have these models open. They usually let go within minutes, and MacSpace then deletes them.")
+                ? loc("macOS's own services still have these models open. They usually let go within minutes, and Molt then deletes them.")
                 : nil
             return .freeingInBackground(help: help)
         }
@@ -396,11 +396,11 @@ enum SiriScreenBuilder {
         let siri = feature == .siri
         let title = siri ? loc("Siri") : loc("Spatial Photos")
         let detail = siri
-            ? loc("Turns Siri off and frees its unused models. MacSpace checks again while it stays off. Your Siri language is kept.")
+            ? loc("Turns Siri off and frees its unused models. Molt checks again while it stays off. Your Siri language is kept.")
             : loc("Turns off spatial photo effects and frees their downloaded models.")
         let badge: Badge?
         switch status.state {
-        case .changedElsewhere: badge = Badge(loc("Changed outside MacSpace"), .info)
+        case .changedElsewhere: badge = Badge(loc("Changed outside Molt"), .info)
         case .unknown: badge = Badge(loc("State unknown"), .info)
         case .unsupported: badge = Badge(loc("Not verified on this macOS version"), .info)
         case .on, .off: badge = nil
@@ -425,10 +425,10 @@ enum SiriScreenBuilder {
         case .restartRequired:
             badge = .restartRequired()
         case .changedElsewhere:
-            badge = Badge(loc("Changed outside MacSpace"), .info,
-                          help: loc("Another change affects these settings. MacSpace keeps it and does not free the call transcription models by itself."))
+            badge = Badge(loc("Changed outside Molt"), .info,
+                          help: loc("Another change affects these settings. Molt keeps it and does not free the call transcription models by itself."))
         case .unknown:
-            badge = Badge(loc("State unknown"), .info, help: loc("MacSpace could not read every Call transcription setting."))
+            badge = Badge(loc("State unknown"), .info, help: loc("Molt could not read every Call transcription setting."))
         case .unsupported:
             badge = Badge(loc("Not verified on this macOS version"), .info)
         case .on, .off:
@@ -469,7 +469,7 @@ enum SiriScreenBuilder {
                  loc("Or delete the account in System Settings > Users & Groups.")]
             } ?? [loc("This account was deleted, but macOS still keeps its models. In Terminal, run:"),
                   "sudo \"\(snapshot.cliPath)\" orphan-subscriptions --execute",
-                  loc("Restart. MacSpace then deletes the models.")]
+                  loc("Restart. Molt then deletes the models.")]
             return Row(id: "account:\(account.guid)", title: account.label, subtitle: account.useCases.count == 1 ? loc("1 feature") : loc("\(account.useCases.count) features"),
                        badge: Badge(loc("Keeps the models"), .action), symbol: "person.crop.circle.badge.exclamationmark", steps: steps)
         }

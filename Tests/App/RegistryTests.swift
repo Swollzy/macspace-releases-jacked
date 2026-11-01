@@ -326,7 +326,7 @@ final class AppNotificationsTests: XCTestCase {
 
     /// Automatic cleanup never runs Large Files or Apps & Login Items, even if a manifest said it should.
     func testAutomaticCleanupNeverRunsTheTrashModules() {
-        for id in ["com.macspace.large-files", "com.macspace.apps-and-login-items"] {
+        for id in ["com.macspace.large-files", "com.macspace.apps-and-login-items", "com.macspace.old-versions"] {
             let manifest = ModuleManifest(id: id, name: id, summary: "", version: "1", symbol: "doc", autoClean: true)
             XCTAssertFalse(AutoCleaner.takesPart(manifest))
         }

@@ -34,7 +34,7 @@ public struct SiriModule: MacSpaceModule {
             catch { return .failed(loc("Couldn't restore feature settings."), details: [error.localizedDescription]) }
         }
         if PhoneFeatureFlags().hasSavedSettings {
-            guard let channel = context.privileged else { return .failed(loc("MacSpace needs its helper to restore Call transcription.")) }
+            guard let channel = context.privileged else { return .failed(loc("Molt needs its helper to restore Call transcription.")) }
             do { _ = try await channel.perform(operation: SiriPrivilegedOperations.setPhoneFeatures, arguments: ["off": "false"]) }
             catch { return .failed(loc("Couldn't restore Call transcription."), details: [error.localizedDescription]) }
         }
@@ -134,7 +134,7 @@ public struct SiriModule: MacSpaceModule {
     /// page, where the restart button is.
     static func restartNotice(_ bytes: UInt64) -> (title: String, body: String) {
         let title = bytes >= SiriScreenBuilder.purgeThreshold ? loc("Restart to free \(ByteFormat.string(bytes))") : loc("Restart to finish")
-        return (title, loc("macOS kept these models for ten minutes. After a restart, MacSpace deletes them."))
+        return (title, loc("macOS kept these models for ten minutes. After a restart, Molt deletes them."))
     }
 
     private func checkFeatureModels(force: Bool = false) async {
@@ -258,7 +258,7 @@ public struct SiriModule: MacSpaceModule {
             }
         case "togglePhoneFeatures":
             guard let value = request.parameters["value"], ["true", "false"].contains(value), let channel = context.privileged else {
-                return .failed(loc("MacSpace needs its helper to change Call transcription."))
+                return .failed(loc("Molt needs its helper to change Call transcription."))
             }
             do {
                 if value == "true" {
@@ -290,7 +290,7 @@ public struct SiriModule: MacSpaceModule {
             let store = self.store
             await ModelPurger.shared.purge(after: ModelReleaseTiming().releaseWait, force: true) { await store.invalidate() }
             return ActionResult(outcome: .succeeded, message: result.message,
-                                details: result.details + ["MacSpace deletes the released models in the background."], refresh: true)
+                                details: result.details + ["Molt deletes the released models in the background."], refresh: true)
         case "freeFeatureModels":
             // The switched-off features' cleanup, now and in view: what was given up on is tried again (`ManagedModelCleanup`).
             progress(ActionProgress(message: loc("Freeing space")))

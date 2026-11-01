@@ -57,7 +57,7 @@ enum PurgeCommand {
             guard allowed else {
                 print(CacheDeleteService.experimental.contains(service)
                       ? "error: \(service) is still being measured; pass --experiment to purge it from the CLI."
-                      : "error: \(service) is not a service MacSpace purges.")
+                      : "error: \(service) is not a service Molt purges.")
                 exit(64)
             }
         }

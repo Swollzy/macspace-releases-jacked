@@ -22,9 +22,9 @@ struct GlassWindowConfigurator: NSViewRepresentable {
     }
 
     final class ConfiguringView: NSView {
-        static let frameName = "MacSpace.glassWindow.2"
+        static let frameName = "Molt.glassWindow.2"
         /// Where earlier versions kept the window's frame, 8 points larger than the glass on every side.
-        static let earlierFrameName = "MacSpace.glassWindow"
+        static let earlierFrameName = "Molt.glassWindow"
         static let earlierBand: CGFloat = 8
 
         /// Off until the window says otherwise: set up before SwiftUI hands over the value, the shadow showed at once, before the glass.

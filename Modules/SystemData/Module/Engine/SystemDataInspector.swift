@@ -583,7 +583,7 @@ public struct SystemDataInspector {
             let leftover = modified(path).flatMap { staged in modified(system["systemVersion"]).map { staged < $0 } } ?? false
             if leftover {
                 add("update:staged", loc("Leftover macOS update files"), .stagedUpdate, paths: [path],
-                    cleanup: managed(loc("Files of an earlier macOS update that is already installed; no update is waiting. macOS has not removed them and they sit in a protected folder, so MacSpace leaves them alone.")))
+                    cleanup: managed(loc("Files of an earlier macOS update that is already installed; no update is waiting. macOS has not removed them and they sit in a protected folder, so Molt leaves them alone.")))
             } else {
                 add("update:staged", loc("Staged macOS update"), .stagedUpdate, paths: [path],
                     cleanup: SystemDataCleanup(kind: .review, description: loc("Check Software Update in System Settings."), command: nil))
@@ -1009,7 +1009,7 @@ public struct SystemDataCleaner {
             }
             // Read again for each item: an app or a build can start while earlier items are deleted.
             guard let processes = processCheck.processes() else {
-                return SystemDataCleanupResult(itemID: item.id, deleted: false, detail: loc("Nothing was freed: MacSpace couldn't check which apps are open."))
+                return SystemDataCleanupResult(itemID: item.id, deleted: false, detail: loc("Nothing was freed: Molt couldn't check which apps are open."))
             }
             let owner = ownersAreBundleIdentifiers
                 ? ProcessCheck.runningApp(item.owners, apps: runningApps(), processes: processes, appPath: processCheck.appPath)
@@ -1027,7 +1027,7 @@ public struct SystemDataCleaner {
             case true?:
                 return SystemDataCleanupResult(itemID: item.id, deleted: false, detail: loc("An app is using these files. Try again later."))
             case nil:
-                return SystemDataCleanupResult(itemID: item.id, deleted: false, detail: loc("Nothing was freed: MacSpace couldn't check which files are in use."))
+                return SystemDataCleanupResult(itemID: item.id, deleted: false, detail: loc("Nothing was freed: Molt couldn't check which files are in use."))
             }
             for path in paths {
                 // Renamed first, in one step, then deleted: an app that starts meanwhile finds no cache rather than half of one, and a

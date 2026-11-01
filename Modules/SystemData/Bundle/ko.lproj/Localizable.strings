@@ -7,7 +7,7 @@
 "%lld more, including Apple Intelligence models, are under Protected by macOS." = "Apple Intelligence 모델 등 %lld개 항목이 macOS가 보호에 있습니다.";
 "%lld places couldn't be measured." = "위치 %lld개를 측정하지 못했습니다.";
 "%lld places only the helper can measure: %@. Turn it on in Settings." = "보조 프로그램만 측정할 수 있는 위치 %lld개: %@. 설정에서 켜세요.";
-"%lld places weren't measured. Reopen MacSpace." = "위치 %lld개가 측정되지 않았습니다. MacSpace를 다시 여세요.";
+"%lld places weren't measured. Reopen Molt." = "위치 %lld개가 측정되지 않았습니다. Molt를 다시 여세요.";
 "%lld reports" = "보고서 %lld개";
 "/System/Library/%@" = "/System/Library/%@";
 "1 item" = "항목 1개";
@@ -79,7 +79,7 @@
 "Everything else" = "나머지 항목";
 "Everything in the Trash is deleted for good." = "휴지통의 모든 항목이 영구적으로 삭제됩니다.";
 "File system metadata" = "파일 시스템 메타데이터";
-"Files of an earlier macOS update that is already installed; no update is waiting. macOS has not removed them and they sit in a protected folder, so MacSpace leaves them alone." = "이미 설치된 macOS 업데이트의 파일이며 대기 중인 업데이트는 없습니다. macOS가 아직 제거하지 않았고 보호된 폴더에 있으므로 MacSpace가 유지합니다.";
+"Files of an earlier macOS update that is already installed; no update is waiting. macOS has not removed them and they sit in a protected folder, so Molt leaves them alone." = "이미 설치된 macOS 업데이트의 파일이며 대기 중인 업데이트는 없습니다. macOS가 아직 제거하지 않았고 보호된 폴더에 있으므로 Molt가 유지합니다.";
 "Free" = "확보";
 "Free %@" = "%@ 확보";
 "Free %@ in the Trash?" = "휴지통의 %@ 정리할까요?";
@@ -135,8 +135,8 @@
 "Not a cleanable item (%@)." = "정리할 수 없는 항목입니다(%@).";
 "Not identified" = "식별되지 않음";
 "Not opened for %lld days" = "%lld일 동안 열지 않음";
-"Nothing was freed: MacSpace couldn't check which apps are open." = "정리된 항목 없음: 실행 중인 앱을 확인하지 못했습니다.";
-"Nothing was freed: MacSpace couldn't check which files are in use." = "정리된 항목 없음: 사용 중인 파일을 확인하지 못했습니다.";
+"Nothing was freed: Molt couldn't check which apps are open." = "정리된 항목 없음: 실행 중인 앱을 확인하지 못했습니다.";
+"Nothing was freed: Molt couldn't check which files are in use." = "정리된 항목 없음: 사용 중인 파일을 확인하지 못했습니다.";
 "Old Homebrew versions" = "이전 Homebrew 버전";
 "Old app copy" = "이전 앱 사본";
 "Old diagnostic and crash reports" = "오래된 진단 및 충돌 보고서";
@@ -236,7 +236,7 @@
 "free %@" = "%@ 확보";
 "macOS builds them again the next time it reads a crash report." = "다음에 충돌 보고서를 읽을 때 macOS가 다시 생성합니다.";
 "macOS downloads them again if they're needed." = "필요하면 macOS가 다시 다운로드합니다.";
-"macOS keeps these locked, even from MacSpace." = "macOS가 잠근 항목으로 MacSpace도 접근할 수 없습니다.";
+"macOS keeps these locked, even from Molt." = "macOS가 잠근 항목으로 Molt도 접근할 수 없습니다.";
 "macOS restore image: %@" = "macOS 복원 이미지: %@";
 "macOS's model catalog, for the Photos spatial effect." = "사진 공간 효과를 위한 macOS 모델 카탈로그입니다.";
 "nothing to free" = "확보할 공간 없음";

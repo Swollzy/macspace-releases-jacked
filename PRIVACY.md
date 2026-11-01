@@ -1,48 +1,48 @@
 **English** · [Português](Docs/Translations/pt-BR/PRIVACY.md) · [Español](Docs/Translations/es/PRIVACY.md) · [Français](Docs/Translations/fr/PRIVACY.md) · [Deutsch](Docs/Translations/de/PRIVACY.md) · [简体中文](Docs/Translations/zh-Hans/PRIVACY.md) · [日本語](Docs/Translations/ja/PRIVACY.md) · [한국어](Docs/Translations/ko/PRIVACY.md)
 
-# Privacy Policy — MacSpace
+# Privacy Policy — Molt
 
-**Last updated: 19 October 2026 · Applies to MacSpace 1.0.0 and later**
+**Last updated: 19 October 2026 · Applies to Molt 1.0.0 and later**
 
-MacSpace does not collect, store, or transmit any usage data. There is no analytics, no
-telemetry, no crash reporting, and no advertising. MacSpace has no account system, so you never
+Molt does not collect, store, or transmit any usage data. There is no analytics, no
+telemetry, no crash reporting, and no advertising. Molt has no account system, so you never
 create a profile or sign in.
 
-This document describes exactly what MacSpace reads, where it keeps it, and the only moment it
+This document describes exactly what Molt reads, where it keeps it, and the only moment it
 uses the network.
 
 ---
 
 ## What stays on your Mac
 
-MacSpace measures your disk, reads a few system settings, and writes a few small files to your
+Molt measures your disk, reads a few system settings, and writes a few small files to your
 own machine. None of it leaves your Mac.
 
 | Data | Where it is stored |
 |---|---|
-| Your settings: theme, window choices, which modules are on, module options, automatic cleanup, notification choices, the last tile each module showed, the first-launch step | macOS preferences (`UserDefaults`) for MacSpace, `~/Library/Preferences/com.macspace.app.plist` |
+| Your settings: theme, window choices, which modules are on, module options, automatic cleanup, notification choices, the last tile each module showed, the first-launch step | macOS preferences (`UserDefaults`) for Molt, `~/Library/Preferences/com.swollzy.molt.plist` |
 | Sparkle's own settings: whether to check for updates automatically, and when it last checked | The same preferences file |
-| Cleanup history: when, which module, how much it freed, how it started, a one-line summary | `~/Library/Application Support/MacSpace/cleanup-history.json` |
-| Space that macOS kept although MacSpace asked it to free it | `~/Library/Application Support/MacSpace/purge-holdouts.json` |
-| Debloat journal: each setting MacSpace changed, its value before and after, the macOS build, and when | `~/Library/Application Support/MacSpace/debloat-journal.json`, and for changes made by the helper `/Library/Application Support/MacSpace/debloat-journal.json` |
-| Debloat watch: which features macOS switched back on, and when (the last 20 events) | `~/Library/Application Support/MacSpace/debloat-watch.json` |
-| The Debloat profile, as it is staged for your approval | `~/Library/Application Support/MacSpace/Profiles/MacSpace.mobileconfig` |
-| Your Siri language and voice, saved while Apple Intelligence is off so MacSpace can restore them | `~/Library/Application Support/MacSpace/ai-guard-saved-siri-settings.json` |
-| Original Siri, Spatial Photos and local Call transcription settings, including absent values | `~/Library/Application Support/MacSpace/feature-settings/` |
-| Model owner requests saved for restoration, including voice and language choices | `~/Library/Application Support/MacSpace/asset-owners/` |
-| Original system-wide Call transcription overrides | `/Library/Application Support/MacSpace/phone-features.json` |
-| Apple Intelligence watch (only if you turn it on): the last state it saw, and a log of changes | `~/Library/Application Support/MacSpace/ai-watch-state.json` and `~/Library/Logs/MacSpace/ai-watch.jsonl` |
-| A backup of macOS's subscription database, only if you remove leftover Apple Intelligence subscriptions of deleted accounts | `/Library/Application Support/MacSpace/backups/` |
+| Cleanup history: when, which module, how much it freed, how it started, a one-line summary | `~/Library/Application Support/Molt/cleanup-history.json` |
+| Space that macOS kept although Molt asked it to free it | `~/Library/Application Support/Molt/purge-holdouts.json` |
+| Debloat journal: each setting Molt changed, its value before and after, the macOS build, and when | `~/Library/Application Support/Molt/debloat-journal.json`, and for changes made by the helper `/Library/Application Support/Molt/debloat-journal.json` |
+| Debloat watch: which features macOS switched back on, and when (the last 20 events) | `~/Library/Application Support/Molt/debloat-watch.json` |
+| The Debloat profile, as it is staged for your approval | `~/Library/Application Support/Molt/Profiles/MacSpace.mobileconfig` |
+| Your Siri language and voice, saved while Apple Intelligence is off so Molt can restore them | `~/Library/Application Support/Molt/ai-guard-saved-siri-settings.json` |
+| Original Siri, Spatial Photos and local Call transcription settings, including absent values | `~/Library/Application Support/Molt/feature-settings/` |
+| Model owner requests saved for restoration, including voice and language choices | `~/Library/Application Support/Molt/asset-owners/` |
+| Original system-wide Call transcription overrides | `/Library/Application Support/Molt/phone-features.json` |
+| Apple Intelligence watch (only if you turn it on): the last state it saw, and a log of changes | `~/Library/Application Support/Molt/ai-watch-state.json` and `~/Library/Logs/Molt/ai-watch.jsonl` |
+| A backup of macOS's subscription database, only if you remove leftover Apple Intelligence subscriptions of deleted accounts | `/Library/Application Support/Molt/backups/` |
 | Update downloads | Sparkle's cache folder, `~/Library/Caches/com.macspace.app/` |
 
 You can delete all of it at any time. [README.md](README.md#uninstall) lists the commands.
-Deleting these files makes MacSpace forget its history and settings. If you delete the Debloat
-journals while Debloat switches are off, MacSpace can no longer restore the original values it
+Deleting these files makes Molt forget its history and settings. If you delete the Debloat
+journals while Debloat switches are off, Molt can no longer restore the original values it
 saved, and uses macOS's defaults instead. Press **Enable all** first.
 
-### What MacSpace reads
+### What Molt reads
 
-MacSpace reads these things on your Mac, to do its job. It does not send any of them anywhere.
+Molt reads these things on your Mac, to do its job. It does not send any of them anywhere.
 
 - **Names and sizes of files and folders**, on the whole disk once you give it Full Disk Access.
   It does not read what is in your documents, photos, mail or messages. It measures how much
@@ -51,7 +51,7 @@ MacSpace reads these things on your Mac, to do its job. It does not send any of 
   folder in each app's container, `~/Library/Containers/<app>/Data/Library/Caches`): when each was
   created, changed or first read, and **when each app was last opened**, as Spotlight records it, to
   tell which caches nothing uses. It does not open the files.
-- **Homebrew's own estimate**, if Homebrew is installed: MacSpace runs `brew cleanup -n`, which
+- **Homebrew's own estimate**, if Homebrew is installed: Molt runs `brew cleanup -n`, which
   changes nothing, with Homebrew's auto-update and analytics off, and only when Homebrew already has
   its package list, so Homebrew does not go online.
 - **A few system files:** the Apple Intelligence eligibility file, macOS's database of asset
@@ -65,46 +65,46 @@ MacSpace reads these things on your Mac, to do its job. It does not send any of 
 
 ---
 
-## When MacSpace uses the network
+## When Molt uses the network
 
-MacSpace uses the network for one purpose: **updates**. It has no analytics, no sign-in and no
+Molt uses the network for one purpose: **updates**. It has no analytics, no sign-in and no
 other connection.
 
 ### When it checks for updates
 
-MacSpace uses [Sparkle](https://sparkle-project.org) to find and install updates. It contacts the
+Molt uses [Sparkle](https://sparkle-project.org) to find and install updates. It contacts the
 network in these cases:
 
-- when you choose **Check for Updates…** in the MacSpace menu, or **Check Now** in Settings;
-- about once a day while MacSpace runs, if automatic checks are on.
+- when you choose **Check for Updates…** in the Molt menu, or **Check Now** in Settings;
+- about once a day while Molt runs, if automatic checks are on.
 
 Automatic checks are off until you switch on **Check for updates automatically** in Settings, or
-say yes to the question Sparkle asks once, from the second launch. Until then, MacSpace does not
+say yes to the question Sparkle asks once, from the second launch. Until then, Molt does not
 check by itself. A build you make from source has no update key, and never checks at all.
 
 A check requests one file from GitHub:
 
 ```
-https://github.com/1architect/macspace-releases/releases/latest/download/appcast.xml
+https://github.com/Swollzy/macspace-releases-jacked/releases/latest/download/appcast.xml
 ```
 
 As with any web request, GitHub can see your IP address. The request also carries the name and
-version of MacSpace and the version of Sparkle, in the usual `User-Agent` header. MacSpace sends no
+version of Molt and the version of Sparkle, in the usual `User-Agent` header. Molt sends no
 system profile, no hardware information, and no identifier of any kind. Sparkle's optional system
 profile is not turned on. GitHub's handling of that request is covered by the
 [GitHub Privacy Statement](https://docs.github.com/site-policy/privacy-policies/github-privacy-statement).
 
 If you accept an update, Sparkle downloads it from GitHub Releases. Every update is signed.
-Sparkle checks the signature against the public key inside MacSpace before it installs anything.
+Sparkle checks the signature against the public key inside Molt before it installs anything.
 
-### What is not MacSpace
+### What is not Molt
 
-If you switch Apple Intelligence back on, macOS (not MacSpace) may download its models. When you
+If you switch Apple Intelligence back on, macOS (not Molt) may download its models. When you
 open a downloaded app, macOS may check it with Apple. Those are macOS's own connections.
 
 ---
 
-## What MacSpace never does
+## What Molt never does
 
 - It never sends your file list, disk figures, settings, cleanup history or account names
   anywhere.
@@ -114,13 +114,13 @@ open a downloaded app, macOS may check it with Apple. Those are macOS's own conn
 
 ### About permissions and the helper
 
-MacSpace asks for a few approvals, each in macOS's own dialog or in System Settings, so it never
+Molt asks for a few approvals, each in macOS's own dialog or in System Settings, so it never
 sees your password:
 
 - **Full Disk Access**, to measure everything on the disk and to read the state of Apple
   Intelligence.
 - **A privileged helper**, a launch daemon (`com.macspace.helper`) that does the few things that
-  need an administrator. It accepts only clients signed by the same developer team as MacSpace and
+  need an administrator. It accepts only clients signed by the same developer team as Molt and
   runs only operations that are built into it.
 - **A configuration profile**, only if you switch off a Debloat policy.
 - **Notifications**, to tell you when something finished.
@@ -131,12 +131,12 @@ What the helper and the profile can do is listed in [SECURITY.md](SECURITY.md).
 
 ## Children
 
-MacSpace is a utility for macOS and is not directed at children. It collects no personal
+Molt is a utility for macOS and is not directed at children. It collects no personal
 information from anyone, of any age.
 
 ## Changes to this policy
 
-If MacSpace's behavior changes, this document changes with it, and the date at the top changes
+If Molt's behavior changes, this document changes with it, and the date at the top changes
 too. The history of this file is public in this repository, so you can see exactly what changed
 and when.
 

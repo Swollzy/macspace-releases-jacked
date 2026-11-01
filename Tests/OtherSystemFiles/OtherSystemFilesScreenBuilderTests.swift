@@ -158,7 +158,7 @@ final class OtherSystemFilesScreenBuilderTests: XCTestCase {
         var snap = snapshot(measured)
         snap.retrying = true
         XCTAssertEqual(snap.freeableBytes, 4_888_453_120)
-        XCTAssertNil(OtherSystemFilesScreenBuilder.freeAction(snap, prominent: true), "no button while MacSpace is already asking")
+        XCTAssertNil(OtherSystemFilesScreenBuilder.freeAction(snap, prominent: true), "no button while Molt is already asking")
         XCTAssertTrue(OtherSystemFilesScreenBuilder.tile(snap).status.hasPrefix("freeing"))
         XCTAssertTrue(OtherSystemFilesScreenBuilder.segments(snap).contains { $0.tone == .caution })
         guard case let .section(free)? = OtherSystemFilesScreenBuilder.freeNow(snap), case let .list(list) = free.widgets[0] else { return XCTFail() }

@@ -61,6 +61,9 @@ actor AppsStore {
     private let read: Read
     private var snapshot: AppsSnapshot?
     private var running: Task<AppsSnapshot, Never>?
+    /// Bumped by `invalidate()`: a read that started before is thrown away when it ends, so an action never shows the page from
+    /// before it.
+    private var generation = 0
 
     init(read: @escaping Read) { self.read = read }
 
@@ -69,9 +72,11 @@ actor AppsStore {
         if let running { return await running.value }
         let read = self.read
         let sink: LoadProgressSink = progress ?? { _ in }
+        let started = generation
         let task = Task.detached(priority: .utility) { read(sink) }
         running = task
         let result = await task.value
+        guard started == generation else { return await snapshot(maxAge: maxAge, progress: progress) }
         snapshot = result
         running = nil
         return result
@@ -79,5 +84,9 @@ actor AppsStore {
 
     var last: AppsSnapshot? { snapshot }
 
-    func invalidate() { snapshot = nil }
+    func invalidate() {
+        snapshot = nil
+        running = nil
+        generation += 1
+    }
 }

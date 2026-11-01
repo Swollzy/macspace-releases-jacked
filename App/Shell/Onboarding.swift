@@ -236,9 +236,9 @@ struct OnboardingView: View {
     private var fullDiskAccess: some View {
         let granted = onboarding.fullDiskAccess == .granted
         let line: String
-        if granted { line = String(localized: "MacSpace can now see everything in System Data.") }
-        else if waiting { line = String(localized: "Turn on MacSpace in the list. Not there? Drag this icon into it.") }
-        else { line = String(localized: "MacSpace needs it to see everything in System Data.") }
+        if granted { line = String(localized: "Molt can now see everything in System Data.") }
+        else if waiting { line = String(localized: "Turn on Molt in the list. Not there? Drag this icon into it.") }
+        else { line = String(localized: "Molt needs it to see everything in System Data.") }
         let action: () -> Void = granted ? { onboarding.next() } : { onboarding.openFullDiskAccess() }
         let later: (() -> Void)? = granted ? nil : { onboarding.next() }
         return StepScreen(title: granted ? String(localized: "Full Disk Access is on") : String(localized: "Allow Full Disk Access"), line: line,
@@ -252,10 +252,10 @@ struct OnboardingView: View {
         let notFound = onboarding.helper == .notFound
         let done = granted || notFound
         let line: String
-        if granted { line = String(localized: "MacSpace can now do the tasks that need an administrator.") }
-        else if notFound { line = String(localized: "Move MacSpace to your Applications folder first.") }
+        if granted { line = String(localized: "Molt can now do the tasks that need an administrator.") }
+        else if notFound { line = String(localized: "Move Molt to your Applications folder first.") }
         else if onboarding.helperError != nil { line = String(localized: "The helper couldn't be installed. Try again in Settings > Permissions.") }
-        else if waiting { line = String(localized: "Turn on MacSpace under Allow in the Background.") }
+        else if waiting { line = String(localized: "Turn on Molt under Allow in the Background.") }
         else { line = String(localized: "It does the few tasks that need an administrator.") }
         let action: () -> Void = done ? { onboarding.next() } : { onboarding.approveHelper() }
         let later: (() -> Void)? = done ? nil : { onboarding.next() }
@@ -270,7 +270,7 @@ struct OnboardingView: View {
         let answered = onboarding.notifications != .notDetermined
         let action: () -> Void = answered ? { onboarding.next() } : { onboarding.allowNotifications() }
         let later: (() -> Void)? = answered ? nil : { onboarding.next() }
-        return StepScreen(title: String(localized: "Get notified"), line: String(localized: "When MacSpace frees space, or your disk is almost full."),
+        return StepScreen(title: String(localized: "Get notified"), line: String(localized: "When Molt frees space, or your disk is almost full."),
                           button: answered ? String(localized: "Continue") : String(localized: "Allow Notifications"), action: action, later: later) {
             SymbolCircle(symbol: onboarding.notifications == .authorized ? "bell.badge.fill" : "bell.fill", ringing: !answered)
         }
@@ -278,8 +278,8 @@ struct OnboardingView: View {
 
     private var ready: some View {
         let freeable = host.reclaimable.values.reduce(0, +)
-        let line = freeable >= 100_000_000 ? String(localized: "You can free up to \(ByteFormat.string(freeable)) right now.") : String(localized: "MacSpace keeps an eye on your disk.")
-        return StepScreen(title: String(localized: "You're all set"), line: line, button: String(localized: "Open MacSpace"), action: { onboarding.finish() }) {
+        let line = freeable >= 100_000_000 ? String(localized: "You can free up to \(ByteFormat.string(freeable)) right now.") : String(localized: "Molt keeps an eye on your disk.")
+        return StepScreen(title: String(localized: "You're all set"), line: line, button: String(localized: "Open Molt"), action: { onboarding.finish() }) {
             SymbolCircle(symbol: "checkmark", ringing: false, celebrates: true)
         }
     }

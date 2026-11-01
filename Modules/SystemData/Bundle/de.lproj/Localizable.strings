@@ -7,7 +7,7 @@
 "%lld more, including Apple Intelligence models, are under Protected by macOS." = "%lld weitere, darunter Modelle von Apple Intelligence, stehen unter „Von macOS geschützt“.";
 "%lld places couldn't be measured." = "%lld Orte konnten nicht gemessen werden.";
 "%lld places only the helper can measure: %@. Turn it on in Settings." = "%lld Orte, die nur das Hilfsprogramm messen kann: %@. Aktiviere es in den Einstellungen.";
-"%lld places weren't measured. Reopen MacSpace." = "%lld Orte wurden nicht gemessen. Öffne MacSpace erneut.";
+"%lld places weren't measured. Reopen Molt." = "%lld Orte wurden nicht gemessen. Öffne Molt erneut.";
 "%lld reports" = "%lld Berichte";
 "/System/Library/%@" = "/System/Library/%@";
 "1 item" = "1 Objekt";
@@ -79,7 +79,7 @@
 "Everything else" = "Alles andere";
 "Everything in the Trash is deleted for good." = "Alles im Papierkorb wird endgültig gelöscht.";
 "File system metadata" = "Metadaten des Dateisystems";
-"Files of an earlier macOS update that is already installed; no update is waiting. macOS has not removed them and they sit in a protected folder, so MacSpace leaves them alone." = "Dateien eines bereits installierten macOS-Updates; kein Update wartet. macOS hat sie nicht entfernt, und sie liegen in einem geschützten Ordner, daher lässt MacSpace sie unangetastet.";
+"Files of an earlier macOS update that is already installed; no update is waiting. macOS has not removed them and they sit in a protected folder, so Molt leaves them alone." = "Dateien eines bereits installierten macOS-Updates; kein Update wartet. macOS hat sie nicht entfernt, und sie liegen in einem geschützten Ordner, daher lässt Molt sie unangetastet.";
 "Free" = "Freigeben";
 "Free %@" = "%@ freigeben";
 "Free %@ in the Trash?" = "%@ im Papierkorb freigeben?";
@@ -135,8 +135,8 @@
 "Not a cleanable item (%@)." = "Kein bereinigbares Objekt (%@).";
 "Not identified" = "Nicht erkannt";
 "Not opened for %lld days" = "Seit %lld Tagen nicht geöffnet";
-"Nothing was freed: MacSpace couldn't check which apps are open." = "Nichts wurde freigegeben: MacSpace konnte nicht prüfen, welche Apps geöffnet sind.";
-"Nothing was freed: MacSpace couldn't check which files are in use." = "Nichts wurde freigegeben: MacSpace konnte nicht prüfen, welche Dateien verwendet werden.";
+"Nothing was freed: Molt couldn't check which apps are open." = "Nichts wurde freigegeben: Molt konnte nicht prüfen, welche Apps geöffnet sind.";
+"Nothing was freed: Molt couldn't check which files are in use." = "Nichts wurde freigegeben: Molt konnte nicht prüfen, welche Dateien verwendet werden.";
 "Old Homebrew versions" = "Alte Homebrew-Versionen";
 "Old app copy" = "Alte App-Kopie";
 "Old diagnostic and crash reports" = "Alte Diagnose- und Absturzberichte";
@@ -236,7 +236,7 @@
 "free %@" = "%@ freigeben";
 "macOS builds them again the next time it reads a crash report." = "macOS baut sie wieder auf, wenn es das nächste Mal einen Absturzbericht liest.";
 "macOS downloads them again if they're needed." = "macOS lädt sie bei Bedarf erneut.";
-"macOS keeps these locked, even from MacSpace." = "macOS hält diese gesperrt, auch für MacSpace.";
+"macOS keeps these locked, even from Molt." = "macOS hält diese gesperrt, auch für Molt.";
 "macOS restore image: %@" = "macOS-Wiederherstellungsimage: %@";
 "macOS's model catalog, for the Photos spatial effect." = "Der Modellkatalog von macOS, für den räumlichen Effekt in Fotos.";
 "nothing to free" = "nichts freizugeben";

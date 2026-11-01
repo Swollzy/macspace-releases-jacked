@@ -1,0 +1,15 @@
+{
+  "id": "com.macspace.old-versions",
+  "name": "Old Versions",
+  "summary": "Finds what earlier versions of Wallflower, Burrow, Swivel and other Swollzy apps left behind, and moves it to the Trash. Your settings and libraries stay.",
+  "version": "0.1.0",
+  "sdkVersion": 7,
+  "symbol": "shippingbox.and.arrow.backward",
+  "minimumMacOS": "26.0",
+  "order": 60,
+  "permissions": [],
+  "options": [],
+  "backgroundTasks": [],
+  "tileTint": "rose",
+  "autoClean": false
+}

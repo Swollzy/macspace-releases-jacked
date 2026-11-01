@@ -68,7 +68,7 @@ public struct AppleIntelligenceModelRelease {
             return [loc("The system or Siri language could not be read.")]
         }
         if AppleIntelligenceLanguageGuard.baseLanguage(siri) == AppleIntelligenceLanguageGuard.baseLanguage(system) {
-            blockers.append(loc("Apple Intelligence is not switched off in this account (Siri language \(siri) matches the system language); switch it off in MacSpace first."))
+            blockers.append(loc("Apple Intelligence is not switched off in this account (Siri language \(siri) matches the system language); switch it off in Molt first."))
         }
         let elsewhere = accounts()?.enabledElsewhere ?? []
         let existing = elsewhere.compactMap(\.name)
@@ -76,7 +76,7 @@ public struct AppleIntelligenceModelRelease {
             blockers.append(loc("Apple Intelligence is on in \(existing.joined(separator: ", ")); those accounts keep the models. Switch it off there or delete the accounts."))
         }
         if elsewhere.contains(where: { $0.name == nil }) {
-            blockers.append(loc("Deleted accounts still subscribe to the models. Remove their leftovers in MacSpace (Siri & Apple Intelligence), restart, then try again."))
+            blockers.append(loc("Deleted accounts still subscribe to the models. Remove their leftovers in Molt (Siri & Apple Intelligence), restart, then try again."))
         }
         return blockers
     }
@@ -142,7 +142,7 @@ public struct AppleIntelligenceModelRelease {
 
         // 2. Make it unavailable again: the transition releases the models' locks.
         do { try restore() } catch {
-            return finish("Could not restore the Siri language \(original): \(error). Apple Intelligence may still be available; switch Apple Intelligence off again in MacSpace.")
+            return finish("Could not restore the Siri language \(original): \(error). Apple Intelligence may still be available; switch Apple Intelligence off again in Molt.")
         }
         log("unavailable", "Siri language \(target) → \(original).")
         if waitFor(eligible: false, timeout: timing.ineligibleTimeout) == false {

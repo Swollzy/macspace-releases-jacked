@@ -257,7 +257,7 @@ enum DebloatScreenBuilder {
         return Action(id: "restoreAll", title: loc("Enable all"), symbol: "arrow.uturn.backward", role: .prominent,
                       parameters: ["ids": controls.map(\.id).joined(separator: ",")],
                       confirmation: Confirmation(title: loc("Enable all \(controls.count) features again?"),
-                                                 message: loc("MacSpace restores the settings it saved before disabling them."),
+                                                 message: loc("Molt restores the settings it saved before disabling them."),
                                                  confirmTitle: loc("Enable")),
                       requires: controls.contains(where: needsHelper) ? [.privilegedHelper] : [])
     }
@@ -291,7 +291,7 @@ enum DebloatScreenBuilder {
         let when = latest.at.formatted(.relative(presentation: .named))
         return Banner(id: "reapplied", severity: .info,
                       title: titles.count == 1 ? loc("\(titles[0]) was turned back on by macOS") : loc("\(titles.count) features were turned back on by macOS"),
-                      message: titles.count == 1 ? loc("MacSpace disabled it again, most recently \(when).") : loc("MacSpace disabled them again, most recently \(when)."))
+                      message: titles.count == 1 ? loc("Molt disabled it again, most recently \(when).") : loc("Molt disabled them again, most recently \(when)."))
     }
 
     static func screen(_ snapshot: DebloatSnapshot) -> Screen {

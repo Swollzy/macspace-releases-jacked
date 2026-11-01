@@ -41,10 +41,10 @@ final class AppAlertTests: XCTestCase {
         let messages = [
             ("Liberar os caches selecionados?", "Encerra Affinity."),
             ("Free?", "Cannot be undone."),
-            ("Uninstall MacSpace?", "Restores settings changed by MacSpace and moves the app to the Trash."),
-            ("MacSpace", "Version 1.1.1\n\nDeveloped by\nGio Mantovani/1architect"),
+            ("Uninstall Molt?", "Restores settings changed by Molt and moves the app to the Trash."),
+            ("Molt", "Version 1.1.1\n\nDeveloped by\nGio Mantovani/1architect"),
             ("選択したキャッシュを解放しますか？", "アプリを終了します。"),
-            ("This copy of MacSpace is incomplete", String(repeating: "Copy the complete app again. ", count: 8))
+            ("This copy of Molt is incomplete", String(repeating: "Copy the complete app again. ", count: 8))
         ]
         for style in [NSAlert.Style.informational, .warning, .critical] {
             for (title, message) in messages {

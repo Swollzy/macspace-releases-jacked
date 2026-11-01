@@ -48,7 +48,7 @@ public struct PhoneFeatureFlags: Sendable {
 
     public init() {
         self.init(overrideURL: URL(fileURLWithPath: "\(FeatureFlagOverrides.directory)/\(Self.domain).plist"),
-                  journalURL: URL(fileURLWithPath: "/Library/Application Support/MacSpace/phone-features.json"),
+                  journalURL: URL(fileURLWithPath: "/Library/Application Support/Molt/phone-features.json"),
                   supported: Self.supported.value,
                   effective: { FeatureFlagOverrides.effectiveValue(domain: Self.domain, feature: $0) },
                   declared: { FeatureFlagOverrides.isDeclared(domain: Self.domain, feature: $0) }, requiresRoot: true,
@@ -106,7 +106,7 @@ public struct PhoneFeatureFlags: Sendable {
 
     /// Called in the authenticated helper. Nothing is changed before the full rollback/intent journal has been persisted.
     public func setOff(_ off: Bool) throws -> Status {
-        guard !requiresRoot || geteuid() == 0 else { throw failure("Changing the Phone gates requires the MacSpace helper.") }
+        guard !requiresRoot || geteuid() == 0 else { throw failure("Changing the Phone gates requires the Molt helper.") }
         if off, !supported || !Self.features.allSatisfy(declared) { throw failure("The Phone gates have not been verified on this macOS build.") }
         return try withLock {
             var journal = try load()
@@ -125,7 +125,7 @@ public struct PhoneFeatureFlags: Sendable {
                 journal = nil
             }
             if journal == nil {
-                guard off else { throw failure("MacSpace has no saved Phone feature settings to restore.") }
+                guard off else { throw failure("Molt has no saved Phone feature settings to restore.") }
                 var originals: [String: Bool] = [:]
                 for feature in Self.features {
                     guard let value = effective(feature) else { throw failure("A Phone feature gate could not be read.") }
@@ -144,7 +144,7 @@ public struct PhoneFeatureFlags: Sendable {
             for entry in intent.entries {
                 let value = try current(entry.feature)
                 guard try Self.equal(value, entry.before) || Self.equal(value, entry.disabled) else {
-                    throw failure("A Phone feature override changed outside MacSpace: \(entry.feature).")
+                    throw failure("A Phone feature override changed outside Molt: \(entry.feature).")
                 }
             }
             intent.wantsOff = off
@@ -168,7 +168,7 @@ public struct PhoneFeatureFlags: Sendable {
     func current(_ feature: String) throws -> Data? { try FeatureFlagOverrides.entry(feature: feature, path: overrideURL.path) }
     static func dictionary(_ data: Data) throws -> [String: Any] {
         guard let value = try PropertyListSerialization.propertyList(from: data, format: nil) as? [String: Any] else {
-            throw NSError(domain: "MacSpace.PhoneFeatures", code: 1, userInfo: [NSLocalizedDescriptionKey: "Unrecognized Phone feature entry."])
+            throw NSError(domain: "Molt.PhoneFeatures", code: 1, userInfo: [NSLocalizedDescriptionKey: "Unrecognized Phone feature entry."])
         }
         return value
     }
@@ -247,5 +247,5 @@ public struct PhoneFeatureFlags: Sendable {
         guard sysctlbyname("kern.bootsessionuuid", &value, &count, nil, 0) == 0 else { return nil }
         return String(decoding: value.prefix { $0 != 0 }.map { UInt8(bitPattern: $0) }, as: UTF8.self)
     }
-    func failure(_ message: String) -> NSError { NSError(domain: "MacSpace.PhoneFeatures", code: 1, userInfo: [NSLocalizedDescriptionKey: message]) }
+    func failure(_ message: String) -> NSError { NSError(domain: "Molt.PhoneFeatures", code: 1, userInfo: [NSLocalizedDescriptionKey: message]) }
 }

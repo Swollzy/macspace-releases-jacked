@@ -1,9 +1,9 @@
-# Contributing to MacSpace
+# Contributing to Molt
 
-Thank you for helping with MacSpace. This page says how to build and test it, what a good pull request contains, and which rules
+Thank you for helping with Molt. This page says how to build and test it, what a good pull request contains, and which rules
 keep the app safe. Everyone who takes part follows the [Code of Conduct](CODE_OF_CONDUCT.md).
 
-MacSpace is released under the [MIT License](LICENSE). By sending a contribution, you agree that it is released under the same
+Molt is released under the [MIT License](LICENSE). By sending a contribution, you agree that it is released under the same
 license.
 
 ## Before you start
@@ -24,7 +24,7 @@ license.
 - A Developer ID or Apple Development certificate is optional. Without one, the build is signed ad hoc and is not notarized. An ad
   hoc signature changes with every build, so macOS asks you for Full Disk Access again each time.
 
-MacSpace is a Swift package. There is no Xcode project.
+Molt is a Swift package. There is no Xcode project.
 
 ## Build and test
 
@@ -56,7 +56,7 @@ INSTALL=1 Scripts/Assemble.sh
 anywhere else cannot install it.
 
 A build without `SPARKLE_PUBLIC_KEY` never checks for updates. The signing identity, the notarization profile and the update keys
-belong to the maintainer and are not in this repository. You do not need them to build, run or test MacSpace.
+belong to the maintainer and are not in this repository. You do not need them to build, run or test Molt.
 
 `Scripts/SelfTest.sh` checks the installed app on your own Mac. It switches Debloat settings off and puts them back, and it writes
 its report to `results/`, which Git ignores. Read it before you run it. It is optional.
@@ -66,7 +66,7 @@ run.
 
 ## Localization
 
-MacSpace speaks eight languages: English, Portuguese (Brazil), French, Spanish, German, Simplified Chinese, Japanese and Korean. **Every text that appears on screen
+Molt speaks eight languages: English, Portuguese (Brazil), French, Spanish, German, Simplified Chinese, Japanese and Korean. **Every text that appears on screen
 needs a translation in all seven other languages.** The check below fails without them.
 
 Translations live in `Localization/<Table>.json`. `App.json` holds the app's texts, and there is one table for each module
@@ -126,7 +126,7 @@ Each module is a separate bundle that describes its screens for the app to draw.
 - Changes that need administrator rights go through the privileged helper, as a named operation in the module's `Privileged/`
   library. The helper answers only the signed app.
 - `Sdk` and `Platform` are separate packages on purpose. Do not merge them into the main package (the reason is in the Handoff).
-- Every switch shows the feature: on means the feature runs, off means MacSpace switched it off.
+- Every switch shows the feature: on means the feature runs, off means Molt switched it off.
 - Give a row a description only when its title is not enough. Keep it to one or two short sentences.
 - Follow the interface rules below. A pull request that breaks one needs a comment in the code saying why.
 
@@ -141,7 +141,7 @@ These apply to the app and to every module.
   not the way macOS does inside (daemons, services, containers, purge, urgency), unless there is no other name.
 - No telltale AI language: no "seamlessly", "simply", "just", "ensure", "robust", "leverage"; no em dashes; no "Note that";
   no exclamation marks; no lists of three for rhythm; no sentence that repeats the title.
-- Say what happens and what it costs the user. Not how MacSpace works inside.
+- Say what happens and what it costs the user. Not how Molt works inside.
 
 **One item, one place.** An item (a folder, a cache, an app's files) is listed on one page only: the page where the user can
 act on it. Two ways to reach the same page are fine (a chart block and a row); two pages that list the same item are not. An
@@ -164,7 +164,7 @@ module's own words, and the page's main action is `Action.restart(title:)`, whic
 calling the module. An action whose result has `restartRequired` ends on the main button as "Restart to finish", which opens the
 same dialog.
 
-**Freeing in the background.** Space MacSpace frees by itself while the row stays (macOS asked again, models deleted as soon as
+**Freeing in the background.** Space Molt frees by itself while the row stays (macOS asked again, models deleted as soon as
 macOS lets go) carries the app's one pill, `Badge.freeingInBackground(help:)`, in a row's or a switch's pills: never a pill in the
 module's own words, and never `Row.activity`, which is for background work with a figure of its own. The app hides the row's button
 meanwhile, and a Free that hands its work to it continues in the row instead of saying All done.

@@ -96,22 +96,22 @@
     }
   },
   {
-    "id" : "App|%@ left. MacSpace can free %@.",
-    "key" : "%@ left. MacSpace can free %@.",
+    "id" : "App|%@ left. Molt can free %@.",
+    "key" : "%@ left. Molt can free %@.",
     "kind" : "Notification",
     "places" : [
       "App\/Shell\/Notifications.swift:103"
     ],
     "table" : "App",
     "translations" : {
-      "de" : "%@ frei. MacSpace kann %@ freigeben.",
-      "en" : "%@ left. MacSpace can free %@.",
-      "es" : "%@ disponibles. MacSpace puede liberar %@.",
-      "fr" : "%@ restants. MacSpace peut libérer %@.",
+      "de" : "%@ frei. Molt kann %@ freigeben.",
+      "en" : "%@ left. Molt can free %@.",
+      "es" : "%@ disponibles. Molt puede liberar %@.",
+      "fr" : "%@ restants. Molt peut libérer %@.",
       "ja" : "残り%@。MacSpaceで%@を解放できます。",
       "ko" : "%@ 남음. MacSpace로 %@ 확보 가능.",
-      "pt-BR" : "%@ livres. O MacSpace pode liberar %@.",
-      "zh-Hans" : "剩余 %@。MacSpace 可释放 %@。"
+      "pt-BR" : "%@ livres. O Molt pode liberar %@.",
+      "zh-Hans" : "剩余 %@。Molt 可释放 %@。"
     }
   },
   {
@@ -343,8 +343,8 @@
     }
   },
   {
-    "id" : "App|About MacSpace",
-    "key" : "About MacSpace",
+    "id" : "App|About Molt",
+    "key" : "About Molt",
     "kind" : "Text",
     "places" : [
       "App\/Shell\/MenuBarContent.swift:151",
@@ -352,14 +352,14 @@
     ],
     "table" : "App",
     "translations" : {
-      "de" : "Über MacSpace",
-      "en" : "About MacSpace",
-      "es" : "Acerca de MacSpace",
-      "fr" : "À propos de MacSpace",
+      "de" : "Über Molt",
+      "en" : "About Molt",
+      "es" : "Acerca de Molt",
+      "fr" : "À propos de Molt",
       "ja" : "MacSpaceについて",
-      "ko" : "MacSpace 정보",
-      "pt-BR" : "Sobre o MacSpace",
-      "zh-Hans" : "关于 MacSpace"
+      "ko" : "Molt 정보",
+      "pt-BR" : "Sobre o Molt",
+      "zh-Hans" : "关于 Molt"
     }
   },
   {
@@ -573,22 +573,22 @@
     }
   },
   {
-    "id" : "App|By MacSpace",
-    "key" : "By MacSpace",
+    "id" : "App|By Molt",
+    "key" : "By Molt",
     "kind" : "Text",
     "places" : [
       "App\/Settings\/CleanupSettings.swift:90"
     ],
     "table" : "App",
     "translations" : {
-      "de" : "Von MacSpace",
-      "en" : "By MacSpace",
-      "es" : "Por MacSpace",
-      "fr" : "Par MacSpace",
+      "de" : "Von Molt",
+      "en" : "By Molt",
+      "es" : "Por Molt",
+      "fr" : "Par Molt",
       "ja" : "MacSpaceによる処理",
       "ko" : "MacSpace가 수행",
-      "pt-BR" : "Pelo MacSpace",
-      "zh-Hans" : "由 MacSpace 执行"
+      "pt-BR" : "Pelo Molt",
+      "zh-Hans" : "由 Molt 执行"
     }
   },
   {
@@ -863,22 +863,22 @@
     }
   },
   {
-    "id" : "App|Couldn’t uninstall MacSpace",
-    "key" : "Couldn’t uninstall MacSpace",
+    "id" : "App|Couldn’t uninstall Molt",
+    "key" : "Couldn’t uninstall Molt",
     "kind" : "Message",
     "places" : [
       "App\/Settings\/AboutMacSpace.swift:49"
     ],
     "table" : "App",
     "translations" : {
-      "de" : "MacSpace konnte nicht deinstalliert werden",
-      "en" : "Couldn’t uninstall MacSpace",
-      "es" : "No se pudo desinstalar MacSpace",
-      "fr" : "Impossible de désinstaller MacSpace",
+      "de" : "Molt konnte nicht deinstalliert werden",
+      "en" : "Couldn’t uninstall Molt",
+      "es" : "No se pudo desinstalar Molt",
+      "fr" : "Impossible de désinstaller Molt",
       "ja" : "MacSpaceをアンインストールできませんでした",
       "ko" : "MacSpace를 제거하지 못함",
-      "pt-BR" : "Não foi possível desinstalar o MacSpace",
-      "zh-Hans" : "无法卸载 MacSpace"
+      "pt-BR" : "Não foi possível desinstalar o Molt",
+      "zh-Hans" : "无法卸载 Molt"
     }
   },
   {
@@ -1338,22 +1338,22 @@
     }
   },
   {
-    "id" : "App|In the background, MacSpace has no menu bar or Dock icon. Open it again from Applications.",
-    "key" : "In the background, MacSpace has no menu bar or Dock icon. Open it again from Applications.",
+    "id" : "App|In the background, Molt has no menu bar or Dock icon. Open it again from Applications.",
+    "key" : "In the background, Molt has no menu bar or Dock icon. Open it again from Applications.",
     "kind" : "Message",
     "places" : [
       "App\/Settings\/GeneralSettings.swift:71"
     ],
     "table" : "App",
     "translations" : {
-      "de" : "Im Hintergrund hat MacSpace kein Symbol in der Menüleiste oder im Dock. Öffne es erneut über „Programme“.",
-      "en" : "In the background, MacSpace has no menu bar or Dock icon. Open it again from Applications.",
-      "es" : "En segundo plano, MacSpace no tiene icono en la barra de menús ni en el Dock. Vuelve a abrirlo desde Aplicaciones.",
-      "fr" : "En arrière-plan, MacSpace n’a pas d’icône dans la barre des menus ni dans le Dock. Rouvrez-le depuis Applications.",
+      "de" : "Im Hintergrund hat Molt kein Symbol in der Menüleiste oder im Dock. Öffne es erneut über „Programme“.",
+      "en" : "In the background, Molt has no menu bar or Dock icon. Open it again from Applications.",
+      "es" : "En segundo plano, Molt no tiene icono en la barra de menús ni en el Dock. Vuelve a abrirlo desde Aplicaciones.",
+      "fr" : "En arrière-plan, Molt n’a pas d’icône dans la barre des menus ni dans le Dock. Rouvrez-le depuis Applications.",
       "ja" : "バックグラウンドではメニューバーやDockにアイコンを表示しません。「アプリケーション」から再度開けます。",
       "ko" : "백그라운드에서는 메뉴 막대나 Dock 아이콘이 표시되지 않습니다. 응용 프로그램에서 다시 여세요.",
-      "pt-BR" : "Em segundo plano, o MacSpace não tem ícone na barra de menus nem no Dock. Abra-o de novo pela pasta Aplicativos.",
-      "zh-Hans" : "在后台运行时，MacSpace 不显示菜单栏或程序坞图标。可从“应用程序”重新打开。"
+      "pt-BR" : "Em segundo plano, o Molt não tem ícone na barra de menus nem no Dock. Abra-o de novo pela pasta Aplicativos.",
+      "zh-Hans" : "在后台运行时，Molt 不显示菜单栏或程序坞图标。可从“应用程序”重新打开。"
     }
   },
   {
@@ -1491,8 +1491,8 @@
     }
   },
   {
-    "id" : "App|MacSpace",
-    "key" : "MacSpace",
+    "id" : "App|Molt",
+    "key" : "Molt",
     "kind" : "Message",
     "places" : [
       "App\/Settings\/AboutMacSpace.swift:15",
@@ -1503,128 +1503,128 @@
     ],
     "table" : "App",
     "translations" : {
-      "de" : "MacSpace",
-      "en" : "MacSpace",
-      "es" : "MacSpace",
-      "fr" : "MacSpace",
-      "ja" : "MacSpace",
-      "ko" : "MacSpace",
-      "pt-BR" : "MacSpace",
-      "zh-Hans" : "MacSpace"
+      "de" : "Molt",
+      "en" : "Molt",
+      "es" : "Molt",
+      "fr" : "Molt",
+      "ja" : "Molt",
+      "ko" : "Molt",
+      "pt-BR" : "Molt",
+      "zh-Hans" : "Molt"
     }
   },
   {
-    "id" : "App|MacSpace can now do the tasks that need an administrator.",
-    "key" : "MacSpace can now do the tasks that need an administrator.",
+    "id" : "App|Molt can now do the tasks that need an administrator.",
+    "key" : "Molt can now do the tasks that need an administrator.",
     "kind" : "Text",
     "places" : [
       "App\/Shell\/Onboarding.swift:255"
     ],
     "table" : "App",
     "translations" : {
-      "de" : "MacSpace kann jetzt die Aufgaben erledigen, die einen Administrator erfordern.",
-      "en" : "MacSpace can now do the tasks that need an administrator.",
-      "es" : "MacSpace ya puede realizar las tareas que requieren un administrador.",
-      "fr" : "MacSpace peut maintenant effectuer les tâches qui demandent un administrateur.",
+      "de" : "Molt kann jetzt die Aufgaben erledigen, die einen Administrator erfordern.",
+      "en" : "Molt can now do the tasks that need an administrator.",
+      "es" : "Molt ya puede realizar las tareas que requieren un administrador.",
+      "fr" : "Molt peut maintenant effectuer les tâches qui demandent un administrateur.",
       "ja" : "管理者権限が必要な処理を実行できるようになりました。",
       "ko" : "이제 MacSpace가 관리자 권한이 필요한 작업을 수행할 수 있습니다.",
-      "pt-BR" : "Agora o MacSpace pode fazer as tarefas que exigem um administrador.",
-      "zh-Hans" : "MacSpace 现在可以执行需要管理员权限的任务。"
+      "pt-BR" : "Agora o Molt pode fazer as tarefas que exigem um administrador.",
+      "zh-Hans" : "Molt 现在可以执行需要管理员权限的任务。"
     }
   },
   {
-    "id" : "App|MacSpace can now see everything in System Data.",
-    "key" : "MacSpace can now see everything in System Data.",
+    "id" : "App|Molt can now see everything in System Data.",
+    "key" : "Molt can now see everything in System Data.",
     "kind" : "Text",
     "places" : [
       "App\/Shell\/Onboarding.swift:239"
     ],
     "table" : "App",
     "translations" : {
-      "de" : "MacSpace sieht jetzt alles in „Systemdaten“.",
-      "en" : "MacSpace can now see everything in System Data.",
-      "es" : "MacSpace ya puede ver todo lo que hay en Datos del sistema.",
-      "fr" : "MacSpace voit maintenant tout le contenu de Données système.",
+      "de" : "Molt sieht jetzt alles in „Systemdaten“.",
+      "en" : "Molt can now see everything in System Data.",
+      "es" : "Molt ya puede ver todo lo que hay en Datos del sistema.",
+      "fr" : "Molt voit maintenant tout le contenu de Données système.",
       "ja" : "すべてのシステムデータを確認できるようになりました。",
       "ko" : "이제 MacSpace가 모든 시스템 데이터를 볼 수 있습니다.",
-      "pt-BR" : "Agora o MacSpace vê tudo em Dados do Sistema.",
-      "zh-Hans" : "MacSpace 现在可以查看所有系统数据。"
+      "pt-BR" : "Agora o Molt vê tudo em Dados do Sistema.",
+      "zh-Hans" : "Molt 现在可以查看所有系统数据。"
     }
   },
   {
-    "id" : "App|MacSpace freed %@",
-    "key" : "MacSpace freed %@",
+    "id" : "App|Molt freed %@",
+    "key" : "Molt freed %@",
     "kind" : "Notification",
     "places" : [
       "App\/Shell\/Notifications.swift:80"
     ],
     "table" : "App",
     "translations" : {
-      "de" : "MacSpace hat %@ freigegeben",
-      "en" : "MacSpace freed %@",
-      "es" : "MacSpace ha liberado %@",
-      "fr" : "MacSpace a libéré %@",
+      "de" : "Molt hat %@ freigegeben",
+      "en" : "Molt freed %@",
+      "es" : "Molt ha liberado %@",
+      "fr" : "Molt a libéré %@",
       "ja" : "MacSpaceが%@を解放しました",
       "ko" : "MacSpace가 %@ 확보함",
-      "pt-BR" : "O MacSpace liberou %@",
-      "zh-Hans" : "MacSpace 已释放 %@"
+      "pt-BR" : "O Molt liberou %@",
+      "zh-Hans" : "Molt 已释放 %@"
     }
   },
   {
-    "id" : "App|MacSpace has not been tested on this release yet.",
-    "key" : "MacSpace has not been tested on this release yet.",
+    "id" : "App|Molt has not been tested on this release yet.",
+    "key" : "Molt has not been tested on this release yet.",
     "kind" : "Message",
     "places" : [
       "App\/Settings\/GeneralSettings.swift:133"
     ],
     "table" : "App",
     "translations" : {
-      "de" : "MacSpace wurde mit dieser Version noch nicht getestet.",
-      "en" : "MacSpace has not been tested on this release yet.",
-      "es" : "MacSpace aún no se ha probado en esta versión.",
-      "fr" : "MacSpace n’a pas encore été testé sur cette version.",
+      "de" : "Molt wurde mit dieser Version noch nicht getestet.",
+      "en" : "Molt has not been tested on this release yet.",
+      "es" : "Molt aún no se ha probado en esta versión.",
+      "fr" : "Molt n’a pas encore été testé sur cette version.",
       "ja" : "このmacOSではまだMacSpaceをテストしていません。",
       "ko" : "이 macOS 버전에서는 아직 MacSpace를 테스트하지 않았습니다.",
-      "pt-BR" : "O MacSpace ainda não foi testado nesta versão.",
-      "zh-Hans" : "此 macOS 版本尚未经过 MacSpace 测试。"
+      "pt-BR" : "O Molt ainda não foi testado nesta versão.",
+      "zh-Hans" : "此 macOS 版本尚未经过 Molt 测试。"
     }
   },
   {
-    "id" : "App|MacSpace keeps an eye on your disk.",
-    "key" : "MacSpace keeps an eye on your disk.",
+    "id" : "App|Molt keeps an eye on your disk.",
+    "key" : "Molt keeps an eye on your disk.",
     "kind" : "Text",
     "places" : [
       "App\/Shell\/Onboarding.swift:281"
     ],
     "table" : "App",
     "translations" : {
-      "de" : "MacSpace behält deinen Speicher im Blick.",
-      "en" : "MacSpace keeps an eye on your disk.",
-      "es" : "MacSpace vigila tu disco.",
-      "fr" : "MacSpace surveille votre disque.",
+      "de" : "Molt behält deinen Speicher im Blick.",
+      "en" : "Molt keeps an eye on your disk.",
+      "es" : "Molt vigila tu disco.",
+      "fr" : "Molt surveille votre disque.",
       "ja" : "MacSpaceがディスクの状態を見守ります。",
       "ko" : "MacSpace가 디스크 상태를 확인합니다.",
-      "pt-BR" : "O MacSpace fica de olho no seu disco.",
-      "zh-Hans" : "MacSpace 会关注磁盘状态。"
+      "pt-BR" : "O Molt fica de olho no seu disco.",
+      "zh-Hans" : "Molt 会关注磁盘状态。"
     }
   },
   {
-    "id" : "App|MacSpace needs it to see everything in System Data.",
-    "key" : "MacSpace needs it to see everything in System Data.",
+    "id" : "App|Molt needs it to see everything in System Data.",
+    "key" : "Molt needs it to see everything in System Data.",
     "kind" : "Text",
     "places" : [
       "App\/Shell\/Onboarding.swift:241"
     ],
     "table" : "App",
     "translations" : {
-      "de" : "MacSpace braucht ihn, um alles in „Systemdaten“ zu sehen.",
-      "en" : "MacSpace needs it to see everything in System Data.",
-      "es" : "MacSpace lo necesita para ver todo lo que hay en Datos del sistema.",
-      "fr" : "MacSpace en a besoin pour voir tout le contenu de Données système.",
+      "de" : "Molt braucht ihn, um alles in „Systemdaten“ zu sehen.",
+      "en" : "Molt needs it to see everything in System Data.",
+      "es" : "Molt lo necesita para ver todo lo que hay en Datos del sistema.",
+      "fr" : "Molt en a besoin pour voir tout le contenu de Données système.",
       "ja" : "すべてのシステムデータを確認するために必要です。",
       "ko" : "모든 시스템 데이터를 보려면 이 권한이 필요합니다.",
-      "pt-BR" : "O MacSpace precisa dele para ver tudo em Dados do Sistema.",
-      "zh-Hans" : "MacSpace 需要此权限才能查看所有系统数据。"
+      "pt-BR" : "O Molt precisa dele para ver tudo em Dados do Sistema.",
+      "zh-Hans" : "Molt 需要此权限才能查看所有系统数据。"
     }
   },
   {
@@ -1723,60 +1723,60 @@
     }
   },
   {
-    "id" : "App|Move MacSpace to the Applications folder, then reopen it.",
-    "key" : "Move MacSpace to the Applications folder, then reopen it.",
+    "id" : "App|Move Molt to the Applications folder, then reopen it.",
+    "key" : "Move Molt to the Applications folder, then reopen it.",
     "kind" : "Other",
     "places" : [
 
     ],
     "table" : "App",
     "translations" : {
-      "de" : "Bewege MacSpace in den Ordner „Programme“ und öffne es erneut.",
-      "en" : "Move MacSpace to the Applications folder, then reopen it.",
-      "es" : "Mueve MacSpace a la carpeta Aplicaciones y vuelve a abrirlo.",
-      "fr" : "Placez MacSpace dans le dossier Applications, puis rouvrez-le.",
+      "de" : "Bewege Molt in den Ordner „Programme“ und öffne es erneut.",
+      "en" : "Move Molt to the Applications folder, then reopen it.",
+      "es" : "Mueve Molt a la carpeta Aplicaciones y vuelve a abrirlo.",
+      "fr" : "Placez Molt dans le dossier Applications, puis rouvrez-le.",
       "ja" : "MacSpaceを「アプリケーション」に移動し、開き直してください。",
       "ko" : "MacSpace를 응용 프로그램 폴더로 옮긴 후 다시 여세요.",
-      "pt-BR" : "Mova o MacSpace para a pasta Aplicativos e abra-o de novo.",
-      "zh-Hans" : "将 MacSpace 移到“应用程序”文件夹，然后重新打开。"
+      "pt-BR" : "Mova o Molt para a pasta Aplicativos e abra-o de novo.",
+      "zh-Hans" : "将 Molt 移到“应用程序”文件夹，然后重新打开。"
     }
   },
   {
-    "id" : "App|Move MacSpace to the Trash from Applications.",
-    "key" : "Move MacSpace to the Trash from Applications.",
+    "id" : "App|Move Molt to the Trash from Applications.",
+    "key" : "Move Molt to the Trash from Applications.",
     "kind" : "Message",
     "places" : [
       "App\/Settings\/AboutMacSpace.swift:72"
     ],
     "table" : "App",
     "translations" : {
-      "de" : "Verschiebe MacSpace aus Programme in den Papierkorb.",
-      "en" : "Move MacSpace to the Trash from Applications.",
-      "es" : "Mueve MacSpace de Aplicaciones a la Papelera.",
-      "fr" : "Placez MacSpace dans la Corbeille depuis Applications.",
+      "de" : "Verschiebe Molt aus Programme in den Papierkorb.",
+      "en" : "Move Molt to the Trash from Applications.",
+      "es" : "Mueve Molt de Aplicaciones a la Papelera.",
+      "fr" : "Placez Molt dans la Corbeille depuis Applications.",
       "ja" : "「アプリケーション」からMacSpaceをゴミ箱に移動してください。",
       "ko" : "응용 프로그램에서 MacSpace를 휴지통으로 옮기세요.",
-      "pt-BR" : "Mova o MacSpace de Aplicativos para o Lixo.",
-      "zh-Hans" : "从“应用程序”将 MacSpace 移到废纸篓。"
+      "pt-BR" : "Mova o Molt de Aplicativos para o Lixo.",
+      "zh-Hans" : "从“应用程序”将 Molt 移到废纸篓。"
     }
   },
   {
-    "id" : "App|Move MacSpace to your Applications folder first.",
-    "key" : "Move MacSpace to your Applications folder first.",
+    "id" : "App|Move Molt to your Applications folder first.",
+    "key" : "Move Molt to your Applications folder first.",
     "kind" : "Text",
     "places" : [
       "App\/Shell\/Onboarding.swift:256"
     ],
     "table" : "App",
     "translations" : {
-      "de" : "Bewege MacSpace zuerst in den Ordner „Programme“.",
-      "en" : "Move MacSpace to your Applications folder first.",
-      "es" : "Primero mueve MacSpace a la carpeta Aplicaciones.",
-      "fr" : "Placez d’abord MacSpace dans le dossier Applications.",
+      "de" : "Bewege Molt zuerst in den Ordner „Programme“.",
+      "en" : "Move Molt to your Applications folder first.",
+      "es" : "Primero mueve Molt a la carpeta Aplicaciones.",
+      "fr" : "Placez d’abord Molt dans le dossier Applications.",
       "ja" : "先にMacSpaceを「アプリケーション」に移動してください。",
       "ko" : "먼저 MacSpace를 응용 프로그램 폴더로 옮기세요.",
-      "pt-BR" : "Primeiro, mova o MacSpace para a pasta Aplicativos.",
-      "zh-Hans" : "请先将 MacSpace 移到“应用程序”文件夹。"
+      "pt-BR" : "Primeiro, mova o Molt para a pasta Aplicativos.",
+      "zh-Hans" : "请先将 Molt 移到“应用程序”文件夹。"
     }
   },
   {
@@ -2123,22 +2123,22 @@
     }
   },
   {
-    "id" : "App|Open MacSpace",
-    "key" : "Open MacSpace",
+    "id" : "App|Open Molt",
+    "key" : "Open Molt",
     "kind" : "Text",
     "places" : [
       "App\/Shell\/Onboarding.swift:282"
     ],
     "table" : "App",
     "translations" : {
-      "de" : "MacSpace öffnen",
-      "en" : "Open MacSpace",
-      "es" : "Abrir MacSpace",
-      "fr" : "Ouvrir MacSpace",
+      "de" : "Molt öffnen",
+      "en" : "Open Molt",
+      "es" : "Abrir Molt",
+      "fr" : "Ouvrir Molt",
       "ja" : "MacSpaceを開く",
-      "ko" : "MacSpace 열기",
-      "pt-BR" : "Abrir o MacSpace",
-      "zh-Hans" : "打开 MacSpace"
+      "ko" : "Molt 열기",
+      "pt-BR" : "Abrir o Molt",
+      "zh-Hans" : "打开 Molt"
     }
   },
   {
@@ -2219,22 +2219,22 @@
     }
   },
   {
-    "id" : "App|Press Install helper. If macOS still does not recognise it, run in Terminal: \/Applications\/MacSpace.app\/Contents\/MacOS\/MacSpaceCli helper --register and send the message it prints.",
-    "key" : "Press Install helper. If macOS still does not recognise it, run in Terminal: \/Applications\/MacSpace.app\/Contents\/MacOS\/MacSpaceCli helper --register and send the message it prints.",
+    "id" : "App|Press Install helper. If macOS still does not recognise it, run in Terminal: \/Applications\/Molt.app\/Contents\/MacOS\/MacSpaceCli helper --register and send the message it prints.",
+    "key" : "Press Install helper. If macOS still does not recognise it, run in Terminal: \/Applications\/Molt.app\/Contents\/MacOS\/MacSpaceCli helper --register and send the message it prints.",
     "kind" : "Other",
     "places" : [
 
     ],
     "table" : "App",
     "translations" : {
-      "de" : "Klicke auf „Hilfsprogramm installieren“. Erkennt macOS es weiterhin nicht, führe im Terminal \/Applications\/MacSpace.app\/Contents\/MacOS\/MacSpaceCli helper --register aus und sende die ausgegebene Meldung.",
-      "en" : "Press Install helper. If macOS still does not recognise it, run in Terminal: \/Applications\/MacSpace.app\/Contents\/MacOS\/MacSpaceCli helper --register and send the message it prints.",
-      "es" : "Pulsa Instalar asistente. Si macOS sigue sin reconocerlo, ejecuta en Terminal: \/Applications\/MacSpace.app\/Contents\/MacOS\/MacSpaceCli helper --register y envía el mensaje que muestre.",
-      "fr" : "Cliquez sur Installer l’assistant. Si macOS ne le reconnaît toujours pas, exécutez dans Terminal : \/Applications\/MacSpace.app\/Contents\/MacOS\/MacSpaceCli helper --register et envoyez le message affiché.",
-      "ja" : "「ヘルパーをインストール」を押してください。認識されない場合はターミナルで \/Applications\/MacSpace.app\/Contents\/MacOS\/MacSpaceCli helper --register を実行し、表示されたメッセージを送ってください。",
-      "ko" : "보조 프로그램 설치를 누르세요. macOS가 인식하지 못하면 터미널에서 \/Applications\/MacSpace.app\/Contents\/MacOS\/MacSpaceCli helper --register 를 실행하고 출력 메시지를 보내주세요.",
-      "pt-BR" : "Clique em Instalar auxiliar. Se o macOS ainda não o reconhecer, execute no Terminal: \/Applications\/MacSpace.app\/Contents\/MacOS\/MacSpaceCli helper --register e envie a mensagem exibida.",
-      "zh-Hans" : "点击“安装辅助程序”。如果 macOS 仍无法识别，请在终端运行：\/Applications\/MacSpace.app\/Contents\/MacOS\/MacSpaceCli helper --register，并发送输出的信息。"
+      "de" : "Klicke auf „Hilfsprogramm installieren“. Erkennt macOS es weiterhin nicht, führe im Terminal \/Applications\/Molt.app\/Contents\/MacOS\/MacSpaceCli helper --register aus und sende die ausgegebene Meldung.",
+      "en" : "Press Install helper. If macOS still does not recognise it, run in Terminal: \/Applications\/Molt.app\/Contents\/MacOS\/MacSpaceCli helper --register and send the message it prints.",
+      "es" : "Pulsa Instalar asistente. Si macOS sigue sin reconocerlo, ejecuta en Terminal: \/Applications\/Molt.app\/Contents\/MacOS\/MacSpaceCli helper --register y envía el mensaje que muestre.",
+      "fr" : "Cliquez sur Installer l’assistant. Si macOS ne le reconnaît toujours pas, exécutez dans Terminal : \/Applications\/Molt.app\/Contents\/MacOS\/MacSpaceCli helper --register et envoyez le message affiché.",
+      "ja" : "「ヘルパーをインストール」を押してください。認識されない場合はターミナルで \/Applications\/Molt.app\/Contents\/MacOS\/MacSpaceCli helper --register を実行し、表示されたメッセージを送ってください。",
+      "ko" : "보조 프로그램 설치를 누르세요. macOS가 인식하지 못하면 터미널에서 \/Applications\/Molt.app\/Contents\/MacOS\/MacSpaceCli helper --register 를 실행하고 출력 메시지를 보내주세요.",
+      "pt-BR" : "Clique em Instalar auxiliar. Se o macOS ainda não o reconhecer, execute no Terminal: \/Applications\/Molt.app\/Contents\/MacOS\/MacSpaceCli helper --register e envie a mensagem exibida.",
+      "zh-Hans" : "点击“安装辅助程序”。如果 macOS 仍无法识别，请在终端运行：\/Applications\/Molt.app\/Contents\/MacOS\/MacSpaceCli helper --register，并发送输出的信息。"
     }
   },
   {
@@ -2276,8 +2276,8 @@
     }
   },
   {
-    "id" : "App|Quit MacSpace",
-    "key" : "Quit MacSpace",
+    "id" : "App|Quit Molt",
+    "key" : "Quit Molt",
     "kind" : "Title",
     "places" : [
       "App\/Settings\/GeneralSettings.swift:22",
@@ -2285,33 +2285,33 @@
     ],
     "table" : "App",
     "translations" : {
-      "de" : "MacSpace beenden",
-      "en" : "Quit MacSpace",
-      "es" : "Salir de MacSpace",
-      "fr" : "Quitter MacSpace",
+      "de" : "Molt beenden",
+      "en" : "Quit Molt",
+      "es" : "Salir de Molt",
+      "fr" : "Quitter Molt",
       "ja" : "MacSpaceを終了",
-      "ko" : "MacSpace 종료",
-      "pt-BR" : "Encerrar o MacSpace",
-      "zh-Hans" : "退出 MacSpace"
+      "ko" : "Molt 종료",
+      "pt-BR" : "Encerrar o Molt",
+      "zh-Hans" : "退出 Molt"
     }
   },
   {
-    "id" : "App|Quit MacSpace and copy it again. Permissions given to this copy would be lost at the next update.",
-    "key" : "Quit MacSpace and copy it again. Permissions given to this copy would be lost at the next update.",
+    "id" : "App|Quit Molt and copy it again. Permissions given to this copy would be lost at the next update.",
+    "key" : "Quit Molt and copy it again. Permissions given to this copy would be lost at the next update.",
     "kind" : "Message",
     "places" : [
       "App\/Main\/MacSpaceMain.swift:25"
     ],
     "table" : "App",
     "translations" : {
-      "de" : "Beende MacSpace und kopiere es erneut. Berechtigungen für diese Kopie gingen beim nächsten Update verloren.",
-      "en" : "Quit MacSpace and copy it again. Permissions given to this copy would be lost at the next update.",
-      "es" : "Sal de MacSpace y vuelve a copiarlo. Los permisos concedidos a esta copia se perderían en la próxima actualización.",
-      "fr" : "Quittez MacSpace et copiez-le à nouveau. Les autorisations accordées à cette copie seraient perdues à la prochaine mise à jour.",
+      "de" : "Beende Molt und kopiere es erneut. Berechtigungen für diese Kopie gingen beim nächsten Update verloren.",
+      "en" : "Quit Molt and copy it again. Permissions given to this copy would be lost at the next update.",
+      "es" : "Sal de Molt y vuelve a copiarlo. Los permisos concedidos a esta copia se perderían en la próxima actualización.",
+      "fr" : "Quittez Molt et copiez-le à nouveau. Les autorisations accordées à cette copie seraient perdues à la prochaine mise à jour.",
       "ja" : "MacSpaceを終了してコピーし直してください。このコピーに与えた権限は次の更新で失われます。",
       "ko" : "MacSpace를 종료하고 다시 복사하세요. 이 사본에 부여한 권한은 다음 업데이트 시 사라집니다.",
-      "pt-BR" : "Encerre o MacSpace e copie-o de novo. As permissões dadas a esta cópia seriam perdidas na próxima atualização.",
-      "zh-Hans" : "退出 MacSpace 并重新拷贝。授予此副本的权限会在下次更新时丢失。"
+      "pt-BR" : "Encerre o Molt e copie-o de novo. As permissões dadas a esta cópia seriam perdidas na próxima atualização.",
+      "zh-Hans" : "退出 Molt 并重新拷贝。授予此副本的权限会在下次更新时丢失。"
     }
   },
   {
@@ -2544,22 +2544,22 @@
     }
   },
   {
-    "id" : "App|Restores settings changed by MacSpace and moves the app to the Trash. Your history is kept. Freed files cannot be restored.",
-    "key" : "Restores settings changed by MacSpace and moves the app to the Trash. Your history is kept. Freed files cannot be restored.",
+    "id" : "App|Restores settings changed by Molt and moves the app to the Trash. Your history is kept. Freed files cannot be restored.",
+    "key" : "Restores settings changed by Molt and moves the app to the Trash. Your history is kept. Freed files cannot be restored.",
     "kind" : "Message",
     "places" : [
       "App\/Settings\/AboutMacSpace.swift:38"
     ],
     "table" : "App",
     "translations" : {
-      "de" : "Stellt von MacSpace geänderte Einstellungen wieder her und verschiebt die App in den Papierkorb. Dein Verlauf bleibt erhalten. Gelöschte Dateien können nicht wiederhergestellt werden.",
-      "en" : "Restores settings changed by MacSpace and moves the app to the Trash. Your history is kept. Freed files cannot be restored.",
-      "es" : "Restaura los ajustes modificados por MacSpace y mueve la app a la Papelera. Se conserva tu historial. Los archivos eliminados no se pueden restaurar.",
-      "fr" : "Restaure les réglages modifiés par MacSpace et place l’app dans la Corbeille. Votre historique est conservé. Les fichiers supprimés ne peuvent pas être restaurés.",
+      "de" : "Stellt von Molt geänderte Einstellungen wieder her und verschiebt die App in den Papierkorb. Dein Verlauf bleibt erhalten. Gelöschte Dateien können nicht wiederhergestellt werden.",
+      "en" : "Restores settings changed by Molt and moves the app to the Trash. Your history is kept. Freed files cannot be restored.",
+      "es" : "Restaura los ajustes modificados por Molt y mueve la app a la Papelera. Se conserva tu historial. Los archivos eliminados no se pueden restaurar.",
+      "fr" : "Restaure les réglages modifiés par Molt et place l’app dans la Corbeille. Votre historique est conservé. Les fichiers supprimés ne peuvent pas être restaurés.",
       "ja" : "MacSpaceが変更した設定を復元し、アプリをゴミ箱に移動します。履歴は保持されます。削除したファイルは復元できません。",
       "ko" : "MacSpace가 변경한 설정을 복원하고 앱을 휴지통으로 옮깁니다. 기록은 유지됩니다. 삭제한 파일은 복원할 수 없습니다.",
-      "pt-BR" : "Restaura os ajustes alterados pelo MacSpace e move o app para o Lixo. Seu histórico é mantido. Arquivos apagados não podem ser restaurados.",
-      "zh-Hans" : "还原 MacSpace 更改的设置并将应用移到废纸篓。保留清理历史，已释放的文件无法恢复。"
+      "pt-BR" : "Restaura os ajustes alterados pelo Molt e move o app para o Lixo. Seu histórico é mantido. Arquivos apagados não podem ser restaurados.",
+      "zh-Hans" : "还原 Molt 更改的设置并将应用移到废纸篓。保留清理历史，已释放的文件无法恢复。"
     }
   },
   {
@@ -2796,79 +2796,79 @@
     }
   },
   {
-    "id" : "App|This build of MacSpace does not contain the helper.",
-    "key" : "This build of MacSpace does not contain the helper.",
+    "id" : "App|This build of Molt does not contain the helper.",
+    "key" : "This build of Molt does not contain the helper.",
     "kind" : "Other",
     "places" : [
 
     ],
     "table" : "App",
     "translations" : {
-      "de" : "Dieser Build von MacSpace enthält das Hilfsprogramm nicht.",
-      "en" : "This build of MacSpace does not contain the helper.",
-      "es" : "Esta versión de MacSpace no incluye el asistente.",
-      "fr" : "Cette version de MacSpace ne contient pas l’assistant.",
+      "de" : "Dieser Build von Molt enthält das Hilfsprogramm nicht.",
+      "en" : "This build of Molt does not contain the helper.",
+      "es" : "Esta versión de Molt no incluye el asistente.",
+      "fr" : "Cette version de Molt ne contient pas l’assistant.",
       "ja" : "このMacSpaceにはヘルパーが含まれていません。",
-      "ko" : "이 MacSpace 빌드에는 보조 프로그램이 없습니다.",
-      "pt-BR" : "Esta versão do MacSpace não contém o auxiliar.",
-      "zh-Hans" : "此 MacSpace 构建不包含辅助程序。"
+      "ko" : "이 Molt 빌드에는 보조 프로그램이 없습니다.",
+      "pt-BR" : "Esta versão do Molt não contém o auxiliar.",
+      "zh-Hans" : "此 Molt 构建不包含辅助程序。"
     }
   },
   {
-    "id" : "App|This copy of MacSpace is incomplete",
-    "key" : "This copy of MacSpace is incomplete",
+    "id" : "App|This copy of Molt is incomplete",
+    "key" : "This copy of Molt is incomplete",
     "kind" : "Message",
     "places" : [
       "App\/Main\/MacSpaceMain.swift:24"
     ],
     "table" : "App",
     "translations" : {
-      "de" : "Diese Kopie von MacSpace ist unvollständig",
-      "en" : "This copy of MacSpace is incomplete",
-      "es" : "Esta copia de MacSpace está incompleta",
-      "fr" : "Cette copie de MacSpace est incomplète",
+      "de" : "Diese Kopie von Molt ist unvollständig",
+      "en" : "This copy of Molt is incomplete",
+      "es" : "Esta copia de Molt está incompleta",
+      "fr" : "Cette copie de Molt est incomplète",
       "ja" : "このMacSpaceのコピーは不完全です",
-      "ko" : "이 MacSpace 사본이 불완전함",
-      "pt-BR" : "Esta cópia do MacSpace está incompleta",
-      "zh-Hans" : "此 MacSpace 副本不完整"
+      "ko" : "이 Molt 사본이 불완전함",
+      "pt-BR" : "Esta cópia do Molt está incompleta",
+      "zh-Hans" : "此 Molt 副本不完整"
     }
   },
   {
-    "id" : "App|Turn on MacSpace in the list. Not there? Drag this icon into it.",
-    "key" : "Turn on MacSpace in the list. Not there? Drag this icon into it.",
+    "id" : "App|Turn on Molt in the list. Not there? Drag this icon into it.",
+    "key" : "Turn on Molt in the list. Not there? Drag this icon into it.",
     "kind" : "Text",
     "places" : [
       "App\/Shell\/Onboarding.swift:240"
     ],
     "table" : "App",
     "translations" : {
-      "de" : "Aktiviere MacSpace in der Liste. Nicht dabei? Zieh dieses Symbol hinein.",
-      "en" : "Turn on MacSpace in the list. Not there? Drag this icon into it.",
-      "es" : "Activa MacSpace en la lista. ¿No aparece? Arrastra este icono a ella.",
-      "fr" : "Activez MacSpace dans la liste. Absent ? Faites-y glisser cette icône.",
+      "de" : "Aktiviere Molt in der Liste. Nicht dabei? Zieh dieses Symbol hinein.",
+      "en" : "Turn on Molt in the list. Not there? Drag this icon into it.",
+      "es" : "Activa Molt en la lista. ¿No aparece? Arrastra este icono a ella.",
+      "fr" : "Activez Molt dans la liste. Absent ? Faites-y glisser cette icône.",
       "ja" : "リストのMacSpaceをオンにしてください。なければ、このアイコンをドラッグしてください。",
       "ko" : "목록에서 MacSpace를 켜세요. 없으면 이 아이콘을 목록으로 드래그하세요.",
-      "pt-BR" : "Ative o MacSpace na lista. Não está lá? Arraste este ícone para ela.",
-      "zh-Hans" : "在列表中开启 MacSpace。没有找到？将此图标拖入列表。"
+      "pt-BR" : "Ative o Molt na lista. Não está lá? Arraste este ícone para ela.",
+      "zh-Hans" : "在列表中开启 Molt。没有找到？将此图标拖入列表。"
     }
   },
   {
-    "id" : "App|Turn on MacSpace under Allow in the Background.",
-    "key" : "Turn on MacSpace under Allow in the Background.",
+    "id" : "App|Turn on Molt under Allow in the Background.",
+    "key" : "Turn on Molt under Allow in the Background.",
     "kind" : "Text",
     "places" : [
       "App\/Shell\/Onboarding.swift:258"
     ],
     "table" : "App",
     "translations" : {
-      "de" : "Aktiviere MacSpace unter „Im Hintergrund erlauben“.",
-      "en" : "Turn on MacSpace under Allow in the Background.",
-      "es" : "Activa MacSpace en Permitir en segundo plano.",
-      "fr" : "Activez MacSpace sous Autoriser en arrière-plan.",
+      "de" : "Aktiviere Molt unter „Im Hintergrund erlauben“.",
+      "en" : "Turn on Molt under Allow in the Background.",
+      "es" : "Activa Molt en Permitir en segundo plano.",
+      "fr" : "Activez Molt sous Autoriser en arrière-plan.",
       "ja" : "「バックグラウンドでの実行を許可」でMacSpaceをオンにしてください。",
       "ko" : "백그라운드에서 허용 아래에서 MacSpace를 켜세요.",
-      "pt-BR" : "Ative o MacSpace em Permitir em Segundo Plano.",
-      "zh-Hans" : "在“允许在后台”下开启 MacSpace。"
+      "pt-BR" : "Ative o Molt em Permitir em Segundo Plano.",
+      "zh-Hans" : "在“允许在后台”下开启 Molt。"
     }
   },
   {
@@ -2891,41 +2891,41 @@
     }
   },
   {
-    "id" : "App|Uninstall MacSpace?",
-    "key" : "Uninstall MacSpace?",
+    "id" : "App|Uninstall Molt?",
+    "key" : "Uninstall Molt?",
     "kind" : "Message",
     "places" : [
       "App\/Settings\/AboutMacSpace.swift:37"
     ],
     "table" : "App",
     "translations" : {
-      "de" : "MacSpace deinstallieren?",
-      "en" : "Uninstall MacSpace?",
-      "es" : "¿Desinstalar MacSpace?",
-      "fr" : "Désinstaller MacSpace ?",
+      "de" : "Molt deinstallieren?",
+      "en" : "Uninstall Molt?",
+      "es" : "¿Desinstalar Molt?",
+      "fr" : "Désinstaller Molt ?",
       "ja" : "MacSpaceをアンインストールしますか？",
       "ko" : "MacSpace를 제거할까요?",
-      "pt-BR" : "Desinstalar o MacSpace?",
-      "zh-Hans" : "卸载 MacSpace？"
+      "pt-BR" : "Desinstalar o Molt?",
+      "zh-Hans" : "卸载 Molt？"
     }
   },
   {
-    "id" : "App|Uninstall MacSpace…",
-    "key" : "Uninstall MacSpace…",
+    "id" : "App|Uninstall Molt…",
+    "key" : "Uninstall Molt…",
     "kind" : "Other",
     "places" : [
 
     ],
     "table" : "App",
     "translations" : {
-      "de" : "MacSpace deinstallieren…",
-      "en" : "Uninstall MacSpace…",
-      "es" : "Desinstalar MacSpace…",
-      "fr" : "Désinstaller MacSpace…",
+      "de" : "Molt deinstallieren…",
+      "en" : "Uninstall Molt…",
+      "es" : "Desinstalar Molt…",
+      "fr" : "Désinstaller Molt…",
       "ja" : "MacSpaceをアンインストール…",
-      "ko" : "MacSpace 제거…",
-      "pt-BR" : "Desinstalar o MacSpace…",
-      "zh-Hans" : "卸载 MacSpace…"
+      "ko" : "Molt 제거…",
+      "pt-BR" : "Desinstalar o Molt…",
+      "zh-Hans" : "卸载 Molt…"
     }
   },
   {
@@ -3045,21 +3045,21 @@
     }
   },
   {
-    "id" : "App|When MacSpace frees space, or your disk is almost full.",
-    "key" : "When MacSpace frees space, or your disk is almost full.",
+    "id" : "App|When Molt frees space, or your disk is almost full.",
+    "key" : "When Molt frees space, or your disk is almost full.",
     "kind" : "Text",
     "places" : [
       "App\/Shell\/Onboarding.swift:273"
     ],
     "table" : "App",
     "translations" : {
-      "de" : "Wenn MacSpace Speicher freigibt oder dein Speicher fast voll ist.",
-      "en" : "When MacSpace frees space, or your disk is almost full.",
-      "es" : "Cuando MacSpace libere espacio o tu disco esté casi lleno.",
-      "fr" : "Quand MacSpace libère de l’espace ou que votre disque est presque plein.",
+      "de" : "Wenn Molt Speicher freigibt oder dein Speicher fast voll ist.",
+      "en" : "When Molt frees space, or your disk is almost full.",
+      "es" : "Cuando Molt libere espacio o tu disco esté casi lleno.",
+      "fr" : "Quand Molt libère de l’espace ou que votre disque est presque plein.",
       "ja" : "空き容量が増えたときやディスクがほぼ満杯のときに通知します。",
       "ko" : "공간이 확보되거나 디스크가 거의 찼을 때 알립니다.",
-      "pt-BR" : "Quando o MacSpace liberar espaço ou o disco estiver quase cheio.",
+      "pt-BR" : "Quando o Molt liberar espaço ou o disco estiver quase cheio.",
       "zh-Hans" : "释放空间或磁盘空间即将用尽时通知。"
     }
   },
@@ -3316,22 +3316,22 @@
     }
   },
   {
-    "id" : "App|macOS is treating MacSpace as a downloaded app, so the helper cannot be installed. In Terminal run: xattr -dr com.apple.quarantine \/Applications\/MacSpace.app, then reopen MacSpace. (A notarized release does not need this.)",
-    "key" : "macOS is treating MacSpace as a downloaded app, so the helper cannot be installed. In Terminal run: xattr -dr com.apple.quarantine \/Applications\/MacSpace.app, then reopen MacSpace. (A notarized release does not need this.)",
+    "id" : "App|macOS is treating Molt as a downloaded app, so the helper cannot be installed. In Terminal run: xattr -dr com.apple.quarantine \/Applications\/Molt.app, then reopen Molt. (A notarized release does not need this.)",
+    "key" : "macOS is treating Molt as a downloaded app, so the helper cannot be installed. In Terminal run: xattr -dr com.apple.quarantine \/Applications\/Molt.app, then reopen Molt. (A notarized release does not need this.)",
     "kind" : "Other",
     "places" : [
 
     ],
     "table" : "App",
     "translations" : {
-      "de" : "macOS behandelt MacSpace als geladene App, daher kann das Hilfsprogramm nicht installiert werden. Führe im Terminal xattr -dr com.apple.quarantine \/Applications\/MacSpace.app aus und öffne MacSpace erneut. (Eine notarisierte Version braucht das nicht.)",
-      "en" : "macOS is treating MacSpace as a downloaded app, so the helper cannot be installed. In Terminal run: xattr -dr com.apple.quarantine \/Applications\/MacSpace.app, then reopen MacSpace. (A notarized release does not need this.)",
-      "es" : "macOS trata MacSpace como una app descargada, así que no se puede instalar el asistente. En Terminal, ejecuta: xattr -dr com.apple.quarantine \/Applications\/MacSpace.app y vuelve a abrir MacSpace. (Una versión notarizada no lo necesita.)",
-      "fr" : "macOS traite MacSpace comme une app téléchargée : l’assistant ne peut donc pas être installé. Dans Terminal, exécutez : xattr -dr com.apple.quarantine \/Applications\/MacSpace.app, puis rouvrez MacSpace. (Une version notarisée n’en a pas besoin.)",
-      "ja" : "macOSがダウンロードしたアプリとして扱っているため、ヘルパーをインストールできません。ターミナルで xattr -dr com.apple.quarantine \/Applications\/MacSpace.app を実行し、開き直してください。（公証済みのリリースでは不要です。）",
-      "ko" : "macOS가 MacSpace를 다운로드한 앱으로 취급하여 보조 프로그램을 설치할 수 없습니다. 터미널에서 xattr -dr com.apple.quarantine \/Applications\/MacSpace.app 를 실행한 후 다시 여세요. (공증된 릴리스에는 필요하지 않습니다.)",
-      "pt-BR" : "O macOS está tratando o MacSpace como um app baixado, então o auxiliar não pode ser instalado. No Terminal, execute: xattr -dr com.apple.quarantine \/Applications\/MacSpace.app e abra o MacSpace de novo. (Uma versão notarizada não precisa disso.)",
-      "zh-Hans" : "macOS 将 MacSpace 视为下载的应用，因此无法安装辅助程序。在终端运行：xattr -dr com.apple.quarantine \/Applications\/MacSpace.app，然后重新打开 MacSpace。（经过公证的版本无需此操作。）"
+      "de" : "macOS behandelt Molt als geladene App, daher kann das Hilfsprogramm nicht installiert werden. Führe im Terminal xattr -dr com.apple.quarantine \/Applications\/Molt.app aus und öffne Molt erneut. (Eine notarisierte Version braucht das nicht.)",
+      "en" : "macOS is treating Molt as a downloaded app, so the helper cannot be installed. In Terminal run: xattr -dr com.apple.quarantine \/Applications\/Molt.app, then reopen Molt. (A notarized release does not need this.)",
+      "es" : "macOS trata Molt como una app descargada, así que no se puede instalar el asistente. En Terminal, ejecuta: xattr -dr com.apple.quarantine \/Applications\/Molt.app y vuelve a abrir Molt. (Una versión notarizada no lo necesita.)",
+      "fr" : "macOS traite Molt comme une app téléchargée : l’assistant ne peut donc pas être installé. Dans Terminal, exécutez : xattr -dr com.apple.quarantine \/Applications\/Molt.app, puis rouvrez Molt. (Une version notarisée n’en a pas besoin.)",
+      "ja" : "macOSがダウンロードしたアプリとして扱っているため、ヘルパーをインストールできません。ターミナルで xattr -dr com.apple.quarantine \/Applications\/Molt.app を実行し、開き直してください。（公証済みのリリースでは不要です。）",
+      "ko" : "macOS가 MacSpace를 다운로드한 앱으로 취급하여 보조 프로그램을 설치할 수 없습니다. 터미널에서 xattr -dr com.apple.quarantine \/Applications\/Molt.app 를 실행한 후 다시 여세요. (공증된 릴리스에는 필요하지 않습니다.)",
+      "pt-BR" : "O macOS está tratando o Molt como um app baixado, então o auxiliar não pode ser instalado. No Terminal, execute: xattr -dr com.apple.quarantine \/Applications\/Molt.app e abra o Molt de novo. (Uma versão notarizada não precisa disso.)",
+      "zh-Hans" : "macOS 将 Molt 视为下载的应用，因此无法安装辅助程序。在终端运行：xattr -dr com.apple.quarantine \/Applications\/Molt.app，然后重新打开 Molt。（经过公证的版本无需此操作。）"
     }
   },
   {
@@ -3928,22 +3928,22 @@
     }
   },
   {
-    "id" : "Debloat|Checks every 15 minutes while MacSpace is open, and disables again any feature macOS switched back on.",
-    "key" : "Checks every 15 minutes while MacSpace is open, and disables again any feature macOS switched back on.",
+    "id" : "Debloat|Checks every 15 minutes while Molt is open, and disables again any feature macOS switched back on.",
+    "key" : "Checks every 15 minutes while Molt is open, and disables again any feature macOS switched back on.",
     "kind" : "Other",
     "places" : [
 
     ],
     "table" : "Debloat",
     "translations" : {
-      "de" : "Prüft alle 15 Minuten, solange MacSpace geöffnet ist, und deaktiviert jede Funktion erneut, die macOS wieder eingeschaltet hat.",
-      "en" : "Checks every 15 minutes while MacSpace is open, and disables again any feature macOS switched back on.",
-      "es" : "Lo comprueba cada 15 minutos mientras MacSpace está abierto y vuelve a desactivar cualquier función que macOS haya activado.",
-      "fr" : "Vérifie toutes les 15 minutes tant que MacSpace est ouvert et désactive de nouveau toute fonction réactivée par macOS.",
+      "de" : "Prüft alle 15 Minuten, solange Molt geöffnet ist, und deaktiviert jede Funktion erneut, die macOS wieder eingeschaltet hat.",
+      "en" : "Checks every 15 minutes while Molt is open, and disables again any feature macOS switched back on.",
+      "es" : "Lo comprueba cada 15 minutos mientras Molt está abierto y vuelve a desactivar cualquier función que macOS haya activado.",
+      "fr" : "Vérifie toutes les 15 minutes tant que Molt est ouvert et désactive de nouveau toute fonction réactivée par macOS.",
       "ja" : "MacSpaceの起動中は15分ごとに確認し、macOSが再びオンにした機能を無効に戻します。",
       "ko" : "MacSpace가 열려 있는 동안 15분마다 확인하고 macOS가 다시 켠 기능을 다시 끕니다.",
-      "pt-BR" : "Verifica a cada 15 minutos enquanto o MacSpace está aberto e desativa de novo qualquer recurso que o macOS tenha reativado.",
-      "zh-Hans" : "MacSpace 运行时每 15 分钟检查一次，再次停用 macOS 重新开启的功能。"
+      "pt-BR" : "Verifica a cada 15 minutos enquanto o Molt está aberto e desativa de novo qualquer recurso que o macOS tenha reativado.",
+      "zh-Hans" : "Molt 运行时每 15 分钟检查一次，再次停用 macOS 重新开启的功能。"
     }
   },
   {
@@ -4637,60 +4637,60 @@
     }
   },
   {
-    "id" : "Debloat|MacSpace disabled it again, most recently %@.",
-    "key" : "MacSpace disabled it again, most recently %@.",
+    "id" : "Debloat|Molt disabled it again, most recently %@.",
+    "key" : "Molt disabled it again, most recently %@.",
     "kind" : "Notice message",
     "places" : [
       "Modules\/Debloat\/Module\/Presentation\/DebloatScreenBuilder.swift:294"
     ],
     "table" : "Debloat",
     "translations" : {
-      "de" : "MacSpace hat sie erneut deaktiviert, zuletzt %@.",
-      "en" : "MacSpace disabled it again, most recently %@.",
-      "es" : "MacSpace la volvió a desactivar, la última vez %@.",
-      "fr" : "MacSpace l’a désactivée de nouveau, la dernière fois %@.",
+      "de" : "Molt hat sie erneut deaktiviert, zuletzt %@.",
+      "en" : "Molt disabled it again, most recently %@.",
+      "es" : "Molt la volvió a desactivar, la última vez %@.",
+      "fr" : "Molt l’a désactivée de nouveau, la dernière fois %@.",
       "ja" : "MacSpaceが再び無効にしました。直近：%@。",
       "ko" : "MacSpace가 다시 껐습니다. 최근: %@.",
-      "pt-BR" : "O MacSpace o desativou de novo, pela última vez %@.",
-      "zh-Hans" : "MacSpace 已再次停用，最近一次为 %@。"
+      "pt-BR" : "O Molt o desativou de novo, pela última vez %@.",
+      "zh-Hans" : "Molt 已再次停用，最近一次为 %@。"
     }
   },
   {
-    "id" : "Debloat|MacSpace disabled them again, most recently %@.",
-    "key" : "MacSpace disabled them again, most recently %@.",
+    "id" : "Debloat|Molt disabled them again, most recently %@.",
+    "key" : "Molt disabled them again, most recently %@.",
     "kind" : "Notice message",
     "places" : [
       "Modules\/Debloat\/Module\/Presentation\/DebloatScreenBuilder.swift:294"
     ],
     "table" : "Debloat",
     "translations" : {
-      "de" : "MacSpace hat sie erneut deaktiviert, zuletzt %@.",
-      "en" : "MacSpace disabled them again, most recently %@.",
-      "es" : "MacSpace las volvió a desactivar, la última vez %@.",
-      "fr" : "MacSpace les a désactivées de nouveau, la dernière fois %@.",
+      "de" : "Molt hat sie erneut deaktiviert, zuletzt %@.",
+      "en" : "Molt disabled them again, most recently %@.",
+      "es" : "Molt las volvió a desactivar, la última vez %@.",
+      "fr" : "Molt les a désactivées de nouveau, la dernière fois %@.",
       "ja" : "MacSpaceがこれらを再び無効にしました。直近：%@。",
       "ko" : "MacSpace가 해당 기능을 다시 껐습니다. 최근: %@.",
-      "pt-BR" : "O MacSpace os desativou de novo, pela última vez %@.",
-      "zh-Hans" : "MacSpace 已再次停用这些功能，最近一次为 %@。"
+      "pt-BR" : "O Molt os desativou de novo, pela última vez %@.",
+      "zh-Hans" : "Molt 已再次停用这些功能，最近一次为 %@。"
     }
   },
   {
-    "id" : "Debloat|MacSpace restores the settings it saved before disabling them.",
-    "key" : "MacSpace restores the settings it saved before disabling them.",
+    "id" : "Debloat|Molt restores the settings it saved before disabling them.",
+    "key" : "Molt restores the settings it saved before disabling them.",
     "kind" : "Confirmation message",
     "places" : [
       "Modules\/Debloat\/Module\/Presentation\/DebloatScreenBuilder.swift:260"
     ],
     "table" : "Debloat",
     "translations" : {
-      "de" : "MacSpace stellt die Einstellungen wieder her, die es vor dem Deaktivieren gesichert hat.",
-      "en" : "MacSpace restores the settings it saved before disabling them.",
-      "es" : "MacSpace restaura los ajustes que guardó antes de desactivarlas.",
-      "fr" : "MacSpace rétablit les réglages enregistrés avant de les désactiver.",
+      "de" : "Molt stellt die Einstellungen wieder her, die es vor dem Deaktivieren gesichert hat.",
+      "en" : "Molt restores the settings it saved before disabling them.",
+      "es" : "Molt restaura los ajustes que guardó antes de desactivarlas.",
+      "fr" : "Molt rétablit les réglages enregistrés avant de les désactiver.",
       "ja" : "無効にする前に保存した設定に戻します。",
       "ko" : "MacSpace가 기능을 끄기 전에 저장한 설정을 복원합니다.",
-      "pt-BR" : "O MacSpace restaura os ajustes que salvou antes de desativá-los.",
-      "zh-Hans" : "MacSpace 会还原停用前保存的设置。"
+      "pt-BR" : "O Molt restaura os ajustes que salvou antes de desativá-los.",
+      "zh-Hans" : "Molt 会还原停用前保存的设置。"
     }
   },
   {
@@ -4999,22 +4999,22 @@
     }
   },
   {
-    "id" : "Debloat|Shows a notification when macOS switches a disabled feature back on and MacSpace disables it again.",
-    "key" : "Shows a notification when macOS switches a disabled feature back on and MacSpace disables it again.",
+    "id" : "Debloat|Shows a notification when macOS switches a disabled feature back on and Molt disables it again.",
+    "key" : "Shows a notification when macOS switches a disabled feature back on and Molt disables it again.",
     "kind" : "Other",
     "places" : [
 
     ],
     "table" : "Debloat",
     "translations" : {
-      "de" : "Zeigt eine Mitteilung, wenn macOS eine deaktivierte Funktion wieder einschaltet und MacSpace sie erneut deaktiviert.",
-      "en" : "Shows a notification when macOS switches a disabled feature back on and MacSpace disables it again.",
-      "es" : "Muestra una notificación cuando macOS vuelve a activar una función desactivada y MacSpace la desactiva de nuevo.",
-      "fr" : "Affiche une notification quand macOS réactive une fonction désactivée et que MacSpace la désactive de nouveau.",
+      "de" : "Zeigt eine Mitteilung, wenn macOS eine deaktivierte Funktion wieder einschaltet und Molt sie erneut deaktiviert.",
+      "en" : "Shows a notification when macOS switches a disabled feature back on and Molt disables it again.",
+      "es" : "Muestra una notificación cuando macOS vuelve a activar una función desactivada y Molt la desactiva de nuevo.",
+      "fr" : "Affiche une notification quand macOS réactive une fonction désactivée et que Molt la désactive de nouveau.",
       "ja" : "macOSが無効な機能を再びオンにし、MacSpaceが再度無効にすると通知します。",
       "ko" : "macOS가 꺼진 기능을 다시 켜고 MacSpace가 다시 끄면 알림을 표시합니다.",
-      "pt-BR" : "Mostra uma notificação quando o macOS reativa um recurso desativado e o MacSpace o desativa de novo.",
-      "zh-Hans" : "macOS 重新开启已停用的功能，而 MacSpace 再次停用时显示通知。"
+      "pt-BR" : "Mostra uma notificação quando o macOS reativa um recurso desativado e o Molt o desativa de novo.",
+      "zh-Hans" : "macOS 重新开启已停用的功能，而 Molt 再次停用时显示通知。"
     }
   },
   {
@@ -5534,41 +5534,41 @@
     }
   },
   {
-    "id" : "Debloat|macOS switched %@ back on. MacSpace disabled it again.",
-    "key" : "macOS switched %@ back on. MacSpace disabled it again.",
+    "id" : "Debloat|macOS switched %@ back on. Molt disabled it again.",
+    "key" : "macOS switched %@ back on. Molt disabled it again.",
     "kind" : "Message",
     "places" : [
       "Modules\/Debloat\/Module\/Support\/DebloatWatch.swift:56"
     ],
     "table" : "Debloat",
     "translations" : {
-      "de" : "macOS hat %@ wieder aktiviert. MacSpace hat es erneut deaktiviert.",
-      "en" : "macOS switched %@ back on. MacSpace disabled it again.",
-      "es" : "macOS ha vuelto a activar %@. MacSpace lo ha desactivado de nuevo.",
-      "fr" : "macOS a réactivé %@. MacSpace l’a désactivé de nouveau.",
+      "de" : "macOS hat %@ wieder aktiviert. Molt hat es erneut deaktiviert.",
+      "en" : "macOS switched %@ back on. Molt disabled it again.",
+      "es" : "macOS ha vuelto a activar %@. Molt lo ha desactivado de nuevo.",
+      "fr" : "macOS a réactivé %@. Molt l’a désactivé de nouveau.",
       "ja" : "macOSが%@を再びオンにしたため、MacSpaceが無効に戻しました。",
       "ko" : "macOS가 %@ 다시 켜서 MacSpace가 다시 껐습니다.",
-      "pt-BR" : "O macOS reativou %@. O MacSpace o desativou de novo.",
-      "zh-Hans" : "macOS 重新开启了 %@，MacSpace 已再次停用。"
+      "pt-BR" : "O macOS reativou %@. O Molt o desativou de novo.",
+      "zh-Hans" : "macOS 重新开启了 %@，Molt 已再次停用。"
     }
   },
   {
-    "id" : "Debloat|macOS switched %@ back on. MacSpace disabled them again.",
-    "key" : "macOS switched %@ back on. MacSpace disabled them again.",
+    "id" : "Debloat|macOS switched %@ back on. Molt disabled them again.",
+    "key" : "macOS switched %@ back on. Molt disabled them again.",
     "kind" : "Message",
     "places" : [
       "Modules\/Debloat\/Module\/Support\/DebloatWatch.swift:57"
     ],
     "table" : "Debloat",
     "translations" : {
-      "de" : "macOS hat %@ wieder aktiviert. MacSpace hat sie erneut deaktiviert.",
-      "en" : "macOS switched %@ back on. MacSpace disabled them again.",
-      "es" : "macOS ha vuelto a activar %@. MacSpace los ha desactivado de nuevo.",
-      "fr" : "macOS a réactivé %@. MacSpace les a désactivés de nouveau.",
+      "de" : "macOS hat %@ wieder aktiviert. Molt hat sie erneut deaktiviert.",
+      "en" : "macOS switched %@ back on. Molt disabled them again.",
+      "es" : "macOS ha vuelto a activar %@. Molt los ha desactivado de nuevo.",
+      "fr" : "macOS a réactivé %@. Molt les a désactivés de nouveau.",
       "ja" : "macOSが%@を再びオンにしたため、MacSpaceがこれらを無効に戻しました。",
       "ko" : "macOS가 %@ 다시 켜서 MacSpace가 해당 기능을 다시 껐습니다.",
-      "pt-BR" : "O macOS reativou %@. O MacSpace os desativou de novo.",
-      "zh-Hans" : "macOS 重新开启了 %@，MacSpace 已再次停用这些功能。"
+      "pt-BR" : "O macOS reativou %@. O Molt os desativou de novo.",
+      "zh-Hans" : "macOS 重新开启了 %@，Molt 已再次停用这些功能。"
     }
   },
   {
@@ -5996,22 +5996,22 @@
     }
   },
   {
-    "id" : "OtherSystemFiles|Files apps marked as safe to delete. macOS frees them when the disk is nearly full; MacSpace keeps asking if it doesn't.",
-    "key" : "Files apps marked as safe to delete. macOS frees them when the disk is nearly full; MacSpace keeps asking if it doesn't.",
+    "id" : "OtherSystemFiles|Files apps marked as safe to delete. macOS frees them when the disk is nearly full; Molt keeps asking if it doesn't.",
+    "key" : "Files apps marked as safe to delete. macOS frees them when the disk is nearly full; Molt keeps asking if it doesn't.",
     "kind" : "Row detail",
     "places" : [
       "Modules\/OtherSystemFiles\/Module\/Support\/PurgeableSnapshot.swift:84"
     ],
     "table" : "OtherSystemFiles",
     "translations" : {
-      "de" : "Dateien, die Apps als löschbar markiert haben. macOS gibt sie frei, wenn das Volume fast voll ist; sonst fragt MacSpace erneut.",
-      "en" : "Files apps marked as safe to delete. macOS frees them when the disk is nearly full; MacSpace keeps asking if it doesn't.",
-      "es" : "Archivos que las apps marcaron como seguros de borrar. macOS los libera cuando el disco está casi lleno; MacSpace insiste si no lo hace.",
-      "fr" : "Fichiers que les apps ont marqués comme supprimables. macOS les libère quand le disque est presque plein ; MacSpace insiste sinon.",
+      "de" : "Dateien, die Apps als löschbar markiert haben. macOS gibt sie frei, wenn das Volume fast voll ist; sonst fragt Molt erneut.",
+      "en" : "Files apps marked as safe to delete. macOS frees them when the disk is nearly full; Molt keeps asking if it doesn't.",
+      "es" : "Archivos que las apps marcaron como seguros de borrar. macOS los libera cuando el disco está casi lleno; Molt insiste si no lo hace.",
+      "fr" : "Fichiers que les apps ont marqués comme supprimables. macOS les libère quand le disque est presque plein ; Molt insiste sinon.",
       "ja" : "アプリが削除してよいと示したファイル。ディスクがほぼいっぱいになるとmacOSが解放し、されない場合はMacSpaceが再度依頼します。",
       "ko" : "앱이 삭제해도 된다고 표시한 파일입니다. 디스크가 거의 차면 macOS가 정리하고, 그렇지 않으면 MacSpace가 다시 요청합니다.",
-      "pt-BR" : "Arquivos que os apps marcaram como seguros para apagar. O macOS os libera quando o disco está quase cheio; o MacSpace insiste se ele não liberar.",
-      "zh-Hans" : "应用标记为可安全删除的文件。磁盘快满时 macOS 会释放它们；若未释放，MacSpace 会继续请求。"
+      "pt-BR" : "Arquivos que os apps marcaram como seguros para apagar. O macOS os libera quando o disco está quase cheio; o Molt insiste se ele não liberar.",
+      "zh-Hans" : "应用标记为可安全删除的文件。磁盘快满时 macOS 会释放它们；若未释放，Molt 会继续请求。"
     }
   },
   {
@@ -6366,22 +6366,22 @@
     }
   },
   {
-    "id" : "OtherSystemFiles|MacSpace could not measure right now. Try the refresh button.",
-    "key" : "MacSpace could not measure right now. Try the refresh button.",
+    "id" : "OtherSystemFiles|Molt could not measure right now. Try the refresh button.",
+    "key" : "Molt could not measure right now. Try the refresh button.",
     "kind" : "Notice message",
     "places" : [
       "Modules\/OtherSystemFiles\/Module\/Presentation\/OtherSystemFilesScreenBuilder.swift:77"
     ],
     "table" : "OtherSystemFiles",
     "translations" : {
-      "de" : "MacSpace konnte gerade nichts messen. Versuche die Aktualisieren-Taste.",
-      "en" : "MacSpace could not measure right now. Try the refresh button.",
-      "es" : "MacSpace no ha podido medir ahora. Prueba con el botón de actualizar.",
-      "fr" : "MacSpace n’a pas pu mesurer pour l’instant. Essayez le bouton Actualiser.",
+      "de" : "Molt konnte gerade nichts messen. Versuche die Aktualisieren-Taste.",
+      "en" : "Molt could not measure right now. Try the refresh button.",
+      "es" : "Molt no ha podido medir ahora. Prueba con el botón de actualizar.",
+      "fr" : "Molt n’a pas pu mesurer pour l’instant. Essayez le bouton Actualiser.",
       "ja" : "今は測定できません。更新ボタンをお試しください。",
       "ko" : "지금은 측정할 수 없습니다. 새로 고침 버튼을 눌러보세요.",
-      "pt-BR" : "O MacSpace não conseguiu medir nada agora. Tente o botão atualizar.",
-      "zh-Hans" : "MacSpace 暂时无法测量，请点击刷新按钮重试。"
+      "pt-BR" : "O Molt não conseguiu medir nada agora. Tente o botão atualizar.",
+      "zh-Hans" : "Molt 暂时无法测量，请点击刷新按钮重试。"
     }
   },
   {
@@ -7116,22 +7116,22 @@
     }
   },
   {
-    "id" : "Siri|A notification when MacSpace finds that macOS made Apple Intelligence available again.",
-    "key" : "A notification when MacSpace finds that macOS made Apple Intelligence available again.",
+    "id" : "Siri|A notification when Molt finds that macOS made Apple Intelligence available again.",
+    "key" : "A notification when Molt finds that macOS made Apple Intelligence available again.",
     "kind" : "Other",
     "places" : [
 
     ],
     "table" : "Siri",
     "translations" : {
-      "de" : "Eine Mitteilung, wenn MacSpace feststellt, dass macOS Apple Intelligence wieder verfügbar gemacht hat.",
-      "en" : "A notification when MacSpace finds that macOS made Apple Intelligence available again.",
-      "es" : "Una notificación cuando MacSpace detecta que macOS volvió a hacer disponible Apple Intelligence.",
-      "fr" : "Une notification quand MacSpace constate que macOS a de nouveau rendu Apple Intelligence disponible.",
+      "de" : "Eine Mitteilung, wenn Molt feststellt, dass macOS Apple Intelligence wieder verfügbar gemacht hat.",
+      "en" : "A notification when Molt finds that macOS made Apple Intelligence available again.",
+      "es" : "Una notificación cuando Molt detecta que macOS volvió a hacer disponible Apple Intelligence.",
+      "fr" : "Une notification quand Molt constate que macOS a de nouveau rendu Apple Intelligence disponible.",
       "ja" : "macOSがApple Intelligenceを再び利用可能にしたことをMacSpaceが見つけたときに通知します。",
       "ko" : "macOS가 Apple Intelligence를 다시 사용 가능하게 한 것을 MacSpace가 발견하면 알립니다.",
-      "pt-BR" : "Uma notificação quando o MacSpace perceber que o macOS disponibilizou o Apple Intelligence de novo.",
-      "zh-Hans" : "当 MacSpace 发现 macOS 再次提供 Apple 智能时发出通知。"
+      "pt-BR" : "Uma notificação quando o Molt perceber que o macOS disponibilizou o Apple Intelligence de novo.",
+      "zh-Hans" : "当 Molt 发现 macOS 再次提供 Apple 智能时发出通知。"
     }
   },
   {
@@ -7269,22 +7269,22 @@
     }
   },
   {
-    "id" : "Siri|Another change affects these settings. MacSpace keeps it and does not free the call transcription models by itself.",
-    "key" : "Another change affects these settings. MacSpace keeps it and does not free the call transcription models by itself.",
+    "id" : "Siri|Another change affects these settings. Molt keeps it and does not free the call transcription models by itself.",
+    "key" : "Another change affects these settings. Molt keeps it and does not free the call transcription models by itself.",
     "kind" : "Pill",
     "places" : [
       "Modules\/Siri\/Module\/Presentation\/SiriScreenBuilder.swift:429"
     ],
     "table" : "Siri",
     "translations" : {
-      "de" : "Eine andere Änderung betrifft diese Einstellungen. MacSpace behält sie bei und gibt die Modelle der Anruftranskription nicht selbst frei.",
-      "en" : "Another change affects these settings. MacSpace keeps it and does not free the call transcription models by itself.",
-      "es" : "Otro cambio afecta a estos ajustes. MacSpace lo conserva y no libera por sí solo los modelos de transcripción de llamadas.",
-      "fr" : "Une autre modification touche ces réglages. MacSpace la conserve et ne libère pas de lui-même les modèles de transcription des appels.",
+      "de" : "Eine andere Änderung betrifft diese Einstellungen. Molt behält sie bei und gibt die Modelle der Anruftranskription nicht selbst frei.",
+      "en" : "Another change affects these settings. Molt keeps it and does not free the call transcription models by itself.",
+      "es" : "Otro cambio afecta a estos ajustes. Molt lo conserva y no libera por sí solo los modelos de transcripción de llamadas.",
+      "fr" : "Une autre modification touche ces réglages. Molt la conserve et ne libère pas de lui-même les modèles de transcription des appels.",
       "ja" : "別の変更がこれらの設定に影響しています。MacSpaceはそれを維持し、通話の文字起こしのモデルを自動では解放しません。",
       "ko" : "다른 변경 사항이 이 설정에 영향을 줍니다. MacSpace는 이를 유지하며 통화 전사 모델을 직접 정리하지 않습니다.",
-      "pt-BR" : "Outra alteração afeta estes ajustes. O MacSpace a preserva e não libera sozinho os modelos de transcrição de chamadas.",
-      "zh-Hans" : "另一项更改影响了这些设置。MacSpace 会保留它，不会自行释放通话转录模型。"
+      "pt-BR" : "Outra alteração afeta estes ajustes. O Molt a preserva e não libera sozinho os modelos de transcrição de chamadas.",
+      "zh-Hans" : "另一项更改影响了这些设置。Molt 会保留它，不会自行释放通话转录模型。"
     }
   },
   {
@@ -7328,22 +7328,22 @@
     }
   },
   {
-    "id" : "Siri|Apple Intelligence is not switched off in this account (Siri language %@ matches the system language); switch it off in MacSpace first.",
-    "key" : "Apple Intelligence is not switched off in this account (Siri language %@ matches the system language); switch it off in MacSpace first.",
+    "id" : "Siri|Apple Intelligence is not switched off in this account (Siri language %@ matches the system language); switch it off in Molt first.",
+    "key" : "Apple Intelligence is not switched off in this account (Siri language %@ matches the system language); switch it off in Molt first.",
     "kind" : "Text",
     "places" : [
       "Modules\/Siri\/Module\/Engine\/AppleIntelligenceModelRelease.swift:71"
     ],
     "table" : "Siri",
     "translations" : {
-      "de" : "Apple Intelligence ist in diesem Account nicht ausgeschaltet (die Siri-Sprache %@ entspricht der Systemsprache); schalte es zuerst in MacSpace aus.",
-      "en" : "Apple Intelligence is not switched off in this account (Siri language %@ matches the system language); switch it off in MacSpace first.",
-      "es" : "Apple Intelligence no está desactivado en esta cuenta (el idioma de Siri, %@, coincide con el del sistema); desactívalo primero en MacSpace.",
-      "fr" : "Apple Intelligence n’est pas désactivé sur ce compte (la langue de Siri, %@, correspond à celle du système) ; désactivez-le d’abord dans MacSpace.",
+      "de" : "Apple Intelligence ist in diesem Account nicht ausgeschaltet (die Siri-Sprache %@ entspricht der Systemsprache); schalte es zuerst in Molt aus.",
+      "en" : "Apple Intelligence is not switched off in this account (Siri language %@ matches the system language); switch it off in Molt first.",
+      "es" : "Apple Intelligence no está desactivado en esta cuenta (el idioma de Siri, %@, coincide con el del sistema); desactívalo primero en Molt.",
+      "fr" : "Apple Intelligence n’est pas désactivé sur ce compte (la langue de Siri, %@, correspond à celle du système) ; désactivez-le d’abord dans Molt.",
       "ja" : "このアカウントではApple Intelligenceがオフではありません（Siriの言語%@がシステム言語と一致）。先にMacSpaceでオフにしてください。",
       "ko" : "이 계정에서 Apple Intelligence가 꺼지지 않았습니다(Siri 언어 %@이(가) 시스템 언어와 일치). 먼저 MacSpace에서 끄세요.",
-      "pt-BR" : "O Apple Intelligence não está desativado nesta conta (o idioma da Siri, %@, é igual ao do sistema); desative-o primeiro no MacSpace.",
-      "zh-Hans" : "此账户的 Apple 智能尚未关闭（Siri 语言 %@ 与系统语言相同）；请先在 MacSpace 中关闭。"
+      "pt-BR" : "O Apple Intelligence não está desativado nesta conta (o idioma da Siri, %@, é igual ao do sistema); desative-o primeiro no Molt.",
+      "zh-Hans" : "此账户的 Apple 智能尚未关闭（Siri 语言 %@ 与系统语言相同）；请先在 Molt 中关闭。"
     }
   },
   {
@@ -7521,8 +7521,8 @@
     }
   },
   {
-    "id" : "Siri|Changed outside MacSpace",
-    "key" : "Changed outside MacSpace",
+    "id" : "Siri|Changed outside Molt",
+    "key" : "Changed outside Molt",
     "kind" : "Pill",
     "places" : [
       "Modules\/Siri\/Module\/Presentation\/SiriScreenBuilder.swift:403",
@@ -7530,14 +7530,14 @@
     ],
     "table" : "Siri",
     "translations" : {
-      "de" : "Außerhalb von MacSpace geändert",
-      "en" : "Changed outside MacSpace",
-      "es" : "Modificado fuera de MacSpace",
-      "fr" : "Modifié hors de MacSpace",
+      "de" : "Außerhalb von Molt geändert",
+      "en" : "Changed outside Molt",
+      "es" : "Modificado fuera de Molt",
+      "fr" : "Modifié hors de Molt",
       "ja" : "MacSpace以外で変更されました",
-      "ko" : "MacSpace 외부에서 변경됨",
-      "pt-BR" : "Alterado fora do MacSpace",
-      "zh-Hans" : "已在 MacSpace 外更改"
+      "ko" : "Molt 외부에서 변경됨",
+      "pt-BR" : "Alterado fora do Molt",
+      "zh-Hans" : "已在 Molt 外更改"
     }
   },
   {
@@ -7714,22 +7714,22 @@
     }
   },
   {
-    "id" : "Siri|Deleted accounts still subscribe to the models. Remove their leftovers in MacSpace (Siri & Apple Intelligence), restart, then try again.",
-    "key" : "Deleted accounts still subscribe to the models. Remove their leftovers in MacSpace (Siri & Apple Intelligence), restart, then try again.",
+    "id" : "Siri|Deleted accounts still subscribe to the models. Remove their leftovers in Molt (Siri & Apple Intelligence), restart, then try again.",
+    "key" : "Deleted accounts still subscribe to the models. Remove their leftovers in Molt (Siri & Apple Intelligence), restart, then try again.",
     "kind" : "Text",
     "places" : [
       "Modules\/Siri\/Module\/Engine\/AppleIntelligenceModelRelease.swift:79"
     ],
     "table" : "Siri",
     "translations" : {
-      "de" : "Gelöschte Accounts nutzen die Modelle noch. Entferne ihre Reste in MacSpace (Siri & Apple Intelligence), starte neu und versuche es erneut.",
-      "en" : "Deleted accounts still subscribe to the models. Remove their leftovers in MacSpace (Siri & Apple Intelligence), restart, then try again.",
-      "es" : "Cuentas eliminadas siguen usando los modelos. Elimina sus restos en MacSpace (Siri y Apple Intelligence), reinicia y vuelve a intentarlo.",
-      "fr" : "Des comptes supprimés utilisent encore les modèles. Supprimez leurs restes dans MacSpace (Siri et Apple Intelligence), redémarrez, puis réessayez.",
+      "de" : "Gelöschte Accounts nutzen die Modelle noch. Entferne ihre Reste in Molt (Siri & Apple Intelligence), starte neu und versuche es erneut.",
+      "en" : "Deleted accounts still subscribe to the models. Remove their leftovers in Molt (Siri & Apple Intelligence), restart, then try again.",
+      "es" : "Cuentas eliminadas siguen usando los modelos. Elimina sus restos en Molt (Siri y Apple Intelligence), reinicia y vuelve a intentarlo.",
+      "fr" : "Des comptes supprimés utilisent encore les modèles. Supprimez leurs restes dans Molt (Siri et Apple Intelligence), redémarrez, puis réessayez.",
       "ja" : "削除済みアカウントがモデルを購読しています。MacSpaceの「SiriとApple Intelligence」で残りを削除し、再起動して再度お試しください。",
       "ko" : "삭제된 계정이 여전히 모델을 구독합니다. MacSpace의 Siri 및 Apple Intelligence에서 잔여 항목을 제거하고 재시동한 후 다시 시도하세요.",
-      "pt-BR" : "Contas apagadas ainda usam os modelos. Remova os restos delas no MacSpace (Siri e Apple Intelligence), reinicie e tente de novo.",
-      "zh-Hans" : "已删除账户仍订阅模型。请在 MacSpace（Siri 与 Apple 智能）中移除残留，重新启动后重试。"
+      "pt-BR" : "Contas apagadas ainda usam os modelos. Remova os restos delas no Molt (Siri e Apple Intelligence), reinicie e tente de novo.",
+      "zh-Hans" : "已删除账户仍订阅模型。请在 Molt（Siri 与 Apple 智能）中移除残留，重新启动后重试。"
     }
   },
   {
@@ -7887,22 +7887,22 @@
     }
   },
   {
-    "id" : "Siri|Each one can be enabled again. MacSpace frees their models.",
-    "key" : "Each one can be enabled again. MacSpace frees their models.",
+    "id" : "Siri|Each one can be enabled again. Molt frees their models.",
+    "key" : "Each one can be enabled again. Molt frees their models.",
     "kind" : "Confirmation message",
     "places" : [
       "Modules\/Siri\/Module\/Presentation\/SiriScreenBuilder.swift:287"
     ],
     "table" : "Siri",
     "translations" : {
-      "de" : "Jede lässt sich wieder aktivieren. MacSpace gibt ihre Modelle frei.",
-      "en" : "Each one can be enabled again. MacSpace frees their models.",
-      "es" : "Cada una se puede volver a activar. MacSpace libera sus modelos.",
-      "fr" : "Chacune peut être réactivée. MacSpace libère leurs modèles.",
+      "de" : "Jede lässt sich wieder aktivieren. Molt gibt ihre Modelle frei.",
+      "en" : "Each one can be enabled again. Molt frees their models.",
+      "es" : "Cada una se puede volver a activar. Molt libera sus modelos.",
+      "fr" : "Chacune peut être réactivée. Molt libère leurs modèles.",
       "ja" : "どの機能も再び有効にできます。MacSpaceがモデルを解放します。",
       "ko" : "각 기능은 다시 켤 수 있습니다. MacSpace가 모델을 정리합니다.",
-      "pt-BR" : "Cada um pode ser reativado. O MacSpace libera os modelos deles.",
-      "zh-Hans" : "每项功能都可以重新启用。MacSpace 会释放它们的模型。"
+      "pt-BR" : "Cada um pode ser reativado. O Molt libera os modelos deles.",
+      "zh-Hans" : "每项功能都可以重新启用。Molt 会释放它们的模型。"
     }
   },
   {
@@ -8296,98 +8296,98 @@
     }
   },
   {
-    "id" : "Siri|MacSpace asks macOS again every five minutes.",
-    "key" : "MacSpace asks macOS again every five minutes.",
+    "id" : "Siri|Molt asks macOS again every five minutes.",
+    "key" : "Molt asks macOS again every five minutes.",
     "kind" : "Pill",
     "places" : [
       "Modules\/Siri\/Module\/Presentation\/SiriScreenBuilder.swift:165"
     ],
     "table" : "Siri",
     "translations" : {
-      "de" : "MacSpace fragt macOS alle fünf Minuten erneut.",
-      "en" : "MacSpace asks macOS again every five minutes.",
-      "es" : "MacSpace vuelve a pedírselo a macOS cada cinco minutos.",
-      "fr" : "MacSpace redemande à macOS toutes les cinq minutes.",
+      "de" : "Molt fragt macOS alle fünf Minuten erneut.",
+      "en" : "Molt asks macOS again every five minutes.",
+      "es" : "Molt vuelve a pedírselo a macOS cada cinco minutos.",
+      "fr" : "Molt redemande à macOS toutes les cinq minutes.",
       "ja" : "MacSpaceは5分ごとにmacOSに再度依頼します。",
       "ko" : "MacSpace가 5분마다 macOS에 다시 요청합니다.",
-      "pt-BR" : "O MacSpace pede de novo ao macOS a cada cinco minutos.",
-      "zh-Hans" : "MacSpace 每五分钟会再次请求 macOS。"
+      "pt-BR" : "O Molt pede de novo ao macOS a cada cinco minutos.",
+      "zh-Hans" : "Molt 每五分钟会再次请求 macOS。"
     }
   },
   {
-    "id" : "Siri|MacSpace could not read every Call transcription setting.",
-    "key" : "MacSpace could not read every Call transcription setting.",
+    "id" : "Siri|Molt could not read every Call transcription setting.",
+    "key" : "Molt could not read every Call transcription setting.",
     "kind" : "Pill",
     "places" : [
       "Modules\/Siri\/Module\/Presentation\/SiriScreenBuilder.swift:431"
     ],
     "table" : "Siri",
     "translations" : {
-      "de" : "MacSpace konnte nicht alle Einstellungen der Anruftranskription lesen.",
-      "en" : "MacSpace could not read every Call transcription setting.",
-      "es" : "MacSpace no pudo leer todos los ajustes de Transcripción de llamadas.",
-      "fr" : "MacSpace n’a pas pu lire tous les réglages de Transcription des appels.",
+      "de" : "Molt konnte nicht alle Einstellungen der Anruftranskription lesen.",
+      "en" : "Molt could not read every Call transcription setting.",
+      "es" : "Molt no pudo leer todos los ajustes de Transcripción de llamadas.",
+      "fr" : "Molt n’a pas pu lire tous les réglages de Transcription des appels.",
       "ja" : "MacSpaceは通話の文字起こしの設定をすべて読み取れませんでした。",
       "ko" : "MacSpace가 통화 전사 설정을 모두 읽지 못했습니다.",
-      "pt-BR" : "O MacSpace não conseguiu ler todos os ajustes da Transcrição de chamadas.",
-      "zh-Hans" : "MacSpace 无法读取通话转录的全部设置。"
+      "pt-BR" : "O Molt não conseguiu ler todos os ajustes da Transcrição de chamadas.",
+      "zh-Hans" : "Molt 无法读取通话转录的全部设置。"
     }
   },
   {
-    "id" : "Siri|MacSpace needs it to read and verify the switch.",
-    "key" : "MacSpace needs it to read and verify the switch.",
+    "id" : "Siri|Molt needs it to read and verify the switch.",
+    "key" : "Molt needs it to read and verify the switch.",
     "kind" : "Notice message",
     "places" : [
       "Modules\/Siri\/Module\/Presentation\/SiriScreenBuilder.swift:25"
     ],
     "table" : "Siri",
     "translations" : {
-      "de" : "MacSpace braucht ihn, um den Schalter zu lesen und zu prüfen.",
-      "en" : "MacSpace needs it to read and verify the switch.",
-      "es" : "MacSpace lo necesita para leer y comprobar el interruptor.",
-      "fr" : "MacSpace en a besoin pour lire et vérifier l’interrupteur.",
+      "de" : "Molt braucht ihn, um den Schalter zu lesen und zu prüfen.",
+      "en" : "Molt needs it to read and verify the switch.",
+      "es" : "Molt lo necesita para leer y comprobar el interruptor.",
+      "fr" : "Molt en a besoin pour lire et vérifier l’interrupteur.",
       "ja" : "スイッチの状態を読み取り検証するために必要です。",
       "ko" : "스위치 상태를 읽고 확인하려면 이 권한이 필요합니다.",
-      "pt-BR" : "O MacSpace precisa para ler e verificar o botão.",
-      "zh-Hans" : "MacSpace 需要此权限才能读取和验证开关状态。"
+      "pt-BR" : "O Molt precisa para ler e verificar o botão.",
+      "zh-Hans" : "Molt 需要此权限才能读取和验证开关状态。"
     }
   },
   {
-    "id" : "Siri|MacSpace needs its helper to change Call transcription.",
-    "key" : "MacSpace needs its helper to change Call transcription.",
+    "id" : "Siri|Molt needs its helper to change Call transcription.",
+    "key" : "Molt needs its helper to change Call transcription.",
     "kind" : "Result message",
     "places" : [
       "Modules\/Siri\/Module\/SiriModule.swift:261"
     ],
     "table" : "Siri",
     "translations" : {
-      "de" : "MacSpace braucht seinen Helfer, um die Anruftranskription zu ändern.",
-      "en" : "MacSpace needs its helper to change Call transcription.",
-      "es" : "MacSpace necesita su asistente para cambiar Transcripción de llamadas.",
-      "fr" : "MacSpace a besoin de son assistant pour modifier Transcription des appels.",
+      "de" : "Molt braucht seinen Helfer, um die Anruftranskription zu ändern.",
+      "en" : "Molt needs its helper to change Call transcription.",
+      "es" : "Molt necesita su asistente para cambiar Transcripción de llamadas.",
+      "fr" : "Molt a besoin de son assistant pour modifier Transcription des appels.",
       "ja" : "通話の文字起こしを変更するにはMacSpaceのヘルパーが必要です。",
-      "ko" : "통화 전사를 변경하려면 MacSpace 도우미가 필요합니다.",
-      "pt-BR" : "O MacSpace precisa do auxiliar para alterar a Transcrição de chamadas.",
-      "zh-Hans" : "MacSpace 需要其辅助程序来更改通话转录。"
+      "ko" : "통화 전사를 변경하려면 Molt 도우미가 필요합니다.",
+      "pt-BR" : "O Molt precisa do auxiliar para alterar a Transcrição de chamadas.",
+      "zh-Hans" : "Molt 需要其辅助程序来更改通话转录。"
     }
   },
   {
-    "id" : "Siri|MacSpace needs its helper to restore Call transcription.",
-    "key" : "MacSpace needs its helper to restore Call transcription.",
+    "id" : "Siri|Molt needs its helper to restore Call transcription.",
+    "key" : "Molt needs its helper to restore Call transcription.",
     "kind" : "Result message",
     "places" : [
       "Modules\/Siri\/Module\/SiriModule.swift:37"
     ],
     "table" : "Siri",
     "translations" : {
-      "de" : "MacSpace braucht seinen Helfer, um die Anruftranskription wiederherzustellen.",
-      "en" : "MacSpace needs its helper to restore Call transcription.",
-      "es" : "MacSpace necesita su asistente para restaurar Transcripción de llamadas.",
-      "fr" : "MacSpace a besoin de son assistant pour rétablir Transcription des appels.",
+      "de" : "Molt braucht seinen Helfer, um die Anruftranskription wiederherzustellen.",
+      "en" : "Molt needs its helper to restore Call transcription.",
+      "es" : "Molt necesita su asistente para restaurar Transcripción de llamadas.",
+      "fr" : "Molt a besoin de son assistant pour rétablir Transcription des appels.",
       "ja" : "通話の文字起こしを元に戻すにはMacSpaceのヘルパーが必要です。",
-      "ko" : "통화 전사를 복원하려면 MacSpace 도우미가 필요합니다.",
-      "pt-BR" : "O MacSpace precisa do auxiliar para restaurar a Transcrição de chamadas.",
-      "zh-Hans" : "MacSpace 需要其辅助程序来恢复通话转录。"
+      "ko" : "통화 전사를 복원하려면 Molt 도우미가 필요합니다.",
+      "pt-BR" : "O Molt precisa do auxiliar para restaurar a Transcrição de chamadas.",
+      "zh-Hans" : "Molt 需要其辅助程序来恢复通话转录。"
     }
   },
   {
@@ -8563,41 +8563,41 @@
     }
   },
   {
-    "id" : "Siri|Open MacSpace to check.",
-    "key" : "Open MacSpace to check.",
+    "id" : "Siri|Open Molt to check.",
+    "key" : "Open Molt to check.",
     "kind" : "Message",
     "places" : [
       "Modules\/Siri\/Module\/Engine\/AppleIntelligenceWatcher.swift:76"
     ],
     "table" : "Siri",
     "translations" : {
-      "de" : "Öffne MacSpace, um es zu prüfen.",
-      "en" : "Open MacSpace to check.",
-      "es" : "Abre MacSpace para comprobarlo.",
-      "fr" : "Ouvrez MacSpace pour vérifier.",
+      "de" : "Öffne Molt, um es zu prüfen.",
+      "en" : "Open Molt to check.",
+      "es" : "Abre Molt para comprobarlo.",
+      "fr" : "Ouvrez Molt pour vérifier.",
       "ja" : "MacSpaceを開いて確認してください。",
       "ko" : "MacSpace를 열어 확인하세요.",
-      "pt-BR" : "Abra o MacSpace para verificar.",
-      "zh-Hans" : "打开 MacSpace 进行检查。"
+      "pt-BR" : "Abra o Molt para verificar.",
+      "zh-Hans" : "打开 Molt 进行检查。"
     }
   },
   {
-    "id" : "Siri|Open MacSpace to free them.",
-    "key" : "Open MacSpace to free them.",
+    "id" : "Siri|Open Molt to free them.",
+    "key" : "Open Molt to free them.",
     "kind" : "Message",
     "places" : [
       "Modules\/Siri\/Module\/Engine\/AppleIntelligenceWatcher.swift:79"
     ],
     "table" : "Siri",
     "translations" : {
-      "de" : "Öffne MacSpace, um sie freizugeben.",
-      "en" : "Open MacSpace to free them.",
-      "es" : "Abre MacSpace para liberarlos.",
-      "fr" : "Ouvrez MacSpace pour les libérer.",
+      "de" : "Öffne Molt, um sie freizugeben.",
+      "en" : "Open Molt to free them.",
+      "es" : "Abre Molt para liberarlos.",
+      "fr" : "Ouvrez Molt pour les libérer.",
       "ja" : "MacSpaceを開いて解放してください。",
       "ko" : "MacSpace를 열어 정리하세요.",
-      "pt-BR" : "Abra o MacSpace para liberá-los.",
-      "zh-Hans" : "打开 MacSpace 释放模型。"
+      "pt-BR" : "Abra o Molt para liberá-los.",
+      "zh-Hans" : "打开 Molt 释放模型。"
     }
   },
   {
@@ -8760,22 +8760,22 @@
     }
   },
   {
-    "id" : "Siri|Restart. MacSpace then deletes the models.",
-    "key" : "Restart. MacSpace then deletes the models.",
+    "id" : "Siri|Restart. Molt then deletes the models.",
+    "key" : "Restart. Molt then deletes the models.",
     "kind" : "Text",
     "places" : [
       "Modules\/Siri\/Module\/Presentation\/SiriScreenBuilder.swift:472"
     ],
     "table" : "Siri",
     "translations" : {
-      "de" : "Starte neu. Danach löscht MacSpace die Modelle.",
-      "en" : "Restart. MacSpace then deletes the models.",
-      "es" : "Reinicia. Después, MacSpace elimina los modelos.",
-      "fr" : "Redémarrez. MacSpace supprime ensuite les modèles.",
+      "de" : "Starte neu. Danach löscht Molt die Modelle.",
+      "en" : "Restart. Molt then deletes the models.",
+      "es" : "Reinicia. Después, Molt elimina los modelos.",
+      "fr" : "Redémarrez. Molt supprime ensuite les modèles.",
       "ja" : "再起動してください。その後MacSpaceがモデルを削除します。",
       "ko" : "재시동하세요. 이후 MacSpace가 모델을 삭제합니다.",
-      "pt-BR" : "Reinicie. Depois, o MacSpace apaga os modelos.",
-      "zh-Hans" : "请重新启动，MacSpace 随后会删除模型。"
+      "pt-BR" : "Reinicie. Depois, o Molt apaga os modelos.",
+      "zh-Hans" : "请重新启动，Molt 随后会删除模型。"
     }
   },
   {
@@ -8957,22 +8957,22 @@
     }
   },
   {
-    "id" : "Siri|Switch it off again in MacSpace.",
-    "key" : "Switch it off again in MacSpace.",
+    "id" : "Siri|Switch it off again in Molt.",
+    "key" : "Switch it off again in Molt.",
     "kind" : "Message",
     "places" : [
       "Modules\/Siri\/Module\/Engine\/AppleIntelligenceWatcher.swift:73"
     ],
     "table" : "Siri",
     "translations" : {
-      "de" : "Schalte es in MacSpace wieder aus.",
-      "en" : "Switch it off again in MacSpace.",
-      "es" : "Vuelve a desactivarlo en MacSpace.",
-      "fr" : "Désactivez-le de nouveau dans MacSpace.",
+      "de" : "Schalte es in Molt wieder aus.",
+      "en" : "Switch it off again in Molt.",
+      "es" : "Vuelve a desactivarlo en Molt.",
+      "fr" : "Désactivez-le de nouveau dans Molt.",
       "ja" : "MacSpaceでもう一度オフにしてください。",
       "ko" : "MacSpace에서 다시 끄세요.",
-      "pt-BR" : "Desative-o de novo no MacSpace.",
-      "zh-Hans" : "在 MacSpace 中再次关闭。"
+      "pt-BR" : "Desative-o de novo no Molt.",
+      "zh-Hans" : "在 Molt 中再次关闭。"
     }
   },
   {
@@ -9128,22 +9128,22 @@
     }
   },
   {
-    "id" : "Siri|Turns Siri off and frees its unused models. MacSpace checks again while it stays off. Your Siri language is kept.",
-    "key" : "Turns Siri off and frees its unused models. MacSpace checks again while it stays off. Your Siri language is kept.",
+    "id" : "Siri|Turns Siri off and frees its unused models. Molt checks again while it stays off. Your Siri language is kept.",
+    "key" : "Turns Siri off and frees its unused models. Molt checks again while it stays off. Your Siri language is kept.",
     "kind" : "Row detail",
     "places" : [
       "Modules\/Siri\/Module\/Presentation\/SiriScreenBuilder.swift:399"
     ],
     "table" : "Siri",
     "translations" : {
-      "de" : "Schaltet Siri aus und gibt ungenutzte Modelle frei. MacSpace prüft erneut, solange Siri aus bleibt. Die Siri-Sprache bleibt erhalten.",
-      "en" : "Turns Siri off and frees its unused models. MacSpace checks again while it stays off. Your Siri language is kept.",
-      "es" : "Desactiva Siri y libera sus modelos sin uso. MacSpace vuelve a comprobarlos mientras siga desactivado. Se conserva el idioma de Siri.",
-      "fr" : "Désactive Siri et libère ses modèles inutilisés. MacSpace vérifie à nouveau tant que Siri reste désactivé. La langue de Siri est conservée.",
+      "de" : "Schaltet Siri aus und gibt ungenutzte Modelle frei. Molt prüft erneut, solange Siri aus bleibt. Die Siri-Sprache bleibt erhalten.",
+      "en" : "Turns Siri off and frees its unused models. Molt checks again while it stays off. Your Siri language is kept.",
+      "es" : "Desactiva Siri y libera sus modelos sin uso. Molt vuelve a comprobarlos mientras siga desactivado. Se conserva el idioma de Siri.",
+      "fr" : "Désactive Siri et libère ses modèles inutilisés. Molt vérifie à nouveau tant que Siri reste désactivé. La langue de Siri est conservée.",
       "ja" : "Siriをオフにして未使用のモデルを解放します。オフの間はMacSpaceが再確認します。Siriの言語は維持されます。",
       "ko" : "Siri를 끄고 사용하지 않는 모델을 비웁니다. 꺼져 있는 동안 MacSpace가 다시 확인합니다. Siri 언어는 유지됩니다.",
-      "pt-BR" : "Desativa a Siri e libera os modelos não usados. O MacSpace verifica novamente enquanto ela estiver desativada. O idioma da Siri é mantido.",
-      "zh-Hans" : "关闭 Siri 并释放其未使用的模型。关闭期间，MacSpace 会再次检查。保留 Siri 语言。"
+      "pt-BR" : "Desativa a Siri e libera os modelos não usados. O Molt verifica novamente enquanto ela estiver desativada. O idioma da Siri é mantido.",
+      "zh-Hans" : "关闭 Siri 并释放其未使用的模型。关闭期间，Molt 会再次检查。保留 Siri 语言。"
     }
   },
   {
@@ -9280,60 +9280,60 @@
     }
   },
   {
-    "id" : "Siri|Usually takes a few instants. If it doesn't, MacSpace does it after %lld minutes.",
-    "key" : "Usually takes a few instants. If it doesn't, MacSpace does it after %lld minutes.",
+    "id" : "Siri|Usually takes a few instants. If it doesn't, Molt does it after %lld minutes.",
+    "key" : "Usually takes a few instants. If it doesn't, Molt does it after %lld minutes.",
     "kind" : "Pill",
     "places" : [
       "Modules\/Siri\/Module\/Presentation\/SiriScreenBuilder.swift:370"
     ],
     "table" : "Siri",
     "translations" : {
-      "de" : "Dauert meist nur einen Moment. Falls nicht, erledigt MacSpace das nach %lld Minuten.",
-      "en" : "Usually takes a few instants. If it doesn't, MacSpace does it after %lld minutes.",
-      "es" : "Suele tardar unos instantes. Si no ocurre, MacSpace lo hace tras %lld minutos.",
-      "fr" : "Cela prend généralement quelques instants. Sinon, MacSpace s’en charge au bout de %lld minutes.",
+      "de" : "Dauert meist nur einen Moment. Falls nicht, erledigt Molt das nach %lld Minuten.",
+      "en" : "Usually takes a few instants. If it doesn't, Molt does it after %lld minutes.",
+      "es" : "Suele tardar unos instantes. Si no ocurre, Molt lo hace tras %lld minutos.",
+      "fr" : "Cela prend généralement quelques instants. Sinon, Molt s’en charge au bout de %lld minutes.",
       "ja" : "通常はすぐ終わります。終わらない場合は%lld分後にMacSpaceが処理します。",
       "ko" : "보통 곧 완료됩니다. 그렇지 않으면 %lld분 후 MacSpace가 처리합니다.",
-      "pt-BR" : "Normalmente leva alguns instantes. Se não acontecer, o MacSpace faz isso após %lld minutos.",
-      "zh-Hans" : "通常很快完成。如未完成，MacSpace 会在 %lld 分钟后处理。"
+      "pt-BR" : "Normalmente leva alguns instantes. Se não acontecer, o Molt faz isso após %lld minutos.",
+      "zh-Hans" : "通常很快完成。如未完成，Molt 会在 %lld 分钟后处理。"
     }
   },
   {
-    "id" : "Siri|While MacSpace is open: finds out if macOS turns Apple Intelligence back on, and frees the models it leaves.",
-    "key" : "While MacSpace is open: finds out if macOS turns Apple Intelligence back on, and frees the models it leaves.",
+    "id" : "Siri|While Molt is open: finds out if macOS turns Apple Intelligence back on, and frees the models it leaves.",
+    "key" : "While Molt is open: finds out if macOS turns Apple Intelligence back on, and frees the models it leaves.",
     "kind" : "Other",
     "places" : [
 
     ],
     "table" : "Siri",
     "translations" : {
-      "de" : "Solange MacSpace geöffnet ist: bemerkt, wenn macOS Apple Intelligence wieder einschaltet, und gibt die Modelle frei, die es hinterlässt.",
-      "en" : "While MacSpace is open: finds out if macOS turns Apple Intelligence back on, and frees the models it leaves.",
-      "es" : "Mientras MacSpace está abierto: detecta si macOS vuelve a activar Apple Intelligence y libera los modelos que deja.",
-      "fr" : "Tant que MacSpace est ouvert : repère si macOS réactive Apple Intelligence et libère les modèles qu’il laisse.",
+      "de" : "Solange Molt geöffnet ist: bemerkt, wenn macOS Apple Intelligence wieder einschaltet, und gibt die Modelle frei, die es hinterlässt.",
+      "en" : "While Molt is open: finds out if macOS turns Apple Intelligence back on, and frees the models it leaves.",
+      "es" : "Mientras Molt está abierto: detecta si macOS vuelve a activar Apple Intelligence y libera los modelos que deja.",
+      "fr" : "Tant que Molt est ouvert : repère si macOS réactive Apple Intelligence et libère les modèles qu’il laisse.",
       "ja" : "MacSpaceが開いている間：macOSがApple Intelligenceを再びオンにしたかを確認し、残ったモデルを解放します。",
       "ko" : "MacSpace가 열려 있는 동안: macOS가 Apple Intelligence를 다시 켰는지 확인하고 남은 모델을 정리합니다.",
-      "pt-BR" : "Enquanto o MacSpace estiver aberto: descobre se o macOS reativou o Apple Intelligence e libera os modelos que ele deixa.",
-      "zh-Hans" : "MacSpace 打开期间：发现 macOS 是否重新开启了 Apple 智能，并释放它留下的模型。"
+      "pt-BR" : "Enquanto o Molt estiver aberto: descobre se o macOS reativou o Apple Intelligence e libera os modelos que ele deixa.",
+      "zh-Hans" : "Molt 打开期间：发现 macOS 是否重新开启了 Apple 智能，并释放它留下的模型。"
     }
   },
   {
-    "id" : "Siri|While MacSpace is open: frees the models macOS asks for again for Siri, Spatial Photos and Call transcription after you switched them off.",
-    "key" : "While MacSpace is open: frees the models macOS asks for again for Siri, Spatial Photos and Call transcription after you switched them off.",
+    "id" : "Siri|While Molt is open: frees the models macOS asks for again for Siri, Spatial Photos and Call transcription after you switched them off.",
+    "key" : "While Molt is open: frees the models macOS asks for again for Siri, Spatial Photos and Call transcription after you switched them off.",
     "kind" : "Other",
     "places" : [
 
     ],
     "table" : "Siri",
     "translations" : {
-      "de" : "Solange MacSpace geöffnet ist: gibt die Modelle frei, die macOS für Siri, Räumliche Fotos und Anruftranskription erneut anfordert, nachdem du sie ausgeschaltet hast.",
-      "en" : "While MacSpace is open: frees the models macOS asks for again for Siri, Spatial Photos and Call transcription after you switched them off.",
-      "es" : "Mientras MacSpace está abierto: libera los modelos que macOS vuelve a pedir para Siri, Fotos espaciales y Transcripción de llamadas después de desactivarlos.",
-      "fr" : "Tant que MacSpace est ouvert : libère les modèles que macOS redemande pour Siri, Photos spatiales et Transcription des appels après que vous les avez désactivés.",
+      "de" : "Solange Molt geöffnet ist: gibt die Modelle frei, die macOS für Siri, Räumliche Fotos und Anruftranskription erneut anfordert, nachdem du sie ausgeschaltet hast.",
+      "en" : "While Molt is open: frees the models macOS asks for again for Siri, Spatial Photos and Call transcription after you switched them off.",
+      "es" : "Mientras Molt está abierto: libera los modelos que macOS vuelve a pedir para Siri, Fotos espaciales y Transcripción de llamadas después de desactivarlos.",
+      "fr" : "Tant que Molt est ouvert : libère les modèles que macOS redemande pour Siri, Photos spatiales et Transcription des appels après que vous les avez désactivés.",
       "ja" : "MacSpaceが開いている間：Siri、空間写真、通話の文字起こしをオフにした後でmacOSが再び求めるモデルを解放します。",
       "ko" : "MacSpace가 열려 있는 동안: Siri, 공간 사진, 통화 전사를 끈 뒤 macOS가 다시 요청하는 모델을 정리합니다.",
-      "pt-BR" : "Enquanto o MacSpace estiver aberto: libera os modelos que o macOS pede de novo para Siri, Fotos Espaciais e Transcrição de chamadas depois que você os desativou.",
-      "zh-Hans" : "MacSpace 打开期间：在你关闭 Siri、空间照片和通话转录后，释放 macOS 再次请求的模型。"
+      "pt-BR" : "Enquanto o Molt estiver aberto: libera os modelos que o macOS pede de novo para Siri, Fotos Espaciais e Transcrição de chamadas depois que você os desativou.",
+      "zh-Hans" : "Molt 打开期间：在你关闭 Siri、空间照片和通话转录后，释放 macOS 再次请求的模型。"
     }
   },
   {
@@ -9490,22 +9490,22 @@
     }
   },
   {
-    "id" : "Siri|macOS does not offer Apple Intelligence in a virtual machine. Use MacSpace on a real Mac.",
-    "key" : "macOS does not offer Apple Intelligence in a virtual machine. Use MacSpace on a real Mac.",
+    "id" : "Siri|macOS does not offer Apple Intelligence in a virtual machine. Use Molt on a real Mac.",
+    "key" : "macOS does not offer Apple Intelligence in a virtual machine. Use Molt on a real Mac.",
     "kind" : "Notice message",
     "places" : [
       "Modules\/Siri\/Module\/Presentation\/SiriScreenBuilder.swift:35"
     ],
     "table" : "Siri",
     "translations" : {
-      "de" : "macOS bietet Apple Intelligence in virtuellen Maschinen nicht an. Nutze MacSpace auf einem echten Mac.",
-      "en" : "macOS does not offer Apple Intelligence in a virtual machine. Use MacSpace on a real Mac.",
-      "es" : "macOS no ofrece Apple Intelligence en una máquina virtual. Usa MacSpace en un Mac real.",
-      "fr" : "macOS ne propose pas Apple Intelligence dans une machine virtuelle. Utilisez MacSpace sur un vrai Mac.",
+      "de" : "macOS bietet Apple Intelligence in virtuellen Maschinen nicht an. Nutze Molt auf einem echten Mac.",
+      "en" : "macOS does not offer Apple Intelligence in a virtual machine. Use Molt on a real Mac.",
+      "es" : "macOS no ofrece Apple Intelligence en una máquina virtual. Usa Molt en un Mac real.",
+      "fr" : "macOS ne propose pas Apple Intelligence dans une machine virtuelle. Utilisez Molt sur un vrai Mac.",
       "ja" : "仮想マシンではApple Intelligenceを利用できません。実機のMacでMacSpaceを使ってください。",
       "ko" : "macOS는 가상 머신에서 Apple Intelligence를 제공하지 않습니다. 실제 Mac에서 MacSpace를 사용하세요.",
-      "pt-BR" : "O macOS não oferece o Apple Intelligence em máquinas virtuais. Use o MacSpace em um Mac real.",
-      "zh-Hans" : "macOS 不在虚拟机中提供 Apple 智能。请在实体 Mac 上使用 MacSpace。"
+      "pt-BR" : "O macOS não oferece o Apple Intelligence em máquinas virtuais. Use o Molt em um Mac real.",
+      "zh-Hans" : "macOS 不在虚拟机中提供 Apple 智能。请在实体 Mac 上使用 Molt。"
     }
   },
   {
@@ -9547,8 +9547,8 @@
     }
   },
   {
-    "id" : "Siri|macOS kept these models for ten minutes. After a restart, MacSpace deletes them.",
-    "key" : "macOS kept these models for ten minutes. After a restart, MacSpace deletes them.",
+    "id" : "Siri|macOS kept these models for ten minutes. After a restart, Molt deletes them.",
+    "key" : "macOS kept these models for ten minutes. After a restart, Molt deletes them.",
     "kind" : "Title",
     "places" : [
       "Modules\/Siri\/Module\/SiriModule.swift:137",
@@ -9556,14 +9556,14 @@
     ],
     "table" : "Siri",
     "translations" : {
-      "de" : "macOS hat diese Modelle zehn Minuten lang behalten. Nach einem Neustart löscht MacSpace sie.",
-      "en" : "macOS kept these models for ten minutes. After a restart, MacSpace deletes them.",
-      "es" : "macOS ha conservado estos modelos durante diez minutos. Tras reiniciar, MacSpace los elimina.",
-      "fr" : "macOS a conservé ces modèles pendant dix minutes. Après un redémarrage, MacSpace les supprime.",
+      "de" : "macOS hat diese Modelle zehn Minuten lang behalten. Nach einem Neustart löscht Molt sie.",
+      "en" : "macOS kept these models for ten minutes. After a restart, Molt deletes them.",
+      "es" : "macOS ha conservado estos modelos durante diez minutos. Tras reiniciar, Molt los elimina.",
+      "fr" : "macOS a conservé ces modèles pendant dix minutes. Après un redémarrage, Molt les supprime.",
       "ja" : "macOSがこれらのモデルを10分間保持しています。再起動後にMacSpaceが削除します。",
       "ko" : "macOS가 이 모델을 10분 동안 유지했습니다. 재시동하면 MacSpace가 삭제합니다.",
-      "pt-BR" : "O macOS manteve esses modelos por dez minutos. Depois de reiniciar, o MacSpace os apaga.",
-      "zh-Hans" : "macOS 已将这些模型保留了十分钟。重新启动后，MacSpace 会将其删除。"
+      "pt-BR" : "O macOS manteve esses modelos por dez minutos. Depois de reiniciar, o Molt os apaga.",
+      "zh-Hans" : "macOS 已将这些模型保留了十分钟。重新启动后，Molt 会将其删除。"
     }
   },
   {
@@ -9586,22 +9586,22 @@
     }
   },
   {
-    "id" : "Siri|macOS's own services still have these models open. They usually let go within minutes, and MacSpace then deletes them.",
-    "key" : "macOS's own services still have these models open. They usually let go within minutes, and MacSpace then deletes them.",
+    "id" : "Siri|macOS's own services still have these models open. They usually let go within minutes, and Molt then deletes them.",
+    "key" : "macOS's own services still have these models open. They usually let go within minutes, and Molt then deletes them.",
     "kind" : "Tooltip",
     "places" : [
       "Modules\/Siri\/Module\/Presentation\/SiriScreenBuilder.swift:388"
     ],
     "table" : "Siri",
     "translations" : {
-      "de" : "Dienste von macOS haben diese Modelle noch geöffnet. Sie geben sie meist innerhalb weniger Minuten frei, dann löscht MacSpace sie.",
-      "en" : "macOS's own services still have these models open. They usually let go within minutes, and MacSpace then deletes them.",
-      "es" : "Servicios del propio macOS aún tienen abiertos estos modelos. Suelen liberarlos en pocos minutos y MacSpace los elimina entonces.",
-      "fr" : "Des services de macOS utilisent encore ces modèles. Ils les libèrent en général en quelques minutes, puis MacSpace les supprime.",
+      "de" : "Dienste von macOS haben diese Modelle noch geöffnet. Sie geben sie meist innerhalb weniger Minuten frei, dann löscht Molt sie.",
+      "en" : "macOS's own services still have these models open. They usually let go within minutes, and Molt then deletes them.",
+      "es" : "Servicios del propio macOS aún tienen abiertos estos modelos. Suelen liberarlos en pocos minutos y Molt los elimina entonces.",
+      "fr" : "Des services de macOS utilisent encore ces modèles. Ils les libèrent en général en quelques minutes, puis Molt les supprime.",
       "ja" : "macOS自身のサービスがまだこれらのモデルを開いています。通常は数分以内に解放され、その後MacSpaceが削除します。",
       "ko" : "macOS 자체 서비스가 아직 이 모델을 사용 중입니다. 보통 몇 분 안에 해제되며, 그러면 MacSpace가 삭제합니다.",
-      "pt-BR" : "Serviços do próprio macOS ainda estão usando esses modelos. Costumam liberá-los em poucos minutos, e o MacSpace então os apaga.",
-      "zh-Hans" : "macOS 自身的服务仍在使用这些模型。它们通常会在几分钟内释放，随后 MacSpace 会将其删除。"
+      "pt-BR" : "Serviços do próprio macOS ainda estão usando esses modelos. Costumam liberá-los em poucos minutos, e o Molt então os apaga.",
+      "zh-Hans" : "macOS 自身的服务仍在使用这些模型。它们通常会在几分钟内释放，随后 Molt 会将其删除。"
     }
   },
   {
@@ -9957,22 +9957,22 @@
     }
   },
   {
-    "id" : "SystemData|%lld places weren't measured. Reopen MacSpace.",
-    "key" : "%lld places weren't measured. Reopen MacSpace.",
+    "id" : "SystemData|%lld places weren't measured. Reopen Molt.",
+    "key" : "%lld places weren't measured. Reopen Molt.",
     "kind" : "Notice message",
     "places" : [
       "Modules\/SystemData\/Module\/Presentation\/SystemDataScreenBuilder.swift:684"
     ],
     "table" : "SystemData",
     "translations" : {
-      "de" : "%lld Orte wurden nicht gemessen. Öffne MacSpace erneut.",
-      "en" : "%lld places weren't measured. Reopen MacSpace.",
-      "es" : "No se han medido %lld ubicaciones. Vuelve a abrir MacSpace.",
-      "fr" : "%lld emplacements n’ont pas été mesurés. Rouvrez MacSpace.",
+      "de" : "%lld Orte wurden nicht gemessen. Öffne Molt erneut.",
+      "en" : "%lld places weren't measured. Reopen Molt.",
+      "es" : "No se han medido %lld ubicaciones. Vuelve a abrir Molt.",
+      "fr" : "%lld emplacements n’ont pas été mesurés. Rouvrez Molt.",
       "ja" : "%lldか所が未測定です。MacSpaceを開き直してください。",
       "ko" : "위치 %lld개가 측정되지 않았습니다. MacSpace를 다시 여세요.",
-      "pt-BR" : "%lld locais não foram medidos. Abra o MacSpace de novo.",
-      "zh-Hans" : "%lld 个位置未测量，请重新打开 MacSpace。"
+      "pt-BR" : "%lld locais não foram medidos. Abra o Molt de novo.",
+      "zh-Hans" : "%lld 个位置未测量，请重新打开 Molt。"
     }
   },
   {
@@ -11346,22 +11346,22 @@
     }
   },
   {
-    "id" : "SystemData|Files of an earlier macOS update that is already installed; no update is waiting. macOS has not removed them and they sit in a protected folder, so MacSpace leaves them alone.",
-    "key" : "Files of an earlier macOS update that is already installed; no update is waiting. macOS has not removed them and they sit in a protected folder, so MacSpace leaves them alone.",
+    "id" : "SystemData|Files of an earlier macOS update that is already installed; no update is waiting. macOS has not removed them and they sit in a protected folder, so Molt leaves them alone.",
+    "key" : "Files of an earlier macOS update that is already installed; no update is waiting. macOS has not removed them and they sit in a protected folder, so Molt leaves them alone.",
     "kind" : "Text",
     "places" : [
       "Modules\/SystemData\/Module\/Engine\/SystemDataInspector.swift:586"
     ],
     "table" : "SystemData",
     "translations" : {
-      "de" : "Dateien eines bereits installierten macOS-Updates; kein Update wartet. macOS hat sie nicht entfernt, und sie liegen in einem geschützten Ordner, daher lässt MacSpace sie unangetastet.",
-      "en" : "Files of an earlier macOS update that is already installed; no update is waiting. macOS has not removed them and they sit in a protected folder, so MacSpace leaves them alone.",
-      "es" : "Archivos de una actualización anterior de macOS ya instalada; no hay ninguna pendiente. macOS no los ha eliminado y están en una carpeta protegida, así que MacSpace no los toca.",
-      "fr" : "Fichiers d’une mise à jour de macOS déjà installée ; aucune mise à jour n’est en attente. macOS ne les a pas supprimés et ils se trouvent dans un dossier protégé : MacSpace n’y touche pas.",
+      "de" : "Dateien eines bereits installierten macOS-Updates; kein Update wartet. macOS hat sie nicht entfernt, und sie liegen in einem geschützten Ordner, daher lässt Molt sie unangetastet.",
+      "en" : "Files of an earlier macOS update that is already installed; no update is waiting. macOS has not removed them and they sit in a protected folder, so Molt leaves them alone.",
+      "es" : "Archivos de una actualización anterior de macOS ya instalada; no hay ninguna pendiente. macOS no los ha eliminado y están en una carpeta protegida, así que Molt no los toca.",
+      "fr" : "Fichiers d’une mise à jour de macOS déjà installée ; aucune mise à jour n’est en attente. macOS ne les a pas supprimés et ils se trouvent dans un dossier protégé : Molt n’y touche pas.",
       "ja" : "インストール済みmacOS更新の残りです。保留中の更新はありません。保護されたフォルダに残っているため、MacSpaceはそのままにします。",
       "ko" : "이미 설치된 macOS 업데이트의 파일이며 대기 중인 업데이트는 없습니다. macOS가 아직 제거하지 않았고 보호된 폴더에 있으므로 MacSpace가 유지합니다.",
-      "pt-BR" : "Arquivos de uma atualização anterior do macOS já instalada; nenhuma atualização está pendente. O macOS não os removeu e eles estão numa pasta protegida, então o MacSpace não mexe neles.",
-      "zh-Hans" : "已安装的 macOS 更新残留文件，没有待安装更新。macOS 尚未移除且文件位于受保护文件夹，MacSpace 不作处理。"
+      "pt-BR" : "Arquivos de uma atualização anterior do macOS já instalada; nenhuma atualização está pendente. O macOS não os removeu e eles estão numa pasta protegida, então o Molt não mexe neles.",
+      "zh-Hans" : "已安装的 macOS 更新残留文件，没有待安装更新。macOS 尚未移除且文件位于受保护文件夹，Molt 不作处理。"
     }
   },
   {
@@ -12425,8 +12425,8 @@
     }
   },
   {
-    "id" : "SystemData|Nothing was freed: MacSpace couldn't check which apps are open.",
-    "key" : "Nothing was freed: MacSpace couldn't check which apps are open.",
+    "id" : "SystemData|Nothing was freed: Molt couldn't check which apps are open.",
+    "key" : "Nothing was freed: Molt couldn't check which apps are open.",
     "kind" : "Result message",
     "places" : [
       "Modules\/SystemData\/Module\/SystemDataModule.swift:321",
@@ -12434,33 +12434,33 @@
     ],
     "table" : "SystemData",
     "translations" : {
-      "de" : "Nichts wurde freigegeben: MacSpace konnte nicht prüfen, welche Apps geöffnet sind.",
-      "en" : "Nothing was freed: MacSpace couldn't check which apps are open.",
-      "es" : "No se liberó nada: MacSpace no pudo comprobar qué apps están abiertas.",
-      "fr" : "Rien n’a été libéré : MacSpace n’a pas pu vérifier quelles apps sont ouvertes.",
+      "de" : "Nichts wurde freigegeben: Molt konnte nicht prüfen, welche Apps geöffnet sind.",
+      "en" : "Nothing was freed: Molt couldn't check which apps are open.",
+      "es" : "No se liberó nada: Molt no pudo comprobar qué apps están abiertas.",
+      "fr" : "Rien n’a été libéré : Molt n’a pas pu vérifier quelles apps sont ouvertes.",
       "ja" : "何も解放していません。実行中のアプリを確認できませんでした。",
       "ko" : "정리된 항목 없음: 실행 중인 앱을 확인하지 못했습니다.",
-      "pt-BR" : "Nada foi liberado: o MacSpace não conseguiu verificar quais apps estão abertos.",
-      "zh-Hans" : "未释放任何内容：MacSpace 无法检查哪些应用正在运行。"
+      "pt-BR" : "Nada foi liberado: o Molt não conseguiu verificar quais apps estão abertos.",
+      "zh-Hans" : "未释放任何内容：Molt 无法检查哪些应用正在运行。"
     }
   },
   {
-    "id" : "SystemData|Nothing was freed: MacSpace couldn't check which files are in use.",
-    "key" : "Nothing was freed: MacSpace couldn't check which files are in use.",
+    "id" : "SystemData|Nothing was freed: Molt couldn't check which files are in use.",
+    "key" : "Nothing was freed: Molt couldn't check which files are in use.",
     "kind" : "Row detail",
     "places" : [
       "Modules\/SystemData\/Module\/Engine\/SystemDataInspector.swift:1030"
     ],
     "table" : "SystemData",
     "translations" : {
-      "de" : "Nichts wurde freigegeben: MacSpace konnte nicht prüfen, welche Dateien verwendet werden.",
-      "en" : "Nothing was freed: MacSpace couldn't check which files are in use.",
-      "es" : "No se liberó nada: MacSpace no pudo comprobar qué archivos están en uso.",
-      "fr" : "Rien n’a été libéré : MacSpace n’a pas pu vérifier quels fichiers sont utilisés.",
+      "de" : "Nichts wurde freigegeben: Molt konnte nicht prüfen, welche Dateien verwendet werden.",
+      "en" : "Nothing was freed: Molt couldn't check which files are in use.",
+      "es" : "No se liberó nada: Molt no pudo comprobar qué archivos están en uso.",
+      "fr" : "Rien n’a été libéré : Molt n’a pas pu vérifier quels fichiers sont utilisés.",
       "ja" : "何も解放していません。使用中のファイルを確認できませんでした。",
       "ko" : "정리된 항목 없음: 사용 중인 파일을 확인하지 못했습니다.",
-      "pt-BR" : "Nada foi liberado: o MacSpace não conseguiu verificar quais arquivos estão em uso.",
-      "zh-Hans" : "未释放任何内容：MacSpace 无法检查哪些文件正在使用。"
+      "pt-BR" : "Nada foi liberado: o Molt não conseguiu verificar quais arquivos estão em uso.",
+      "zh-Hans" : "未释放任何内容：Molt 无法检查哪些文件正在使用。"
     }
   },
   {
@@ -14366,8 +14366,8 @@
     }
   },
   {
-    "id" : "SystemData|macOS keeps these locked, even from MacSpace.",
-    "key" : "macOS keeps these locked, even from MacSpace.",
+    "id" : "SystemData|macOS keeps these locked, even from Molt.",
+    "key" : "macOS keeps these locked, even from Molt.",
     "kind" : "Row detail",
     "places" : [
       "Modules\/SystemData\/Module\/Presentation\/SystemDataScreenBuilder.swift:124",
@@ -14376,14 +14376,14 @@
     ],
     "table" : "SystemData",
     "translations" : {
-      "de" : "macOS hält diese gesperrt, auch für MacSpace.",
-      "en" : "macOS keeps these locked, even from MacSpace.",
-      "es" : "macOS los mantiene bloqueados, incluso para MacSpace.",
-      "fr" : "macOS garde ces éléments verrouillés, même pour MacSpace.",
+      "de" : "macOS hält diese gesperrt, auch für Molt.",
+      "en" : "macOS keeps these locked, even from Molt.",
+      "es" : "macOS los mantiene bloqueados, incluso para Molt.",
+      "fr" : "macOS garde ces éléments verrouillés, même pour Molt.",
       "ja" : "macOSがロックしており、MacSpaceもアクセスできません。",
       "ko" : "macOS가 잠근 항목으로 MacSpace도 접근할 수 없습니다.",
-      "pt-BR" : "O macOS mantém isto inacessível, até para o MacSpace.",
-      "zh-Hans" : "macOS 锁定这些内容，MacSpace 也无法访问。"
+      "pt-BR" : "O macOS mantém isto inacessível, até para o Molt.",
+      "zh-Hans" : "macOS 锁定这些内容，Molt 也无法访问。"
     }
   },
   {

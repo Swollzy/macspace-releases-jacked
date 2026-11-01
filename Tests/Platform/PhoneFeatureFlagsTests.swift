@@ -89,7 +89,7 @@ final class PhoneFeatureFlagsTests: XCTestCase {
         XCTAssertTrue(control.status().managedOff)
         let future = PhoneFeatureFlags(overrideURL: control.overrideURL, journalURL: control.journalURL, supported: false,
                                       effective: { values.flags[$0] }, declared: { _ in false }, bootSession: { values.boot })
-        XCTAssertNoThrow(try future.setOff(false), "An OS update must never strand an override MacSpace owns")
+        XCTAssertNoThrow(try future.setOff(false), "An OS update must never strand an override Molt owns")
         XCTAssertFalse(FileManager.default.fileExists(atPath: control.overrideURL.path))
     }
 

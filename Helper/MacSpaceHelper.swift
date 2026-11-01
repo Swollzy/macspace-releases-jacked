@@ -5,7 +5,7 @@ import MacSpacePlatform
 import MacSpaceSiriPrivileged
 import MacSpaceSystemDataPrivileged
 
-/// The MacSpace privileged helper: a launch daemon the app registers with `SMAppService`. It serves `com.macspace.helper`
+/// The MacSpace privileged helper: a launch daemon the app registers with `SMAppService`. It serves `com.swollzy.molt.helper`
 /// and runs only the named operations contributed by the modules' Privileged libraries, for clients that satisfy the
 /// code-signing requirement in its launchd plist (which the app's signature covers).
 @main
@@ -17,6 +17,7 @@ struct MacSpaceHelper {
             FileHandle.standardError.write(Data("MacSpaceHelper: refusing to start without --client-requirement <code signing requirement>\n".utf8))
             exit(78) // EX_CONFIG
         }
+        EarlierDataFolders.moveSystemFolder()
         let service = PrivilegedHelperService(handlers: [SiriPrivilegedOperations(), DebloatPrivilegedOperations(), SystemDataPrivilegedOperations(),
                                                                     TimeMachinePrivilegedOperations()])
         let delegate = PrivilegedHelperListenerDelegate(service: service, clientRequirement: arguments[index + 1])

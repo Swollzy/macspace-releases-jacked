@@ -75,7 +75,7 @@ public final class PurgeHoldouts: @unchecked Sendable {
 
     public static let shared = PurgeHoldouts()
     public static let defaultURL = FileManager.default.homeDirectoryForCurrentUser
-        .appendingPathComponent("Library/Application Support/MacSpace/purge-holdouts.json")
+        .appendingPathComponent("Library/Application Support/Molt/purge-holdouts.json")
     public static let lifetime: TimeInterval = 24 * 60 * 60
 
     private let url: URL?
@@ -249,7 +249,7 @@ public struct PurgeRun: Sendable {
     /// macOS kept the files; MacSpace asks it again in the background (`PurgeRetrier`).
     public static let laterMessage = String(localized: "Finishing in the background")
 
-    static let retryNote = "MacSpace asks macOS again over the next hour; the figures update as soon as it lets them go."
+    static let retryNote = "Molt asks macOS again over the next hour; the figures update as soon as it lets them go."
 
     /// The lines that say what happened, for a result note.
     public static func details(_ outcome: Outcome) -> [String] {

@@ -18,6 +18,8 @@ public struct AppUninstaller: Sendable {
     public typealias Recycler = @Sendable (_ url: URL) async throws -> URL?
     public typealias Mover = @Sendable (_ url: URL) throws -> URL?
     public typealias IsRunning = @Sendable (_ bundleID: String) -> Bool
+    /// Whether Launch Services knows an app with this identifier anywhere on the Mac (another copy, on another disk).
+    public typealias ExistsElsewhere = @Sendable (_ bundleID: String) -> Bool
 
     /// Finder's own Move to Trash, which asks for an administrator's password when the app belongs to another user (an installer's).
     public static let liveRecycler: Recycler = { url in
@@ -39,7 +41,7 @@ public struct AppUninstaller: Sendable {
     }
 
     public static let journalURL = FileManager.default.homeDirectoryForCurrentUser
-        .appendingPathComponent("Library/Application Support/MacSpace/removed-apps.json")
+        .appendingPathComponent("Library/Application Support/Molt/removed-apps.json")
 
     public var journalURL: URL
     public var finder: LeftoverFinder
@@ -47,17 +49,26 @@ public struct AppUninstaller: Sendable {
     public var recycle: Recycler
     public var move: Mover
     public var isRunning: IsRunning
+    public var existsElsewhere: ExistsElsewhere
 
     public init(journalURL: URL = AppUninstaller.journalURL, finder: LeftoverFinder = LeftoverFinder(),
                 installed: @escaping @Sendable () -> [InstalledApp] = { AppInventory.apps(sizes: false) },
                 recycle: @escaping Recycler = AppUninstaller.liveRecycler, move: @escaping Mover = AppUninstaller.liveMover,
-                isRunning: @escaping IsRunning = AppUninstaller.liveIsRunning) {
+                isRunning: @escaping IsRunning = AppUninstaller.liveIsRunning,
+                existsElsewhere: @escaping ExistsElsewhere = AppUninstaller.liveExistsElsewhere) {
         self.journalURL = journalURL
         self.finder = finder
         self.installed = installed
         self.recycle = recycle
         self.move = move
         self.isRunning = isRunning
+        self.existsElsewhere = existsElsewhere
+    }
+
+    /// Launch Services' answer, leaving out copies in the Trash: the app just moved there is still registered for a while.
+    public static let liveExistsElsewhere: ExistsElsewhere = { bundleID in
+        guard let url = NSWorkspace.shared.urlForApplication(withBundleIdentifier: bundleID) else { return false }
+        return !url.standardizedFileURL.path.contains("/.Trash/") && FileManager.default.fileExists(atPath: url.path)
     }
 
     public enum Failure: Error, Equatable, CustomStringConvertible {
@@ -69,7 +80,7 @@ public struct AppUninstaller: Sendable {
 
         public var description: String {
             switch self {
-            case .protected: return "macOS's own apps and MacSpace are not moved."
+            case .protected: return "macOS's own apps and Molt are not moved."
             case .running: return "The app is open."
             case .notInstalled: return "The app is no longer there."
             case .stillInstalled: return "The app is installed again, so its files are in use."
@@ -95,7 +106,7 @@ public struct AppUninstaller: Sendable {
     public func pending() -> [(app: Removed, leftovers: [Leftover])] {
         let apps = installed()
         return self.removed().compactMap { removed in
-            guard !apps.contains(where: { $0.bundleID == removed.bundleID }) else { return nil }
+            guard !apps.contains(where: { $0.bundleID == removed.bundleID }), !existsElsewhere(removed.bundleID) else { return nil }
             return (removed, finder.leftovers(bundleID: removed.bundleID, name: removed.name, installed: apps))
         }
     }
@@ -105,7 +116,7 @@ public struct AppUninstaller: Sendable {
     public func trashLeftovers(_ paths: [String], of bundleID: String) throws -> (trashed: [String: String], refused: [String: String], bytes: UInt64) {
         guard let removed = self.removed().first(where: { $0.bundleID == bundleID }) else { throw Failure.notInstalled }
         let apps = installed()
-        guard !apps.contains(where: { $0.bundleID == bundleID }) else { throw Failure.stillInstalled }
+        guard !apps.contains(where: { $0.bundleID == bundleID }), !existsElsewhere(bundleID) else { throw Failure.stillInstalled }
         let current = Dictionary(finder.leftovers(bundleID: bundleID, name: removed.name, installed: apps).map { ($0.path, $0) },
                                  uniquingKeysWith: { a, _ in a })
         var trashed: [String: String] = [:], refused: [String: String] = [:]

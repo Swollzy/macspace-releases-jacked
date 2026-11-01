@@ -5,12 +5,12 @@ import MacSpaceSdk
 
 /// The look of the glass window: sizes, the colors, the motion, and the shared controls.
 ///
-/// Each tile and page is drawn on one deep color (`TileTint`), and one warm color, amber, means "you can act on this" wherever it
+/// Each tile and page is drawn on one deep color (`TileTint`), and one bright color, Molt's mint, means "you can act on this" wherever it
 /// appears: the part Clean frees, a setting macOS undid, the main action of a page, Apple Intelligence switched on.
 enum Theme {
-    static let action = Color(hex: 0xEF9F27)
-    static let actionLight = Color(hex: 0xFAC775)
-    static let actionDeep = Color(hex: 0x412402)
+    static let action = Color(hex: 0x2EE6C5)
+    static let actionLight = Color(hex: 0x8FF3E0)
+    static let actionDeep = Color(hex: 0x053B33)
 
     /// The glass frame around the tiles, and the space between tiles.
     static let frame: CGFloat = 11

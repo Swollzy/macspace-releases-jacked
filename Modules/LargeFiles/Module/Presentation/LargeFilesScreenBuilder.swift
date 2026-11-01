@@ -46,8 +46,8 @@ enum LargeFilesScreenBuilder {
         var widgets: [ScreenWidget] = []
         if !snapshot.unreadableRoots.isEmpty {
             let names = snapshot.unreadableRoots.map { ($0 as NSString).lastPathComponent }
-            widgets.append(.banner(Banner(id: "unreadable", severity: .warning, title: loc("MacSpace can't read some of your folders"),
-                                          message: loc("Allow MacSpace to read \(ListFormatter.localizedString(byJoining: names)), or give it Full Disk Access."),
+            widgets.append(.banner(Banner(id: "unreadable", severity: .warning, title: loc("Molt can't read some of your folders"),
+                                          message: loc("Allow Molt to read \(ListFormatter.localizedString(byJoining: names)), or give it Full Disk Access."),
                                           action: .allowFullDiskAccess(title: loc("Allow")))))
         }
         widgets.append(.section(SectionWidget(id: "large", title: loc("Over 100 MB"), widgets: [.list(ListWidget(id: "large-list",

@@ -70,7 +70,7 @@ enum AppsScreenBuilder {
         } else {
             row.actions = [Action(id: "trashApp", title: loc("Move to Trash"), symbol: "trash", role: .destructive, parameters: ["path": app.path],
                                   confirmation: Confirmation(title: loc("Move \(app.name) to the Trash?"),
-                                                             message: loc("Only the app moves now. MacSpace then shows what it left, for you to choose."),
+                                                             message: loc("Only the app moves now. Molt then shows what it left, for you to choose."),
                                                              confirmTitle: loc("Move to Trash")),
                                   workingTitle: loc("Moving to Trash"))]
         }

@@ -449,32 +449,32 @@
   "ログアウトすると適用されます。",
   "로그아웃하면 적용됩니다."
  ],
- "MacSpace disabled it again, most recently %@.": [
-  "O MacSpace o desativou de novo, pela última vez %@.",
-  "MacSpace l’a désactivée de nouveau, la dernière fois %@.",
-  "MacSpace la volvió a desactivar, la última vez %@.",
-  "MacSpace hat sie erneut deaktiviert, zuletzt %@.",
-  "MacSpace 已再次停用，最近一次为 %@。",
-  "MacSpaceが再び無効にしました。直近：%@。",
-  "MacSpace가 다시 껐습니다. 최근: %@."
+ "Molt disabled it again, most recently %@.": [
+  "O Molt o desativou de novo, pela última vez %@.",
+  "Molt l’a désactivée de nouveau, la dernière fois %@.",
+  "Molt la volvió a desactivar, la última vez %@.",
+  "Molt hat sie erneut deaktiviert, zuletzt %@.",
+  "Molt 已再次停用，最近一次为 %@。",
+  "Moltが再び無効にしました。直近：%@。",
+  "Molt가 다시 껐습니다. 최근: %@."
  ],
- "MacSpace disabled them again, most recently %@.": [
-  "O MacSpace os desativou de novo, pela última vez %@.",
-  "MacSpace les a désactivées de nouveau, la dernière fois %@.",
-  "MacSpace las volvió a desactivar, la última vez %@.",
-  "MacSpace hat sie erneut deaktiviert, zuletzt %@.",
-  "MacSpace 已再次停用这些功能，最近一次为 %@。",
-  "MacSpaceがこれらを再び無効にしました。直近：%@。",
-  "MacSpace가 해당 기능을 다시 껐습니다. 최근: %@."
+ "Molt disabled them again, most recently %@.": [
+  "O Molt os desativou de novo, pela última vez %@.",
+  "Molt les a désactivées de nouveau, la dernière fois %@.",
+  "Molt las volvió a desactivar, la última vez %@.",
+  "Molt hat sie erneut deaktiviert, zuletzt %@.",
+  "Molt 已再次停用这些功能，最近一次为 %@。",
+  "Moltがこれらを再び無効にしました。直近：%@。",
+  "Molt가 해당 기능을 다시 껐습니다. 최근: %@."
  ],
- "MacSpace restores the settings it saved before disabling them.": [
-  "O MacSpace restaura os ajustes que salvou antes de desativá-los.",
-  "MacSpace rétablit les réglages enregistrés avant de les désactiver.",
-  "MacSpace restaura los ajustes que guardó antes de desactivarlas.",
-  "MacSpace stellt die Einstellungen wieder her, die es vor dem Deaktivieren gesichert hat.",
-  "MacSpace 会还原停用前保存的设置。",
+ "Molt restores the settings it saved before disabling them.": [
+  "O Molt restaura os ajustes que salvou antes de desativá-los.",
+  "Molt rétablit les réglages enregistrés avant de les désactiver.",
+  "Molt restaura los ajustes que guardó antes de desactivarlas.",
+  "Molt stellt die Einstellungen wieder her, die es vor dem Deaktivieren gesichert hat.",
+  "Molt 会还原停用前保存的设置。",
   "無効にする前に保存した設定に戻します。",
-  "MacSpace가 기능을 끄기 전에 저장한 설정을 복원합니다."
+  "Molt가 기능을 끄기 전에 저장한 설정을 복원합니다."
  ],
  "No control was named.": [
   "Nenhum controle foi indicado.",
@@ -710,23 +710,23 @@
   "macOSがポリシープロファイルの承認を一度だけ求めます。",
   "macOS가 정책 프로파일 승인을 한 번 요청합니다."
  ],
- "macOS switched %@ back on. MacSpace disabled it again.": [
-  "O macOS reativou %@. O MacSpace o desativou de novo.",
-  "macOS a réactivé %@. MacSpace l’a désactivé de nouveau.",
-  "macOS ha vuelto a activar %@. MacSpace lo ha desactivado de nuevo.",
-  "macOS hat %@ wieder aktiviert. MacSpace hat es erneut deaktiviert.",
-  "macOS 重新开启了 %@，MacSpace 已再次停用。",
-  "macOSが%@を再びオンにしたため、MacSpaceが無効に戻しました。",
-  "macOS가 %@ 다시 켜서 MacSpace가 다시 껐습니다."
+ "macOS switched %@ back on. Molt disabled it again.": [
+  "O macOS reativou %@. O Molt o desativou de novo.",
+  "macOS a réactivé %@. Molt l’a désactivé de nouveau.",
+  "macOS ha vuelto a activar %@. Molt lo ha desactivado de nuevo.",
+  "macOS hat %@ wieder aktiviert. Molt hat es erneut deaktiviert.",
+  "macOS 重新开启了 %@，Molt 已再次停用。",
+  "macOSが%@を再びオンにしたため、Moltが無効に戻しました。",
+  "macOS가 %@ 다시 켜서 Molt가 다시 껐습니다."
  ],
- "macOS switched %@ back on. MacSpace disabled them again.": [
-  "O macOS reativou %@. O MacSpace os desativou de novo.",
-  "macOS a réactivé %@. MacSpace les a désactivés de nouveau.",
-  "macOS ha vuelto a activar %@. MacSpace los ha desactivado de nuevo.",
-  "macOS hat %@ wieder aktiviert. MacSpace hat sie erneut deaktiviert.",
-  "macOS 重新开启了 %@，MacSpace 已再次停用这些功能。",
-  "macOSが%@を再びオンにしたため、MacSpaceがこれらを無効に戻しました。",
-  "macOS가 %@ 다시 켜서 MacSpace가 해당 기능을 다시 껐습니다."
+ "macOS switched %@ back on. Molt disabled them again.": [
+  "O macOS reativou %@. O Molt os desativou de novo.",
+  "macOS a réactivé %@. Molt les a désactivés de nouveau.",
+  "macOS ha vuelto a activar %@. Molt los ha desactivado de nuevo.",
+  "macOS hat %@ wieder aktiviert. Molt hat sie erneut deaktiviert.",
+  "macOS 重新开启了 %@，Molt 已再次停用这些功能。",
+  "macOSが%@を再びオンにしたため、Moltがこれらを無効に戻しました。",
+  "macOS가 %@ 다시 켜서 Molt가 해당 기능을 다시 껐습니다."
  ],
  "Turn off analytics, ads and background data collection that macOS lets you control.": [
   "Desative análises, anúncios e a coleta de dados em segundo plano que o macOS permite controlar.",
@@ -746,14 +746,14 @@
   "macOSが変更を元に戻したら通知",
   "macOS가 변경을 되돌리면 알림"
  ],
- "Shows a notification when macOS switches a disabled feature back on and MacSpace disables it again.": [
-  "Mostra uma notificação quando o macOS reativa um recurso desativado e o MacSpace o desativa de novo.",
-  "Affiche une notification quand macOS réactive une fonction désactivée et que MacSpace la désactive de nouveau.",
-  "Muestra una notificación cuando macOS vuelve a activar una función desactivada y MacSpace la desactiva de nuevo.",
-  "Zeigt eine Mitteilung, wenn macOS eine deaktivierte Funktion wieder einschaltet und MacSpace sie erneut deaktiviert.",
-  "macOS 重新开启已停用的功能，而 MacSpace 再次停用时显示通知。",
-  "macOSが無効な機能を再びオンにし、MacSpaceが再度無効にすると通知します。",
-  "macOS가 꺼진 기능을 다시 켜고 MacSpace가 다시 끄면 알림을 표시합니다."
+ "Shows a notification when macOS switches a disabled feature back on and Molt disables it again.": [
+  "Mostra uma notificação quando o macOS reativa um recurso desativado e o Molt o desativa de novo.",
+  "Affiche une notification quand macOS réactive une fonction désactivée et que Molt la désactive de nouveau.",
+  "Muestra una notificación cuando macOS vuelve a activar una función desactivada y Molt la desactiva de nuevo.",
+  "Zeigt eine Mitteilung, wenn macOS eine deaktivierte Funktion wieder einschaltet und Molt sie erneut deaktiviert.",
+  "macOS 重新开启已停用的功能，而 Molt 再次停用时显示通知。",
+  "macOSが無効な機能を再びオンにし、Moltが再度無効にすると通知します。",
+  "macOS가 꺼진 기능을 다시 켜고 Molt가 다시 끄면 알림을 표시합니다."
  ],
  "Disable automatically if changed": [
   "Desativar automaticamente se houver alteração",
@@ -764,14 +764,14 @@
   "変更されたら自動的に無効にする",
   "변경되면 자동으로 끄기"
  ],
- "Checks every 15 minutes while MacSpace is open, and disables again any feature macOS switched back on.": [
-  "Verifica a cada 15 minutos enquanto o MacSpace está aberto e desativa de novo qualquer recurso que o macOS tenha reativado.",
-  "Vérifie toutes les 15 minutes tant que MacSpace est ouvert et désactive de nouveau toute fonction réactivée par macOS.",
-  "Lo comprueba cada 15 minutos mientras MacSpace está abierto y vuelve a desactivar cualquier función que macOS haya activado.",
-  "Prüft alle 15 Minuten, solange MacSpace geöffnet ist, und deaktiviert jede Funktion erneut, die macOS wieder eingeschaltet hat.",
-  "MacSpace 运行时每 15 分钟检查一次，再次停用 macOS 重新开启的功能。",
-  "MacSpaceの起動中は15分ごとに確認し、macOSが再びオンにした機能を無効に戻します。",
-  "MacSpace가 열려 있는 동안 15분마다 확인하고 macOS가 다시 켠 기능을 다시 끕니다."
+ "Checks every 15 minutes while Molt is open, and disables again any feature macOS switched back on.": [
+  "Verifica a cada 15 minutos enquanto o Molt está aberto e desativa de novo qualquer recurso que o macOS tenha reativado.",
+  "Vérifie toutes les 15 minutes tant que Molt est ouvert et désactive de nouveau toute fonction réactivée par macOS.",
+  "Lo comprueba cada 15 minutos mientras Molt está abierto y vuelve a desactivar cualquier función que macOS haya activado.",
+  "Prüft alle 15 Minuten, solange Molt geöffnet ist, und deaktiviert jede Funktion erneut, die macOS wieder eingeschaltet hat.",
+  "Molt 运行时每 15 分钟检查一次，再次停用 macOS 重新开启的功能。",
+  "Moltの起動中は15分ごとに確認し、macOSが再びオンにした機能を無効に戻します。",
+  "Molt가 열려 있는 동안 15분마다 확인하고 macOS가 다시 켠 기능을 다시 끕니다."
  ],
  "Share analytics with Apple": [
   "Compartilhar análises com a Apple",

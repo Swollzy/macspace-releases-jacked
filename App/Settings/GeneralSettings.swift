@@ -19,7 +19,7 @@ public enum GeneralSettings {
 
         public var title: String {
             switch self {
-            case .quit: return String(localized: "Quit MacSpace")
+            case .quit: return String(localized: "Quit Molt")
             case .menuBar: return String(localized: "Keep running in the menu bar")
             case .background: return String(localized: "Keep running in the background")
             }
@@ -68,7 +68,7 @@ struct GeneralSettingsSection: View {
             PagePicker(selection: Binding(get: { closedWindow }, set: { closedWindow = $0; GeneralSettings.setClosedWindow($0) })) {
                 ForEach(GeneralSettings.ClosedWindow.allCases) { Text($0.title).tag($0) }
             } label: {
-                InfoTitle(title: String(localized: "When the window closes"), info: String(localized: "In the background, MacSpace has no menu bar or Dock icon. Open it again from Applications."))
+                InfoTitle(title: String(localized: "When the window closes"), info: String(localized: "In the background, Molt has no menu bar or Dock icon. Open it again from Applications."))
             }
             Toggle(isOn: Binding(get: { opensAtLogin }, set: setOpensAtLogin)) {
                 VStack(alignment: .leading, spacing: 2) {
@@ -130,7 +130,7 @@ struct MacOSReleaseSection: View {
                 VStack(alignment: .trailing, spacing: 2) {
                     Text(MacOSRelease.current.description).textSelection(.enabled).monospacedDigit()
                     if !SupportedReleases.isSupported() {
-                        StatusFlag(text: String(localized: "MacSpace has not been tested on this release yet."), tone: .neutral)
+                        StatusFlag(text: String(localized: "Molt has not been tested on this release yet."), tone: .neutral)
                     }
                 }
             }
@@ -148,6 +148,25 @@ struct NotificationSettingsSection: View {
         PageSection("Notifications") {
             ForEach(AppNotifications.Kind.allCases) { kind in
                 Toggle(kind.title, isOn: Binding(get: { notifications.isOn(kind) }, set: { notifications.set(kind, on: $0); tick += 1 }))
+            }
+        }
+    }
+}
+
+/// Uninstall, last in Settings: the same steps as About › Uninstall, after a confirmation.
+struct UninstallSettingsSection: View {
+    @ObservedObject var host: ModuleHost
+
+    var body: some View {
+        PageSection("Uninstall") {
+            LabeledContent {
+                Button("Uninstall Molt…", role: .destructive) { AboutMolt.confirmUninstall(host: host) }
+            } label: {
+                VStack(alignment: .leading, spacing: 2) {
+                    Text("Remove Molt from this Mac")
+                    Text("Undoes the settings Molt changed, removes its helper and login item, and moves the app to the Trash.")
+                        .font(.caption).foregroundStyle(.secondary)
+                }
             }
         }
     }

@@ -1,12 +1,12 @@
 name: Feature request
-description: Suggest a change or an addition to MacSpace.
+description: Suggest a change or an addition to Molt.
 title: "[Feature]: "
 labels: ["enhancement"]
 body:
   - type: markdown
     attributes:
       value: |
-        Thank you for the idea. MacSpace is a System Data and Apple Intelligence cleaner for macOS. Requests that help with those two jobs are the easiest to take in.
+        Thank you for the idea. Molt is a System Data and Apple Intelligence cleaner for macOS. Requests that help with those two jobs are the easiest to take in.
   - type: checkboxes
     id: checks
     attributes:
@@ -17,7 +17,7 @@ body:
   - type: dropdown
     id: module
     attributes:
-      label: Which part of MacSpace is it about?
+      label: Which part of Molt is it about?
       options:
         - System Data
         - Siri & Apple Intelligence
@@ -39,7 +39,7 @@ body:
   - type: textarea
     id: solution
     attributes:
-      label: What would you like MacSpace to do?
+      label: What would you like Molt to do?
     validations:
       required: true
   - type: textarea

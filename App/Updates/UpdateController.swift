@@ -22,7 +22,7 @@ public final class UpdateController: ObservableObject {
         if Self.isConfigured(bundle) {
             let driver = UpdateUserDriver(hostBundle: bundle, delegate: nil)
             let updater = SPUUpdater(hostBundle: bundle, applicationBundle: bundle, userDriver: driver, delegate: nil)
-            do { try updater.start() } catch { NSLog("MacSpace: the updater did not start: %@", error.localizedDescription) }
+            do { try updater.start() } catch { NSLog("Molt: the updater did not start: %@", error.localizedDescription) }
             self.updater = updater
             userDriver = driver
             observation = updater.publisher(for: \.canCheckForUpdates).sink { [weak self] value in
@@ -64,7 +64,7 @@ final class UpdateUserDriver: SPUStandardUserDriver {
         let sparkle = Bundle(for: SPUUpdater.self)
         let format = sparkle.localizedString(forKey: "%@ %@ is currently the newest version available.", value: nil, table: "Sparkle")
         let name = Bundle.main.object(forInfoDictionaryKey: "CFBundleDisplayName") as? String
-            ?? Bundle.main.object(forInfoDictionaryKey: "CFBundleName") as? String ?? "MacSpace"
+            ?? Bundle.main.object(forInfoDictionaryKey: "CFBundleName") as? String ?? "Molt"
         var info = error.userInfo
         info[NSLocalizedRecoverySuggestionErrorKey] = String(format: format, name, latest.displayVersionString)
         super.showUpdateNotFoundWithError(NSError(domain: error.domain, code: error.code, userInfo: info), acknowledgement: acknowledgement)

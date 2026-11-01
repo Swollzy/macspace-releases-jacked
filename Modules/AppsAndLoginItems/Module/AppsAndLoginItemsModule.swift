@@ -79,7 +79,7 @@ public struct AppsAndLoginItemsModule: MacSpaceModule {
             } catch let failure as AppUninstaller.Failure {
                 switch failure {
                 case .running: return .failed(loc("Quit \(app.name) first"))
-                case .protected: return .failed(loc("MacSpace doesn't move this app"))
+                case .protected: return .failed(loc("Molt doesn't move this app"))
                 case .notInstalled: return ActionResult(outcome: .failed, message: loc("That app is no longer there"), refresh: true)
                 case .stillInstalled, .trash: return .failed(loc("Couldn't move it to the Trash"), details: [failure.description])
                 }

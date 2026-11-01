@@ -80,7 +80,7 @@ final class AppCacheTests: XCTestCase {
     /// system volume) nor MacSpace's own.
     func testTheInspectorListsThirdPartyCachesOfEverySize() throws {
         let caches = root.appendingPathComponent("home/Library/Caches")
-        for name in ["com.example.Small", "com.apple.Something", "PassKit", "com.macspace.app"] {
+        for name in ["com.example.Small", "com.apple.Something", "PassKit", "com.swollzy.molt"] {
             try fm.createDirectory(at: caches.appendingPathComponent(name), withIntermediateDirectories: true)
             try Data(count: 3_000_000).write(to: caches.appendingPathComponent("\(name)/blob"))
         }
@@ -259,7 +259,7 @@ final class AppCacheTests: XCTestCase {
         XCTAssertEqual(selection.sections[1].rows, ["appcache:open", "appcache:busy", "appcache:tool"], "largest first")
         XCTAssertEqual(selection.checked, ["appcache:gone"])
         XCTAssertEqual(selection.suggested, ["appcache:gone"])
-        XCTAssertNotNil(selection.choices["appcache:open"], "its app is open: chosen, it is freed once MacSpace may quit the app")
+        XCTAssertNotNil(selection.choices["appcache:open"], "its app is open: chosen, it is freed once Molt may quit the app")
         XCTAssertEqual(selection.noteNames.keys.sorted(), ["appcache:open"], "its app is named in the confirmation, which quits it")
         XCTAssertEqual(selection.note, "Quits %@.")
         XCTAssertEqual(selection.action.workingTitle, "Freeing space")
@@ -270,7 +270,7 @@ final class AppCacheTests: XCTestCase {
         XCTAssertNil(gone.detail)
         XCTAssertEqual(row.children.first { $0.id == "appcache:open" }?.badges.map(\.text), ["Open now"])
         XCTAssertEqual(row.children.first { $0.id == "appcache:busy" }?.badges.map(\.text), [],
-                       "the part's title says it comes back; an app MacSpace cannot name gets no pill")
+                       "the part's title says it comes back; an app Molt cannot name gets no pill")
         XCTAssertEqual(row.children.first { $0.id == "appcache:tool" }?.badges.map(\.text), [])
     }
 
@@ -312,11 +312,11 @@ final class AppCacheTests: XCTestCase {
     /// the Finder.
     func testTheAppsQuitForACacheAreItsOwners() {
         let apps = [RunningApp(bundleIdentifier: "org.mozilla.firefox", name: "Firefox"), RunningApp(bundleIdentifier: "com.apple.finder", name: "Finder"),
-                    RunningApp(bundleIdentifier: "com.macspace.app", name: "MacSpace"), RunningApp(bundleIdentifier: "com.example.Notes", name: "Notes")]
+                    RunningApp(bundleIdentifier: "com.swollzy.molt", name: "Molt"), RunningApp(bundleIdentifier: "com.example.Notes", name: "Notes")]
         XCTAssertEqual(AppQuitter.owning(["org.mozilla.firefox"], exact: true, apps: apps), [0])
         XCTAssertEqual(AppQuitter.owning(["Firefox"], exact: false, apps: apps), [0])
         XCTAssertEqual(AppQuitter.owning(["Firefox"], exact: true, apps: apps), [], "a container is named after its app's identifier")
-        XCTAssertEqual(AppQuitter.owning(["com.apple.finder", "MacSpace"], exact: false, apps: apps), [])
+        XCTAssertEqual(AppQuitter.owning(["com.apple.finder", "Molt"], exact: false, apps: apps), [])
         XCTAssertEqual(AppQuitter.owning(["com.example.FinderSync"], exact: false, apps: apps), [], "a short name inside another's is not it")
     }
 
@@ -367,7 +367,7 @@ final class AppCacheTests: XCTestCase {
         let manifest = ModuleManifest(id: "m", name: "M", summary: "", version: "1", symbol: "x", options: [
             OptionDefinition(id: CacheCleaner.switchID, title: "Free caches", kind: .toggle(defaultValue: true)),
             OptionDefinition(id: CacheCleaner.choiceID, title: "Cache cleaner", kind: .choice(options: [
-                OptionChoice(id: "macspace", title: "MacSpace"), OptionChoice(id: "onyx", title: "OnyX", apps: ["com.titanium.OnyX"]),
+                OptionChoice(id: "macspace", title: "Molt"), OptionChoice(id: "onyx", title: "OnyX", apps: ["com.titanium.OnyX"]),
             ], defaultValue: "macspace"), under: CacheCleaner.switchID),
         ])
         func context(_ on: Bool, _ choice: String) -> ModuleContext {

@@ -60,7 +60,7 @@ final class SiriScreenBuilderTests: XCTestCase {
                           purgeable: UInt64? = nil, blockers: [String] = []) -> SiriSnapshot {
         SiriSnapshot(status: status(state, languagesMatch: match), disablePlan: .success(plan()),
                      accounts: accounts.map { AppleIntelligenceAccountsReport(accounts: $0) }, purgeableAssetsBytes: purgeable,
-                     releaseBlockers: blockers, watch: nil, cliPath: "/Applications/MacSpace.app/Contents/MacOS/MacSpaceCli", takenAt: Date())
+                     releaseBlockers: blockers, watch: nil, cliPath: "/Applications/Molt.app/Contents/MacOS/MacSpaceCli", takenAt: Date())
     }
 
     func testStoreSharesProgressWithPageJoiningTileAndKeepsCachedReadsQuiet() async throws {
@@ -158,7 +158,7 @@ final class SiriScreenBuilderTests: XCTestCase {
         snap.featureDownloading = [.spatialPhotos]
         XCTAssertEqual(SiriScreenBuilder.refreshAfter(snap), 5, "a download is followed as it arrives")
         snap.featureSettings = [.siri: .init(state: .off, managedOff: true, requestedOff: true), .spatialPhotos: .init(state: .off, managedOff: true, requestedOff: true)]
-        XCTAssertNil(SiriScreenBuilder.tile(snap).reclaimableBytes, "switched off, the models are MacSpace's to delete, not the user's to free")
+        XCTAssertNil(SiriScreenBuilder.tile(snap).reclaimableBytes, "switched off, the models are Molt's to delete, not the user's to free")
         snap.featureDownloading = []
         guard case let .state(_, _, kept, _, _) = SiriScreenBuilder.tile(snap).graphic else { return XCTFail() }
         XCTAssertEqual(kept, "\(ByteFormat.string(3_200_000_000)) of models kept by macOS", "never said clean while they stay")
@@ -191,7 +191,7 @@ final class SiriScreenBuilderTests: XCTestCase {
         snap.featureSettings = [.siri: .init(state: .off, managedOff: true, requestedOff: true)]
         snap.featureModelBytes = [.siri: 1_400_000_000]
         snap.featureCleanupWaiting = [.siri]
-        XCTAssertEqual(SiriScreenBuilder.switchList(snap).rows[1].badge?.role, .freeingInBackground, "not held: MacSpace deletes them again")
+        XCTAssertEqual(SiriScreenBuilder.switchList(snap).rows[1].badge?.role, .freeingInBackground, "not held: Molt deletes them again")
         XCTAssertNotEqual(SiriScreenBuilder.screen(snap).primary?.id, Action.restartID)
         snap.featureLocked = [.siri]
         XCTAssertEqual(SiriScreenBuilder.switchList(snap).rows[1].badge?.role, .freeingInBackground, "a lock alone: macOS usually lets go within minutes")
@@ -331,7 +331,7 @@ final class SiriScreenBuilderTests: XCTestCase {
         var snap = snapshot(.protected)
         snap.phoneFeatures = .init(state: .off, managedOff: true, effective: [:], requestedOff: true)
         let cases: [(ModelFeatureSettings.State, String?)] = [
-            (.off, nil), (.changedElsewhere, "Changed outside MacSpace"),
+            (.off, nil), (.changedElsewhere, "Changed outside Molt"),
             (.unknown, "State unknown"), (.unsupported, "Not verified on this macOS version")
         ]
         for (state, badge) in cases {
